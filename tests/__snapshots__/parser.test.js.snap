@@ -1,0 +1,358 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`
+  SELECT
+    \`id\`,
+    id,
+    1
+    "1",
+    '1',
+ 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int ) 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "CREATE",
+      "definitions": Array [
+        Object {
+          "columnName": "a",
+          "columnType": "int",
+          "type": "CreateDefinition",
+        },
+      ],
+      "tableName": "Foo",
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int primary key ) 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "CREATE",
+      "definitions": Array [
+        Object {
+          "columnName": "a",
+          "columnType": "int",
+          "type": "CreateDefinition",
+        },
+        Object {
+          "columnName": "primary",
+          "columnType": "key",
+          "type": "CreateDefinition",
+        },
+      ],
+      "tableName": "Foo",
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int, b varchar(255) ) 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "CREATE",
+      "definitions": Array [
+        Object {
+          "columnName": "a",
+          "columnType": "int",
+          "type": "CreateDefinition",
+        },
+        Object {
+          "columnName": "b",
+          "columnType": "varchar",
+          "type": "CreateDefinition",
+        },
+      ],
+      "tableName": "Foo",
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( key (id) ) 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "CREATE",
+      "definitions": Array [],
+      "tableName": "Foo",
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT (a) 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "arguments": Array [
+            "a",
+          ],
+          "callee": undefined,
+          "type": "CallExpression",
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT 1; SELECT 2; 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        "1",
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT 2 * (a % b) 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "left": Object {
+            "left": "2",
+            "operator": "*",
+            "right": Object {
+              "arguments": Array [
+                "a",
+              ],
+              "callee": undefined,
+              "type": "CallExpression",
+            },
+          },
+          "operator": "%",
+          "right": "b",
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT a + b * c / d 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "left": Object {
+            "left": "a",
+            "operator": "+",
+            "right": Object {
+              "left": "b",
+              "operator": "*",
+              "right": "c",
+            },
+          },
+          "operator": "/",
+          "right": "d",
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT a + b - c 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "left": "a",
+          "operator": "+",
+          "right": Object {
+            "left": "b",
+            "operator": "-",
+            "right": "c",
+          },
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT a + b 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "left": "a",
+          "operator": "+",
+          "right": "b",
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT a + b as c 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "left": "a",
+          "operator": "+",
+          "right": "b",
+        },
+        "as",
+        "c",
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT a FROM b WHERE m = 6; 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        "a",
+      ],
+    },
+    Object {
+      "clauseName": "FROM",
+      "expressions": Array [
+        "b",
+      ],
+    },
+    Object {
+      "clauseName": "WHERE",
+      "expressions": Array [
+        Object {
+          "left": "m",
+          "operator": "=",
+          "right": "6",
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT a from A.B 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        "a",
+      ],
+    },
+    Object {
+      "clauseName": "from",
+      "expressions": Array [
+        "A",
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT f(g(a)) 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "arguments": Array [
+            "g",
+          ],
+          "callee": "f",
+          "type": "CallExpression",
+        },
+        Object {
+          "arguments": Array [
+            "a",
+          ],
+          "callee": undefined,
+          "type": "CallExpression",
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT fn(), fn(a), fn(a, b) 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "arguments": Array [],
+          "callee": "fn",
+          "type": "CallExpression",
+        },
+        Object {
+          "arguments": Array [
+            "a",
+          ],
+          "callee": "fn",
+          "type": "CallExpression",
+        },
+        Object {
+          "arguments": Array [
+            "a",
+            "b",
+          ],
+          "callee": "fn",
+          "type": "CallExpression",
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
