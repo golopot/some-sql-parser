@@ -49,3 +49,14 @@ testParse(`CREATE TABLE Foo ( a int )`);
 testParse(`CREATE TABLE Foo ( a int, b varchar(255) )`);
 testParse(`CREATE TABLE Foo ( a int primary key )`);
 testParse(`CREATE TABLE Foo ( key (id) )`);
+
+testParse(`UPDATE Foo SET a = 5`);
+testParse(`UPDATE Foo SET f(a) = 5`);
+
+testParse(`DROP DATABASE db_name`);
+testParse(`DROP DATABASE IF EXISTS db_name`);
+
+testParse(`ALTER TABLE tbl_name ADD a int`);
+testParse(`ALTER TABLE tbl_name ADD COLUMN a int`);
+testParse(`ALTER TABLE tbl_name ADD a int FIRST`);
+testParse(`ALTER TABLE tbl_name ADD a int AFTER b`);
