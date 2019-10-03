@@ -24,13 +24,12 @@ function testParse(code) {
 
 testParse(`SELECT 1; SELECT 2;`);
 testParse(`SELECT a FROM b WHERE m = 6;`);
+testParse(`SELECT a, b,`);
+testParse(`SELECT "1", '1', \`1\``);
+
 testParse(`
-  SELECT
-    \`id\`,
-    id,
-    1
-    "1",
-    '1',
+SELECT
+  a
 `);
 
 testParse(`SELECT fn(), fn(a), fn(a, b)`);
@@ -45,10 +44,17 @@ testParse(`SELECT a + b as c`);
 
 testParse(`SELECT a from A.B`);
 
+testParse(`SELECT null, true, current_timestamp from a`);
+
+testParse(`SELECT not from a`);
+testParse(`SELECT varchar from a`);
+
 testParse(`CREATE TABLE Foo ( a int )`);
 testParse(`CREATE TABLE Foo ( a int, b varchar(255) )`);
 testParse(`CREATE TABLE Foo ( a int primary key )`);
 testParse(`CREATE TABLE Foo ( key (id) )`);
+testParse(`CREATE TABLE "Foo" ( a int )`);
+testParse(`CREATE TABLE Foo ()`);
 
 testParse(`UPDATE Foo SET a = 5`);
 testParse(`UPDATE Foo SET f(a) = 5`);

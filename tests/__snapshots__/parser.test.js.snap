@@ -1,18 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`
-  SELECT
-    \`id\`,
-    id,
-    1
-    "1",
-    '1',
+SELECT
+  a
  1`] = `
 Object {
   "clauses": Array [
     Object {
       "clauseName": "SELECT",
-      "expressions": Array [],
+      "expressions": Array [
+        "a",
+      ],
     },
   ],
   "type": "Statement",
@@ -44,6 +42,15 @@ exports[`ALTER TABLE tbl_name ADD a int FIRST 1`] = `
 Object {
   "clauses": Array [],
   "type": "Statement",
+}
+`;
+
+exports[`CREATE TABLE "Foo" ( a int ) 1`] = `
+Object {
+  "expected": undefined,
+  "index": undefined,
+  "message": "\\"(\\" expected.",
+  "type": undefined,
 }
 `;
 
@@ -127,6 +134,19 @@ Object {
 }
 `;
 
+exports[`CREATE TABLE Foo () 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "CREATE",
+      "definitions": Array [],
+      "tableName": "Foo",
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
 exports[`DROP DATABASE IF EXISTS db_name 1`] = `
 Object {
   "clauses": Array [],
@@ -137,6 +157,31 @@ Object {
 exports[`DROP DATABASE db_name 1`] = `
 Object {
   "clauses": Array [],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT "1", '1', \`1\` 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "type": "LiteralToken",
+          "value": "1",
+        },
+        Object {
+          "type": "LiteralToken",
+          "value": "1",
+        },
+        Object {
+          "type": "LiteralToken",
+          "value": "1",
+        },
+      ],
+    },
+  ],
   "type": "Statement",
 }
 `;
@@ -339,6 +384,21 @@ Object {
 }
 `;
 
+exports[`SELECT a, b, 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        "a",
+        "b",
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
 exports[`SELECT f(g(a)) 1`] = `
 Object {
   "clauses": Array [
@@ -392,6 +452,68 @@ Object {
           "callee": "fn",
           "type": "CallExpression",
         },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT not from a 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        "not",
+      ],
+    },
+    Object {
+      "clauseName": "from",
+      "expressions": Array [
+        "a",
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT null, true, current_timestamp from a 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        "null",
+        "true",
+        "current_timestamp",
+      ],
+    },
+    Object {
+      "clauseName": "from",
+      "expressions": Array [
+        "a",
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT varchar from a 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        "varchar",
+      ],
+    },
+    Object {
+      "clauseName": "from",
+      "expressions": Array [
+        "a",
       ],
     },
   ],
