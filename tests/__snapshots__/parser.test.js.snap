@@ -288,10 +288,17 @@ Object {
       "clauseName": "FROM",
       "expressions": Array [
         "foo",
-        "LEFT",
-        "JOIN",
+      ],
+    },
+    Object {
+      "clauseName": "LEFT JOIN",
+      "expressions": Array [
         "goo",
-        "ON",
+      ],
+    },
+    Object {
+      "clauseName": "ON",
+      "expressions": Array [
         Object {
           "left": Object {
             "left": "foo",
@@ -436,11 +443,18 @@ Object {
       "expressions": Array [
         "foo",
         "f",
-        "LEFT",
-        "JOIN",
+      ],
+    },
+    Object {
+      "clauseName": "LEFT JOIN",
+      "expressions": Array [
         "goo",
         "g",
-        "ON",
+      ],
+    },
+    Object {
+      "clauseName": "ON",
+      "expressions": Array [
         Object {
           "left": Object {
             "left": "f",
