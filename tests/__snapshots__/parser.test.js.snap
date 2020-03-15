@@ -273,6 +273,44 @@ Object {
 }
 `;
 
+exports[`SELECT * FROM foo GROUP BY a HAVING b=5 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "type": "WildcardExpression",
+        },
+      ],
+    },
+    Object {
+      "clauseName": "FROM",
+      "expressions": Array [
+        "foo",
+      ],
+    },
+    Object {
+      "clauseName": "GROUP BY",
+      "expressions": Array [
+        "a",
+      ],
+    },
+    Object {
+      "clauseName": "HAVING",
+      "expressions": Array [
+        Object {
+          "left": "b",
+          "operator": "=",
+          "right": "5",
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
 exports[`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a 1`] = `
 Object {
   "clauses": Array [
@@ -441,15 +479,23 @@ Object {
     Object {
       "clauseName": "FROM",
       "expressions": Array [
-        "foo",
-        "f",
+        Object {
+          "isExplicit": false,
+          "left": "foo",
+          "right": "f",
+          "type": "AliasExpression",
+        },
       ],
     },
     Object {
       "clauseName": "LEFT JOIN",
       "expressions": Array [
-        "goo",
-        "g",
+        Object {
+          "isExplicit": false,
+          "left": "goo",
+          "right": "g",
+          "type": "AliasExpression",
+        },
       ],
     },
     Object {
@@ -509,6 +555,24 @@ Object {
           },
           "operator": "%",
           "right": "b",
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT a "aa" 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        "a",
+        Object {
+          "type": "LiteralToken",
+          "value": "aa",
         },
       ],
     },
@@ -583,26 +647,6 @@ Object {
 }
 `;
 
-exports[`SELECT a + b as c 1`] = `
-Object {
-  "clauses": Array [
-    Object {
-      "clauseName": "SELECT",
-      "expressions": Array [
-        Object {
-          "left": "a",
-          "operator": "+",
-          "right": "b",
-        },
-        "as",
-        "c",
-      ],
-    },
-  ],
-  "type": "Statement",
-}
-`;
-
 exports[`SELECT a FROM A.B 1`] = `
 Object {
   "clauses": Array [
@@ -650,6 +694,70 @@ Object {
           "operator": "=",
           "right": "6",
         },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT a aa 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "isExplicit": false,
+          "left": "a",
+          "right": "aa",
+          "type": "AliasExpression",
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT a as aa 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "isExplicit": true,
+          "left": "a",
+          "right": "aa",
+          "type": "AliasExpression",
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT a b c d e 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "isExplicit": false,
+          "left": "a",
+          "right": "b",
+          "type": "AliasExpression",
+        },
+        Object {
+          "isExplicit": false,
+          "left": "c",
+          "right": "d",
+          "type": "AliasExpression",
+        },
+        "e",
       ],
     },
   ],
@@ -713,6 +821,28 @@ Object {
           },
         },
       ],
+    },
+    Object {
+      "clauseName": "FROM",
+      "expressions": Array [
+        "foo",
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT by FROM foo; 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [],
+    },
+    Object {
+      "clauseName": "by",
+      "expressions": Array [],
     },
     Object {
       "clauseName": "FROM",

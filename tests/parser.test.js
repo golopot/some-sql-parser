@@ -40,7 +40,10 @@ testParse(`SELECT a + b * c / d`);
 testParse(`SELECT (a)`);
 testParse(`SELECT 2 * (a % b)`);
 
-testParse(`SELECT a + b as c`);
+testParse(`SELECT a as aa`);
+testParse(`SELECT a aa`);
+testParse(`SELECT a "aa"`);
+
 
 testParse(`SELECT a FROM A.B`);
 
@@ -48,6 +51,8 @@ testParse(`SELECT null, true, current_timestamp FROM a`);
 
 testParse(`SELECT not FROM a`);
 testParse(`SELECT varchar FROM a`);
+testParse(`SELECT by FROM foo;`);
+testParse(`SELECT a b c d e`);
 
 testParse(`SELECT * FROM foo`);
 testParse(`SELECT a.* FROM foo`);
@@ -60,8 +65,12 @@ testParse(`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo)`);
 
 testParse(`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo)`);
 
+// join
 testParse(`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a`);
 testParse(`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a`);
+
+// group by
+testParse(`SELECT * FROM foo GROUP BY a HAVING b=5`);
 
 testParse(`CREATE TABLE Foo ( a int )`);
 testParse(`CREATE TABLE Foo ( a int, b varchar(255) )`);
