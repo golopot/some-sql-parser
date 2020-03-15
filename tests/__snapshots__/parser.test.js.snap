@@ -67,6 +67,7 @@ Object {
         },
       ],
       "tableName": "Foo",
+      "type": "Clause",
     },
   ],
   "type": "Statement",
@@ -91,6 +92,7 @@ Object {
         },
       ],
       "tableName": "Foo",
+      "type": "Clause",
     },
   ],
   "type": "Statement",
@@ -115,6 +117,7 @@ Object {
         },
       ],
       "tableName": "Foo",
+      "type": "Clause",
     },
   ],
   "type": "Statement",
@@ -128,6 +131,7 @@ Object {
       "clauseName": "CREATE",
       "definitions": Array [],
       "tableName": "Foo",
+      "type": "Clause",
     },
   ],
   "type": "Statement",
@@ -141,6 +145,7 @@ Object {
       "clauseName": "CREATE",
       "definitions": Array [],
       "tableName": "Foo",
+      "type": "Clause",
     },
   ],
   "type": "Statement",
@@ -198,6 +203,256 @@ Object {
           ],
           "callee": undefined,
           "type": "CallExpression",
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT * FROM (SELECT * FROM foo) 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "type": "WildcardExpression",
+        },
+      ],
+    },
+    Object {
+      "clauseName": "FROM",
+      "expressions": Array [
+        Object {
+          "arguments": Array [],
+          "callee": undefined,
+          "type": "CallExpression",
+        },
+      ],
+    },
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "type": "WildcardExpression",
+        },
+      ],
+    },
+    Object {
+      "clauseName": "FROM",
+      "expressions": Array [
+        "foo",
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT * FROM foo 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "type": "WildcardExpression",
+        },
+      ],
+    },
+    Object {
+      "clauseName": "FROM",
+      "expressions": Array [
+        "foo",
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "type": "WildcardExpression",
+        },
+      ],
+    },
+    Object {
+      "clauseName": "FROM",
+      "expressions": Array [
+        "foo",
+        "LEFT",
+        "JOIN",
+        "goo",
+        "ON",
+        Object {
+          "left": Object {
+            "left": "foo",
+            "operator": ".",
+            "right": "a",
+          },
+          "operator": "=",
+          "right": Object {
+            "left": "goo",
+            "operator": ".",
+            "right": "a",
+          },
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo) 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "type": "WildcardExpression",
+        },
+      ],
+    },
+    Object {
+      "clauseName": "FROM",
+      "expressions": Array [
+        "foo",
+      ],
+    },
+    Object {
+      "clauseName": "WHERE",
+      "expressions": Array [
+        Object {
+          "left": "a",
+          "operator": "=",
+          "right": Object {
+            "arguments": Array [],
+            "callee": undefined,
+            "type": "CallExpression",
+          },
+        },
+      ],
+    },
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "arguments": Array [
+            "b",
+          ],
+          "callee": "max",
+          "type": "CallExpression",
+        },
+      ],
+    },
+    Object {
+      "clauseName": "FROM",
+      "expressions": Array [
+        "foo",
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo) 2`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "type": "WildcardExpression",
+        },
+      ],
+    },
+    Object {
+      "clauseName": "FROM",
+      "expressions": Array [
+        "foo",
+      ],
+    },
+    Object {
+      "clauseName": "WHERE",
+      "expressions": Array [
+        Object {
+          "left": "a",
+          "operator": "=",
+          "right": Object {
+            "arguments": Array [],
+            "callee": undefined,
+            "type": "CallExpression",
+          },
+        },
+      ],
+    },
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "arguments": Array [
+            "b",
+          ],
+          "callee": "max",
+          "type": "CallExpression",
+        },
+      ],
+    },
+    Object {
+      "clauseName": "FROM",
+      "expressions": Array [
+        "foo",
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "type": "WildcardExpression",
+        },
+      ],
+    },
+    Object {
+      "clauseName": "FROM",
+      "expressions": Array [
+        "foo",
+        "f",
+        "LEFT",
+        "JOIN",
+        "goo",
+        "g",
+        "ON",
+        Object {
+          "left": Object {
+            "left": "f",
+            "operator": ".",
+            "right": "a",
+          },
+          "operator": "=",
+          "right": Object {
+            "left": "g",
+            "operator": ".",
+            "right": "a",
+          },
         },
       ],
     },
@@ -334,6 +589,30 @@ Object {
 }
 `;
 
+exports[`SELECT a FROM A.B 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        "a",
+      ],
+    },
+    Object {
+      "clauseName": "FROM",
+      "expressions": Array [
+        Object {
+          "left": "A",
+          "operator": ".",
+          "right": "B",
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
 exports[`SELECT a FROM b WHERE m = 6; 1`] = `
 Object {
   "clauses": Array [
@@ -364,26 +643,6 @@ Object {
 }
 `;
 
-exports[`SELECT a from A.B 1`] = `
-Object {
-  "clauses": Array [
-    Object {
-      "clauseName": "SELECT",
-      "expressions": Array [
-        "a",
-      ],
-    },
-    Object {
-      "clauseName": "from",
-      "expressions": Array [
-        "A",
-      ],
-    },
-  ],
-  "type": "Statement",
-}
-`;
-
 exports[`SELECT a, b, 1`] = `
 Object {
   "clauses": Array [
@@ -392,6 +651,59 @@ Object {
       "expressions": Array [
         "a",
         "b",
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT a."select" FROM foo 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "left": "a",
+          "operator": ".",
+          "right": Object {
+            "type": "LiteralToken",
+            "value": "select",
+          },
+        },
+      ],
+    },
+    Object {
+      "clauseName": "FROM",
+      "expressions": Array [
+        "foo",
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT a.* FROM foo 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "left": "a",
+          "operator": ".",
+          "right": Object {
+            "type": "WildcardExpression",
+          },
+        },
+      ],
+    },
+    Object {
+      "clauseName": "FROM",
+      "expressions": Array [
+        "foo",
       ],
     },
   ],
@@ -459,7 +771,7 @@ Object {
 }
 `;
 
-exports[`SELECT not from a 1`] = `
+exports[`SELECT not FROM a 1`] = `
 Object {
   "clauses": Array [
     Object {
@@ -469,7 +781,7 @@ Object {
       ],
     },
     Object {
-      "clauseName": "from",
+      "clauseName": "FROM",
       "expressions": Array [
         "a",
       ],
@@ -479,7 +791,7 @@ Object {
 }
 `;
 
-exports[`SELECT null, true, current_timestamp from a 1`] = `
+exports[`SELECT null, true, current_timestamp FROM a 1`] = `
 Object {
   "clauses": Array [
     Object {
@@ -491,7 +803,7 @@ Object {
       ],
     },
     Object {
-      "clauseName": "from",
+      "clauseName": "FROM",
       "expressions": Array [
         "a",
       ],
@@ -501,7 +813,7 @@ Object {
 }
 `;
 
-exports[`SELECT varchar from a 1`] = `
+exports[`SELECT varchar FROM a 1`] = `
 Object {
   "clauses": Array [
     Object {
@@ -511,7 +823,7 @@ Object {
       ],
     },
     Object {
-      "clauseName": "from",
+      "clauseName": "FROM",
       "expressions": Array [
         "a",
       ],

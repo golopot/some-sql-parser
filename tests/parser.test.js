@@ -42,12 +42,26 @@ testParse(`SELECT 2 * (a % b)`);
 
 testParse(`SELECT a + b as c`);
 
-testParse(`SELECT a from A.B`);
+testParse(`SELECT a FROM A.B`);
 
-testParse(`SELECT null, true, current_timestamp from a`);
+testParse(`SELECT null, true, current_timestamp FROM a`);
 
-testParse(`SELECT not from a`);
-testParse(`SELECT varchar from a`);
+testParse(`SELECT not FROM a`);
+testParse(`SELECT varchar FROM a`);
+
+testParse(`SELECT * FROM foo`);
+testParse(`SELECT a.* FROM foo`);
+
+testParse(`SELECT a."select" FROM foo`);
+
+testParse(`SELECT * FROM (SELECT * FROM foo)`);
+
+testParse(`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo)`);
+
+testParse(`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo)`);
+
+testParse(`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a`);
+testParse(`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a`);
 
 testParse(`CREATE TABLE Foo ( a int )`);
 testParse(`CREATE TABLE Foo ( a int, b varchar(255) )`);
