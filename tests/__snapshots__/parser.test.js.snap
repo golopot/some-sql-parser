@@ -198,11 +198,8 @@ Object {
       "clauseName": "SELECT",
       "expressions": Array [
         Object {
-          "arguments": Array [
-            "a",
-          ],
-          "callee": undefined,
-          "type": "CallExpression",
+          "expression": "a",
+          "type": "ParenthesisExpression",
         },
       ],
     },
@@ -213,41 +210,10 @@ Object {
 
 exports[`SELECT * FROM (SELECT * FROM foo) 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "clauseName": "SELECT",
-      "expressions": Array [
-        Object {
-          "type": "WildcardExpression",
-        },
-      ],
-    },
-    Object {
-      "clauseName": "FROM",
-      "expressions": Array [
-        Object {
-          "arguments": Array [],
-          "callee": undefined,
-          "type": "CallExpression",
-        },
-      ],
-    },
-    Object {
-      "clauseName": "SELECT",
-      "expressions": Array [
-        Object {
-          "type": "WildcardExpression",
-        },
-      ],
-    },
-    Object {
-      "clauseName": "FROM",
-      "expressions": Array [
-        "foo",
-      ],
-    },
-  ],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "\\")\\" expected.",
+  "type": undefined,
 }
 `;
 
@@ -359,109 +325,19 @@ Object {
 
 exports[`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo) 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "clauseName": "SELECT",
-      "expressions": Array [
-        Object {
-          "type": "WildcardExpression",
-        },
-      ],
-    },
-    Object {
-      "clauseName": "FROM",
-      "expressions": Array [
-        "foo",
-      ],
-    },
-    Object {
-      "clauseName": "WHERE",
-      "expressions": Array [
-        Object {
-          "left": "a",
-          "operator": "=",
-          "right": Object {
-            "arguments": Array [],
-            "callee": undefined,
-            "type": "CallExpression",
-          },
-        },
-      ],
-    },
-    Object {
-      "clauseName": "SELECT",
-      "expressions": Array [
-        Object {
-          "arguments": Array [
-            "b",
-          ],
-          "callee": "max",
-          "type": "CallExpression",
-        },
-      ],
-    },
-    Object {
-      "clauseName": "FROM",
-      "expressions": Array [
-        "foo",
-      ],
-    },
-  ],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "\\")\\" expected.",
+  "type": undefined,
 }
 `;
 
 exports[`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo) 2`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "clauseName": "SELECT",
-      "expressions": Array [
-        Object {
-          "type": "WildcardExpression",
-        },
-      ],
-    },
-    Object {
-      "clauseName": "FROM",
-      "expressions": Array [
-        "foo",
-      ],
-    },
-    Object {
-      "clauseName": "WHERE",
-      "expressions": Array [
-        Object {
-          "left": "a",
-          "operator": "=",
-          "right": Object {
-            "arguments": Array [],
-            "callee": undefined,
-            "type": "CallExpression",
-          },
-        },
-      ],
-    },
-    Object {
-      "clauseName": "SELECT",
-      "expressions": Array [
-        Object {
-          "arguments": Array [
-            "b",
-          ],
-          "callee": "max",
-          "type": "CallExpression",
-        },
-      ],
-    },
-    Object {
-      "clauseName": "FROM",
-      "expressions": Array [
-        "foo",
-      ],
-    },
-  ],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "\\")\\" expected.",
+  "type": undefined,
 }
 `;
 
@@ -545,15 +421,12 @@ Object {
           "left": "2",
           "operator": "*",
           "right": Object {
-            "arguments": Array [
-              Object {
-                "left": "a",
-                "operator": "%",
-                "right": "b",
-              },
-            ],
-            "callee": undefined,
-            "type": "CallExpression",
+            "expression": Object {
+              "left": "a",
+              "operator": "%",
+              "right": "b",
+            },
+            "type": "ParenthesisExpression",
           },
         },
       ],
