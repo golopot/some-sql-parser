@@ -542,19 +542,19 @@ Object {
       "clauseName": "SELECT",
       "expressions": Array [
         Object {
-          "left": Object {
-            "left": "2",
-            "operator": "*",
-            "right": Object {
-              "arguments": Array [
-                "a",
-              ],
-              "callee": undefined,
-              "type": "CallExpression",
-            },
+          "left": "2",
+          "operator": "*",
+          "right": Object {
+            "arguments": Array [
+              Object {
+                "left": "a",
+                "operator": "%",
+                "right": "b",
+              },
+            ],
+            "callee": undefined,
+            "type": "CallExpression",
           },
-          "operator": "%",
-          "right": "b",
         },
       ],
     },
@@ -570,10 +570,6 @@ Object {
       "clauseName": "SELECT",
       "expressions": Array [
         "a",
-        Object {
-          "type": "LiteralToken",
-          "value": "aa",
-        },
       ],
     },
   ],
@@ -741,27 +737,10 @@ Object {
 
 exports[`SELECT a b c d e 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "clauseName": "SELECT",
-      "expressions": Array [
-        Object {
-          "isExplicit": false,
-          "left": "a",
-          "right": "b",
-          "type": "AliasExpression",
-        },
-        Object {
-          "isExplicit": false,
-          "left": "c",
-          "right": "d",
-          "type": "AliasExpression",
-        },
-        "e",
-      ],
-    },
-  ],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Expecting a clause.",
+  "type": undefined,
 }
 `;
 
@@ -863,16 +842,15 @@ Object {
       "expressions": Array [
         Object {
           "arguments": Array [
-            "g",
+            Object {
+              "arguments": Array [
+                "a",
+              ],
+              "callee": "g",
+              "type": "CallExpression",
+            },
           ],
           "callee": "f",
-          "type": "CallExpression",
-        },
-        Object {
-          "arguments": Array [
-            "a",
-          ],
-          "callee": undefined,
           "type": "CallExpression",
         },
       ],
