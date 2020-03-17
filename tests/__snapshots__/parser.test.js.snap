@@ -166,6 +166,62 @@ Object {
 }
 `;
 
+exports[`INSERT INTO foo (a, b) SELECT c, d FROM bar; 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "INSERT",
+      "expressions": Array [],
+    },
+    Object {
+      "clauseName": "INTO",
+      "expressions": Array [
+        Object {
+          "arguments": Array [
+            "a",
+            "b",
+          ],
+          "callee": "foo",
+          "type": "CallExpression",
+        },
+      ],
+    },
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        "c",
+        "d",
+      ],
+    },
+    Object {
+      "clauseName": "FROM",
+      "expressions": Array [
+        "bar",
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`INSERT INTO foo (a, b) VALUES (1, 2), (3, 4); 1`] = `
+Object {
+  "expected": undefined,
+  "index": undefined,
+  "message": "Expecting a clause.",
+  "type": undefined,
+}
+`;
+
+exports[`INSERT INTO foo (a, b) VALUES (15, a * 2); 1`] = `
+Object {
+  "expected": undefined,
+  "index": undefined,
+  "message": "Expecting a clause.",
+  "type": undefined,
+}
+`;
+
 exports[`SELECT "1", '1', \`1\` 1`] = `
 Object {
   "clauses": Array [
@@ -200,6 +256,27 @@ Object {
         Object {
           "expression": "a",
           "type": "ParenthesisExpression",
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT (f)() 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "arguments": Array [],
+          "callee": Object {
+            "expression": "f",
+            "type": "ParenthesisExpression",
+          },
+          "type": "CallExpression",
         },
       ],
     },
@@ -389,6 +466,65 @@ Object {
             "operator": ".",
             "right": "a",
           },
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT 1 SELECT 2 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        "1",
+      ],
+    },
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        "2",
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT 1 UNION SELECT 2 1`] = `
+Object {
+  "expected": undefined,
+  "index": undefined,
+  "message": "Expecting a clause.",
+  "type": undefined,
+}
+`;
+
+exports[`SELECT 1 UPDATE foo SET a = 5 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        "1",
+      ],
+    },
+    Object {
+      "clauseName": "UPDATE",
+      "expressions": Array [
+        "foo",
+      ],
+    },
+    Object {
+      "clauseName": "SET",
+      "expressions": Array [
+        Object {
+          "left": "a",
+          "operator": "=",
+          "right": "5",
         },
       ],
     },
@@ -707,6 +843,24 @@ Object {
 }
 `;
 
+exports[`SELECT f()() 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "arguments": Array [],
+          "callee": "f",
+          "type": "CallExpression",
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
 exports[`SELECT f(g(a)) 1`] = `
 Object {
   "clauses": Array [
@@ -725,6 +879,54 @@ Object {
           ],
           "callee": "f",
           "type": "CallExpression",
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT f.g() 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "left": "f",
+          "operator": ".",
+          "right": Object {
+            "arguments": Array [],
+            "callee": "g",
+            "type": "CallExpression",
+          },
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT f.g.h() 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "left": "f",
+          "operator": ".",
+          "right": Object {
+            "left": "g",
+            "operator": ".",
+            "right": Object {
+              "arguments": Array [],
+              "callee": "h",
+              "type": "CallExpression",
+            },
+          },
         },
       ],
     },
@@ -757,6 +959,42 @@ Object {
             "b",
           ],
           "callee": "fn",
+          "type": "CallExpression",
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT max () 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "arguments": Array [],
+          "callee": "max",
+          "type": "CallExpression",
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT max() 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "arguments": Array [],
+          "callee": "max",
           "type": "CallExpression",
         },
       ],
@@ -828,6 +1066,24 @@ Object {
 }
 `;
 
+exports[`SSSSS foo FROM b 1`] = `
+Object {
+  "expected": undefined,
+  "index": undefined,
+  "message": "Expecting a statement.",
+  "type": undefined,
+}
+`;
+
+exports[`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4 1`] = `
+Object {
+  "expected": undefined,
+  "index": undefined,
+  "message": "Expecting a clause.",
+  "type": undefined,
+}
+`;
+
 exports[`UPDATE Foo SET a = 5 1`] = `
 Object {
   "clauses": Array [
@@ -844,6 +1100,35 @@ Object {
           "left": "a",
           "operator": "=",
           "right": "5",
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`UPDATE Foo SET a = 5, b = 6 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "UPDATE",
+      "expressions": Array [
+        "Foo",
+      ],
+    },
+    Object {
+      "clauseName": "SET",
+      "expressions": Array [
+        Object {
+          "left": "a",
+          "operator": "=",
+          "right": "5",
+        },
+        Object {
+          "left": "b",
+          "operator": "=",
+          "right": "6",
         },
       ],
     },

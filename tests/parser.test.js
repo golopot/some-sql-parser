@@ -34,6 +34,12 @@ SELECT
 
 testParse(`SELECT fn(), fn(a), fn(a, b)`);
 testParse(`SELECT f(g(a))`);
+testParse(`SELECT f()()`);
+testParse(`SELECT f.g()`);
+testParse(`SELECT f.g.h()`);
+testParse(`SELECT (f)()`);
+testParse(`SELECT max()`);
+testParse(`SELECT max ()`);
 testParse(`SELECT a + b`);
 testParse(`SELECT a + b - c`);
 testParse(`SELECT a + b * c / d`);
@@ -72,6 +78,12 @@ testParse(`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a`);
 // group by
 testParse(`SELECT * FROM foo GROUP BY a HAVING b=5`);
 
+testParse(`SELECT 1 UNION SELECT 2`);
+
+testParse(`INSERT INTO foo (a, b) VALUES (15, a * 2);`);
+testParse(`INSERT INTO foo (a, b) VALUES (1, 2), (3, 4);`);
+testParse(`INSERT INTO foo (a, b) SELECT c, d FROM bar;`);
+
 testParse(`CREATE TABLE Foo ( a int )`);
 testParse(`CREATE TABLE Foo ( a int, b varchar(255) )`);
 testParse(`CREATE TABLE Foo ( a int primary key )`);
@@ -80,6 +92,8 @@ testParse(`CREATE TABLE "Foo" ( a int )`);
 testParse(`CREATE TABLE Foo ()`);
 
 testParse(`UPDATE Foo SET a = 5`);
+testParse(`UPDATE Foo SET a = 5, b = 6`);
+testParse(`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4`);
 testParse(`UPDATE Foo SET f(a) = 5`);
 
 testParse(`DROP DATABASE db_name`);
@@ -89,3 +103,7 @@ testParse(`ALTER TABLE tbl_name ADD a int`);
 testParse(`ALTER TABLE tbl_name ADD COLUMN a int`);
 testParse(`ALTER TABLE tbl_name ADD a int FIRST`);
 testParse(`ALTER TABLE tbl_name ADD a int AFTER b`);
+
+testParse(`SSSSS foo FROM b`);
+testParse(`SELECT 1 SELECT 2`);
+testParse(`SELECT 1 UPDATE foo SET a = 5`);
