@@ -194,10 +194,8 @@ Object {
       ],
     },
     Object {
-      "clauseName": "FROM",
-      "expressions": Array [
-        "bar",
-      ],
+      "table": "bar",
+      "type": "FromClause",
     },
   ],
   "type": "Statement",
@@ -214,6 +212,47 @@ Object {
 `;
 
 exports[`INSERT INTO foo (a, b) VALUES (15, a * 2); 1`] = `
+Object {
+  "expected": undefined,
+  "index": undefined,
+  "message": "Expecting a clause.",
+  "type": undefined,
+}
+`;
+
+exports[`INSERT INTO foo VALUE (1), (2); 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "INSERT",
+      "expressions": Array [],
+    },
+    Object {
+      "clauseName": "INTO",
+      "expressions": Array [
+        Object {
+          "isExplicit": false,
+          "left": "foo",
+          "right": "VALUE",
+          "type": "AliasExpression",
+        },
+      ],
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`INSERT INTO foo VALUES (1, 2) 1`] = `
+Object {
+  "expected": undefined,
+  "index": undefined,
+  "message": "Expecting a clause.",
+  "type": undefined,
+}
+`;
+
+exports[`INSERT foo VALUES (1, 2) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
@@ -285,12 +324,75 @@ Object {
 }
 `;
 
+exports[`SELECT * FROM "foo" 1`] = `
+Object {
+  "expected": undefined,
+  "index": undefined,
+  "message": "Unexpected token.",
+  "type": undefined,
+}
+`;
+
 exports[`SELECT * FROM (SELECT * FROM foo) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "\\")\\" expected.",
+  "message": "Unexpected token.",
   "type": undefined,
+}
+`;
+
+exports[`SELECT * FROM \`foo\`.\`goo\` 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "type": "WildcardExpression",
+        },
+      ],
+    },
+    Object {
+      "table": Object {
+        "left": Object {
+          "type": "LiteralToken",
+          "value": "foo",
+        },
+        "right": Object {
+          "type": "LiteralToken",
+          "value": "goo",
+        },
+        "type": "MemberExpression",
+      },
+      "type": "FromClause",
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT * FROM f.g.h 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
+      "expressions": Array [
+        Object {
+          "type": "WildcardExpression",
+        },
+      ],
+    },
+    Object {
+      "table": Object {
+        "left": "f",
+        "right": "g",
+        "type": "MemberExpression",
+      },
+      "type": "FromClause",
+    },
+  ],
+  "type": "Statement",
 }
 `;
 
@@ -306,10 +408,8 @@ Object {
       ],
     },
     Object {
-      "clauseName": "FROM",
-      "expressions": Array [
-        "foo",
-      ],
+      "table": "foo",
+      "type": "FromClause",
     },
   ],
   "type": "Statement",
@@ -328,10 +428,8 @@ Object {
       ],
     },
     Object {
-      "clauseName": "FROM",
-      "expressions": Array [
-        "foo",
-      ],
+      "table": "foo",
+      "type": "FromClause",
     },
     Object {
       "clauseName": "GROUP BY",
@@ -366,10 +464,8 @@ Object {
       ],
     },
     Object {
-      "clauseName": "FROM",
-      "expressions": Array [
-        "foo",
-      ],
+      "table": "foo",
+      "type": "FromClause",
     },
     Object {
       "clauseName": "LEFT JOIN",
@@ -420,6 +516,15 @@ Object {
 
 exports[`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a 1`] = `
 Object {
+  "expected": undefined,
+  "index": undefined,
+  "message": "Expecting a clause.",
+  "type": undefined,
+}
+`;
+
+exports[`SELECT * FROM foo, goo 1`] = `
+Object {
   "clauses": Array [
     Object {
       "clauseName": "SELECT",
@@ -430,44 +535,32 @@ Object {
       ],
     },
     Object {
-      "clauseName": "FROM",
+      "table": "foo",
+      "type": "FromClause",
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT * FROM foo.goo 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "clauseName": "SELECT",
       "expressions": Array [
         Object {
-          "isExplicit": false,
-          "left": "foo",
-          "right": "f",
-          "type": "AliasExpression",
+          "type": "WildcardExpression",
         },
       ],
     },
     Object {
-      "clauseName": "LEFT JOIN",
-      "expressions": Array [
-        Object {
-          "isExplicit": false,
-          "left": "goo",
-          "right": "g",
-          "type": "AliasExpression",
-        },
-      ],
-    },
-    Object {
-      "clauseName": "ON",
-      "expressions": Array [
-        Object {
-          "left": Object {
-            "left": "f",
-            "operator": ".",
-            "right": "a",
-          },
-          "operator": "=",
-          "right": Object {
-            "left": "g",
-            "operator": ".",
-            "right": "a",
-          },
-        },
-      ],
+      "table": Object {
+        "left": "foo",
+        "right": "goo",
+        "type": "MemberExpression",
+      },
+      "type": "FromClause",
     },
   ],
   "type": "Statement",
@@ -652,30 +745,6 @@ Object {
 }
 `;
 
-exports[`SELECT a FROM A.B 1`] = `
-Object {
-  "clauses": Array [
-    Object {
-      "clauseName": "SELECT",
-      "expressions": Array [
-        "a",
-      ],
-    },
-    Object {
-      "clauseName": "FROM",
-      "expressions": Array [
-        Object {
-          "left": "A",
-          "operator": ".",
-          "right": "B",
-        },
-      ],
-    },
-  ],
-  "type": "Statement",
-}
-`;
-
 exports[`SELECT a FROM b WHERE m = 6; 1`] = `
 Object {
   "clauses": Array [
@@ -686,10 +755,8 @@ Object {
       ],
     },
     Object {
-      "clauseName": "FROM",
-      "expressions": Array [
-        "b",
-      ],
+      "table": "b",
+      "type": "FromClause",
     },
     Object {
       "clauseName": "WHERE",
@@ -785,10 +852,8 @@ Object {
       ],
     },
     Object {
-      "clauseName": "FROM",
-      "expressions": Array [
-        "foo",
-      ],
+      "table": "foo",
+      "type": "FromClause",
     },
   ],
   "type": "Statement",
@@ -811,10 +876,8 @@ Object {
       ],
     },
     Object {
-      "clauseName": "FROM",
-      "expressions": Array [
-        "foo",
-      ],
+      "table": "foo",
+      "type": "FromClause",
     },
   ],
   "type": "Statement",
@@ -833,10 +896,8 @@ Object {
       "expressions": Array [],
     },
     Object {
-      "clauseName": "FROM",
-      "expressions": Array [
-        "foo",
-      ],
+      "table": "foo",
+      "type": "FromClause",
     },
   ],
   "type": "Statement",
@@ -1014,10 +1075,8 @@ Object {
       ],
     },
     Object {
-      "clauseName": "FROM",
-      "expressions": Array [
-        "a",
-      ],
+      "table": "a",
+      "type": "FromClause",
     },
   ],
   "type": "Statement",
@@ -1036,10 +1095,8 @@ Object {
       ],
     },
     Object {
-      "clauseName": "FROM",
-      "expressions": Array [
-        "a",
-      ],
+      "table": "a",
+      "type": "FromClause",
     },
   ],
   "type": "Statement",
@@ -1056,10 +1113,8 @@ Object {
       ],
     },
     Object {
-      "clauseName": "FROM",
-      "expressions": Array [
-        "a",
-      ],
+      "table": "a",
+      "type": "FromClause",
     },
   ],
   "type": "Statement",

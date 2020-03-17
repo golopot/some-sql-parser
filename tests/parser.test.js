@@ -50,9 +50,6 @@ testParse(`SELECT a as aa`);
 testParse(`SELECT a aa`);
 testParse(`SELECT a "aa"`);
 
-
-testParse(`SELECT a FROM A.B`);
-
 testParse(`SELECT null, true, current_timestamp FROM a`);
 
 testParse(`SELECT not FROM a`);
@@ -71,6 +68,13 @@ testParse(`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo)`);
 
 testParse(`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo)`);
 
+testParse(`SELECT * FROM foo.goo`);
+testParse('SELECT * FROM `foo`.`goo`');
+testParse(`SELECT * FROM "foo"`);
+
+testParse(`SELECT * FROM foo, goo`);
+testParse(`SELECT * FROM f.g.h`);
+
 // join
 testParse(`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a`);
 testParse(`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a`);
@@ -80,8 +84,11 @@ testParse(`SELECT * FROM foo GROUP BY a HAVING b=5`);
 
 testParse(`SELECT 1 UNION SELECT 2`);
 
+testParse(`INSERT INTO foo VALUES (1, 2)`);
+testParse(`INSERT foo VALUES (1, 2)`);
 testParse(`INSERT INTO foo (a, b) VALUES (15, a * 2);`);
 testParse(`INSERT INTO foo (a, b) VALUES (1, 2), (3, 4);`);
+testParse(`INSERT INTO foo VALUE (1), (2);`);
 testParse(`INSERT INTO foo (a, b) SELECT c, d FROM bar;`);
 
 testParse(`CREATE TABLE Foo ( a int )`);
