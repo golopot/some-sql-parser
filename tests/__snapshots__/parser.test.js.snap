@@ -350,7 +350,7 @@ exports[`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Invalid syntax.",
+  "message": "\\")\\" expected.",
   "type": undefined,
 }
 `;
@@ -359,7 +359,7 @@ exports[`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo) 2`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Invalid syntax.",
+  "message": "\\")\\" expected.",
   "type": undefined,
 }
 `;
@@ -574,10 +574,27 @@ Object {
 
 exports[`SELECT a FROM b WHERE m = 6; 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax.",
-  "type": undefined,
+  "clauses": Array [
+    Object {
+      "expressions": Array [
+        "a",
+      ],
+      "type": "SelectClause",
+    },
+    Object {
+      "table": "b",
+      "type": "FromClause",
+    },
+    Object {
+      "expression": Object {
+        "left": "m",
+        "operator": "=",
+        "right": "6",
+      },
+      "type": "WhereClause",
+    },
+  ],
+  "type": "Statement",
 }
 `;
 
@@ -922,7 +939,7 @@ exports[`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Invalid syntax.",
+  "message": "Expecting a clause.",
   "type": undefined,
 }
 `;
