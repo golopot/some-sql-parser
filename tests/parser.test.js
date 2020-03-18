@@ -102,7 +102,8 @@ testParse(`UPDATE Foo SET a = 5`);
 testParse(`UPDATE Foo SET a = 5, b = 6`);
 testParse(`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4`);
 testParse(`UPDATE Foo SET f(a) = 5`);
-
+testParse(`UPDATE Foo SET a = 6 b`);
+testParse(`UPDATE Foo SET a = 6 as b`);
 
 testParse(`ALTER TABLE tbl_name ADD a int`);
 testParse(`ALTER TABLE tbl_name ADD COLUMN a int`);

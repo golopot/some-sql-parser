@@ -993,6 +993,42 @@ Object {
 }
 `;
 
+exports[`UPDATE Foo SET a = 6 as b 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "table": "Foo",
+      "type": "UpdateClause",
+    },
+    Object {
+      "expressions": Array [
+        Object {
+          "isExplicit": true,
+          "left": Object {
+            "left": "a",
+            "operator": "=",
+            "right": "6",
+          },
+          "right": "b",
+          "type": "AliasExpression",
+        },
+      ],
+      "type": "SetClause",
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`UPDATE Foo SET a = 6 b 1`] = `
+Object {
+  "expected": undefined,
+  "index": undefined,
+  "message": "Expecting a clause.",
+  "type": undefined,
+}
+`;
+
 exports[`UPDATE Foo SET f(a) = 5 1`] = `
 Object {
   "clauses": Array [
