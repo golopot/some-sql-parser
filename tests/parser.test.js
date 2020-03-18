@@ -103,8 +103,6 @@ testParse(`UPDATE Foo SET a = 5, b = 6`);
 testParse(`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4`);
 testParse(`UPDATE Foo SET f(a) = 5`);
 
-testParse(`DROP DATABASE db_name`);
-testParse(`DROP DATABASE IF EXISTS db_name`);
 
 testParse(`ALTER TABLE tbl_name ADD a int`);
 testParse(`ALTER TABLE tbl_name ADD COLUMN a int`);
@@ -114,3 +112,8 @@ testParse(`ALTER TABLE tbl_name ADD a int AFTER b`);
 testParse(`SSSSS foo FROM b`);
 testParse(`SELECT 1 SELECT 2`);
 testParse(`SELECT 1 UPDATE foo SET a = 5`);
+
+testParse(`CREATE DATABASE db_name`);
+
+testParse(`DROP DATABASE db_name`);
+testParse(`DROP DATABASE IF EXISTS db_name`);

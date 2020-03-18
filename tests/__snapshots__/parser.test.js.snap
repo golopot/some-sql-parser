@@ -7,10 +7,10 @@ SELECT
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         "a",
       ],
+      "type": "SelectClause",
     },
   ],
   "type": "Statement",
@@ -21,7 +21,7 @@ exports[`ALTER TABLE tbl_name ADD COLUMN a int 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -30,7 +30,7 @@ exports[`ALTER TABLE tbl_name ADD a int 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -39,7 +39,7 @@ exports[`ALTER TABLE tbl_name ADD a int AFTER b 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -48,7 +48,16 @@ exports[`ALTER TABLE tbl_name ADD a int FIRST 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Invalid syntax.",
+  "type": undefined,
+}
+`;
+
+exports[`CREATE DATABASE db_name 1`] = `
+Object {
+  "expected": undefined,
+  "index": undefined,
+  "message": "Keyword \\"TABLE\\" expected.",
   "type": undefined,
 }
 `;
@@ -111,27 +120,17 @@ exports[`DROP DATABASE IF EXISTS db_name 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
 
 exports[`DROP DATABASE db_name 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "clauseName": "DROP",
-      "expressions": Array [
-        Object {
-          "isExplicit": false,
-          "left": "DATABASE",
-          "right": "db_name",
-          "type": "AliasExpression",
-        },
-      ],
-    },
-  ],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Invalid syntax.",
+  "type": undefined,
 }
 `;
 
@@ -193,7 +192,6 @@ exports[`SELECT "1", '1', \`1\` 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         Object {
           "type": "LiteralToken",
@@ -208,6 +206,7 @@ Object {
           "value": "1",
         },
       ],
+      "type": "SelectClause",
     },
   ],
   "type": "Statement",
@@ -218,13 +217,13 @@ exports[`SELECT (a) 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         Object {
           "expression": "a",
           "type": "ParenthesisExpression",
         },
       ],
+      "type": "SelectClause",
     },
   ],
   "type": "Statement",
@@ -235,7 +234,6 @@ exports[`SELECT (f)() 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         Object {
           "arguments": Array [],
@@ -246,6 +244,7 @@ Object {
           "type": "CallExpression",
         },
       ],
+      "type": "SelectClause",
     },
   ],
   "type": "Statement",
@@ -274,12 +273,12 @@ exports[`SELECT * FROM \`foo\`.\`goo\` 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         Object {
           "type": "WildcardExpression",
         },
       ],
+      "type": "SelectClause",
     },
     Object {
       "table": Object {
@@ -313,12 +312,12 @@ exports[`SELECT * FROM foo 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         Object {
           "type": "WildcardExpression",
         },
       ],
+      "type": "SelectClause",
     },
     Object {
       "table": "foo",
@@ -331,81 +330,19 @@ Object {
 
 exports[`SELECT * FROM foo GROUP BY a HAVING b=5 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "clauseName": "SELECT",
-      "expressions": Array [
-        Object {
-          "type": "WildcardExpression",
-        },
-      ],
-    },
-    Object {
-      "table": "foo",
-      "type": "FromClause",
-    },
-    Object {
-      "clauseName": "GROUP BY",
-      "expressions": Array [
-        "a",
-      ],
-    },
-    Object {
-      "clauseName": "HAVING",
-      "expressions": Array [
-        Object {
-          "left": "b",
-          "operator": "=",
-          "right": "5",
-        },
-      ],
-    },
-  ],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Invalid syntax.",
+  "type": undefined,
 }
 `;
 
 exports[`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "clauseName": "SELECT",
-      "expressions": Array [
-        Object {
-          "type": "WildcardExpression",
-        },
-      ],
-    },
-    Object {
-      "table": "foo",
-      "type": "FromClause",
-    },
-    Object {
-      "clauseName": "LEFT JOIN",
-      "expressions": Array [
-        "goo",
-      ],
-    },
-    Object {
-      "clauseName": "ON",
-      "expressions": Array [
-        Object {
-          "left": Object {
-            "left": "foo",
-            "operator": ".",
-            "right": "a",
-          },
-          "operator": "=",
-          "right": Object {
-            "left": "goo",
-            "operator": ".",
-            "right": "a",
-          },
-        },
-      ],
-    },
-  ],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Invalid syntax.",
+  "type": undefined,
 }
 `;
 
@@ -413,7 +350,7 @@ exports[`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "\\")\\" expected.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -422,7 +359,7 @@ exports[`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo) 2`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "\\")\\" expected.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -449,12 +386,12 @@ exports[`SELECT * FROM foo.goo 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         Object {
           "type": "WildcardExpression",
         },
       ],
+      "type": "SelectClause",
     },
     Object {
       "table": Object {
@@ -473,16 +410,16 @@ exports[`SELECT 1 SELECT 2 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         "1",
       ],
+      "type": "SelectClause",
     },
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         "2",
       ],
+      "type": "SelectClause",
     },
   ],
   "type": "Statement",
@@ -502,17 +439,16 @@ exports[`SELECT 1 UPDATE foo SET a = 5 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         "1",
       ],
+      "type": "SelectClause",
     },
     Object {
       "table": "foo",
       "type": "UpdateClause",
     },
     Object {
-      "clauseName": "SET",
       "expressions": Array [
         Object {
           "left": "a",
@@ -520,6 +456,7 @@ Object {
           "right": "5",
         },
       ],
+      "type": "SetClause",
     },
   ],
   "type": "Statement",
@@ -539,7 +476,6 @@ exports[`SELECT 2 * (a % b) 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         Object {
           "left": "2",
@@ -554,6 +490,7 @@ Object {
           },
         },
       ],
+      "type": "SelectClause",
     },
   ],
   "type": "Statement",
@@ -573,7 +510,6 @@ exports[`SELECT a + b * c / d 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         Object {
           "left": Object {
@@ -589,6 +525,7 @@ Object {
           "right": "d",
         },
       ],
+      "type": "SelectClause",
     },
   ],
   "type": "Statement",
@@ -599,7 +536,6 @@ exports[`SELECT a + b - c 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         Object {
           "left": "a",
@@ -611,6 +547,7 @@ Object {
           },
         },
       ],
+      "type": "SelectClause",
     },
   ],
   "type": "Statement",
@@ -621,7 +558,6 @@ exports[`SELECT a + b 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         Object {
           "left": "a",
@@ -629,6 +565,7 @@ Object {
           "right": "b",
         },
       ],
+      "type": "SelectClause",
     },
   ],
   "type": "Statement",
@@ -648,7 +585,6 @@ exports[`SELECT a aa 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         Object {
           "isExplicit": false,
@@ -657,6 +593,7 @@ Object {
           "type": "AliasExpression",
         },
       ],
+      "type": "SelectClause",
     },
   ],
   "type": "Statement",
@@ -667,7 +604,6 @@ exports[`SELECT a as aa 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         Object {
           "isExplicit": true,
@@ -676,6 +612,7 @@ Object {
           "type": "AliasExpression",
         },
       ],
+      "type": "SelectClause",
     },
   ],
   "type": "Statement",
@@ -695,11 +632,11 @@ exports[`SELECT a, b, 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         "a",
         "b",
       ],
+      "type": "SelectClause",
     },
   ],
   "type": "Statement",
@@ -710,7 +647,6 @@ exports[`SELECT a."select" FROM foo 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         Object {
           "left": "a",
@@ -721,6 +657,7 @@ Object {
           },
         },
       ],
+      "type": "SelectClause",
     },
     Object {
       "table": "foo",
@@ -735,7 +672,6 @@ exports[`SELECT a.* FROM foo 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         Object {
           "left": "a",
@@ -745,6 +681,7 @@ Object {
           },
         },
       ],
+      "type": "SelectClause",
     },
     Object {
       "table": "foo",
@@ -777,7 +714,6 @@ exports[`SELECT f(g(a)) 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         Object {
           "arguments": Array [
@@ -793,6 +729,7 @@ Object {
           "type": "CallExpression",
         },
       ],
+      "type": "SelectClause",
     },
   ],
   "type": "Statement",
@@ -803,7 +740,6 @@ exports[`SELECT f.g() 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         Object {
           "left": "f",
@@ -815,6 +751,7 @@ Object {
           },
         },
       ],
+      "type": "SelectClause",
     },
   ],
   "type": "Statement",
@@ -825,7 +762,6 @@ exports[`SELECT f.g.h() 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         Object {
           "left": "f",
@@ -841,6 +777,7 @@ Object {
           },
         },
       ],
+      "type": "SelectClause",
     },
   ],
   "type": "Statement",
@@ -851,7 +788,6 @@ exports[`SELECT fn(), fn(a), fn(a, b) 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         Object {
           "arguments": Array [],
@@ -874,6 +810,7 @@ Object {
           "type": "CallExpression",
         },
       ],
+      "type": "SelectClause",
     },
   ],
   "type": "Statement",
@@ -884,7 +821,6 @@ exports[`SELECT max () 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         Object {
           "arguments": Array [],
@@ -892,6 +828,7 @@ Object {
           "type": "CallExpression",
         },
       ],
+      "type": "SelectClause",
     },
   ],
   "type": "Statement",
@@ -902,7 +839,6 @@ exports[`SELECT max() 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         Object {
           "arguments": Array [],
@@ -910,6 +846,7 @@ Object {
           "type": "CallExpression",
         },
       ],
+      "type": "SelectClause",
     },
   ],
   "type": "Statement",
@@ -920,10 +857,10 @@ exports[`SELECT not FROM a 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         "not",
       ],
+      "type": "SelectClause",
     },
     Object {
       "table": "a",
@@ -938,12 +875,12 @@ exports[`SELECT null, true, current_timestamp FROM a 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         "null",
         "true",
         "current_timestamp",
       ],
+      "type": "SelectClause",
     },
     Object {
       "table": "a",
@@ -958,10 +895,10 @@ exports[`SELECT varchar FROM a 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "SELECT",
       "expressions": Array [
         "varchar",
       ],
+      "type": "SelectClause",
     },
     Object {
       "table": "a",
@@ -985,7 +922,7 @@ exports[`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -998,7 +935,6 @@ Object {
       "type": "UpdateClause",
     },
     Object {
-      "clauseName": "SET",
       "expressions": Array [
         Object {
           "left": "a",
@@ -1006,6 +942,7 @@ Object {
           "right": "5",
         },
       ],
+      "type": "SetClause",
     },
   ],
   "type": "Statement",
@@ -1020,7 +957,6 @@ Object {
       "type": "UpdateClause",
     },
     Object {
-      "clauseName": "SET",
       "expressions": Array [
         Object {
           "left": "a",
@@ -1033,6 +969,7 @@ Object {
           "right": "6",
         },
       ],
+      "type": "SetClause",
     },
   ],
   "type": "Statement",
@@ -1047,7 +984,6 @@ Object {
       "type": "UpdateClause",
     },
     Object {
-      "clauseName": "SET",
       "expressions": Array [
         Object {
           "left": Object {
@@ -1061,6 +997,7 @@ Object {
           "right": "5",
         },
       ],
+      "type": "SetClause",
     },
   ],
   "type": "Statement",
