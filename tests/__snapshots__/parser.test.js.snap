@@ -192,32 +192,8 @@ exports[`INSERT INTO foo (a, b) SELECT c, d FROM bar; 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "INSERT",
-      "expressions": Array [],
-    },
-    Object {
-      "clauseName": "INTO",
-      "expressions": Array [
-        Object {
-          "arguments": Array [
-            "a",
-            "b",
-          ],
-          "callee": "foo",
-          "type": "CallExpression",
-        },
-      ],
-    },
-    Object {
-      "clauseName": "SELECT",
-      "expressions": Array [
-        "c",
-        "d",
-      ],
-    },
-    Object {
-      "table": "bar",
-      "type": "FromClause",
+      "table": "foo",
+      "type": "InsertClause",
     },
   ],
   "type": "Statement",
@@ -226,42 +202,34 @@ Object {
 
 exports[`INSERT INTO foo (a, b) VALUES (1, 2), (3, 4); 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Expecting a clause.",
-  "type": undefined,
+  "clauses": Array [
+    Object {
+      "table": "foo",
+      "type": "InsertClause",
+    },
+  ],
+  "type": "Statement",
 }
 `;
 
 exports[`INSERT INTO foo (a, b) VALUES (15, a * 2); 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Expecting a clause.",
-  "type": undefined,
+  "clauses": Array [
+    Object {
+      "table": "foo",
+      "type": "InsertClause",
+    },
+  ],
+  "type": "Statement",
 }
 `;
 
 exports[`INSERT INTO foo VALUE (1), (2); 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "clauseName": "INSERT",
-      "expressions": Array [],
-    },
-    Object {
-      "clauseName": "INTO",
-      "expressions": Array [
-        Object {
-          "isExplicit": false,
-          "left": "foo",
-          "right": "VALUE",
-          "type": "AliasExpression",
-        },
-      ],
-    },
-  ],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Expecting a clause.",
+  "type": undefined,
 }
 `;
 
@@ -628,10 +596,8 @@ Object {
       ],
     },
     Object {
-      "clauseName": "UPDATE",
-      "expressions": Array [
-        "foo",
-      ],
+      "table": "foo",
+      "type": "UpdateClause",
     },
     Object {
       "clauseName": "SET",
@@ -1165,10 +1131,8 @@ exports[`UPDATE Foo SET a = 5 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "UPDATE",
-      "expressions": Array [
-        "Foo",
-      ],
+      "table": "Foo",
+      "type": "UpdateClause",
     },
     Object {
       "clauseName": "SET",
@@ -1189,10 +1153,8 @@ exports[`UPDATE Foo SET a = 5, b = 6 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "UPDATE",
-      "expressions": Array [
-        "Foo",
-      ],
+      "table": "Foo",
+      "type": "UpdateClause",
     },
     Object {
       "clauseName": "SET",
@@ -1218,10 +1180,8 @@ exports[`UPDATE Foo SET f(a) = 5 1`] = `
 Object {
   "clauses": Array [
     Object {
-      "clauseName": "UPDATE",
-      "expressions": Array [
-        "Foo",
-      ],
+      "table": "Foo",
+      "type": "UpdateClause",
     },
     Object {
       "clauseName": "SET",
