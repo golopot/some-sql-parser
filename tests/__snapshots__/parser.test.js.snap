@@ -19,29 +19,37 @@ Object {
 
 exports[`ALTER TABLE tbl_name ADD COLUMN a int 1`] = `
 Object {
-  "clauses": Array [],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Expecting a clause.",
+  "type": undefined,
 }
 `;
 
 exports[`ALTER TABLE tbl_name ADD a int 1`] = `
 Object {
-  "clauses": Array [],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Expecting a clause.",
+  "type": undefined,
 }
 `;
 
 exports[`ALTER TABLE tbl_name ADD a int AFTER b 1`] = `
 Object {
-  "clauses": Array [],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Expecting a clause.",
+  "type": undefined,
 }
 `;
 
 exports[`ALTER TABLE tbl_name ADD a int FIRST 1`] = `
 Object {
-  "clauses": Array [],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Expecting a clause.",
+  "type": undefined,
 }
 `;
 
@@ -154,14 +162,28 @@ Object {
 
 exports[`DROP DATABASE IF EXISTS db_name 1`] = `
 Object {
-  "clauses": Array [],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Expecting a clause.",
+  "type": undefined,
 }
 `;
 
 exports[`DROP DATABASE db_name 1`] = `
 Object {
-  "clauses": Array [],
+  "clauses": Array [
+    Object {
+      "clauseName": "DROP",
+      "expressions": Array [
+        Object {
+          "isExplicit": false,
+          "left": "DATABASE",
+          "right": "db_name",
+          "type": "AliasExpression",
+        },
+      ],
+    },
+  ],
   "type": "Statement",
 }
 `;
