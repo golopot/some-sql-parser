@@ -120,5 +120,8 @@ testParse(`SELECT 1 UPDATE foo SET a = 5`);
 
 testParse(`CREATE DATABASE db_name`);
 
+testParse(`DROP TABLE table_name`);
+testParse(`DROP TABLE IF EXISTS table_name`);
+
 testParse(`DROP DATABASE db_name`);
 testParse(`DROP DATABASE IF EXISTS db_name`);

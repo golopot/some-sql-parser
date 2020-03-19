@@ -97,10 +97,21 @@ Object {
 
 exports[`CREATE TABLE Foo ( a int ) 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax.",
-  "type": undefined,
+  "clauses": Array [
+    Object {
+      "clauseName": "CREATE TABLE",
+      "definitions": Array [
+        Object {
+          "columnName": "a",
+          "columnType": "INT",
+          "type": "CreateDefinition",
+        },
+      ],
+      "tableName": "Foo",
+      "type": "Clause",
+    },
+  ],
+  "type": "Statement",
 }
 `;
 
@@ -108,7 +119,7 @@ exports[`CREATE TABLE Foo ( a int primary key ) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Invalid syntax.",
+  "message": "Invalid create table definition.",
   "type": undefined,
 }
 `;
@@ -117,7 +128,7 @@ exports[`CREATE TABLE Foo ( a int, b varchar(255) ) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Invalid syntax.",
+  "message": "Invalid type",
   "type": undefined,
 }
 `;
@@ -126,7 +137,7 @@ exports[`CREATE TABLE Foo ( key (id) ) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Invalid syntax.",
+  "message": "Invalid create table definition.",
   "type": undefined,
 }
 `;
@@ -135,7 +146,7 @@ exports[`CREATE TABLE Foo () 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Invalid syntax.",
+  "message": "Invalid create table definition.",
   "type": undefined,
 }
 `;
@@ -155,6 +166,32 @@ Object {
     Object {
       "databaseName": "db_name",
       "type": "DropDatabaseClause",
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`DROP TABLE IF EXISTS table_name 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "hasIfExists": true,
+      "tableName": "table_name",
+      "type": "DropTableClause",
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`DROP TABLE table_name 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "hasIfExists": false,
+      "tableName": "table_name",
+      "type": "DropTableClause",
     },
   ],
   "type": "Statement",
