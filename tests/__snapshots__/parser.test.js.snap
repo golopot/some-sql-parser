@@ -84,7 +84,7 @@ exports[`CREATE TABLE Foo ( a int ) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -93,7 +93,7 @@ exports[`CREATE TABLE Foo ( a int primary key ) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -102,7 +102,7 @@ exports[`CREATE TABLE Foo ( a int, b varchar(255) ) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -111,7 +111,7 @@ exports[`CREATE TABLE Foo ( key (id) ) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -174,7 +174,7 @@ exports[`INSERT INTO foo VALUE (1), (2); 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -183,7 +183,7 @@ exports[`INSERT INTO foo VALUES (1, 2) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -192,7 +192,7 @@ exports[`INSERT foo VALUES (1, 2) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -377,7 +377,7 @@ exports[`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -439,7 +439,7 @@ exports[`SELECT 1 UNION SELECT 2 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -649,7 +649,7 @@ exports[`SELECT a b c d e 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -883,7 +883,7 @@ exports[`SELECT not FROM a 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -892,7 +892,7 @@ exports[`SELECT null, true, current_timestamp FROM a 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -901,7 +901,7 @@ exports[`SELECT varchar FROM a 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -919,7 +919,7 @@ exports[`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -977,7 +977,7 @@ exports[`UPDATE Foo SET a = 6 as b 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -986,7 +986,7 @@ exports[`UPDATE Foo SET a = 6 b 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting a clause.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
