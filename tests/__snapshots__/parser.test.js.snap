@@ -62,6 +62,15 @@ Object {
 }
 `;
 
+exports[`CREATE INDEX idx ON t1 (col1, col2) 1`] = `
+Object {
+  "expected": undefined,
+  "index": undefined,
+  "message": "Keyword \\"TABLE\\" expected.",
+  "type": undefined,
+}
+`;
+
 exports[`CREATE TABLE "Foo" ( a int ) 1`] = `
 Object {
   "expected": undefined,
@@ -75,7 +84,7 @@ exports[`CREATE TABLE Foo ( a int ) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Invalid syntax.",
+  "message": "Expecting a clause.",
   "type": undefined,
 }
 `;
@@ -84,7 +93,7 @@ exports[`CREATE TABLE Foo ( a int primary key ) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Invalid syntax.",
+  "message": "Expecting a clause.",
   "type": undefined,
 }
 `;
@@ -93,7 +102,7 @@ exports[`CREATE TABLE Foo ( a int, b varchar(255) ) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Invalid syntax.",
+  "message": "Expecting a clause.",
   "type": undefined,
 }
 `;
@@ -102,7 +111,7 @@ exports[`CREATE TABLE Foo ( key (id) ) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Invalid syntax.",
+  "message": "Expecting a clause.",
   "type": undefined,
 }
 `;
@@ -604,9 +613,9 @@ Object {
     Object {
       "expressions": Array [
         Object {
-          "isExplicit": false,
-          "left": "a",
-          "right": "aa",
+          "alias": "aa",
+          "expression": "a",
+          "hasAsKeyword": false,
           "type": "AliasExpression",
         },
       ],
@@ -623,9 +632,9 @@ Object {
     Object {
       "expressions": Array [
         Object {
-          "isExplicit": true,
-          "left": "a",
-          "right": "aa",
+          "alias": "aa",
+          "expression": "a",
+          "hasAsKeyword": true,
           "type": "AliasExpression",
         },
       ],
@@ -872,57 +881,28 @@ Object {
 
 exports[`SELECT not FROM a 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "expressions": Array [
-        "not",
-      ],
-      "type": "SelectClause",
-    },
-    Object {
-      "table": "a",
-      "type": "FromClause",
-    },
-  ],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Expecting a clause.",
+  "type": undefined,
 }
 `;
 
 exports[`SELECT null, true, current_timestamp FROM a 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "expressions": Array [
-        "null",
-        "true",
-        "current_timestamp",
-      ],
-      "type": "SelectClause",
-    },
-    Object {
-      "table": "a",
-      "type": "FromClause",
-    },
-  ],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Expecting a clause.",
+  "type": undefined,
 }
 `;
 
 exports[`SELECT varchar FROM a 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "expressions": Array [
-        "varchar",
-      ],
-      "type": "SelectClause",
-    },
-    Object {
-      "table": "a",
-      "type": "FromClause",
-    },
-  ],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Expecting a clause.",
+  "type": undefined,
 }
 `;
 
@@ -995,28 +975,10 @@ Object {
 
 exports[`UPDATE Foo SET a = 6 as b 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "table": "Foo",
-      "type": "UpdateClause",
-    },
-    Object {
-      "expressions": Array [
-        Object {
-          "isExplicit": true,
-          "left": Object {
-            "left": "a",
-            "operator": "=",
-            "right": "6",
-          },
-          "right": "b",
-          "type": "AliasExpression",
-        },
-      ],
-      "type": "SetClause",
-    },
-  ],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Expecting a clause.",
+  "type": undefined,
 }
 `;
 
