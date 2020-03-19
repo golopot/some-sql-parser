@@ -199,19 +199,49 @@ Object {
 
 exports[`INSERT INTO foo VALUES (1, 2) 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax.",
-  "type": undefined,
+  "clauses": Array [
+    Object {
+      "table": "foo",
+      "type": "InsertClause",
+    },
+    Object {
+      "expressions": Array [
+        Object {
+          "expressions": Array [
+            "1",
+            "2",
+          ],
+          "type": "TupleExpression",
+        },
+      ],
+      "type": "ValuesClause",
+    },
+  ],
+  "type": "Statement",
 }
 `;
 
 exports[`INSERT foo VALUES (1, 2) 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax.",
-  "type": undefined,
+  "clauses": Array [
+    Object {
+      "table": "foo",
+      "type": "InsertClause",
+    },
+    Object {
+      "expressions": Array [
+        Object {
+          "expressions": Array [
+            "1",
+            "2",
+          ],
+          "type": "TupleExpression",
+        },
+      ],
+      "type": "ValuesClause",
+    },
+  ],
+  "type": "Statement",
 }
 `;
 
@@ -377,7 +407,7 @@ exports[`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "\\")\\" expected.",
+  "message": "Invalid syntax",
   "type": undefined,
 }
 `;
@@ -386,7 +416,7 @@ exports[`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo) 2`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "\\")\\" expected.",
+  "message": "Invalid syntax",
   "type": undefined,
 }
 `;
