@@ -103,7 +103,11 @@ Object {
       "definitions": Array [
         Object {
           "columnName": "a",
-          "columnType": "INT",
+          "columnType": Object {
+            "arguments": undefined,
+            "name": "INT",
+            "type": "DataType",
+          },
           "type": "CreateDefinition",
         },
       ],
@@ -126,10 +130,36 @@ Object {
 
 exports[`CREATE TABLE Foo ( a int, b varchar(255) ) 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid type",
-  "type": undefined,
+  "clauses": Array [
+    Object {
+      "clauseName": "CREATE TABLE",
+      "definitions": Array [
+        Object {
+          "columnName": "a",
+          "columnType": Object {
+            "arguments": undefined,
+            "name": "INT",
+            "type": "DataType",
+          },
+          "type": "CreateDefinition",
+        },
+        Object {
+          "columnName": "b",
+          "columnType": Object {
+            "arguments": Array [
+              "255",
+            ],
+            "name": "VARCHAR",
+            "type": "DataType",
+          },
+          "type": "CreateDefinition",
+        },
+      ],
+      "tableName": "Foo",
+      "type": "Clause",
+    },
+  ],
+  "type": "Statement",
 }
 `;
 
