@@ -55,10 +55,25 @@ Object {
 
 exports[`CREATE DATABASE db_name 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Keyword \\"TABLE\\" expected.",
-  "type": undefined,
+  "clauses": Array [
+    Object {
+      "databaseName": "db_name",
+      "type": "CreateDatabaseClause",
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`CREATE DATABASE db_name 2`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "databaseName": "db_name",
+      "type": "CreateDatabaseClause",
+    },
+  ],
+  "type": "Statement",
 }
 `;
 
@@ -66,7 +81,7 @@ exports[`CREATE INDEX idx ON t1 (col1, col2) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Keyword \\"TABLE\\" expected.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -75,7 +90,7 @@ exports[`CREATE TABLE "Foo" ( a int ) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "\\"(\\" expected.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -84,7 +99,7 @@ exports[`CREATE TABLE Foo ( a int ) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Unexpected token.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -93,7 +108,7 @@ exports[`CREATE TABLE Foo ( a int primary key ) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Unexpected token.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -102,7 +117,7 @@ exports[`CREATE TABLE Foo ( a int, b varchar(255) ) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Unexpected token.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -111,7 +126,7 @@ exports[`CREATE TABLE Foo ( key (id) ) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Unexpected token.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -129,17 +144,20 @@ exports[`DROP DATABASE IF EXISTS db_name 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Invalid syntax.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
 
 exports[`DROP DATABASE db_name 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax.",
-  "type": undefined,
+  "clauses": Array [
+    Object {
+      "databaseName": "db_name",
+      "type": "DropDatabaseClause",
+    },
+  ],
+  "type": "Statement",
 }
 `;
 
@@ -174,7 +192,7 @@ exports[`INSERT INTO foo VALUE (1), (2); 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Unexpected token.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -183,7 +201,7 @@ exports[`INSERT INTO foo VALUES (1, 2) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Unexpected token.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -192,7 +210,7 @@ exports[`INSERT foo VALUES (1, 2) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Unexpected token.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -377,7 +395,7 @@ exports[`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Unexpected token.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -439,7 +457,7 @@ exports[`SELECT 1 UNION SELECT 2 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Unexpected token.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -649,7 +667,7 @@ exports[`SELECT a b c d e 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Unexpected token.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -883,7 +901,7 @@ exports[`SELECT not FROM a 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Unexpected token.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -892,7 +910,7 @@ exports[`SELECT null, true, current_timestamp FROM a 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Unexpected token.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -901,7 +919,7 @@ exports[`SELECT varchar FROM a 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Unexpected token.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -919,7 +937,7 @@ exports[`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Unexpected token.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -977,7 +995,7 @@ exports[`UPDATE Foo SET a = 6 as b 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Unexpected token.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -986,7 +1004,7 @@ exports[`UPDATE Foo SET a = 6 b 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Unexpected token.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;

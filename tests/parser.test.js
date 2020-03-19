@@ -98,6 +98,8 @@ testParse(`CREATE TABLE Foo ( key (id) )`);
 testParse(`CREATE TABLE "Foo" ( a int )`);
 testParse(`CREATE TABLE Foo ()`);
 
+testParse(`CREATE DATABASE db_name`);
+
 testParse(`CREATE INDEX idx ON t1 (col1, col2)`);
 
 testParse(`UPDATE Foo SET a = 5`);
