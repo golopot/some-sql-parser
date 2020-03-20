@@ -19,10 +19,22 @@ Object {
 
 exports[`ALTER TABLE tbl_name ADD COLUMN a int 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Unexpected token.",
-  "type": undefined,
+  "clauses": Array [
+    Object {
+      "after": undefined,
+      "columnName": "a",
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "first": false,
+      "table": "tbl_name",
+      "type": "AlterTableClause",
+      "variant": "ADD COLUMN",
+    },
+  ],
+  "type": "Statement",
 }
 `;
 
