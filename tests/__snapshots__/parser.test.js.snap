@@ -37,6 +37,7 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "first": false,
       "table": "tbl_name",
       "type": "AlterTableClause",
       "variant": "ADD COLUMN",
@@ -57,6 +58,7 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "first": false,
       "table": "tbl_name",
       "type": "AlterTableClause",
       "variant": "ADD COLUMN",
@@ -68,10 +70,22 @@ Object {
 
 exports[`ALTER TABLE tbl_name ADD a int FIRST 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax.",
-  "type": undefined,
+  "clauses": Array [
+    Object {
+      "after": undefined,
+      "columnName": "a",
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "first": true,
+      "table": "tbl_name",
+      "type": "AlterTableClause",
+      "variant": "ADD COLUMN",
+    },
+  ],
+  "type": "Statement",
 }
 `;
 
