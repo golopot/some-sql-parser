@@ -30,6 +30,7 @@ exports[`ALTER TABLE tbl_name ADD a int 1`] = `
 Object {
   "clauses": Array [
     Object {
+      "after": undefined,
       "columnName": "a",
       "columnType": Object {
         "arguments": undefined,
@@ -47,10 +48,21 @@ Object {
 
 exports[`ALTER TABLE tbl_name ADD a int AFTER b 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax.",
-  "type": undefined,
+  "clauses": Array [
+    Object {
+      "after": "b",
+      "columnName": "a",
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "table": "tbl_name",
+      "type": "AlterTableClause",
+      "variant": "ADD COLUMN",
+    },
+  ],
+  "type": "Statement",
 }
 `;
 

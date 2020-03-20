@@ -2,6 +2,7 @@
   "extends": ["airbnb-base", "prettier"],
   "plugins": ["jsdoc"],
   "rules": {
+    "no-empty": 1,
     "no-restricted-syntax": 0,
     "no-nested-ternary": 0,
     // "jsdoc/check-alignment": 2,
