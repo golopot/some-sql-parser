@@ -434,10 +434,37 @@ Object {
 
 exports[`SELECT * FROM (SELECT * FROM foo) 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Unexpected token.",
-  "type": undefined,
+  "clauses": Array [
+    Object {
+      "expressions": Array [
+        Object {
+          "type": "WildcardExpression",
+        },
+      ],
+      "type": "SelectClause",
+    },
+    Object {
+      "table": Object {
+        "clauses": Array [
+          Object {
+            "expressions": Array [
+              Object {
+                "type": "WildcardExpression",
+              },
+            ],
+            "type": "SelectClause",
+          },
+          Object {
+            "table": "foo",
+            "type": "FromClause",
+          },
+        ],
+        "type": "Statement",
+      },
+      "type": "FromClause",
+    },
+  ],
+  "type": "Statement",
 }
 `;
 
