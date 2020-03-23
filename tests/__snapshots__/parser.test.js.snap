@@ -666,6 +666,15 @@ Object {
 }
 `;
 
+exports[`SELECT 1`] = `
+Object {
+  "expected": undefined,
+  "index": undefined,
+  "message": "Invalid syntax.",
+  "type": undefined,
+}
+`;
+
 exports[`SELECT 1 SELECT 2 1`] = `
 Object {
   "clauses": Array [

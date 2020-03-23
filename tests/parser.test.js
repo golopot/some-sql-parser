@@ -80,6 +80,8 @@ testParse(`SELECT * FROM "foo"`);
 testParse(`SELECT * FROM foo, goo`);
 testParse(`SELECT * FROM f.g.h`);
 
+testParse(`SELECT`);
+
 // join
 testParse(`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a`);
 testParse(`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a`);
