@@ -46,6 +46,9 @@ testParse(`SELECT a + b * c / d`);
 testParse(`SELECT (a)`);
 testParse(`SELECT 2 * (a % b)`);
 
+testParse(`SELECT +-!~1`);
+testParse(`SELECT + 1 - 2`);
+
 testParse(`SELECT a as aa`);
 testParse(`SELECT a aa`);
 testParse(`SELECT a "aa"`);
@@ -61,6 +64,8 @@ testParse(`SELECT * FROM foo`);
 testParse(`SELECT a.* FROM foo`);
 
 testParse(`SELECT a."select" FROM foo`);
+
+testParse(`SELECT (SELECT 1)`);
 
 testParse(`SELECT * FROM (SELECT * FROM foo)`);
 

@@ -385,6 +385,15 @@ Object {
 }
 `;
 
+exports[`SELECT (SELECT 1) 1`] = `
+Object {
+  "expected": undefined,
+  "index": undefined,
+  "message": "Invalid syntax",
+  "type": undefined,
+}
+`;
+
 exports[`SELECT (a) 1`] = `
 Object {
   "clauses": Array [
@@ -599,6 +608,58 @@ Object {
         "type": "MemberExpression",
       },
       "type": "FromClause",
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT + 1 - 2 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "expressions": Array [
+        Object {
+          "left": Object {
+            "operand": "1",
+            "operator": "+",
+            "type": "UnaryExpression",
+          },
+          "operator": "-",
+          "right": "2",
+        },
+      ],
+      "type": "SelectClause",
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
+exports[`SELECT +-!~1 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "expressions": Array [
+        Object {
+          "operand": Object {
+            "operand": Object {
+              "operand": Object {
+                "operand": "1",
+                "operator": "~",
+                "type": "UnaryExpression",
+              },
+              "operator": "!",
+              "type": "UnaryExpression",
+            },
+            "operator": "-",
+            "type": "UnaryExpression",
+          },
+          "operator": "+",
+          "type": "UnaryExpression",
+        },
+      ],
+      "type": "SelectClause",
     },
   ],
   "type": "Statement",
