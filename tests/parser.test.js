@@ -121,6 +121,22 @@ testParse(`ALTER TABLE tbl_name ADD COLUMN a int`);
 testParse(`ALTER TABLE tbl_name ADD a int FIRST`);
 testParse(`ALTER TABLE tbl_name ADD a int AFTER b`);
 
+testParse(`ALTER TABLE tbl_name ADD a int, ADD b int`);
+
+testParse(`ALTER TABLE table_name DROP a`);
+testParse(`ALTER TABLE table_name DROP COLUMN a`);
+testParse(`ALTER TABLE table_name DROP INDEX index_name`);
+testParse(`ALTER TABLE table_name DROP KEY index_name`);
+testParse(`ALTER TABLE table_name DROP PRIMARY KEY`);
+testParse(`ALTER TABLE table_name DROP FOREIGN KEY fk_symbol`);
+
+testParse(`ALTER TABLE table_name RENAME COLUMN old_column TO new_column`);
+testParse(`ALTER TABLE table_name RENAME KEY old_key TO new_key`);
+testParse(`ALTER TABLE table_name RENAME INDEX old_key TO new_key`);
+testParse(`ALTER TABLE table_name RENAME new_table_name`);
+testParse(`ALTER TABLE table_name RENAME TO new_table_name`);
+testParse(`ALTER TABLE table_name RENAME AS new_table_name`);
+
 testParse(`SSSSS foo FROM b`);
 testParse(`SELECT 1 SELECT 2`);
 testParse(`SELECT 1 UPDATE foo SET a = 5`);
