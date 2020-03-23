@@ -132,3 +132,5 @@ testParse(`DROP TABLE IF EXISTS table_name`);
 
 testParse(`DROP DATABASE db_name`);
 testParse(`DROP DATABASE IF EXISTS db_name`);
+
+testParse(`DROP INDEX index_name ON tbl_name`);

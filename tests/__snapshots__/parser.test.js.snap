@@ -250,6 +250,19 @@ Object {
 }
 `;
 
+exports[`DROP INDEX index_name ON tbl_name 1`] = `
+Object {
+  "clauses": Array [
+    Object {
+      "indexName": "index_name",
+      "tableName": "tbl_name",
+      "type": "DropIndexClause",
+    },
+  ],
+  "type": "Statement",
+}
+`;
+
 exports[`DROP TABLE IF EXISTS table_name 1`] = `
 Object {
   "clauses": Array [
