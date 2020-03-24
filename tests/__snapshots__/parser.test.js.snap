@@ -18,10 +18,14 @@ Object {
 
 exports[`ALTER TABLE table_name DROP COLUMN a 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Expecting keyword ADD.",
-  "type": undefined,
+  "specifications": Array [
+    Object {
+      "columnName": "a",
+      "type": "AlterTableDropColumnSpecification",
+    },
+  ],
+  "table": "table_name",
+  "type": "AlterTableStatement",
 }
 `;
 
@@ -29,7 +33,7 @@ exports[`ALTER TABLE table_name DROP FOREIGN KEY fk_symbol 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting keyword ADD.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -38,7 +42,7 @@ exports[`ALTER TABLE table_name DROP INDEX index_name 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting keyword ADD.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -47,7 +51,7 @@ exports[`ALTER TABLE table_name DROP KEY index_name 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting keyword ADD.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -56,17 +60,21 @@ exports[`ALTER TABLE table_name DROP PRIMARY KEY 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting keyword ADD.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
 
 exports[`ALTER TABLE table_name DROP a 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Expecting keyword ADD.",
-  "type": undefined,
+  "specifications": Array [
+    Object {
+      "columnName": "a",
+      "type": "AlterTableDropColumnSpecification",
+    },
+  ],
+  "table": "table_name",
+  "type": "AlterTableStatement",
 }
 `;
 
@@ -74,7 +82,7 @@ exports[`ALTER TABLE table_name RENAME AS new_table_name 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting keyword ADD.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -83,7 +91,7 @@ exports[`ALTER TABLE table_name RENAME COLUMN old_column TO new_column 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting keyword ADD.",
+  "message": "Invalid syntax.",
   "type": undefined,
 }
 `;
@@ -92,7 +100,7 @@ exports[`ALTER TABLE table_name RENAME INDEX old_key TO new_key 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting keyword ADD.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -101,7 +109,7 @@ exports[`ALTER TABLE table_name RENAME KEY old_key TO new_key 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting keyword ADD.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
@@ -110,90 +118,132 @@ exports[`ALTER TABLE table_name RENAME TO new_table_name 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Expecting keyword ADD.",
+  "message": "Unexpected token.",
   "type": undefined,
 }
 `;
 
 exports[`ALTER TABLE table_name RENAME new_table_name 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Expecting keyword ADD.",
-  "type": undefined,
+  "specifications": Array [
+    Object {
+      "columnName": "new_table_name",
+      "type": "AlterTableRenameColumnSpecification",
+    },
+  ],
+  "table": "table_name",
+  "type": "AlterTableStatement",
 }
 `;
 
 exports[`ALTER TABLE tbl_name ADD COLUMN a int 1`] = `
 Object {
-  "after": undefined,
-  "columnName": "a",
-  "columnType": Object {
-    "arguments": undefined,
-    "name": "INT",
-    "type": "DataType",
-  },
-  "first": false,
+  "specifications": Array [
+    Object {
+      "after": undefined,
+      "columnName": "a",
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "first": false,
+      "type": "AlterTableAddColumnSpecification",
+    },
+  ],
   "table": "tbl_name",
   "type": "AlterTableStatement",
-  "variant": "ADD COLUMN",
 }
 `;
 
 exports[`ALTER TABLE tbl_name ADD a int 1`] = `
 Object {
-  "after": undefined,
-  "columnName": "a",
-  "columnType": Object {
-    "arguments": undefined,
-    "name": "INT",
-    "type": "DataType",
-  },
-  "first": false,
+  "specifications": Array [
+    Object {
+      "after": undefined,
+      "columnName": "a",
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "first": false,
+      "type": "AlterTableAddColumnSpecification",
+    },
+  ],
   "table": "tbl_name",
   "type": "AlterTableStatement",
-  "variant": "ADD COLUMN",
 }
 `;
 
 exports[`ALTER TABLE tbl_name ADD a int AFTER b 1`] = `
 Object {
-  "after": "b",
-  "columnName": "a",
-  "columnType": Object {
-    "arguments": undefined,
-    "name": "INT",
-    "type": "DataType",
-  },
-  "first": false,
+  "specifications": Array [
+    Object {
+      "after": "b",
+      "columnName": "a",
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "first": false,
+      "type": "AlterTableAddColumnSpecification",
+    },
+  ],
   "table": "tbl_name",
   "type": "AlterTableStatement",
-  "variant": "ADD COLUMN",
 }
 `;
 
 exports[`ALTER TABLE tbl_name ADD a int FIRST 1`] = `
 Object {
-  "after": undefined,
-  "columnName": "a",
-  "columnType": Object {
-    "arguments": undefined,
-    "name": "INT",
-    "type": "DataType",
-  },
-  "first": true,
+  "specifications": Array [
+    Object {
+      "after": undefined,
+      "columnName": "a",
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "first": true,
+      "type": "AlterTableAddColumnSpecification",
+    },
+  ],
   "table": "tbl_name",
   "type": "AlterTableStatement",
-  "variant": "ADD COLUMN",
 }
 `;
 
 exports[`ALTER TABLE tbl_name ADD a int, ADD b int 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax.",
-  "type": undefined,
+  "specifications": Array [
+    Object {
+      "after": undefined,
+      "columnName": "a",
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "first": false,
+      "type": "AlterTableAddColumnSpecification",
+    },
+    Object {
+      "after": undefined,
+      "columnName": "b",
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "first": false,
+      "type": "AlterTableAddColumnSpecification",
+    },
+  ],
+  "table": "tbl_name",
+  "type": "AlterTableStatement",
 }
 `;
 
