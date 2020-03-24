@@ -346,6 +346,15 @@ Object {
 }
 `;
 
+exports[`DELETE FROM table_name WHERE a = 5 ORDER BY a LIMIT count 1`] = `
+Object {
+  "expected": undefined,
+  "index": undefined,
+  "message": "Invalid syntax.",
+  "type": undefined,
+}
+`;
+
 exports[`DROP DATABASE IF EXISTS db_name 1`] = `
 Object {
   "expected": undefined,
@@ -1307,10 +1316,39 @@ Object {
 
 exports[`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax.",
-  "type": undefined,
+  "clauses": Array [
+    Object {
+      "table": "Foo",
+      "type": "UpdateClause",
+    },
+    Object {
+      "expressions": Array [
+        Object {
+          "left": "a",
+          "operator": "=",
+          "right": "1",
+        },
+      ],
+      "type": "SetClause",
+    },
+    Object {
+      "expression": Object {
+        "left": "b",
+        "operator": "=",
+        "right": "2",
+      },
+      "type": "WhereClause",
+    },
+    Object {
+      "columnName": "c",
+      "type": "OrderByClause",
+    },
+    Object {
+      "count": "4",
+      "type": "LimitClause",
+    },
+  ],
+  "type": "Statement",
 }
 `;
 

@@ -137,6 +137,8 @@ testParse(`ALTER TABLE table_name RENAME new_table_name`);
 testParse(`ALTER TABLE table_name RENAME TO new_table_name`);
 testParse(`ALTER TABLE table_name RENAME AS new_table_name`);
 
+testParse(`DELETE FROM table_name WHERE a = 5 ORDER BY a LIMIT count`);
+
 testParse(`SSSSS foo FROM b`);
 testParse(`SELECT 1 SELECT 2`);
 testParse(`SELECT 1 UPDATE foo SET a = 5`);
