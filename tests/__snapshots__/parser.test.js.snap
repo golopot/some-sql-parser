@@ -5,15 +5,12 @@ SELECT
   a
  1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "expressions": Array [
-        "a",
-      ],
-      "type": "SelectClause",
-    },
+  "expressions": Array [
+    "a",
   ],
-  "type": "Statement",
+  "from": undefined,
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
@@ -127,85 +124,65 @@ Object {
 
 exports[`ALTER TABLE tbl_name ADD COLUMN a int 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "after": undefined,
-      "columnName": "a",
-      "columnType": Object {
-        "arguments": undefined,
-        "name": "INT",
-        "type": "DataType",
-      },
-      "first": false,
-      "table": "tbl_name",
-      "type": "AlterTableClause",
-      "variant": "ADD COLUMN",
-    },
-  ],
-  "type": "Statement",
+  "after": undefined,
+  "columnName": "a",
+  "columnType": Object {
+    "arguments": undefined,
+    "name": "INT",
+    "type": "DataType",
+  },
+  "first": false,
+  "table": "tbl_name",
+  "type": "AlterTableStatement",
+  "variant": "ADD COLUMN",
 }
 `;
 
 exports[`ALTER TABLE tbl_name ADD a int 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "after": undefined,
-      "columnName": "a",
-      "columnType": Object {
-        "arguments": undefined,
-        "name": "INT",
-        "type": "DataType",
-      },
-      "first": false,
-      "table": "tbl_name",
-      "type": "AlterTableClause",
-      "variant": "ADD COLUMN",
-    },
-  ],
-  "type": "Statement",
+  "after": undefined,
+  "columnName": "a",
+  "columnType": Object {
+    "arguments": undefined,
+    "name": "INT",
+    "type": "DataType",
+  },
+  "first": false,
+  "table": "tbl_name",
+  "type": "AlterTableStatement",
+  "variant": "ADD COLUMN",
 }
 `;
 
 exports[`ALTER TABLE tbl_name ADD a int AFTER b 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "after": "b",
-      "columnName": "a",
-      "columnType": Object {
-        "arguments": undefined,
-        "name": "INT",
-        "type": "DataType",
-      },
-      "first": false,
-      "table": "tbl_name",
-      "type": "AlterTableClause",
-      "variant": "ADD COLUMN",
-    },
-  ],
-  "type": "Statement",
+  "after": "b",
+  "columnName": "a",
+  "columnType": Object {
+    "arguments": undefined,
+    "name": "INT",
+    "type": "DataType",
+  },
+  "first": false,
+  "table": "tbl_name",
+  "type": "AlterTableStatement",
+  "variant": "ADD COLUMN",
 }
 `;
 
 exports[`ALTER TABLE tbl_name ADD a int FIRST 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "after": undefined,
-      "columnName": "a",
-      "columnType": Object {
-        "arguments": undefined,
-        "name": "INT",
-        "type": "DataType",
-      },
-      "first": true,
-      "table": "tbl_name",
-      "type": "AlterTableClause",
-      "variant": "ADD COLUMN",
-    },
-  ],
-  "type": "Statement",
+  "after": undefined,
+  "columnName": "a",
+  "columnType": Object {
+    "arguments": undefined,
+    "name": "INT",
+    "type": "DataType",
+  },
+  "first": true,
+  "table": "tbl_name",
+  "type": "AlterTableStatement",
+  "variant": "ADD COLUMN",
 }
 `;
 
@@ -220,25 +197,15 @@ Object {
 
 exports[`CREATE DATABASE db_name 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "databaseName": "db_name",
-      "type": "CreateDatabaseClause",
-    },
-  ],
-  "type": "Statement",
+  "databaseName": "db_name",
+  "type": "CreateDatabaseStatement",
 }
 `;
 
 exports[`CREATE DATABASE db_name 2`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "databaseName": "db_name",
-      "type": "CreateDatabaseClause",
-    },
-  ],
-  "type": "Statement",
+  "databaseName": "db_name",
+  "type": "CreateDatabaseStatement",
 }
 `;
 
@@ -262,25 +229,19 @@ Object {
 
 exports[`CREATE TABLE Foo ( a int ) 1`] = `
 Object {
-  "clauses": Array [
+  "definitions": Array [
     Object {
-      "clauseName": "CREATE TABLE",
-      "definitions": Array [
-        Object {
-          "columnName": "a",
-          "columnType": Object {
-            "arguments": undefined,
-            "name": "INT",
-            "type": "DataType",
-          },
-          "type": "CreateDefinition",
-        },
-      ],
-      "tableName": "Foo",
-      "type": "Clause",
+      "columnName": "a",
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "type": "CreateDefinition",
     },
   ],
-  "type": "Statement",
+  "tableName": "Foo",
+  "type": "CreateTableStatement",
 }
 `;
 
@@ -295,36 +256,30 @@ Object {
 
 exports[`CREATE TABLE Foo ( a int, b varchar(255) ) 1`] = `
 Object {
-  "clauses": Array [
+  "definitions": Array [
     Object {
-      "clauseName": "CREATE TABLE",
-      "definitions": Array [
-        Object {
-          "columnName": "a",
-          "columnType": Object {
-            "arguments": undefined,
-            "name": "INT",
-            "type": "DataType",
-          },
-          "type": "CreateDefinition",
-        },
-        Object {
-          "columnName": "b",
-          "columnType": Object {
-            "arguments": Array [
-              "255",
-            ],
-            "name": "VARCHAR",
-            "type": "DataType",
-          },
-          "type": "CreateDefinition",
-        },
-      ],
-      "tableName": "Foo",
-      "type": "Clause",
+      "columnName": "a",
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "type": "CreateDefinition",
+    },
+    Object {
+      "columnName": "b",
+      "columnType": Object {
+        "arguments": Array [
+          "255",
+        ],
+        "name": "VARCHAR",
+        "type": "DataType",
+      },
+      "type": "CreateDefinition",
     },
   ],
-  "type": "Statement",
+  "tableName": "Foo",
+  "type": "CreateTableStatement",
 }
 `;
 
@@ -366,52 +321,32 @@ Object {
 
 exports[`DROP DATABASE db_name 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "databaseName": "db_name",
-      "type": "DropDatabaseClause",
-    },
-  ],
-  "type": "Statement",
+  "databaseName": "db_name",
+  "type": "DropDatabaseStatement",
 }
 `;
 
 exports[`DROP INDEX index_name ON tbl_name 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "indexName": "index_name",
-      "tableName": "tbl_name",
-      "type": "DropIndexClause",
-    },
-  ],
-  "type": "Statement",
+  "indexName": "index_name",
+  "tableName": "tbl_name",
+  "type": "DropIndexStatement",
 }
 `;
 
 exports[`DROP TABLE IF EXISTS table_name 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "hasIfExists": true,
-      "tableName": "table_name",
-      "type": "DropTableClause",
-    },
-  ],
-  "type": "Statement",
+  "hasIfExists": true,
+  "tableName": "table_name",
+  "type": "DropTableStatement",
 }
 `;
 
 exports[`DROP TABLE table_name 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "hasIfExists": false,
-      "tableName": "table_name",
-      "type": "DropTableClause",
-    },
-  ],
-  "type": "Statement",
+  "hasIfExists": false,
+  "tableName": "table_name",
+  "type": "DropTableStatement",
 }
 `;
 
@@ -419,7 +354,7 @@ exports[`INSERT INTO foo (a, b) SELECT c, d FROM bar; 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Invalid syntax.",
+  "message": "Clause expected.",
   "type": undefined,
 }
 `;
@@ -428,7 +363,7 @@ exports[`INSERT INTO foo (a, b) VALUES (1, 2), (3, 4); 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Invalid syntax.",
+  "message": "Clause expected.",
   "type": undefined,
 }
 `;
@@ -437,7 +372,7 @@ exports[`INSERT INTO foo (a, b) VALUES (15, a * 2); 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Invalid syntax.",
+  "message": "Clause expected.",
   "type": undefined,
 }
 `;
@@ -453,74 +388,61 @@ Object {
 
 exports[`INSERT INTO foo VALUES (1, 2) 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "table": "foo",
-      "type": "InsertClause",
-    },
-    Object {
-      "expressions": Array [
-        Object {
-          "expressions": Array [
-            "1",
-            "2",
-          ],
-          "type": "TupleExpression",
-        },
-      ],
-      "type": "ValuesClause",
-    },
-  ],
-  "type": "Statement",
+  "table": "foo",
+  "type": "InsertStatement",
+  "values": Object {
+    "expressions": Array [
+      Object {
+        "expressions": Array [
+          "1",
+          "2",
+        ],
+        "type": "TupleExpression",
+      },
+    ],
+    "type": "ValuesClause",
+  },
 }
 `;
 
 exports[`INSERT foo VALUES (1, 2) 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "table": "foo",
-      "type": "InsertClause",
-    },
-    Object {
-      "expressions": Array [
-        Object {
-          "expressions": Array [
-            "1",
-            "2",
-          ],
-          "type": "TupleExpression",
-        },
-      ],
-      "type": "ValuesClause",
-    },
-  ],
-  "type": "Statement",
+  "table": "foo",
+  "type": "InsertStatement",
+  "values": Object {
+    "expressions": Array [
+      Object {
+        "expressions": Array [
+          "1",
+          "2",
+        ],
+        "type": "TupleExpression",
+      },
+    ],
+    "type": "ValuesClause",
+  },
 }
 `;
 
 exports[`SELECT "1", '1', \`1\` 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
-          "type": "LiteralToken",
-          "value": "1",
-        },
-        Object {
-          "type": "LiteralToken",
-          "value": "1",
-        },
-        Object {
-          "type": "LiteralToken",
-          "value": "1",
-        },
-      ],
-      "type": "SelectClause",
+      "type": "LiteralToken",
+      "value": "1",
+    },
+    Object {
+      "type": "LiteralToken",
+      "value": "1",
+    },
+    Object {
+      "type": "LiteralToken",
+      "value": "1",
     },
   ],
-  "type": "Statement",
+  "from": undefined,
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
@@ -535,39 +457,33 @@ Object {
 
 exports[`SELECT (a) 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
-          "expression": "a",
-          "type": "ParenthesisExpression",
-        },
-      ],
-      "type": "SelectClause",
+      "expression": "a",
+      "type": "ParenthesisExpression",
     },
   ],
-  "type": "Statement",
+  "from": undefined,
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
 exports[`SELECT (f)() 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
-          "arguments": Array [],
-          "callee": Object {
-            "expression": "f",
-            "type": "ParenthesisExpression",
-          },
-          "type": "CallExpression",
-        },
-      ],
-      "type": "SelectClause",
+      "arguments": Array [],
+      "callee": Object {
+        "expression": "f",
+        "type": "ParenthesisExpression",
+      },
+      "type": "CallExpression",
     },
   ],
-  "type": "Statement",
+  "from": undefined,
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
@@ -582,67 +498,36 @@ Object {
 
 exports[`SELECT * FROM (SELECT * FROM foo) 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "expressions": Array [
-        Object {
-          "type": "WildcardExpression",
-        },
-      ],
-      "type": "SelectClause",
-    },
-    Object {
-      "table": Object {
-        "clauses": Array [
-          Object {
-            "expressions": Array [
-              Object {
-                "type": "WildcardExpression",
-              },
-            ],
-            "type": "SelectClause",
-          },
-          Object {
-            "table": "foo",
-            "type": "FromClause",
-          },
-        ],
-        "type": "Statement",
-      },
-      "type": "FromClause",
-    },
-  ],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Cannot read property 'length' of undefined",
+  "type": undefined,
 }
 `;
 
 exports[`SELECT * FROM \`foo\`.\`goo\` 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
-          "type": "WildcardExpression",
-        },
-      ],
-      "type": "SelectClause",
-    },
-    Object {
-      "table": Object {
-        "left": Object {
-          "type": "LiteralToken",
-          "value": "foo",
-        },
-        "right": Object {
-          "type": "LiteralToken",
-          "value": "goo",
-        },
-        "type": "MemberExpression",
-      },
-      "type": "FromClause",
+      "type": "WildcardExpression",
     },
   ],
-  "type": "Statement",
+  "from": Object {
+    "table": Object {
+      "left": Object {
+        "type": "LiteralToken",
+        "value": "foo",
+      },
+      "right": Object {
+        "type": "LiteralToken",
+        "value": "goo",
+      },
+      "type": "MemberExpression",
+    },
+    "type": "FromClause",
+  },
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
@@ -657,21 +542,17 @@ Object {
 
 exports[`SELECT * FROM foo 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
-          "type": "WildcardExpression",
-        },
-      ],
-      "type": "SelectClause",
-    },
-    Object {
-      "table": "foo",
-      "type": "FromClause",
+      "type": "WildcardExpression",
     },
   ],
-  "type": "Statement",
+  "from": Object {
+    "table": "foo",
+    "type": "FromClause",
+  },
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
@@ -731,77 +612,67 @@ Object {
 
 exports[`SELECT * FROM foo.goo 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
-          "type": "WildcardExpression",
-        },
-      ],
-      "type": "SelectClause",
-    },
-    Object {
-      "table": Object {
-        "left": "foo",
-        "right": "goo",
-        "type": "MemberExpression",
-      },
-      "type": "FromClause",
+      "type": "WildcardExpression",
     },
   ],
-  "type": "Statement",
+  "from": Object {
+    "table": Object {
+      "left": "foo",
+      "right": "goo",
+      "type": "MemberExpression",
+    },
+    "type": "FromClause",
+  },
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
 exports[`SELECT + 1 - 2 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
-          "left": Object {
-            "operand": "1",
-            "operator": "+",
-            "type": "UnaryExpression",
-          },
-          "operator": "-",
-          "right": "2",
-        },
-      ],
-      "type": "SelectClause",
+      "left": Object {
+        "operand": "1",
+        "operator": "+",
+        "type": "UnaryExpression",
+      },
+      "operator": "-",
+      "right": "2",
     },
   ],
-  "type": "Statement",
+  "from": undefined,
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
 exports[`SELECT +-!~1 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
+      "operand": Object {
+        "operand": Object {
           "operand": Object {
-            "operand": Object {
-              "operand": Object {
-                "operand": "1",
-                "operator": "~",
-                "type": "UnaryExpression",
-              },
-              "operator": "!",
-              "type": "UnaryExpression",
-            },
-            "operator": "-",
+            "operand": "1",
+            "operator": "~",
             "type": "UnaryExpression",
           },
-          "operator": "+",
+          "operator": "!",
           "type": "UnaryExpression",
         },
-      ],
-      "type": "SelectClause",
+        "operator": "-",
+        "type": "UnaryExpression",
+      },
+      "operator": "+",
+      "type": "UnaryExpression",
     },
   ],
-  "type": "Statement",
+  "from": undefined,
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
@@ -816,21 +687,10 @@ Object {
 
 exports[`SELECT 1 SELECT 2 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "expressions": Array [
-        "1",
-      ],
-      "type": "SelectClause",
-    },
-    Object {
-      "expressions": Array [
-        "2",
-      ],
-      "type": "SelectClause",
-    },
-  ],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Invalid syntax.",
+  "type": undefined,
 }
 `;
 
@@ -845,29 +705,10 @@ Object {
 
 exports[`SELECT 1 UPDATE foo SET a = 5 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "expressions": Array [
-        "1",
-      ],
-      "type": "SelectClause",
-    },
-    Object {
-      "table": "foo",
-      "type": "UpdateClause",
-    },
-    Object {
-      "expressions": Array [
-        Object {
-          "left": "a",
-          "operator": "=",
-          "right": "5",
-        },
-      ],
-      "type": "SetClause",
-    },
-  ],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Invalid syntax.",
+  "type": undefined,
 }
 `;
 
@@ -882,26 +723,23 @@ Object {
 
 exports[`SELECT 2 * (a % b) 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
-          "left": "2",
-          "operator": "*",
-          "right": Object {
-            "expression": Object {
-              "left": "a",
-              "operator": "%",
-              "right": "b",
-            },
-            "type": "ParenthesisExpression",
-          },
+      "left": "2",
+      "operator": "*",
+      "right": Object {
+        "expression": Object {
+          "left": "a",
+          "operator": "%",
+          "right": "b",
         },
-      ],
-      "type": "SelectClause",
+        "type": "ParenthesisExpression",
+      },
     },
   ],
-  "type": "Statement",
+  "from": undefined,
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
@@ -916,131 +754,111 @@ Object {
 
 exports[`SELECT a + b * c / d 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
-          "left": Object {
-            "left": "a",
-            "operator": "+",
-            "right": Object {
-              "left": "b",
-              "operator": "*",
-              "right": "c",
-            },
-          },
-          "operator": "/",
-          "right": "d",
+      "left": Object {
+        "left": "a",
+        "operator": "+",
+        "right": Object {
+          "left": "b",
+          "operator": "*",
+          "right": "c",
         },
-      ],
-      "type": "SelectClause",
+      },
+      "operator": "/",
+      "right": "d",
     },
   ],
-  "type": "Statement",
+  "from": undefined,
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
 exports[`SELECT a + b - c 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
-          "left": "a",
-          "operator": "+",
-          "right": Object {
-            "left": "b",
-            "operator": "-",
-            "right": "c",
-          },
-        },
-      ],
-      "type": "SelectClause",
+      "left": "a",
+      "operator": "+",
+      "right": Object {
+        "left": "b",
+        "operator": "-",
+        "right": "c",
+      },
     },
   ],
-  "type": "Statement",
+  "from": undefined,
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
 exports[`SELECT a + b 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
-          "left": "a",
-          "operator": "+",
-          "right": "b",
-        },
-      ],
-      "type": "SelectClause",
+      "left": "a",
+      "operator": "+",
+      "right": "b",
     },
   ],
-  "type": "Statement",
+  "from": undefined,
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
 exports[`SELECT a FROM b WHERE m = 6; 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "expressions": Array [
-        "a",
-      ],
-      "type": "SelectClause",
-    },
-    Object {
-      "table": "b",
-      "type": "FromClause",
-    },
-    Object {
-      "expression": Object {
-        "left": "m",
-        "operator": "=",
-        "right": "6",
-      },
-      "type": "WhereClause",
-    },
+  "expressions": Array [
+    "a",
   ],
-  "type": "Statement",
+  "from": Object {
+    "table": "b",
+    "type": "FromClause",
+  },
+  "type": "SelectStatement",
+  "where": Object {
+    "expression": Object {
+      "left": "m",
+      "operator": "=",
+      "right": "6",
+    },
+    "type": "WhereClause",
+  },
 }
 `;
 
 exports[`SELECT a aa 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
-          "alias": "aa",
-          "expression": "a",
-          "hasAsKeyword": false,
-          "type": "AliasExpression",
-        },
-      ],
-      "type": "SelectClause",
+      "alias": "aa",
+      "expression": "a",
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
-  "type": "Statement",
+  "from": undefined,
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
 exports[`SELECT a as aa 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
-          "alias": "aa",
-          "expression": "a",
-          "hasAsKeyword": true,
-          "type": "AliasExpression",
-        },
-      ],
-      "type": "SelectClause",
+      "alias": "aa",
+      "expression": "a",
+      "hasAsKeyword": true,
+      "type": "AliasExpression",
     },
   ],
-  "type": "Statement",
+  "from": undefined,
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
@@ -1055,65 +873,54 @@ Object {
 
 exports[`SELECT a, b, 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "expressions": Array [
-        "a",
-        "b",
-      ],
-      "type": "SelectClause",
-    },
+  "expressions": Array [
+    "a",
+    "b",
   ],
-  "type": "Statement",
+  "from": undefined,
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
 exports[`SELECT a."select" FROM foo 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
-          "left": "a",
-          "operator": ".",
-          "right": Object {
-            "type": "LiteralToken",
-            "value": "select",
-          },
-        },
-      ],
-      "type": "SelectClause",
-    },
-    Object {
-      "table": "foo",
-      "type": "FromClause",
+      "left": "a",
+      "operator": ".",
+      "right": Object {
+        "type": "LiteralToken",
+        "value": "select",
+      },
     },
   ],
-  "type": "Statement",
+  "from": Object {
+    "table": "foo",
+    "type": "FromClause",
+  },
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
 exports[`SELECT a.* FROM foo 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
-          "left": "a",
-          "operator": ".",
-          "right": Object {
-            "type": "WildcardExpression",
-          },
-        },
-      ],
-      "type": "SelectClause",
-    },
-    Object {
-      "table": "foo",
-      "type": "FromClause",
+      "left": "a",
+      "operator": ".",
+      "right": Object {
+        "type": "WildcardExpression",
+      },
     },
   ],
-  "type": "Statement",
+  "from": Object {
+    "table": "foo",
+    "type": "FromClause",
+  },
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
@@ -1137,144 +944,126 @@ Object {
 
 exports[`SELECT f(g(a)) 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
+      "arguments": Array [
         Object {
           "arguments": Array [
-            Object {
-              "arguments": Array [
-                "a",
-              ],
-              "callee": "g",
-              "type": "CallExpression",
-            },
+            "a",
           ],
-          "callee": "f",
+          "callee": "g",
           "type": "CallExpression",
         },
       ],
-      "type": "SelectClause",
+      "callee": "f",
+      "type": "CallExpression",
     },
   ],
-  "type": "Statement",
+  "from": undefined,
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
 exports[`SELECT f.g() 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
-          "left": "f",
-          "operator": ".",
-          "right": Object {
-            "arguments": Array [],
-            "callee": "g",
-            "type": "CallExpression",
-          },
-        },
-      ],
-      "type": "SelectClause",
+      "left": "f",
+      "operator": ".",
+      "right": Object {
+        "arguments": Array [],
+        "callee": "g",
+        "type": "CallExpression",
+      },
     },
   ],
-  "type": "Statement",
+  "from": undefined,
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
 exports[`SELECT f.g.h() 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
-          "left": "f",
-          "operator": ".",
-          "right": Object {
-            "left": "g",
-            "operator": ".",
-            "right": Object {
-              "arguments": Array [],
-              "callee": "h",
-              "type": "CallExpression",
-            },
-          },
+      "left": "f",
+      "operator": ".",
+      "right": Object {
+        "left": "g",
+        "operator": ".",
+        "right": Object {
+          "arguments": Array [],
+          "callee": "h",
+          "type": "CallExpression",
         },
-      ],
-      "type": "SelectClause",
+      },
     },
   ],
-  "type": "Statement",
+  "from": undefined,
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
 exports[`SELECT fn(), fn(a), fn(a, b) 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
-          "arguments": Array [],
-          "callee": "fn",
-          "type": "CallExpression",
-        },
-        Object {
-          "arguments": Array [
-            "a",
-          ],
-          "callee": "fn",
-          "type": "CallExpression",
-        },
-        Object {
-          "arguments": Array [
-            "a",
-            "b",
-          ],
-          "callee": "fn",
-          "type": "CallExpression",
-        },
+      "arguments": Array [],
+      "callee": "fn",
+      "type": "CallExpression",
+    },
+    Object {
+      "arguments": Array [
+        "a",
       ],
-      "type": "SelectClause",
+      "callee": "fn",
+      "type": "CallExpression",
+    },
+    Object {
+      "arguments": Array [
+        "a",
+        "b",
+      ],
+      "callee": "fn",
+      "type": "CallExpression",
     },
   ],
-  "type": "Statement",
+  "from": undefined,
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
 exports[`SELECT max () 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
-          "arguments": Array [],
-          "callee": "max",
-          "type": "CallExpression",
-        },
-      ],
-      "type": "SelectClause",
+      "arguments": Array [],
+      "callee": "max",
+      "type": "CallExpression",
     },
   ],
-  "type": "Statement",
+  "from": undefined,
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
 exports[`SELECT max() 1`] = `
 Object {
-  "clauses": Array [
+  "expressions": Array [
     Object {
-      "expressions": Array [
-        Object {
-          "arguments": Array [],
-          "callee": "max",
-          "type": "CallExpression",
-        },
-      ],
-      "type": "SelectClause",
+      "arguments": Array [],
+      "callee": "max",
+      "type": "CallExpression",
     },
   ],
-  "type": "Statement",
+  "from": undefined,
+  "type": "SelectStatement",
+  "where": undefined,
 }
 `;
 
@@ -1316,88 +1105,28 @@ Object {
 
 exports[`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "table": "Foo",
-      "type": "UpdateClause",
-    },
-    Object {
-      "expressions": Array [
-        Object {
-          "left": "a",
-          "operator": "=",
-          "right": "1",
-        },
-      ],
-      "type": "SetClause",
-    },
-    Object {
-      "expression": Object {
-        "left": "b",
-        "operator": "=",
-        "right": "2",
-      },
-      "type": "WhereClause",
-    },
-    Object {
-      "columnName": "c",
-      "type": "OrderByClause",
-    },
-    Object {
-      "count": "4",
-      "type": "LimitClause",
-    },
-  ],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Invalid syntax.",
+  "type": undefined,
 }
 `;
 
 exports[`UPDATE Foo SET a = 5 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "table": "Foo",
-      "type": "UpdateClause",
-    },
-    Object {
-      "expressions": Array [
-        Object {
-          "left": "a",
-          "operator": "=",
-          "right": "5",
-        },
-      ],
-      "type": "SetClause",
-    },
-  ],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Invalid syntax.",
+  "type": undefined,
 }
 `;
 
 exports[`UPDATE Foo SET a = 5, b = 6 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "table": "Foo",
-      "type": "UpdateClause",
-    },
-    Object {
-      "expressions": Array [
-        Object {
-          "left": "a",
-          "operator": "=",
-          "right": "5",
-        },
-        Object {
-          "left": "b",
-          "operator": "=",
-          "right": "6",
-        },
-      ],
-      "type": "SetClause",
-    },
-  ],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Invalid syntax.",
+  "type": undefined,
 }
 `;
 
@@ -1421,28 +1150,9 @@ Object {
 
 exports[`UPDATE Foo SET f(a) = 5 1`] = `
 Object {
-  "clauses": Array [
-    Object {
-      "table": "Foo",
-      "type": "UpdateClause",
-    },
-    Object {
-      "expressions": Array [
-        Object {
-          "left": Object {
-            "arguments": Array [
-              "a",
-            ],
-            "callee": "f",
-            "type": "CallExpression",
-          },
-          "operator": "=",
-          "right": "5",
-        },
-      ],
-      "type": "SetClause",
-    },
-  ],
-  "type": "Statement",
+  "expected": undefined,
+  "index": undefined,
+  "message": "Invalid syntax.",
+  "type": undefined,
 }
 `;
