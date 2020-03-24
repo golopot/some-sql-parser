@@ -265,7 +265,7 @@ exports[`CREATE INDEX idx ON t1 (col1, col2) 1`] = `
 Object {
   "expected": undefined,
   "index": undefined,
-  "message": "Invalid syntax.",
+  "message": "Not yet implemented.",
   "type": undefined,
 }
 `;
@@ -427,19 +427,58 @@ Object {
 
 exports[`INSERT INTO foo (a, b) VALUES (1, 2), (3, 4); 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Expecting keyword VALUES.",
-  "type": undefined,
+  "columnNames": Array [
+    "a",
+    "b",
+  ],
+  "table": "foo",
+  "type": "InsertStatement",
+  "values": Object {
+    "expressions": Array [
+      Object {
+        "expressions": Array [
+          "1",
+          "2",
+        ],
+        "type": "TupleExpression",
+      },
+      Object {
+        "expressions": Array [
+          "3",
+          "4",
+        ],
+        "type": "TupleExpression",
+      },
+    ],
+    "type": "ValuesClause",
+  },
 }
 `;
 
 exports[`INSERT INTO foo (a, b) VALUES (15, a * 2); 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Expecting keyword VALUES.",
-  "type": undefined,
+  "columnNames": Array [
+    "a",
+    "b",
+  ],
+  "table": "foo",
+  "type": "InsertStatement",
+  "values": Object {
+    "expressions": Array [
+      Object {
+        "expressions": Array [
+          "15",
+          Object {
+            "left": "a",
+            "operator": "*",
+            "right": "2",
+          },
+        ],
+        "type": "TupleExpression",
+      },
+    ],
+    "type": "ValuesClause",
+  },
 }
 `;
 
@@ -454,6 +493,7 @@ Object {
 
 exports[`INSERT INTO foo VALUES (1, 2) 1`] = `
 Object {
+  "columnNames": undefined,
   "table": "foo",
   "type": "InsertStatement",
   "values": Object {
@@ -473,6 +513,7 @@ Object {
 
 exports[`INSERT foo VALUES (1, 2) 1`] = `
 Object {
+  "columnNames": undefined,
   "table": "foo",
   "type": "InsertStatement",
   "values": Object {
