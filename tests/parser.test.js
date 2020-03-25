@@ -1,154 +1,150 @@
 /* eslint-disable quotes */
 const Parser = require('../lib/parser');
 
-function serializeParseError(error) {
-  return {
-    type: error.type,
-    message: error.message,
-    index: error.index,
-    expected: error.expected,
-  };
-}
-
-function testParse(code) {
+function testPass(code) {
   it(code, () => {
-    let ast;
-    try {
-      ast = Parser.parse(code);
-    } catch (err) {
-      ast = serializeParseError(err);
-    }
+    const ast = Parser.parse(code);
     expect(ast).toMatchSnapshot();
   });
 }
 
-testParse(`SELECT 1; SELECT 2;`);
-testParse(`SELECT a FROM b WHERE m = 6;`);
-testParse(`SELECT a, b,`);
-testParse(`SELECT "1", '1', \`1\``);
+function testFail(code) {
+  it(code, () => {
+    function parseCode() {
+      return Parser.parse(code);
+    }
 
-testParse(`
+    expect(parseCode).toThrowErrorMatchingSnapshot();
+  });
+}
+
+testPass(`SELECT 1; SELECT 2;`);
+testPass(`SELECT a FROM b WHERE m = 6;`);
+testPass(`SELECT a, b,`);
+testPass(`SELECT "1", '1', \`1\``);
+
+testPass(`
 SELECT
   a
 `);
 
-testParse(`SELECT fn(), fn(a), fn(a, b)`);
-testParse(`SELECT f(g(a))`);
-testParse(`SELECT f()()`);
-testParse(`SELECT f.g()`);
-testParse(`SELECT f.g.h()`);
-testParse(`SELECT (f)()`);
-testParse(`SELECT max()`);
-testParse(`SELECT max ()`);
-testParse(`SELECT a + b`);
-testParse(`SELECT a + b - c`);
-testParse(`SELECT a + b * c / d`);
-testParse(`SELECT (a)`);
-testParse(`SELECT 2 * (a % b)`);
+testPass(`SELECT fn(), fn(a), fn(a, b)`);
+testPass(`SELECT f(g(a))`);
+testPass(`SELECT f.g()`);
+testFail(`SELECT f.g.h()`);
+testPass(`SELECT max()`);
+testPass(`SELECT max ()`);
+testFail(`SELECT (f)()`);
+testFail(`SELECT f()()`);
 
-testParse(`SELECT +-!~1`);
-testParse(`SELECT + 1 - 2`);
+testPass(`SELECT a + b`);
+testPass(`SELECT a + b - c`);
+testPass(`SELECT a + b * c / d`);
+testPass(`SELECT (a)`);
+testPass(`SELECT 2 * (a % b)`);
 
-testParse(`SELECT a as aa`);
-testParse(`SELECT a aa`);
-testParse(`SELECT a "aa"`);
+testPass(`SELECT +-!~1`);
+testPass(`SELECT + 1 - 2`);
 
-testParse(`SELECT null, true, current_timestamp FROM a`);
+testPass(`SELECT a aa`);
+testPass(`SELECT a "aa"`);
+testPass(`SELECT t as tt`);
 
-testParse(`SELECT not FROM a`);
-testParse(`SELECT varchar FROM a`);
-testParse(`SELECT by FROM foo;`);
-testParse(`SELECT a b c d e`);
+testPass(`SELECT null, true, current_timestamp FROM a`);
+testFail(`SELECT not FROM a`);
+testFail(`SELECT varchar FROM a`);
+testFail(`SELECT by FROM foo;`);
+testFail(`SELECT a b c d e`);
 
-testParse(`SELECT * FROM foo`);
-testParse(`SELECT a.* FROM foo`);
+testPass(`SELECT * FROM foo`);
+testPass(`SELECT a.* FROM foo`);
 
-testParse(`SELECT a."select" FROM foo`);
+testPass(`SELECT a."select" FROM foo`);
 
-testParse(`SELECT (SELECT 1)`);
+testPass(`SELECT (SELECT 1)`);
 
-testParse(`SELECT * FROM (SELECT * FROM foo)`);
+testPass(`SELECT * FROM (SELECT * FROM foo)`);
 
-testParse(`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo)`);
+testPass(`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo)`);
 
-testParse(`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo)`);
+testPass(`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo)`);
 
-testParse(`SELECT * FROM foo.goo`);
-testParse('SELECT * FROM `foo`.`goo`');
-testParse(`SELECT * FROM "foo"`);
+testPass(`SELECT * FROM foo.goo`);
+testPass('SELECT * FROM `foo`.`goo`');
+testPass(`SELECT * FROM "foo"`);
 
-testParse(`SELECT * FROM foo, goo`);
-testParse(`SELECT * FROM f.g.h`);
+testPass(`SELECT * FROM foo, goo`);
+testFail(`SELECT * FROM f.g.h`);
 
-testParse(`SELECT`);
+testFail(`SELECT`);
 
 // join
-testParse(`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a`);
-testParse(`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a`);
+testPass(`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a`);
+testPass(`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a`);
 
 // group by
-testParse(`SELECT * FROM foo GROUP BY a HAVING b=5`);
+testPass(`SELECT * FROM foo GROUP BY a HAVING b=5`);
 
-testParse(`SELECT 1 UNION SELECT 2`);
+testPass(`SELECT 1 UNION SELECT 2`);
 
-testParse(`INSERT INTO foo VALUES (1, 2)`);
-testParse(`INSERT foo VALUES (1, 2)`);
-testParse(`INSERT INTO foo (a, b) VALUES (15, a * 2);`);
-testParse(`INSERT INTO foo (a, b) VALUES (1, 2), (3, 4);`);
-testParse(`INSERT INTO foo VALUE (1), (2);`);
-testParse(`INSERT INTO foo (a, b) SELECT c, d FROM bar;`);
+testPass(`INSERT INTO foo VALUES (1, 2)`);
+testPass(`INSERT foo VALUES (1, 2)`);
+testPass(`INSERT INTO foo (a, b) VALUES (15, a * 2);`);
+testPass(`INSERT INTO foo (a, b) VALUES (1, 2), (3, 4);`);
+testPass(`INSERT INTO foo VALUE (1), (2);`);
+testPass(`INSERT INTO foo (a, b) SELECT c, d FROM bar;`);
 
-testParse(`CREATE TABLE Foo ( a int )`);
-testParse(`CREATE TABLE Foo ( a int, b varchar(255) )`);
-testParse(`CREATE TABLE Foo ( a int primary key )`);
-testParse(`CREATE TABLE Foo ( key (id) )`);
-testParse(`CREATE TABLE "Foo" ( a int )`);
-testParse(`CREATE TABLE Foo ()`);
+testPass(`CREATE TABLE Foo ( a int )`);
+testPass(`CREATE TABLE Foo ( a int, b varchar(255) )`);
+testPass(`CREATE TABLE Foo ( a int primary key )`);
+testPass(`CREATE TABLE Foo ( key (id) )`);
+testPass(`CREATE TABLE "Foo" ( a int )`);
+testFail(`CREATE TABLE Foo ()`);
 
-testParse(`CREATE DATABASE db_name`);
+testPass(`CREATE DATABASE db_name`);
 
-testParse(`CREATE INDEX idx ON t1 (col1, col2)`);
+testPass(`CREATE INDEX idx ON t1 (col1, col2)`);
 
-testParse(`UPDATE Foo SET a = 5`);
-testParse(`UPDATE Foo SET a = 5, b = 6`);
-testParse(`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4`);
-testParse(`UPDATE Foo SET f(a) = 5`);
-testParse(`UPDATE Foo SET a = 6 b`);
-testParse(`UPDATE Foo SET a = 6 as b`);
+testPass(`UPDATE Foo SET a = 5`);
+testPass(`UPDATE Foo SET a = 5, b = 6`);
+testPass(`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4`);
+testPass(`UPDATE Foo SET f(a) = 5`);
+testPass(`UPDATE Foo SET a = 6 b`);
+testPass(`UPDATE Foo SET a = 6 as b`);
 
-testParse(`ALTER TABLE tbl_name ADD a int`);
-testParse(`ALTER TABLE tbl_name ADD COLUMN a int`);
-testParse(`ALTER TABLE tbl_name ADD a int FIRST`);
-testParse(`ALTER TABLE tbl_name ADD a int AFTER b`);
+testPass(`ALTER TABLE tbl_name ADD a int`);
+testPass(`ALTER TABLE tbl_name ADD COLUMN a int`);
+testPass(`ALTER TABLE tbl_name ADD a int FIRST`);
+testPass(`ALTER TABLE tbl_name ADD a int AFTER b`);
 
-testParse(`ALTER TABLE tbl_name ADD a int, ADD b int`);
+testPass(`ALTER TABLE tbl_name ADD a int, ADD b int`);
 
-testParse(`ALTER TABLE table_name DROP a`);
-testParse(`ALTER TABLE table_name DROP COLUMN a`);
-testParse(`ALTER TABLE table_name DROP INDEX index_name`);
-testParse(`ALTER TABLE table_name DROP KEY index_name`);
-testParse(`ALTER TABLE table_name DROP PRIMARY KEY`);
-testParse(`ALTER TABLE table_name DROP FOREIGN KEY fk_symbol`);
+testPass(`ALTER TABLE table_name DROP a`);
+testPass(`ALTER TABLE table_name DROP COLUMN a`);
+testPass(`ALTER TABLE table_name DROP INDEX index_name`);
+testPass(`ALTER TABLE table_name DROP KEY index_name`);
+testPass(`ALTER TABLE table_name DROP PRIMARY KEY`);
+testPass(`ALTER TABLE table_name DROP FOREIGN KEY fk_symbol`);
 
-testParse(`ALTER TABLE table_name RENAME COLUMN old_column TO new_column`);
-testParse(`ALTER TABLE table_name RENAME KEY old_key TO new_key`);
-testParse(`ALTER TABLE table_name RENAME INDEX old_key TO new_key`);
-testParse(`ALTER TABLE table_name RENAME new_table_name`);
-testParse(`ALTER TABLE table_name RENAME TO new_table_name`);
-testParse(`ALTER TABLE table_name RENAME AS new_table_name`);
+testPass(`ALTER TABLE table_name RENAME COLUMN old_column TO new_column`);
+testPass(`ALTER TABLE table_name RENAME KEY old_key TO new_key`);
+testPass(`ALTER TABLE table_name RENAME INDEX old_key TO new_key`);
+testPass(`ALTER TABLE table_name RENAME new_table_name`);
+testPass(`ALTER TABLE table_name RENAME TO new_table_name`);
+testPass(`ALTER TABLE table_name RENAME AS new_table_name`);
 
-testParse(`DELETE FROM table_name WHERE a = 5 ORDER BY a LIMIT 3`);
+testPass(`DELETE FROM table_name WHERE a = 5 ORDER BY a LIMIT 3`);
 
-testParse(`SSSSS foo FROM b`);
-testParse(`SELECT 1 SELECT 2`);
-testParse(`SELECT 1 UPDATE foo SET a = 5`);
+testFail(`SSSSS foo FROM b`);
+testFail(`SELECT 1 SELECT 2`);
+testFail(`SELECT 1 UPDATE foo SET a = 5`);
 
-testParse(`CREATE DATABASE db_name`);
+testPass(`CREATE DATABASE db_name`);
 
-testParse(`DROP TABLE table_name`);
-testParse(`DROP TABLE IF EXISTS table_name`);
+testPass(`DROP TABLE table_name`);
+testPass(`DROP TABLE IF EXISTS table_name`);
 
-testParse(`DROP DATABASE db_name`);
-testParse(`DROP DATABASE IF EXISTS db_name`);
+testPass(`DROP DATABASE db_name`);
+testPass(`DROP DATABASE IF EXISTS db_name`);
 
-testParse(`DROP INDEX index_name ON tbl_name`);
+testPass(`DROP INDEX index_name ON tbl_name`);
