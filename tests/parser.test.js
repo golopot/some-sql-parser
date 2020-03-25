@@ -104,6 +104,7 @@ testPass(`CREATE TABLE Foo ( a int )`);
 testPass('CREATE TABLE `Foo` ( a int )');
 testPass(`CREATE TABLE Foo ( a int, b varchar(255) )`);
 testPass(`CREATE TABLE Foo ( a int primary key )`);
+testPass(`CREATE TABLE Foo ( a int key )`);
 testFail(`CREATE TABLE "Foo" ( a int )`);
 testFail(`CREATE TABLE Foo ( key (id) )`);
 testFail(`CREATE TABLE Foo ()`);
