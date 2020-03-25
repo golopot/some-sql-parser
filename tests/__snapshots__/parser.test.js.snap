@@ -80,46 +80,69 @@ Object {
 
 exports[`ALTER TABLE table_name RENAME AS new_table_name 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Unexpected token.",
-  "type": undefined,
+  "specifications": Array [
+    Object {
+      "tableName": "new_table_name",
+      "type": "AlterTableRenameTableSpecification",
+    },
+  ],
+  "table": "table_name",
+  "type": "AlterTableStatement",
 }
 `;
 
 exports[`ALTER TABLE table_name RENAME COLUMN old_column TO new_column 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax.",
-  "type": undefined,
+  "specifications": Array [
+    Object {
+      "sourceColumnName": "old_column",
+      "targetColumnName": "new_column",
+      "type": "AlterTableRenameColumnSpecification",
+    },
+  ],
+  "table": "table_name",
+  "type": "AlterTableStatement",
 }
 `;
 
 exports[`ALTER TABLE table_name RENAME INDEX old_key TO new_key 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Unexpected token.",
-  "type": undefined,
+  "specifications": Array [
+    Object {
+      "sourceKey": "old_key",
+      "targetKey": "new_key",
+      "type": "AlterTableRenameKeySpecification",
+    },
+  ],
+  "table": "table_name",
+  "type": "AlterTableStatement",
 }
 `;
 
 exports[`ALTER TABLE table_name RENAME KEY old_key TO new_key 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Unexpected token.",
-  "type": undefined,
+  "specifications": Array [
+    Object {
+      "sourceKey": "old_key",
+      "targetKey": "new_key",
+      "type": "AlterTableRenameKeySpecification",
+    },
+  ],
+  "table": "table_name",
+  "type": "AlterTableStatement",
 }
 `;
 
 exports[`ALTER TABLE table_name RENAME TO new_table_name 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Unexpected token.",
-  "type": undefined,
+  "specifications": Array [
+    Object {
+      "tableName": "new_table_name",
+      "type": "AlterTableRenameTableSpecification",
+    },
+  ],
+  "table": "table_name",
+  "type": "AlterTableStatement",
 }
 `;
 
@@ -127,8 +150,8 @@ exports[`ALTER TABLE table_name RENAME new_table_name 1`] = `
 Object {
   "specifications": Array [
     Object {
-      "columnName": "new_table_name",
-      "type": "AlterTableRenameColumnSpecification",
+      "tableName": "new_table_name",
+      "type": "AlterTableRenameTableSpecification",
     },
   ],
   "table": "table_name",
