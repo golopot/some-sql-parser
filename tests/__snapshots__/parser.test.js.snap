@@ -21,7 +21,7 @@ Object {
   "specifications": Array [
     Object {
       "columnName": "a",
-      "type": "AlterTableDropColumnSpecification",
+      "type": "DropColumnSpecification",
     },
   ],
   "table": "table_name",
@@ -31,37 +31,52 @@ Object {
 
 exports[`ALTER TABLE table_name DROP FOREIGN KEY fk_symbol 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Unexpected token.",
-  "type": undefined,
+  "specifications": Array [
+    Object {
+      "key": "fk_symbol",
+      "type": "DropForeignKeySpecification",
+    },
+  ],
+  "table": "table_name",
+  "type": "AlterTableStatement",
 }
 `;
 
 exports[`ALTER TABLE table_name DROP INDEX index_name 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Unexpected token.",
-  "type": undefined,
+  "specifications": Array [
+    Object {
+      "key": "index_name",
+      "type": "DropKeySpecification",
+    },
+  ],
+  "table": "table_name",
+  "type": "AlterTableStatement",
 }
 `;
 
 exports[`ALTER TABLE table_name DROP KEY index_name 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Unexpected token.",
-  "type": undefined,
+  "specifications": Array [
+    Object {
+      "key": "index_name",
+      "type": "DropKeySpecification",
+    },
+  ],
+  "table": "table_name",
+  "type": "AlterTableStatement",
 }
 `;
 
 exports[`ALTER TABLE table_name DROP PRIMARY KEY 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Unexpected token.",
-  "type": undefined,
+  "specifications": Array [
+    Object {
+      "type": "DropPrimaryKeySpecification",
+    },
+  ],
+  "table": "table_name",
+  "type": "AlterTableStatement",
 }
 `;
 
@@ -70,7 +85,7 @@ Object {
   "specifications": Array [
     Object {
       "columnName": "a",
-      "type": "AlterTableDropColumnSpecification",
+      "type": "DropColumnSpecification",
     },
   ],
   "table": "table_name",
