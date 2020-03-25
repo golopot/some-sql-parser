@@ -301,10 +301,13 @@ Object {
 
 exports[`CREATE INDEX idx ON t1 (col1, col2) 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Not yet implemented.",
-  "type": undefined,
+  "key": "idx",
+  "keyParts": Array [
+    "col1",
+    "col2",
+  ],
+  "tableName": "t1",
+  "type": "CreateIndexStatement",
 }
 `;
 
