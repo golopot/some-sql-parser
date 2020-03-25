@@ -270,12 +270,26 @@ Object {
 }
 `;
 
-exports[`CREATE TABLE "Foo" ( a int ) 1`] = `
+exports[`CREATE TABLE "Foo" ( a int ) 1`] = `[SyntaxError: Unexpected token.]`;
+
+exports[`CREATE TABLE \`Foo\` ( a int ) 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Unexpected token.",
-  "type": undefined,
+  "definitions": Array [
+    Object {
+      "columnName": "a",
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "type": "CreateDefinition",
+    },
+  ],
+  "tableName": Object {
+    "type": "LiteralToken",
+    "value": "Foo",
+  },
+  "type": "CreateTableStatement",
 }
 `;
 
@@ -335,16 +349,9 @@ Object {
 }
 `;
 
-exports[`CREATE TABLE Foo ( key (id) ) 1`] = `
-Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid create table definition.",
-  "type": undefined,
-}
-`;
+exports[`CREATE TABLE Foo ( key (id) ) 1`] = `[SyntaxError: Invalid create table definition.]`;
 
-exports[`CREATE TABLE Foo () 1`] = `"Invalid create table definition."`;
+exports[`CREATE TABLE Foo () 1`] = `[SyntaxError: Invalid create table definition.]`;
 
 exports[`DELETE FROM table_name WHERE a = 5 ORDER BY a LIMIT 3 1`] = `
 Object {
@@ -371,16 +378,16 @@ Object {
 
 exports[`DROP DATABASE IF EXISTS db_name 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Unexpected token.",
-  "type": undefined,
+  "databaseName": "db_name",
+  "hasIfExists": true,
+  "type": "DropDatabaseStatement",
 }
 `;
 
 exports[`DROP DATABASE db_name 1`] = `
 Object {
   "databaseName": "db_name",
+  "hasIfExists": false,
   "type": "DropDatabaseStatement",
 }
 `;
@@ -639,7 +646,7 @@ Object {
 }
 `;
 
-exports[`SELECT * FROM f.g.h 1`] = `"Invalid syntax."`;
+exports[`SELECT * FROM f.g.h 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT * FROM foo 1`] = `
 Object {
@@ -785,9 +792,9 @@ Object {
 }
 `;
 
-exports[`SELECT 1`] = `"Invalid syntax."`;
+exports[`SELECT 1`] = `[SyntaxError: Invalid syntax.]`;
 
-exports[`SELECT 1 SELECT 2 1`] = `"Invalid syntax."`;
+exports[`SELECT 1 SELECT 2 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT 1 UNION SELECT 2 1`] = `
 Object {
@@ -798,7 +805,7 @@ Object {
 }
 `;
 
-exports[`SELECT 1 UPDATE foo SET a = 5 1`] = `"Invalid syntax."`;
+exports[`SELECT 1 UPDATE foo SET a = 5 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT 1; SELECT 2; 1`] = `
 Object {
@@ -946,7 +953,7 @@ Object {
 }
 `;
 
-exports[`SELECT a b c d e 1`] = `"Invalid syntax."`;
+exports[`SELECT a b c d e 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT a, b, 1`] = `
 Object {
@@ -1007,9 +1014,9 @@ Object {
 }
 `;
 
-exports[`SELECT by FROM foo; 1`] = `"Invalid syntax."`;
+exports[`SELECT by FROM foo; 1`] = `[SyntaxError: Invalid syntax.]`;
 
-exports[`SELECT f()() 1`] = `"Invalid syntax."`;
+exports[`SELECT f()() 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT f(g(a)) 1`] = `
 Object {
@@ -1148,7 +1155,7 @@ Object {
 }
 `;
 
-exports[`SELECT not FROM a 1`] = `"Invalid syntax."`;
+exports[`SELECT not FROM a 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT null, true, current_timestamp FROM a 1`] = `
 Object {
@@ -1177,9 +1184,9 @@ Object {
 }
 `;
 
-exports[`SELECT varchar FROM a 1`] = `"Invalid syntax."`;
+exports[`SELECT varchar FROM a 1`] = `[SyntaxError: Invalid syntax.]`;
 
-exports[`SSSSS foo FROM b 1`] = `"Expecting a statement."`;
+exports[`SSSSS foo FROM b 1`] = `[SyntaxError: Expecting a statement.]`;
 
 exports[`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4 1`] = `
 Object {
@@ -1193,11 +1200,13 @@ Object {
 exports[`UPDATE Foo SET a = 5 1`] = `
 Object {
   "set": Object {
-    "expression": Object {
-      "left": "a",
-      "operator": "=",
-      "right": "5",
-    },
+    "expressions": Array [
+      Object {
+        "left": "a",
+        "operator": "=",
+        "right": "5",
+      },
+    ],
     "type": "SetClause",
   },
   "table": "Foo",
@@ -1208,45 +1217,47 @@ Object {
 
 exports[`UPDATE Foo SET a = 5, b = 6 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax.",
-  "type": undefined,
+  "set": Object {
+    "expressions": Array [
+      Object {
+        "left": "a",
+        "operator": "=",
+        "right": "5",
+      },
+      Object {
+        "left": "b",
+        "operator": "=",
+        "right": "6",
+      },
+    ],
+    "type": "SetClause",
+  },
+  "table": "Foo",
+  "type": "UpdateStatement",
+  "where": undefined,
 }
 `;
 
-exports[`UPDATE Foo SET a = 6 as b 1`] = `
-Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax.",
-  "type": undefined,
-}
-`;
+exports[`UPDATE Foo SET a = 6 as b 1`] = `[SyntaxError: Invalid syntax.]`;
 
-exports[`UPDATE Foo SET a = 6 b 1`] = `
-Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax.",
-  "type": undefined,
-}
-`;
+exports[`UPDATE Foo SET a = 6 b 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`UPDATE Foo SET f(a) = 5 1`] = `
 Object {
   "set": Object {
-    "expression": Object {
-      "left": Object {
-        "arguments": Array [
-          "a",
-        ],
-        "callee": "f",
-        "type": "CallExpression",
+    "expressions": Array [
+      Object {
+        "left": Object {
+          "arguments": Array [
+            "a",
+          ],
+          "callee": "f",
+          "type": "CallExpression",
+        },
+        "operator": "=",
+        "right": "5",
       },
-      "operator": "=",
-      "right": "5",
-    },
+    ],
     "type": "SetClause",
   },
   "table": "Foo",

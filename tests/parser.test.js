@@ -10,11 +10,17 @@ function testPass(code) {
 
 function testFail(code) {
   it(code, () => {
-    function parseCode() {
-      return Parser.parse(code);
+    let didThrown = false;
+    try {
+      Parser.parse(code);
+    } catch (e) {
+      didThrown = true;
+      expect(e).toMatchSnapshot();
     }
 
-    expect(parseCode).toThrowErrorMatchingSnapshot();
+    if (!didThrown) {
+      throw new Error('Expected a syntax error.');
+    }
   });
 }
 
@@ -95,10 +101,11 @@ testPass(`INSERT INTO foo VALUE (1), (2);`);
 testPass(`INSERT INTO foo (a, b) SELECT c, d FROM bar;`);
 
 testPass(`CREATE TABLE Foo ( a int )`);
+testPass('CREATE TABLE `Foo` ( a int )');
 testPass(`CREATE TABLE Foo ( a int, b varchar(255) )`);
 testPass(`CREATE TABLE Foo ( a int primary key )`);
-testPass(`CREATE TABLE Foo ( key (id) )`);
-testPass(`CREATE TABLE "Foo" ( a int )`);
+testFail(`CREATE TABLE "Foo" ( a int )`);
+testFail(`CREATE TABLE Foo ( key (id) )`);
 testFail(`CREATE TABLE Foo ()`);
 
 testPass(`CREATE DATABASE db_name`);
@@ -109,8 +116,8 @@ testPass(`UPDATE Foo SET a = 5`);
 testPass(`UPDATE Foo SET a = 5, b = 6`);
 testPass(`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4`);
 testPass(`UPDATE Foo SET f(a) = 5`);
-testPass(`UPDATE Foo SET a = 6 b`);
-testPass(`UPDATE Foo SET a = 6 as b`);
+testFail(`UPDATE Foo SET a = 6 b`);
+testFail(`UPDATE Foo SET a = 6 as b`);
 
 testPass(`ALTER TABLE tbl_name ADD a int`);
 testPass(`ALTER TABLE tbl_name ADD COLUMN a int`);
