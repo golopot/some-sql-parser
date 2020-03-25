@@ -1224,7 +1224,7 @@ Object {
 
 exports[`SELECT varchar FROM a 1`] = `[SyntaxError: Invalid syntax.]`;
 
-exports[`SSSSS foo FROM b 1`] = `[SyntaxError: Expecting a statement.]`;
+exports[`SSSSS foo FROM b 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4 1`] = `
 Object {
