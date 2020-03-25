@@ -1228,15 +1228,41 @@ exports[`SSSSS foo FROM b 1`] = `[SyntaxError: Expecting a statement.]`;
 
 exports[`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax.",
-  "type": undefined,
+  "limit": Object {
+    "count": "4",
+    "type": "LimitClause",
+  },
+  "orderBy": Object {
+    "columnName": "c",
+    "type": "OrderByClause",
+  },
+  "set": Object {
+    "expressions": Array [
+      Object {
+        "left": "a",
+        "operator": "=",
+        "right": "1",
+      },
+    ],
+    "type": "SetClause",
+  },
+  "table": "Foo",
+  "type": "UpdateStatement",
+  "where": Object {
+    "expression": Object {
+      "left": "b",
+      "operator": "=",
+      "right": "2",
+    },
+    "type": "WhereClause",
+  },
 }
 `;
 
 exports[`UPDATE Foo SET a = 5 1`] = `
 Object {
+  "limit": undefined,
+  "orderBy": undefined,
   "set": Object {
     "expressions": Array [
       Object {
@@ -1255,6 +1281,8 @@ Object {
 
 exports[`UPDATE Foo SET a = 5, b = 6 1`] = `
 Object {
+  "limit": undefined,
+  "orderBy": undefined,
   "set": Object {
     "expressions": Array [
       Object {
@@ -1282,6 +1310,8 @@ exports[`UPDATE Foo SET a = 6 b 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`UPDATE Foo SET f(a) = 5 1`] = `
 Object {
+  "limit": undefined,
+  "orderBy": undefined,
   "set": Object {
     "expressions": Array [
       Object {
