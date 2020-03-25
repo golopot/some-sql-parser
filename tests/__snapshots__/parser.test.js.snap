@@ -492,10 +492,27 @@ Object {
 
 exports[`INSERT INTO foo (a, b) SELECT c, d FROM bar; 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Expecting keyword VALUES.",
-  "type": undefined,
+  "columnNames": Array [
+    "a",
+    "b",
+  ],
+  "select": Object {
+    "expressions": Array [
+      "c",
+      "d",
+    ],
+    "from": Object {
+      "table": "bar",
+      "type": "FromClause",
+    },
+    "limit": undefined,
+    "orderBy": undefined,
+    "type": "SelectStatement",
+    "where": undefined,
+  },
+  "table": "foo",
+  "type": "InsertStatement",
+  "values": undefined,
 }
 `;
 
@@ -505,6 +522,7 @@ Object {
     "a",
     "b",
   ],
+  "select": undefined,
   "table": "foo",
   "type": "InsertStatement",
   "values": Object {
@@ -535,6 +553,7 @@ Object {
     "a",
     "b",
   ],
+  "select": undefined,
   "table": "foo",
   "type": "InsertStatement",
   "values": Object {
@@ -568,6 +587,7 @@ Object {
 exports[`INSERT INTO foo VALUES (1, 2) 1`] = `
 Object {
   "columnNames": undefined,
+  "select": undefined,
   "table": "foo",
   "type": "InsertStatement",
   "values": Object {
@@ -588,6 +608,7 @@ Object {
 exports[`INSERT foo VALUES (1, 2) 1`] = `
 Object {
   "columnNames": undefined,
+  "select": undefined,
   "table": "foo",
   "type": "InsertStatement",
   "values": Object {

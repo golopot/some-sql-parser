@@ -83,7 +83,6 @@ testPass(`SELECT * FROM foo, goo`);
 testFail(`SELECT * FROM f.g.h`);
 
 testFail(`SELECT`);
-
 // join
 testPass(`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a`);
 testPass(`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a`);
