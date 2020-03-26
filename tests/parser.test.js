@@ -87,8 +87,12 @@ testFail(`SELECT * FROM f.g.h`);
 
 testFail(`SELECT`);
 // join
+testPass(`SELECT * FROM foo JOIN goo`);
+testPass(`SELECT * FROM foo JOIN goo ON f.a = g.a`);
+
 testPass(`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a`);
 testPass(`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a`);
+testFail(`SELECT * FROM foo LEFT JOIN goo`)
 
 // group by
 testPass(`SELECT * FROM foo GROUP BY a HAVING b=5`);

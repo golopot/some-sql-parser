@@ -505,7 +505,11 @@ Object {
       "d",
     ],
     "from": Object {
-      "table": "bar",
+      "table": Object {
+        "joins": Array [],
+        "table": "bar",
+        "type": "TableReference",
+      },
       "type": "FromClause",
     },
     "groupBy": undefined,
@@ -725,15 +729,19 @@ Object {
   ],
   "from": Object {
     "table": Object {
-      "left": Object {
-        "type": "LiteralToken",
-        "value": "foo",
+      "joins": Array [],
+      "table": Object {
+        "left": Object {
+          "type": "LiteralToken",
+          "value": "foo",
+        },
+        "right": Object {
+          "type": "LiteralToken",
+          "value": "goo",
+        },
+        "type": "MemberExpression",
       },
-      "right": Object {
-        "type": "LiteralToken",
-        "value": "goo",
-      },
-      "type": "MemberExpression",
+      "type": "TableReference",
     },
     "type": "FromClause",
   },
@@ -757,7 +765,11 @@ Object {
     },
   ],
   "from": Object {
-    "table": "foo",
+    "table": Object {
+      "joins": Array [],
+      "table": "foo",
+      "type": "TableReference",
+    },
     "type": "FromClause",
   },
   "groupBy": undefined,
@@ -778,7 +790,11 @@ Object {
     },
   ],
   "from": Object {
-    "table": "foo",
+    "table": Object {
+      "joins": Array [],
+      "table": "foo",
+      "type": "TableReference",
+    },
     "type": "FromClause",
   },
   "groupBy": Object {
@@ -803,12 +819,131 @@ Object {
 }
 `;
 
+exports[`SELECT * FROM foo JOIN goo 1`] = `
+Object {
+  "expressions": Array [
+    Object {
+      "type": "WildcardExpression",
+    },
+  ],
+  "from": Object {
+    "table": Object {
+      "joins": Array [
+        Object {
+          "joinType": "inner",
+          "on": undefined,
+          "table": "goo",
+          "type": "JoinClause",
+        },
+      ],
+      "table": "foo",
+      "type": "TableReference",
+    },
+    "type": "FromClause",
+  },
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT * FROM foo JOIN goo ON f.a = g.a 1`] = `
+Object {
+  "expressions": Array [
+    Object {
+      "type": "WildcardExpression",
+    },
+  ],
+  "from": Object {
+    "table": Object {
+      "joins": Array [
+        Object {
+          "joinType": "inner",
+          "on": Object {
+            "expression": Object {
+              "left": Object {
+                "left": "f",
+                "operator": ".",
+                "right": "a",
+              },
+              "operator": "=",
+              "right": Object {
+                "left": "g",
+                "operator": ".",
+                "right": "a",
+              },
+            },
+            "type": "OnClause",
+          },
+          "table": "goo",
+          "type": "JoinClause",
+        },
+      ],
+      "table": "foo",
+      "type": "TableReference",
+    },
+    "type": "FromClause",
+  },
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT * FROM foo LEFT JOIN goo 1`] = `[SyntaxError: Invalid syntax.]`;
+
 exports[`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax.",
-  "type": undefined,
+  "expressions": Array [
+    Object {
+      "type": "WildcardExpression",
+    },
+  ],
+  "from": Object {
+    "table": Object {
+      "joins": Array [
+        Object {
+          "joinType": "left",
+          "on": Object {
+            "expression": Object {
+              "left": Object {
+                "left": "foo",
+                "operator": ".",
+                "right": "a",
+              },
+              "operator": "=",
+              "right": Object {
+                "left": "goo",
+                "operator": ".",
+                "right": "a",
+              },
+            },
+            "type": "OnClause",
+          },
+          "table": "goo",
+          "type": "JoinClause",
+        },
+      ],
+      "table": "foo",
+      "type": "TableReference",
+    },
+    "type": "FromClause",
+  },
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
 }
 `;
 
@@ -857,9 +992,13 @@ Object {
   ],
   "from": Object {
     "table": Object {
-      "left": "foo",
-      "right": "goo",
-      "type": "MemberExpression",
+      "joins": Array [],
+      "table": Object {
+        "left": "foo",
+        "right": "goo",
+        "type": "MemberExpression",
+      },
+      "type": "TableReference",
     },
     "type": "FromClause",
   },
@@ -1126,7 +1265,11 @@ Object {
     "a",
   ],
   "from": Object {
-    "table": "b",
+    "table": Object {
+      "joins": Array [],
+      "table": "b",
+      "type": "TableReference",
+    },
     "type": "FromClause",
   },
   "groupBy": undefined,
@@ -1199,7 +1342,11 @@ Object {
     },
   ],
   "from": Object {
-    "table": "foo",
+    "table": Object {
+      "joins": Array [],
+      "table": "foo",
+      "type": "TableReference",
+    },
     "type": "FromClause",
   },
   "groupBy": undefined,
@@ -1224,7 +1371,11 @@ Object {
     },
   ],
   "from": Object {
-    "table": "foo",
+    "table": Object {
+      "joins": Array [],
+      "table": "foo",
+      "type": "TableReference",
+    },
     "type": "FromClause",
   },
   "groupBy": undefined,
@@ -1449,7 +1600,11 @@ Object {
     ],
     "type": "SetClause",
   },
-  "table": "Foo",
+  "table": Object {
+    "joins": Array [],
+    "table": "Foo",
+    "type": "TableReference",
+  },
   "type": "UpdateStatement",
   "where": Object {
     "expression": Object {
@@ -1476,7 +1631,11 @@ Object {
     ],
     "type": "SetClause",
   },
-  "table": "Foo",
+  "table": Object {
+    "joins": Array [],
+    "table": "Foo",
+    "type": "TableReference",
+  },
   "type": "UpdateStatement",
   "where": undefined,
 }
@@ -1501,7 +1660,11 @@ Object {
     ],
     "type": "SetClause",
   },
-  "table": "Foo",
+  "table": Object {
+    "joins": Array [],
+    "table": "Foo",
+    "type": "TableReference",
+  },
   "type": "UpdateStatement",
   "where": undefined,
 }
@@ -1531,7 +1694,11 @@ Object {
     ],
     "type": "SetClause",
   },
-  "table": "Foo",
+  "table": Object {
+    "joins": Array [],
+    "table": "Foo",
+    "type": "TableReference",
+  },
   "type": "UpdateStatement",
   "where": undefined,
 }
