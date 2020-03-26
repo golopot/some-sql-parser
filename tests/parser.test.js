@@ -44,6 +44,7 @@ testFail(`SELECT (f)()`);
 testFail(`SELECT f()()`);
 
 testPass(`SELECT a + b`);
+testPass(`SELECT a + b + c`);
 testPass(`SELECT a + b - c`);
 testPass(`SELECT a + b * c / d`);
 testPass(`SELECT (a)`);

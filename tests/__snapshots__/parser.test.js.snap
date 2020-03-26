@@ -1215,17 +1215,41 @@ Object {
 }
 `;
 
+exports[`SELECT a + b + c 1`] = `
+Object {
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "left": "a",
+        "operator": "+",
+        "right": "b",
+      },
+      "operator": "+",
+      "right": "c",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
 exports[`SELECT a + b - c 1`] = `
 Object {
   "expressions": Array [
     Object {
-      "left": "a",
-      "operator": "+",
-      "right": Object {
-        "left": "b",
-        "operator": "-",
-        "right": "c",
+      "left": Object {
+        "left": "a",
+        "operator": "+",
+        "right": "b",
       },
+      "operator": "-",
+      "right": "c",
     },
   ],
   "from": undefined,
