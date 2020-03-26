@@ -12,6 +12,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -508,6 +509,7 @@ Object {
     "limit": undefined,
     "orderBy": undefined,
     "type": "SelectStatement",
+    "union": undefined,
     "where": undefined,
   },
   "table": "foo",
@@ -575,15 +577,6 @@ Object {
 }
 `;
 
-exports[`INSERT INTO foo VALUE (1), (2); 1`] = `
-Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Expecting keyword VALUES.",
-  "type": undefined,
-}
-`;
-
 exports[`INSERT INTO foo VALUES (1, 2) 1`] = `
 Object {
   "columnNames": undefined,
@@ -646,6 +639,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -671,6 +665,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -737,6 +732,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -757,6 +753,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -833,6 +830,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -854,6 +852,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -883,6 +882,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -893,10 +893,59 @@ exports[`SELECT 1 SELECT 2 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT 1 UNION SELECT 2 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax.",
-  "type": undefined,
+  "expressions": Array [
+    "1",
+  ],
+  "from": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": Object {
+    "expressions": Array [
+      "2",
+    ],
+    "from": undefined,
+    "limit": undefined,
+    "orderBy": undefined,
+    "type": "SelectStatement",
+    "union": undefined,
+    "where": undefined,
+  },
+  "where": undefined,
+}
+`;
+
+exports[`SELECT 1 UNION SELECT 2 UNION SELECT 3 1`] = `
+Object {
+  "expressions": Array [
+    "1",
+  ],
+  "from": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": Object {
+    "expressions": Array [
+      "2",
+    ],
+    "from": undefined,
+    "limit": undefined,
+    "orderBy": undefined,
+    "type": "SelectStatement",
+    "union": Object {
+      "expressions": Array [
+        "3",
+      ],
+      "from": undefined,
+      "limit": undefined,
+      "orderBy": undefined,
+      "type": "SelectStatement",
+      "union": undefined,
+      "where": undefined,
+    },
+    "where": undefined,
+  },
+  "where": undefined,
 }
 `;
 
@@ -931,6 +980,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -965,6 +1015,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -986,6 +1037,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -1003,6 +1055,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -1019,6 +1072,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": Object {
     "expression": Object {
       "left": "m",
@@ -1044,6 +1098,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -1060,6 +1115,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -1083,6 +1139,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -1105,6 +1162,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -1134,6 +1192,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -1155,6 +1214,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -1212,6 +1272,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -1229,6 +1290,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -1246,6 +1308,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;
@@ -1275,6 +1338,7 @@ Object {
   "limit": undefined,
   "orderBy": undefined,
   "type": "SelectStatement",
+  "union": undefined,
   "where": undefined,
 }
 `;

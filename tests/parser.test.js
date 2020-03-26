@@ -91,12 +91,12 @@ testPass(`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a`);
 testPass(`SELECT * FROM foo GROUP BY a HAVING b=5`);
 
 testPass(`SELECT 1 UNION SELECT 2`);
+testPass(`SELECT 1 UNION SELECT 2 UNION SELECT 3`);
 
 testPass(`INSERT INTO foo VALUES (1, 2)`);
 testPass(`INSERT foo VALUES (1, 2)`);
 testPass(`INSERT INTO foo (a, b) VALUES (15, a * 2);`);
 testPass(`INSERT INTO foo (a, b) VALUES (1, 2), (3, 4);`);
-testPass(`INSERT INTO foo VALUE (1), (2);`);
 testPass(`INSERT INTO foo (a, b) SELECT c, d FROM bar;`);
 
 testPass(`CREATE TABLE Foo ( a int )`);
