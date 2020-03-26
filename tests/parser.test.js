@@ -75,6 +75,9 @@ testPass(`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo)`);
 
 testPass(`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo)`);
 
+testPass(`SELECT * FROM foo as goo`);
+testPass(`SELECT * FROM foo goo`);
+
 testPass(`SELECT * FROM foo.goo`);
 testPass('SELECT * FROM `foo`.`goo`');
 testPass(`SELECT * FROM "foo"`);
