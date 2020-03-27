@@ -505,17 +505,15 @@ Object {
       "d",
     ],
     "from": Object {
-      "tables": Array [
-        Object {
-          "joins": Array [],
-          "table": Object {
-            "alias": undefined,
-            "table": "bar",
-            "type": "TableFactor",
-          },
-          "type": "TableReference",
+      "table": Object {
+        "joins": Array [],
+        "table": Object {
+          "alias": undefined,
+          "table": "bar",
+          "type": "TableFactor",
         },
-      ],
+        "type": "TableReference",
+      },
       "type": "FromClause",
     },
     "groupBy": undefined,
@@ -746,27 +744,25 @@ Object {
     },
   ],
   "from": Object {
-    "tables": Array [
-      Object {
-        "joins": Array [],
+    "table": Object {
+      "joins": Array [],
+      "table": Object {
+        "alias": undefined,
         "table": Object {
-          "alias": undefined,
-          "table": Object {
-            "left": Object {
-              "type": "LiteralToken",
-              "value": "foo",
-            },
-            "right": Object {
-              "type": "LiteralToken",
-              "value": "goo",
-            },
-            "type": "MemberExpression",
+          "left": Object {
+            "type": "LiteralToken",
+            "value": "foo",
           },
-          "type": "TableFactor",
+          "right": Object {
+            "type": "LiteralToken",
+            "value": "goo",
+          },
+          "type": "MemberExpression",
         },
-        "type": "TableReference",
+        "type": "TableFactor",
       },
-    ],
+      "type": "TableReference",
+    },
     "type": "FromClause",
   },
   "groupBy": undefined,
@@ -789,17 +785,15 @@ Object {
     },
   ],
   "from": Object {
-    "tables": Array [
-      Object {
-        "joins": Array [],
-        "table": Object {
-          "alias": undefined,
-          "table": "foo",
-          "type": "TableFactor",
-        },
-        "type": "TableReference",
+    "table": Object {
+      "joins": Array [],
+      "table": Object {
+        "alias": undefined,
+        "table": "foo",
+        "type": "TableFactor",
       },
-    ],
+      "type": "TableReference",
+    },
     "type": "FromClause",
   },
   "groupBy": undefined,
@@ -820,17 +814,15 @@ Object {
     },
   ],
   "from": Object {
-    "tables": Array [
-      Object {
-        "joins": Array [],
-        "table": Object {
-          "alias": undefined,
-          "table": "foo",
-          "type": "TableFactor",
-        },
-        "type": "TableReference",
+    "table": Object {
+      "joins": Array [],
+      "table": Object {
+        "alias": undefined,
+        "table": "foo",
+        "type": "TableFactor",
       },
-    ],
+      "type": "TableReference",
+    },
     "type": "FromClause",
   },
   "groupBy": Object {
@@ -863,28 +855,26 @@ Object {
     },
   ],
   "from": Object {
-    "tables": Array [
-      Object {
-        "joins": Array [
-          Object {
-            "joinType": "inner",
-            "on": undefined,
-            "table": Object {
-              "alias": undefined,
-              "table": "goo",
-              "type": "TableFactor",
-            },
-            "type": "JoinClause",
+    "table": Object {
+      "joins": Array [
+        Object {
+          "joinType": "inner",
+          "on": undefined,
+          "table": Object {
+            "alias": undefined,
+            "table": "goo",
+            "type": "TableFactor",
           },
-        ],
-        "table": Object {
-          "alias": undefined,
-          "table": "foo",
-          "type": "TableFactor",
+          "type": "JoinClause",
         },
-        "type": "TableReference",
+      ],
+      "table": Object {
+        "alias": undefined,
+        "table": "foo",
+        "type": "TableFactor",
       },
-    ],
+      "type": "TableReference",
+    },
     "type": "FromClause",
   },
   "groupBy": undefined,
@@ -905,43 +895,41 @@ Object {
     },
   ],
   "from": Object {
-    "tables": Array [
-      Object {
-        "joins": Array [
-          Object {
-            "joinType": "inner",
-            "on": Object {
-              "expression": Object {
-                "left": Object {
-                  "left": "f",
-                  "operator": ".",
-                  "right": "a",
-                },
-                "operator": "=",
-                "right": Object {
-                  "left": "g",
-                  "operator": ".",
-                  "right": "a",
-                },
+    "table": Object {
+      "joins": Array [
+        Object {
+          "joinType": "inner",
+          "on": Object {
+            "expression": Object {
+              "left": Object {
+                "left": "f",
+                "operator": ".",
+                "right": "a",
               },
-              "type": "OnClause",
+              "operator": "=",
+              "right": Object {
+                "left": "g",
+                "operator": ".",
+                "right": "a",
+              },
             },
-            "table": Object {
-              "alias": undefined,
-              "table": "goo",
-              "type": "TableFactor",
-            },
-            "type": "JoinClause",
+            "type": "OnClause",
           },
-        ],
-        "table": Object {
-          "alias": undefined,
-          "table": "foo",
-          "type": "TableFactor",
+          "table": Object {
+            "alias": undefined,
+            "table": "goo",
+            "type": "TableFactor",
+          },
+          "type": "JoinClause",
         },
-        "type": "TableReference",
+      ],
+      "table": Object {
+        "alias": undefined,
+        "table": "foo",
+        "type": "TableFactor",
       },
-    ],
+      "type": "TableReference",
+    },
     "type": "FromClause",
   },
   "groupBy": undefined,
@@ -964,43 +952,41 @@ Object {
     },
   ],
   "from": Object {
-    "tables": Array [
-      Object {
-        "joins": Array [
-          Object {
-            "joinType": "left",
-            "on": Object {
-              "expression": Object {
-                "left": Object {
-                  "left": "foo",
-                  "operator": ".",
-                  "right": "a",
-                },
-                "operator": "=",
-                "right": Object {
-                  "left": "goo",
-                  "operator": ".",
-                  "right": "a",
-                },
+    "table": Object {
+      "joins": Array [
+        Object {
+          "joinType": "left",
+          "on": Object {
+            "expression": Object {
+              "left": Object {
+                "left": "foo",
+                "operator": ".",
+                "right": "a",
               },
-              "type": "OnClause",
+              "operator": "=",
+              "right": Object {
+                "left": "goo",
+                "operator": ".",
+                "right": "a",
+              },
             },
-            "table": Object {
-              "alias": undefined,
-              "table": "goo",
-              "type": "TableFactor",
-            },
-            "type": "JoinClause",
+            "type": "OnClause",
           },
-        ],
-        "table": Object {
-          "alias": undefined,
-          "table": "foo",
-          "type": "TableFactor",
+          "table": Object {
+            "alias": undefined,
+            "table": "goo",
+            "type": "TableFactor",
+          },
+          "type": "JoinClause",
         },
-        "type": "TableReference",
+      ],
+      "table": Object {
+        "alias": undefined,
+        "table": "foo",
+        "type": "TableFactor",
       },
-    ],
+      "type": "TableReference",
+    },
     "type": "FromClause",
   },
   "groupBy": undefined,
@@ -1021,17 +1007,15 @@ Object {
     },
   ],
   "from": Object {
-    "tables": Array [
-      Object {
-        "joins": Array [],
-        "table": Object {
-          "alias": undefined,
-          "table": "foo",
-          "type": "TableFactor",
-        },
-        "type": "TableReference",
+    "table": Object {
+      "joins": Array [],
+      "table": Object {
+        "alias": undefined,
+        "table": "foo",
+        "type": "TableFactor",
       },
-    ],
+      "type": "TableReference",
+    },
     "type": "FromClause",
   },
   "groupBy": undefined,
@@ -1071,17 +1055,15 @@ Object {
     },
   ],
   "from": Object {
-    "tables": Array [
-      Object {
-        "joins": Array [],
-        "table": Object {
-          "alias": "goo",
-          "table": "foo",
-          "type": "TableFactor",
-        },
-        "type": "TableReference",
+    "table": Object {
+      "joins": Array [],
+      "table": Object {
+        "alias": "goo",
+        "table": "foo",
+        "type": "TableFactor",
       },
-    ],
+      "type": "TableReference",
+    },
     "type": "FromClause",
   },
   "groupBy": undefined,
@@ -1102,43 +1084,41 @@ Object {
     },
   ],
   "from": Object {
-    "tables": Array [
-      Object {
-        "joins": Array [
-          Object {
-            "joinType": "left",
-            "on": Object {
-              "expression": Object {
-                "left": Object {
-                  "left": "f",
-                  "operator": ".",
-                  "right": "a",
-                },
-                "operator": "=",
-                "right": Object {
-                  "left": "g",
-                  "operator": ".",
-                  "right": "a",
-                },
+    "table": Object {
+      "joins": Array [
+        Object {
+          "joinType": "left",
+          "on": Object {
+            "expression": Object {
+              "left": Object {
+                "left": "f",
+                "operator": ".",
+                "right": "a",
               },
-              "type": "OnClause",
+              "operator": "=",
+              "right": Object {
+                "left": "g",
+                "operator": ".",
+                "right": "a",
+              },
             },
-            "table": Object {
-              "alias": "g",
-              "table": "goo",
-              "type": "TableFactor",
-            },
-            "type": "JoinClause",
+            "type": "OnClause",
           },
-        ],
-        "table": Object {
-          "alias": "f",
-          "table": "foo",
-          "type": "TableFactor",
+          "table": Object {
+            "alias": "g",
+            "table": "goo",
+            "type": "TableFactor",
+          },
+          "type": "JoinClause",
         },
-        "type": "TableReference",
+      ],
+      "table": Object {
+        "alias": "f",
+        "table": "foo",
+        "type": "TableFactor",
       },
-    ],
+      "type": "TableReference",
+    },
     "type": "FromClause",
   },
   "groupBy": undefined,
@@ -1159,17 +1139,15 @@ Object {
     },
   ],
   "from": Object {
-    "tables": Array [
-      Object {
-        "joins": Array [],
-        "table": Object {
-          "alias": "goo",
-          "table": "foo",
-          "type": "TableFactor",
-        },
-        "type": "TableReference",
+    "table": Object {
+      "joins": Array [],
+      "table": Object {
+        "alias": "goo",
+        "table": "foo",
+        "type": "TableFactor",
       },
-    ],
+      "type": "TableReference",
+    },
     "type": "FromClause",
   },
   "groupBy": undefined,
@@ -1190,26 +1168,29 @@ Object {
     },
   ],
   "from": Object {
-    "tables": Array [
-      Object {
-        "joins": Array [],
-        "table": Object {
-          "alias": undefined,
-          "table": "foo",
-          "type": "TableFactor",
+    "table": Object {
+      "tables": Array [
+        Object {
+          "joins": Array [],
+          "table": Object {
+            "alias": undefined,
+            "table": "foo",
+            "type": "TableFactor",
+          },
+          "type": "TableReference",
         },
-        "type": "TableReference",
-      },
-      Object {
-        "joins": Array [],
-        "table": Object {
-          "alias": undefined,
-          "table": "goo",
-          "type": "TableFactor",
+        Object {
+          "joins": Array [],
+          "table": Object {
+            "alias": undefined,
+            "table": "goo",
+            "type": "TableFactor",
+          },
+          "type": "TableReference",
         },
-        "type": "TableReference",
-      },
-    ],
+      ],
+      "type": "TableReferenceList",
+    },
     "type": "FromClause",
   },
   "groupBy": undefined,
@@ -1230,21 +1211,19 @@ Object {
     },
   ],
   "from": Object {
-    "tables": Array [
-      Object {
-        "joins": Array [],
+    "table": Object {
+      "joins": Array [],
+      "table": Object {
+        "alias": undefined,
         "table": Object {
-          "alias": undefined,
-          "table": Object {
-            "left": "foo",
-            "right": "goo",
-            "type": "MemberExpression",
-          },
-          "type": "TableFactor",
+          "left": "foo",
+          "right": "goo",
+          "type": "MemberExpression",
         },
-        "type": "TableReference",
+        "type": "TableFactor",
       },
-    ],
+      "type": "TableReference",
+    },
     "type": "FromClause",
   },
   "groupBy": undefined,
@@ -1534,17 +1513,15 @@ Object {
     "a",
   ],
   "from": Object {
-    "tables": Array [
-      Object {
-        "joins": Array [],
-        "table": Object {
-          "alias": undefined,
-          "table": "b",
-          "type": "TableFactor",
-        },
-        "type": "TableReference",
+    "table": Object {
+      "joins": Array [],
+      "table": Object {
+        "alias": undefined,
+        "table": "b",
+        "type": "TableFactor",
       },
-    ],
+      "type": "TableReference",
+    },
     "type": "FromClause",
   },
   "groupBy": undefined,
@@ -1617,17 +1594,15 @@ Object {
     },
   ],
   "from": Object {
-    "tables": Array [
-      Object {
-        "joins": Array [],
-        "table": Object {
-          "alias": undefined,
-          "table": "foo",
-          "type": "TableFactor",
-        },
-        "type": "TableReference",
+    "table": Object {
+      "joins": Array [],
+      "table": Object {
+        "alias": undefined,
+        "table": "foo",
+        "type": "TableFactor",
       },
-    ],
+      "type": "TableReference",
+    },
     "type": "FromClause",
   },
   "groupBy": undefined,
@@ -1652,17 +1627,15 @@ Object {
     },
   ],
   "from": Object {
-    "tables": Array [
-      Object {
-        "joins": Array [],
-        "table": Object {
-          "alias": undefined,
-          "table": "foo",
-          "type": "TableFactor",
-        },
-        "type": "TableReference",
+    "table": Object {
+      "joins": Array [],
+      "table": Object {
+        "alias": undefined,
+        "table": "foo",
+        "type": "TableFactor",
       },
-    ],
+      "type": "TableReference",
+    },
     "type": "FromClause",
   },
   "groupBy": undefined,
