@@ -662,10 +662,29 @@ Object {
 
 exports[`SELECT (SELECT 1) 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax",
-  "type": undefined,
+  "expressions": Array [
+    Object {
+      "expressions": Array [
+        "1",
+      ],
+      "from": undefined,
+      "groupBy": undefined,
+      "having": undefined,
+      "limit": undefined,
+      "orderBy": undefined,
+      "type": "SelectStatement",
+      "union": undefined,
+      "where": undefined,
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
 }
 `;
 
@@ -708,14 +727,7 @@ Object {
 }
 `;
 
-exports[`SELECT * FROM "foo" 1`] = `
-Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Unexpected token.",
-  "type": undefined,
-}
-`;
+exports[`SELECT * FROM "foo" 1`] = `[SyntaxError: Unexpected token.]`;
 
 exports[`SELECT * FROM (SELECT * FROM foo) 1`] = `
 Object {
@@ -1001,21 +1013,53 @@ Object {
 }
 `;
 
-exports[`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo) 1`] = `
+exports[`SELECT * FROM foo WHERE a = (SELECT 42) 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax",
-  "type": undefined,
-}
-`;
-
-exports[`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo) 2`] = `
-Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax",
-  "type": undefined,
+  "expressions": Array [
+    Object {
+      "type": "WildcardExpression",
+    },
+  ],
+  "from": Object {
+    "tables": Array [
+      Object {
+        "joins": Array [],
+        "table": Object {
+          "alias": undefined,
+          "table": "foo",
+          "type": "TableFactor",
+        },
+        "type": "TableReference",
+      },
+    ],
+    "type": "FromClause",
+  },
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": Object {
+    "expression": Object {
+      "left": "a",
+      "operator": "=",
+      "right": Object {
+        "expressions": Array [
+          "42",
+        ],
+        "from": undefined,
+        "groupBy": undefined,
+        "having": undefined,
+        "limit": undefined,
+        "orderBy": undefined,
+        "type": "SelectStatement",
+        "union": undefined,
+        "where": undefined,
+      },
+    },
+    "type": "WhereClause",
+  },
 }
 `;
 

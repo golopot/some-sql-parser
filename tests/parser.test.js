@@ -72,16 +72,14 @@ testPass(`SELECT (SELECT 1)`);
 
 testPass(`SELECT * FROM (SELECT * FROM foo)`);
 
-testPass(`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo)`);
-
-testPass(`SELECT * FROM foo WHERE a = (SELECT max(b) FROM foo)`);
+testPass(`SELECT * FROM foo WHERE a = (SELECT 42)`);
 
 testPass(`SELECT * FROM foo as goo`);
 testPass(`SELECT * FROM foo goo`);
 
 testPass(`SELECT * FROM foo.goo`);
 testPass('SELECT * FROM `foo`.`goo`');
-testPass(`SELECT * FROM "foo"`);
+testFail(`SELECT * FROM "foo"`);
 
 testPass(`SELECT * FROM foo, goo`);
 testFail(`SELECT * FROM f.g.h`);
