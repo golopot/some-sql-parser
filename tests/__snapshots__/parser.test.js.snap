@@ -507,7 +507,11 @@ Object {
     "from": Object {
       "table": Object {
         "joins": Array [],
-        "table": "bar",
+        "table": Object {
+          "alias": undefined,
+          "table": "bar",
+          "type": "TableFactor",
+        },
         "type": "TableReference",
       },
       "type": "FromClause",
@@ -731,15 +735,19 @@ Object {
     "table": Object {
       "joins": Array [],
       "table": Object {
-        "left": Object {
-          "type": "LiteralToken",
-          "value": "foo",
+        "alias": undefined,
+        "table": Object {
+          "left": Object {
+            "type": "LiteralToken",
+            "value": "foo",
+          },
+          "right": Object {
+            "type": "LiteralToken",
+            "value": "goo",
+          },
+          "type": "MemberExpression",
         },
-        "right": Object {
-          "type": "LiteralToken",
-          "value": "goo",
-        },
-        "type": "MemberExpression",
+        "type": "TableFactor",
       },
       "type": "TableReference",
     },
@@ -767,7 +775,11 @@ Object {
   "from": Object {
     "table": Object {
       "joins": Array [],
-      "table": "foo",
+      "table": Object {
+        "alias": undefined,
+        "table": "foo",
+        "type": "TableFactor",
+      },
       "type": "TableReference",
     },
     "type": "FromClause",
@@ -792,7 +804,11 @@ Object {
   "from": Object {
     "table": Object {
       "joins": Array [],
-      "table": "foo",
+      "table": Object {
+        "alias": undefined,
+        "table": "foo",
+        "type": "TableFactor",
+      },
       "type": "TableReference",
     },
     "type": "FromClause",
@@ -832,11 +848,19 @@ Object {
         Object {
           "joinType": "inner",
           "on": undefined,
-          "table": "goo",
+          "table": Object {
+            "alias": undefined,
+            "table": "goo",
+            "type": "TableFactor",
+          },
           "type": "JoinClause",
         },
       ],
-      "table": "foo",
+      "table": Object {
+        "alias": undefined,
+        "table": "foo",
+        "type": "TableFactor",
+      },
       "type": "TableReference",
     },
     "type": "FromClause",
@@ -879,11 +903,19 @@ Object {
             },
             "type": "OnClause",
           },
-          "table": "goo",
+          "table": Object {
+            "alias": undefined,
+            "table": "goo",
+            "type": "TableFactor",
+          },
           "type": "JoinClause",
         },
       ],
-      "table": "foo",
+      "table": Object {
+        "alias": undefined,
+        "table": "foo",
+        "type": "TableFactor",
+      },
       "type": "TableReference",
     },
     "type": "FromClause",
@@ -928,11 +960,19 @@ Object {
             },
             "type": "OnClause",
           },
-          "table": "goo",
+          "table": Object {
+            "alias": undefined,
+            "table": "goo",
+            "type": "TableFactor",
+          },
           "type": "JoinClause",
         },
       ],
-      "table": "foo",
+      "table": Object {
+        "alias": undefined,
+        "table": "foo",
+        "type": "TableFactor",
+      },
       "type": "TableReference",
     },
     "type": "FromClause",
@@ -965,12 +1005,116 @@ Object {
 }
 `;
 
+exports[`SELECT * FROM foo as goo 1`] = `
+Object {
+  "expressions": Array [
+    Object {
+      "type": "WildcardExpression",
+    },
+  ],
+  "from": Object {
+    "table": Object {
+      "joins": Array [],
+      "table": Object {
+        "alias": "goo",
+        "table": "foo",
+        "type": "TableFactor",
+      },
+      "type": "TableReference",
+    },
+    "type": "FromClause",
+  },
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
 exports[`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax.",
-  "type": undefined,
+  "expressions": Array [
+    Object {
+      "type": "WildcardExpression",
+    },
+  ],
+  "from": Object {
+    "table": Object {
+      "joins": Array [
+        Object {
+          "joinType": "left",
+          "on": Object {
+            "expression": Object {
+              "left": Object {
+                "left": "f",
+                "operator": ".",
+                "right": "a",
+              },
+              "operator": "=",
+              "right": Object {
+                "left": "g",
+                "operator": ".",
+                "right": "a",
+              },
+            },
+            "type": "OnClause",
+          },
+          "table": Object {
+            "alias": "g",
+            "table": "goo",
+            "type": "TableFactor",
+          },
+          "type": "JoinClause",
+        },
+      ],
+      "table": Object {
+        "alias": "f",
+        "table": "foo",
+        "type": "TableFactor",
+      },
+      "type": "TableReference",
+    },
+    "type": "FromClause",
+  },
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT * FROM foo goo 1`] = `
+Object {
+  "expressions": Array [
+    Object {
+      "type": "WildcardExpression",
+    },
+  ],
+  "from": Object {
+    "table": Object {
+      "joins": Array [],
+      "table": Object {
+        "alias": "goo",
+        "table": "foo",
+        "type": "TableFactor",
+      },
+      "type": "TableReference",
+    },
+    "type": "FromClause",
+  },
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
 }
 `;
 
@@ -994,9 +1138,13 @@ Object {
     "table": Object {
       "joins": Array [],
       "table": Object {
-        "left": "foo",
-        "right": "goo",
-        "type": "MemberExpression",
+        "alias": undefined,
+        "table": Object {
+          "left": "foo",
+          "right": "goo",
+          "type": "MemberExpression",
+        },
+        "type": "TableFactor",
       },
       "type": "TableReference",
     },
@@ -1291,7 +1439,11 @@ Object {
   "from": Object {
     "table": Object {
       "joins": Array [],
-      "table": "b",
+      "table": Object {
+        "alias": undefined,
+        "table": "b",
+        "type": "TableFactor",
+      },
       "type": "TableReference",
     },
     "type": "FromClause",
@@ -1368,7 +1520,11 @@ Object {
   "from": Object {
     "table": Object {
       "joins": Array [],
-      "table": "foo",
+      "table": Object {
+        "alias": undefined,
+        "table": "foo",
+        "type": "TableFactor",
+      },
       "type": "TableReference",
     },
     "type": "FromClause",
@@ -1397,7 +1553,11 @@ Object {
   "from": Object {
     "table": Object {
       "joins": Array [],
-      "table": "foo",
+      "table": Object {
+        "alias": undefined,
+        "table": "foo",
+        "type": "TableFactor",
+      },
       "type": "TableReference",
     },
     "type": "FromClause",
@@ -1626,7 +1786,11 @@ Object {
   },
   "table": Object {
     "joins": Array [],
-    "table": "Foo",
+    "table": Object {
+      "alias": undefined,
+      "table": "Foo",
+      "type": "TableFactor",
+    },
     "type": "TableReference",
   },
   "type": "UpdateStatement",
@@ -1657,7 +1821,11 @@ Object {
   },
   "table": Object {
     "joins": Array [],
-    "table": "Foo",
+    "table": Object {
+      "alias": undefined,
+      "table": "Foo",
+      "type": "TableFactor",
+    },
     "type": "TableReference",
   },
   "type": "UpdateStatement",
@@ -1686,7 +1854,11 @@ Object {
   },
   "table": Object {
     "joins": Array [],
-    "table": "Foo",
+    "table": Object {
+      "alias": undefined,
+      "table": "Foo",
+      "type": "TableFactor",
+    },
     "type": "TableReference",
   },
   "type": "UpdateStatement",
@@ -1720,7 +1892,11 @@ Object {
   },
   "table": Object {
     "joins": Array [],
-    "table": "Foo",
+    "table": Object {
+      "alias": undefined,
+      "table": "Foo",
+      "type": "TableFactor",
+    },
     "type": "TableReference",
   },
   "type": "UpdateStatement",
