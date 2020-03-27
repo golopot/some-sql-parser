@@ -70,7 +70,8 @@ testPass(`SELECT a."select" FROM foo`);
 
 testPass(`SELECT (SELECT 1)`);
 
-testPass(`SELECT * FROM (SELECT * FROM foo)`);
+testPass(`SELECT * FROM (SELECT * FROM foo) alias`);
+testFail(`SELECT * FROM (SELECT * FROM foo)`);
 
 testPass(`SELECT * FROM foo WHERE a = (SELECT 42)`);
 

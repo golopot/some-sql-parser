@@ -727,12 +727,59 @@ Object {
 
 exports[`SELECT * FROM "foo" 1`] = `[SyntaxError: Unexpected token.]`;
 
-exports[`SELECT * FROM (SELECT * FROM foo) 1`] = `
+exports[`SELECT * FROM (SELECT * FROM foo) 1`] = `[SyntaxError: Missing alias for subquery.]`;
+
+exports[`SELECT * FROM (SELECT * FROM foo) alias 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Cannot read property 'length' of undefined",
-  "type": undefined,
+  "expressions": Array [
+    Object {
+      "type": "WildcardExpression",
+    },
+  ],
+  "from": Object {
+    "table": Object {
+      "joins": Array [],
+      "table": Object {
+        "alias": "alias",
+        "table": Object {
+          "expressions": Array [
+            Object {
+              "type": "WildcardExpression",
+            },
+          ],
+          "from": Object {
+            "table": Object {
+              "joins": Array [],
+              "table": Object {
+                "alias": undefined,
+                "table": "foo",
+                "type": "TableFactor",
+              },
+              "type": "TableReference",
+            },
+            "type": "FromClause",
+          },
+          "groupBy": undefined,
+          "having": undefined,
+          "limit": undefined,
+          "orderBy": undefined,
+          "type": "SelectStatement",
+          "union": undefined,
+          "where": undefined,
+        },
+        "type": "TableFactor",
+      },
+      "type": "TableReference",
+    },
+    "type": "FromClause",
+  },
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
 }
 `;
 
