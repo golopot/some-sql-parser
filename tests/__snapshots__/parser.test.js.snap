@@ -1855,10 +1855,30 @@ exports[`SELECT not FROM a 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT null, true, current_timestamp FROM a 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax.",
-  "type": undefined,
+  "expressions": Array [
+    "null",
+    "true",
+    "current_timestamp",
+  ],
+  "from": Object {
+    "table": Object {
+      "joins": Array [],
+      "table": Object {
+        "alias": undefined,
+        "table": "a",
+        "type": "TableFactor",
+      },
+      "type": "TableReference",
+    },
+    "type": "FromClause",
+  },
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
 }
 `;
 
