@@ -658,6 +658,10 @@ Object {
 }
 `;
 
+exports[`SELECT "a".b 1`] = `[SyntaxError: Invalid syntax.]`;
+
+exports[`SELECT "foo"() 1`] = `[SyntaxError: Invalid syntax.]`;
+
 exports[`SELECT (SELECT 1) 1`] = `
 Object {
   "expressions": Array [
@@ -705,25 +709,7 @@ Object {
 }
 `;
 
-exports[`SELECT (f)() 1`] = `
-Object {
-  "expressions": Array [
-    Object {
-      "arguments": Array [],
-      "callee": Object {
-        "expression": "f",
-        "type": "ParenthesisExpression",
-      },
-      "type": "CallExpression",
-    },
-  ],
-  "from": undefined,
-  "limit": undefined,
-  "orderBy": undefined,
-  "type": "SelectStatement",
-  "where": undefined,
-}
-`;
+exports[`SELECT (f)() 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT * FROM "foo" 1`] = `[SyntaxError: Unexpected token.]`;
 
@@ -950,14 +936,14 @@ Object {
             "expression": Object {
               "left": Object {
                 "left": "f",
-                "operator": ".",
                 "right": "a",
+                "type": "MemberExpression",
               },
               "operator": "=",
               "right": Object {
                 "left": "g",
-                "operator": ".",
                 "right": "a",
+                "type": "MemberExpression",
               },
             },
             "type": "OnClause",
@@ -1007,14 +993,14 @@ Object {
             "expression": Object {
               "left": Object {
                 "left": "foo",
-                "operator": ".",
                 "right": "a",
+                "type": "MemberExpression",
               },
               "operator": "=",
               "right": Object {
                 "left": "goo",
-                "operator": ".",
                 "right": "a",
+                "type": "MemberExpression",
               },
             },
             "type": "OnClause",
@@ -1139,14 +1125,14 @@ Object {
             "expression": Object {
               "left": Object {
                 "left": "f",
-                "operator": ".",
                 "right": "a",
+                "type": "MemberExpression",
               },
               "operator": "=",
               "right": Object {
                 "left": "g",
-                "operator": ".",
                 "right": "a",
+                "type": "MemberExpression",
               },
             },
             "type": "OnClause",
@@ -1283,6 +1269,8 @@ Object {
 }
 `;
 
+exports[`SELECT *.a 1`] = `[SyntaxError: Invalid syntax.]`;
+
 exports[`SELECT + 1 - 2 1`] = `
 Object {
   "expressions": Array [
@@ -1325,6 +1313,109 @@ Object {
         "type": "UnaryExpression",
       },
       "operator": "+",
+      "type": "UnaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT \`a\`.\`b\` 1`] = `
+Object {
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "type": "BacktickStringLiteral",
+        "value": "a",
+      },
+      "right": Object {
+        "type": "BacktickStringLiteral",
+        "value": "b",
+      },
+      "type": "MemberExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT \`foo\`() 1`] = `
+Object {
+  "expressions": Array [
+    Object {
+      "arguments": Array [],
+      "callee": Object {
+        "type": "BacktickStringLiteral",
+        "value": "foo",
+      },
+      "type": "CallExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT \`foo\`.\`bar\`() 1`] = `
+Object {
+  "expressions": Array [
+    Object {
+      "arguments": Array [],
+      "callee": Object {
+        "left": Object {
+          "type": "BacktickStringLiteral",
+          "value": "foo",
+        },
+        "right": Object {
+          "type": "BacktickStringLiteral",
+          "value": "bar",
+        },
+        "type": "MemberExpression",
+      },
+      "type": "CallExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT - a.b 1`] = `
+Object {
+  "expressions": Array [
+    Object {
+      "operand": Object {
+        "left": "a",
+        "right": "b",
+        "type": "MemberExpression",
+      },
+      "operator": "-",
       "type": "UnaryExpression",
     },
   ],
@@ -1436,6 +1527,26 @@ Object {
         },
         "type": "ParenthesisExpression",
       },
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT CURRENT_DATE() 1`] = `
+Object {
+  "expressions": Array [
+    Object {
+      "arguments": Array [],
+      "callee": "CURRENT_DATE",
+      "type": "CallExpression",
     },
   ],
   "from": undefined,
@@ -1667,30 +1778,20 @@ Object {
 }
 `;
 
-exports[`SELECT a."select" FROM foo 1`] = `
+exports[`SELECT a."b" 1`] = `[SyntaxError: Unexpected token.]`;
+
+exports[`SELECT a.* 1`] = `
 Object {
   "expressions": Array [
     Object {
       "left": "a",
-      "operator": ".",
       "right": Object {
-        "type": "StringLiteral",
-        "value": "select",
+        "type": "WildcardExpression",
       },
+      "type": "MemberExpression",
     },
   ],
-  "from": Object {
-    "table": Object {
-      "joins": Array [],
-      "table": Object {
-        "alias": undefined,
-        "table": "foo",
-        "type": "TableFactor",
-      },
-      "type": "TableReference",
-    },
-    "type": "FromClause",
-  },
+  "from": undefined,
   "groupBy": undefined,
   "having": undefined,
   "limit": undefined,
@@ -1706,10 +1807,10 @@ Object {
   "expressions": Array [
     Object {
       "left": "a",
-      "operator": ".",
       "right": Object {
         "type": "WildcardExpression",
       },
+      "type": "MemberExpression",
     },
   ],
   "from": Object {
@@ -1734,9 +1835,57 @@ Object {
 }
 `;
 
+exports[`SELECT a.b 1`] = `
+Object {
+  "expressions": Array [
+    Object {
+      "left": "a",
+      "right": "b",
+      "type": "MemberExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT a.b.c 1`] = `
+Object {
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "left": "a",
+        "right": "b",
+        "type": "MemberExpression",
+      },
+      "operator": ".",
+      "right": "c",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT a.b.c.d 1`] = `[SyntaxError: Invalid syntax.]`;
+
 exports[`SELECT by FROM foo; 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT f()() 1`] = `[SyntaxError: Invalid syntax.]`;
+
+exports[`SELECT f().g 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT f(g(a)) 1`] = `
 Object {
@@ -1770,13 +1919,13 @@ exports[`SELECT f.g() 1`] = `
 Object {
   "expressions": Array [
     Object {
-      "left": "f",
-      "operator": ".",
-      "right": Object {
-        "arguments": Array [],
-        "callee": "g",
-        "type": "CallExpression",
+      "arguments": Array [],
+      "callee": Object {
+        "left": "f",
+        "right": "g",
+        "type": "MemberExpression",
       },
+      "type": "CallExpression",
     },
   ],
   "from": undefined,
@@ -1790,30 +1939,7 @@ Object {
 }
 `;
 
-exports[`SELECT f.g.h() 1`] = `
-Object {
-  "expressions": Array [
-    Object {
-      "left": "f",
-      "operator": ".",
-      "right": Object {
-        "left": "g",
-        "operator": ".",
-        "right": Object {
-          "arguments": Array [],
-          "callee": "h",
-          "type": "CallExpression",
-        },
-      },
-    },
-  ],
-  "from": undefined,
-  "limit": undefined,
-  "orderBy": undefined,
-  "type": "SelectStatement",
-  "where": undefined,
-}
-`;
+exports[`SELECT f.g.h() 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT fn(), fn(a), fn(a, b) 1`] = `
 Object {

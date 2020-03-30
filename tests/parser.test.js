@@ -34,12 +34,27 @@ SELECT
   a
 `);
 
+testPass(`SELECT a.b`); 
+testPass(`SELECT a.b.c`); 
+testPass('SELECT `a`.`b`');
+testPass('SELECT a.*');
+testPass('SELECT - a.b');
+testFail('SELECT a.b.c.d');
+testFail('SELECT "a".b');
+testFail('SELECT a."b"');
+testFail('SELECT *.a');
+
 testPass(`SELECT fn(), fn(a), fn(a, b)`);
 testPass(`SELECT f(g(a))`);
 testPass(`SELECT f.g()`);
-testFail(`SELECT f.g.h()`);
 testPass(`SELECT max()`);
 testPass(`SELECT max ()`);
+testPass(`SELECT CURRENT_DATE()`);
+testPass('SELECT `foo`()');
+testPass('SELECT `foo`.`bar`()');
+testFail(`SELECT "foo"()`);
+testFail(`SELECT f.g.h()`);
+testFail(`SELECT f().g`);
 testFail(`SELECT (f)()`);
 testFail(`SELECT f()()`);
 
@@ -67,8 +82,6 @@ testFail(`SELECT a b c d e`);
 testPass(`SELECT * FROM foo`);
 testPass(`SELECT a.* FROM foo`);
 
-testPass(`SELECT a."select" FROM foo`);
-
 testPass(`SELECT (SELECT 1)`);
 
 testPass(`SELECT * FROM (SELECT * FROM foo) alias`);
@@ -93,7 +106,7 @@ testPass(`SELECT * FROM foo JOIN goo ON f.a = g.a`);
 
 testPass(`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a`);
 testPass(`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a`);
-testFail(`SELECT * FROM foo LEFT JOIN goo`)
+testFail(`SELECT * FROM foo LEFT JOIN goo`);
 
 // group by
 testPass(`SELECT * FROM foo GROUP BY a HAVING b=5`);
