@@ -55,6 +55,7 @@ testPass(`SELECT + 1 - 2`);
 
 testPass(`SELECT a aa`);
 testPass(`SELECT a "aa"`);
+testPass(`SELECT a \`aa\``);
 testPass(`SELECT t as tt`);
 
 testPass(`SELECT null, true, current_timestamp FROM a`);

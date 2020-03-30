@@ -331,7 +331,7 @@ Object {
     },
   ],
   "tableName": Object {
-    "type": "LiteralToken",
+    "type": "BacktickStringLiteral",
     "value": "Foo",
   },
   "type": "CreateTableStatement",
@@ -635,15 +635,15 @@ exports[`SELECT "1", '1', \`1\` 1`] = `
 Object {
   "expressions": Array [
     Object {
-      "type": "LiteralToken",
+      "type": "StringLiteral",
       "value": "1",
     },
     Object {
-      "type": "LiteralToken",
+      "type": "StringLiteral",
       "value": "1",
     },
     Object {
-      "type": "LiteralToken",
+      "type": "BacktickStringLiteral",
       "value": "1",
     },
   ],
@@ -797,11 +797,11 @@ Object {
         "alias": undefined,
         "table": Object {
           "left": Object {
-            "type": "LiteralToken",
+            "type": "BacktickStringLiteral",
             "value": "foo",
           },
           "right": Object {
-            "type": "LiteralToken",
+            "type": "BacktickStringLiteral",
             "value": "goo",
           },
           "type": "MemberExpression",
@@ -1451,10 +1451,25 @@ Object {
 
 exports[`SELECT a "aa" 1`] = `
 Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax.",
-  "type": undefined,
+  "expressions": Array [
+    Object {
+      "alias": Object {
+        "type": "StringLiteral",
+        "value": "aa",
+      },
+      "expression": "a",
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
 }
 `;
 
@@ -1554,6 +1569,30 @@ Object {
 }
 `;
 
+exports[`SELECT a \`aa\` 1`] = `
+Object {
+  "expressions": Array [
+    Object {
+      "alias": Object {
+        "type": "BacktickStringLiteral",
+        "value": "aa",
+      },
+      "expression": "a",
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
 exports[`SELECT a FROM b WHERE m = 6; 1`] = `
 Object {
   "expressions": Array [
@@ -1635,7 +1674,7 @@ Object {
       "left": "a",
       "operator": ".",
       "right": Object {
-        "type": "LiteralToken",
+        "type": "StringLiteral",
         "value": "select",
       },
     },
