@@ -493,7 +493,25 @@ Object {
 }
 `;
 
-exports[`INSERT INTO foo (a, b) SELECT c, d FROM bar; 1`] = `
+exports[`INSERT INTO foo VALUES (1) 1`] = `
+Object {
+  "columnNames": undefined,
+  "select": undefined,
+  "table": "foo",
+  "type": "InsertStatement",
+  "values": Object {
+    "expressions": Array [
+      Object {
+        "expression": "1",
+        "type": "ParenthesisExpression",
+      },
+    ],
+    "type": "ValuesClause",
+  },
+}
+`;
+
+exports[`INSERT foo (a, b) SELECT c, d FROM bar; 1`] = `
 Object {
   "columnNames": Array [
     "a",
@@ -530,7 +548,7 @@ Object {
 }
 `;
 
-exports[`INSERT INTO foo (a, b) VALUES (1, 2), (3, 4); 1`] = `
+exports[`INSERT foo (a, b) VALUES (1, 2), (3, 4); 1`] = `
 Object {
   "columnNames": Array [
     "a",
@@ -561,35 +579,7 @@ Object {
 }
 `;
 
-exports[`INSERT INTO foo (a, b) VALUES (15, a * 2); 1`] = `
-Object {
-  "columnNames": Array [
-    "a",
-    "b",
-  ],
-  "select": undefined,
-  "table": "foo",
-  "type": "InsertStatement",
-  "values": Object {
-    "expressions": Array [
-      Object {
-        "expressions": Array [
-          "15",
-          Object {
-            "left": "a",
-            "operator": "*",
-            "right": "2",
-          },
-        ],
-        "type": "TupleExpression",
-      },
-    ],
-    "type": "ValuesClause",
-  },
-}
-`;
-
-exports[`INSERT INTO foo VALUES (1, 2) 1`] = `
+exports[`INSERT foo VALUES (1) 1`] = `
 Object {
   "columnNames": undefined,
   "select": undefined,
@@ -598,11 +588,26 @@ Object {
   "values": Object {
     "expressions": Array [
       Object {
-        "expressions": Array [
-          "1",
-          "2",
-        ],
-        "type": "TupleExpression",
+        "expression": "1",
+        "type": "ParenthesisExpression",
+      },
+    ],
+    "type": "ValuesClause",
+  },
+}
+`;
+
+exports[`INSERT foo VALUES (1) 2`] = `
+Object {
+  "columnNames": undefined,
+  "select": undefined,
+  "table": "foo",
+  "type": "InsertStatement",
+  "values": Object {
+    "expressions": Array [
+      Object {
+        "expression": "1",
+        "type": "ParenthesisExpression",
       },
     ],
     "type": "ValuesClause",
@@ -1263,6 +1268,27 @@ Object {
   "having": undefined,
   "limit": undefined,
   "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT * ORDER BY a 1`] = `
+Object {
+  "expressions": Array [
+    Object {
+      "type": "WildcardExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": Object {
+    "columnName": "a",
+    "type": "OrderByClause",
+  },
   "type": "SelectStatement",
   "union": undefined,
   "where": undefined,
@@ -2071,6 +2097,78 @@ Object {
 exports[`SELECT varchar FROM a 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SSSSS foo FROM b 1`] = `[SyntaxError: Invalid syntax.]`;
+
+exports[`UPDATE Foo JOIN Goo SET a = 1 1`] = `
+Object {
+  "limit": undefined,
+  "orderBy": undefined,
+  "set": Object {
+    "expressions": Array [
+      Object {
+        "left": "a",
+        "operator": "=",
+        "right": "1",
+      },
+    ],
+    "type": "SetClause",
+  },
+  "table": Object {
+    "joins": Array [
+      Object {
+        "joinType": "inner",
+        "on": undefined,
+        "table": Object {
+          "alias": undefined,
+          "table": "Goo",
+          "type": "TableFactor",
+        },
+        "type": "JoinClause",
+      },
+    ],
+    "table": Object {
+      "alias": undefined,
+      "table": "Foo",
+      "type": "TableFactor",
+    },
+    "type": "TableReference",
+  },
+  "type": "UpdateStatement",
+  "where": undefined,
+}
+`;
+
+exports[`UPDATE Foo SET a = 1 LIMIT 1 1`] = `
+Object {
+  "limit": Object {
+    "count": "1",
+    "type": "LimitClause",
+  },
+  "orderBy": undefined,
+  "set": Object {
+    "expressions": Array [
+      Object {
+        "left": "a",
+        "operator": "=",
+        "right": "1",
+      },
+    ],
+    "type": "SetClause",
+  },
+  "table": Object {
+    "joins": Array [],
+    "table": Object {
+      "alias": undefined,
+      "table": "Foo",
+      "type": "TableFactor",
+    },
+    "type": "TableReference",
+  },
+  "type": "UpdateStatement",
+  "where": undefined,
+}
+`;
+
+exports[`UPDATE Foo SET a = 1 LIMIT 1, 1 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4 1`] = `
 Object {
