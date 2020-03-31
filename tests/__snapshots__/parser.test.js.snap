@@ -7,7 +7,18 @@ SELECT
 Object {
   "distinct": false,
   "expressions": Array [
-    "a",
+    Object {
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
+    },
   ],
   "from": undefined,
   "groupBy": undefined,
@@ -31,11 +42,17 @@ exports[`ALTER TABLE table_name DROP COLUMN a 1`] = `
 Object {
   "specifications": Array [
     Object {
-      "columnName": "a",
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
       "type": "DropColumnSpecification",
     },
   ],
-  "table": "table_name",
+  "table": Object {
+    "name": "table_name",
+    "type": "Identifier",
+  },
   "type": "AlterTableStatement",
 }
 `;
@@ -44,11 +61,17 @@ exports[`ALTER TABLE table_name DROP FOREIGN KEY fk_symbol 1`] = `
 Object {
   "specifications": Array [
     Object {
-      "key": "fk_symbol",
+      "key": Object {
+        "name": "fk_symbol",
+        "type": "Identifier",
+      },
       "type": "DropForeignKeySpecification",
     },
   ],
-  "table": "table_name",
+  "table": Object {
+    "name": "table_name",
+    "type": "Identifier",
+  },
   "type": "AlterTableStatement",
 }
 `;
@@ -57,11 +80,17 @@ exports[`ALTER TABLE table_name DROP INDEX index_name 1`] = `
 Object {
   "specifications": Array [
     Object {
-      "key": "index_name",
+      "key": Object {
+        "name": "index_name",
+        "type": "Identifier",
+      },
       "type": "DropKeySpecification",
     },
   ],
-  "table": "table_name",
+  "table": Object {
+    "name": "table_name",
+    "type": "Identifier",
+  },
   "type": "AlterTableStatement",
 }
 `;
@@ -70,11 +99,17 @@ exports[`ALTER TABLE table_name DROP KEY index_name 1`] = `
 Object {
   "specifications": Array [
     Object {
-      "key": "index_name",
+      "key": Object {
+        "name": "index_name",
+        "type": "Identifier",
+      },
       "type": "DropKeySpecification",
     },
   ],
-  "table": "table_name",
+  "table": Object {
+    "name": "table_name",
+    "type": "Identifier",
+  },
   "type": "AlterTableStatement",
 }
 `;
@@ -86,7 +121,10 @@ Object {
       "type": "DropPrimaryKeySpecification",
     },
   ],
-  "table": "table_name",
+  "table": Object {
+    "name": "table_name",
+    "type": "Identifier",
+  },
   "type": "AlterTableStatement",
 }
 `;
@@ -95,11 +133,17 @@ exports[`ALTER TABLE table_name DROP a 1`] = `
 Object {
   "specifications": Array [
     Object {
-      "columnName": "a",
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
       "type": "DropColumnSpecification",
     },
   ],
-  "table": "table_name",
+  "table": Object {
+    "name": "table_name",
+    "type": "Identifier",
+  },
   "type": "AlterTableStatement",
 }
 `;
@@ -108,11 +152,17 @@ exports[`ALTER TABLE table_name RENAME AS new_table_name 1`] = `
 Object {
   "specifications": Array [
     Object {
-      "tableName": "new_table_name",
+      "tableName": Object {
+        "name": "new_table_name",
+        "type": "Identifier",
+      },
       "type": "AlterTableRenameTableSpecification",
     },
   ],
-  "table": "table_name",
+  "table": Object {
+    "name": "table_name",
+    "type": "Identifier",
+  },
   "type": "AlterTableStatement",
 }
 `;
@@ -121,12 +171,21 @@ exports[`ALTER TABLE table_name RENAME COLUMN old_column TO new_column 1`] = `
 Object {
   "specifications": Array [
     Object {
-      "sourceColumnName": "old_column",
-      "targetColumnName": "new_column",
+      "sourceColumnName": Object {
+        "name": "old_column",
+        "type": "Identifier",
+      },
+      "targetColumnName": Object {
+        "name": "new_column",
+        "type": "Identifier",
+      },
       "type": "AlterTableRenameColumnSpecification",
     },
   ],
-  "table": "table_name",
+  "table": Object {
+    "name": "table_name",
+    "type": "Identifier",
+  },
   "type": "AlterTableStatement",
 }
 `;
@@ -135,12 +194,21 @@ exports[`ALTER TABLE table_name RENAME INDEX old_key TO new_key 1`] = `
 Object {
   "specifications": Array [
     Object {
-      "sourceKey": "old_key",
-      "targetKey": "new_key",
+      "sourceKey": Object {
+        "name": "old_key",
+        "type": "Identifier",
+      },
+      "targetKey": Object {
+        "name": "new_key",
+        "type": "Identifier",
+      },
       "type": "AlterTableRenameKeySpecification",
     },
   ],
-  "table": "table_name",
+  "table": Object {
+    "name": "table_name",
+    "type": "Identifier",
+  },
   "type": "AlterTableStatement",
 }
 `;
@@ -149,12 +217,21 @@ exports[`ALTER TABLE table_name RENAME KEY old_key TO new_key 1`] = `
 Object {
   "specifications": Array [
     Object {
-      "sourceKey": "old_key",
-      "targetKey": "new_key",
+      "sourceKey": Object {
+        "name": "old_key",
+        "type": "Identifier",
+      },
+      "targetKey": Object {
+        "name": "new_key",
+        "type": "Identifier",
+      },
       "type": "AlterTableRenameKeySpecification",
     },
   ],
-  "table": "table_name",
+  "table": Object {
+    "name": "table_name",
+    "type": "Identifier",
+  },
   "type": "AlterTableStatement",
 }
 `;
@@ -163,11 +240,17 @@ exports[`ALTER TABLE table_name RENAME TO new_table_name 1`] = `
 Object {
   "specifications": Array [
     Object {
-      "tableName": "new_table_name",
+      "tableName": Object {
+        "name": "new_table_name",
+        "type": "Identifier",
+      },
       "type": "AlterTableRenameTableSpecification",
     },
   ],
-  "table": "table_name",
+  "table": Object {
+    "name": "table_name",
+    "type": "Identifier",
+  },
   "type": "AlterTableStatement",
 }
 `;
@@ -176,11 +259,17 @@ exports[`ALTER TABLE table_name RENAME new_table_name 1`] = `
 Object {
   "specifications": Array [
     Object {
-      "tableName": "new_table_name",
+      "tableName": Object {
+        "name": "new_table_name",
+        "type": "Identifier",
+      },
       "type": "AlterTableRenameTableSpecification",
     },
   ],
-  "table": "table_name",
+  "table": Object {
+    "name": "table_name",
+    "type": "Identifier",
+  },
   "type": "AlterTableStatement",
 }
 `;
@@ -190,7 +279,10 @@ Object {
   "specifications": Array [
     Object {
       "after": undefined,
-      "columnName": "a",
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
       "columnType": Object {
         "arguments": undefined,
         "name": "INT",
@@ -200,7 +292,10 @@ Object {
       "type": "AlterTableAddColumnSpecification",
     },
   ],
-  "table": "tbl_name",
+  "table": Object {
+    "name": "tbl_name",
+    "type": "Identifier",
+  },
   "type": "AlterTableStatement",
 }
 `;
@@ -210,7 +305,10 @@ Object {
   "specifications": Array [
     Object {
       "after": undefined,
-      "columnName": "a",
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
       "columnType": Object {
         "arguments": undefined,
         "name": "INT",
@@ -220,7 +318,10 @@ Object {
       "type": "AlterTableAddColumnSpecification",
     },
   ],
-  "table": "tbl_name",
+  "table": Object {
+    "name": "tbl_name",
+    "type": "Identifier",
+  },
   "type": "AlterTableStatement",
 }
 `;
@@ -229,8 +330,14 @@ exports[`ALTER TABLE tbl_name ADD a int AFTER b 1`] = `
 Object {
   "specifications": Array [
     Object {
-      "after": "b",
-      "columnName": "a",
+      "after": Object {
+        "name": "b",
+        "type": "Identifier",
+      },
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
       "columnType": Object {
         "arguments": undefined,
         "name": "INT",
@@ -240,7 +347,10 @@ Object {
       "type": "AlterTableAddColumnSpecification",
     },
   ],
-  "table": "tbl_name",
+  "table": Object {
+    "name": "tbl_name",
+    "type": "Identifier",
+  },
   "type": "AlterTableStatement",
 }
 `;
@@ -250,7 +360,10 @@ Object {
   "specifications": Array [
     Object {
       "after": undefined,
-      "columnName": "a",
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
       "columnType": Object {
         "arguments": undefined,
         "name": "INT",
@@ -260,7 +373,10 @@ Object {
       "type": "AlterTableAddColumnSpecification",
     },
   ],
-  "table": "tbl_name",
+  "table": Object {
+    "name": "tbl_name",
+    "type": "Identifier",
+  },
   "type": "AlterTableStatement",
 }
 `;
@@ -270,7 +386,10 @@ Object {
   "specifications": Array [
     Object {
       "after": undefined,
-      "columnName": "a",
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
       "columnType": Object {
         "arguments": undefined,
         "name": "INT",
@@ -281,7 +400,10 @@ Object {
     },
     Object {
       "after": undefined,
-      "columnName": "b",
+      "columnName": Object {
+        "name": "b",
+        "type": "Identifier",
+      },
       "columnType": Object {
         "arguments": undefined,
         "name": "INT",
@@ -291,44 +413,68 @@ Object {
       "type": "AlterTableAddColumnSpecification",
     },
   ],
-  "table": "tbl_name",
+  "table": Object {
+    "name": "tbl_name",
+    "type": "Identifier",
+  },
   "type": "AlterTableStatement",
 }
 `;
 
 exports[`CREATE DATABASE db_name 1`] = `
 Object {
-  "databaseName": "db_name",
+  "databaseName": Object {
+    "name": "db_name",
+    "type": "Identifier",
+  },
   "type": "CreateDatabaseStatement",
 }
 `;
 
 exports[`CREATE DATABASE db_name 2`] = `
 Object {
-  "databaseName": "db_name",
+  "databaseName": Object {
+    "name": "db_name",
+    "type": "Identifier",
+  },
   "type": "CreateDatabaseStatement",
 }
 `;
 
 exports[`CREATE INDEX idx ON t1 (col1, col2) 1`] = `
 Object {
-  "key": "idx",
+  "key": Object {
+    "name": "idx",
+    "type": "Identifier",
+  },
   "keyParts": Array [
-    "col1",
-    "col2",
+    Object {
+      "name": "col1",
+      "type": "Identifier",
+    },
+    Object {
+      "name": "col2",
+      "type": "Identifier",
+    },
   ],
-  "tableName": "t1",
+  "tableName": Object {
+    "name": "t1",
+    "type": "Identifier",
+  },
   "type": "CreateIndexStatement",
 }
 `;
 
-exports[`CREATE TABLE "Foo" ( a int ) 1`] = `[SyntaxError: Unexpected token.]`;
+exports[`CREATE TABLE "Foo" ( a int ) 1`] = `[SyntaxError: "(" expected.]`;
 
 exports[`CREATE TABLE \`Foo\` ( a int ) 1`] = `
 Object {
   "definitions": Array [
     Object {
-      "columnName": "a",
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
       "columnType": Object {
         "arguments": undefined,
         "name": "INT",
@@ -350,7 +496,10 @@ exports[`CREATE TABLE Foo ( a int ) 1`] = `
 Object {
   "definitions": Array [
     Object {
-      "columnName": "a",
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
       "columnType": Object {
         "arguments": undefined,
         "name": "INT",
@@ -360,7 +509,10 @@ Object {
       "type": "CreateDefinition",
     },
   ],
-  "tableName": "Foo",
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
   "type": "CreateTableStatement",
 }
 `;
@@ -369,7 +521,10 @@ exports[`CREATE TABLE Foo ( a int key ) 1`] = `
 Object {
   "definitions": Array [
     Object {
-      "columnName": "a",
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
       "columnType": Object {
         "arguments": undefined,
         "name": "INT",
@@ -379,7 +534,10 @@ Object {
       "type": "CreateDefinition",
     },
   ],
-  "tableName": "Foo",
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
   "type": "CreateTableStatement",
 }
 `;
@@ -388,7 +546,10 @@ exports[`CREATE TABLE Foo ( a int primary key ) 1`] = `
 Object {
   "definitions": Array [
     Object {
-      "columnName": "a",
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
       "columnType": Object {
         "arguments": undefined,
         "name": "INT",
@@ -398,7 +559,10 @@ Object {
       "type": "CreateDefinition",
     },
   ],
-  "tableName": "Foo",
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
   "type": "CreateTableStatement",
 }
 `;
@@ -407,7 +571,10 @@ exports[`CREATE TABLE Foo ( a int, b varchar(255) ) 1`] = `
 Object {
   "definitions": Array [
     Object {
-      "columnName": "a",
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
       "columnType": Object {
         "arguments": undefined,
         "name": "INT",
@@ -417,7 +584,10 @@ Object {
       "type": "CreateDefinition",
     },
     Object {
-      "columnName": "b",
+      "columnName": Object {
+        "name": "b",
+        "type": "Identifier",
+      },
       "columnType": Object {
         "arguments": Array [
           "255",
@@ -429,14 +599,17 @@ Object {
       "type": "CreateDefinition",
     },
   ],
-  "tableName": "Foo",
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
   "type": "CreateTableStatement",
 }
 `;
 
 exports[`CREATE TABLE Foo ( key (id) ) 1`] = `[SyntaxError: Invalid create table definition.]`;
 
-exports[`CREATE TABLE Foo () 1`] = `[SyntaxError: Invalid create table definition.]`;
+exports[`CREATE TABLE Foo () 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`DELETE FROM table_name WHERE a = 5 ORDER BY a LIMIT 3 1`] = `
 Object {
@@ -446,14 +619,23 @@ Object {
     "type": "LimitClause",
   },
   "orderBy": Object {
-    "columnName": "a",
+    "columnName": Object {
+      "name": "a",
+      "type": "Identifier",
+    },
     "type": "OrderByClause",
   },
-  "tableName": "table_name",
+  "tableName": Object {
+    "name": "table_name",
+    "type": "Identifier",
+  },
   "type": "DeleteStatement",
   "where": Object {
     "expression": Object {
-      "left": "a",
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
       "operator": "=",
       "right": "5",
     },
@@ -464,7 +646,10 @@ Object {
 
 exports[`DROP DATABASE IF EXISTS db_name 1`] = `
 Object {
-  "databaseName": "db_name",
+  "databaseName": Object {
+    "name": "db_name",
+    "type": "Identifier",
+  },
   "hasIfExists": true,
   "type": "DropDatabaseStatement",
 }
@@ -472,7 +657,10 @@ Object {
 
 exports[`DROP DATABASE db_name 1`] = `
 Object {
-  "databaseName": "db_name",
+  "databaseName": Object {
+    "name": "db_name",
+    "type": "Identifier",
+  },
   "hasIfExists": false,
   "type": "DropDatabaseStatement",
 }
@@ -480,8 +668,14 @@ Object {
 
 exports[`DROP INDEX index_name ON tbl_name 1`] = `
 Object {
-  "indexName": "index_name",
-  "tableName": "tbl_name",
+  "indexName": Object {
+    "name": "index_name",
+    "type": "Identifier",
+  },
+  "tableName": Object {
+    "name": "tbl_name",
+    "type": "Identifier",
+  },
   "type": "DropIndexStatement",
 }
 `;
@@ -489,7 +683,10 @@ Object {
 exports[`DROP TABLE IF EXISTS table_name 1`] = `
 Object {
   "hasIfExists": true,
-  "tableName": "table_name",
+  "tableName": Object {
+    "name": "table_name",
+    "type": "Identifier",
+  },
   "type": "DropTableStatement",
 }
 `;
@@ -497,7 +694,10 @@ Object {
 exports[`DROP TABLE table_name 1`] = `
 Object {
   "hasIfExists": false,
-  "tableName": "table_name",
+  "tableName": Object {
+    "name": "table_name",
+    "type": "Identifier",
+  },
   "type": "DropTableStatement",
 }
 `;
@@ -512,7 +712,10 @@ Object {
   "priority": "HIGH_PRIORITY",
   "select": undefined,
   "set": undefined,
-  "table": "foo",
+  "table": Object {
+    "name": "foo",
+    "type": "Identifier",
+  },
   "type": "InsertStatement",
   "values": Object {
     "expressions": Array [
@@ -534,7 +737,10 @@ Object {
   "priority": undefined,
   "select": undefined,
   "set": undefined,
-  "table": "foo",
+  "table": Object {
+    "name": "foo",
+    "type": "Identifier",
+  },
   "type": "InsertStatement",
   "values": Object {
     "expressions": Array [
@@ -556,7 +762,10 @@ Object {
   "priority": undefined,
   "select": undefined,
   "set": undefined,
-  "table": "foo",
+  "table": Object {
+    "name": "foo",
+    "type": "Identifier",
+  },
   "type": "InsertStatement",
   "values": Object {
     "expressions": Array [
@@ -578,7 +787,10 @@ Object {
   "priority": "LOW_PRIORITY",
   "select": undefined,
   "set": undefined,
-  "table": "foo",
+  "table": Object {
+    "name": "foo",
+    "type": "Identifier",
+  },
   "type": "InsertStatement",
   "values": Object {
     "expressions": Array [
@@ -595,8 +807,14 @@ Object {
 exports[`INSERT foo (a, b) SELECT c, d FROM bar; 1`] = `
 Object {
   "columnNames": Array [
-    "a",
-    "b",
+    Object {
+      "name": "a",
+      "type": "Identifier",
+    },
+    Object {
+      "name": "b",
+      "type": "Identifier",
+    },
   ],
   "ignore": undefined,
   "onDuplicateKeyUpdate": undefined,
@@ -604,15 +822,35 @@ Object {
   "select": Object {
     "distinct": false,
     "expressions": Array [
-      "c",
-      "d",
+      Object {
+        "alias": Object {
+          "name": undefined,
+          "type": "Identifier",
+        },
+        "expression": Object {
+          "name": "c",
+          "type": "Identifier",
+        },
+        "hasAsKeyword": false,
+        "type": "AliasExpression",
+      },
+      Object {
+        "name": "d",
+        "type": "Identifier",
+      },
     ],
     "from": Object {
       "table": Object {
         "joins": Array [],
         "table": Object {
-          "alias": undefined,
-          "table": "bar",
+          "alias": Object {
+            "name": undefined,
+            "type": "Identifier",
+          },
+          "table": Object {
+            "name": "bar",
+            "type": "Identifier",
+          },
           "type": "TableFactor",
         },
         "type": "TableReference",
@@ -635,7 +873,10 @@ Object {
     "where": undefined,
   },
   "set": undefined,
-  "table": "foo",
+  "table": Object {
+    "name": "foo",
+    "type": "Identifier",
+  },
   "type": "InsertStatement",
   "values": undefined,
 }
@@ -644,15 +885,24 @@ Object {
 exports[`INSERT foo (a, b) VALUES (1, 2), (3, 4); 1`] = `
 Object {
   "columnNames": Array [
-    "a",
-    "b",
+    Object {
+      "name": "a",
+      "type": "Identifier",
+    },
+    Object {
+      "name": "b",
+      "type": "Identifier",
+    },
   ],
   "ignore": undefined,
   "onDuplicateKeyUpdate": undefined,
   "priority": undefined,
   "select": undefined,
   "set": undefined,
-  "table": "foo",
+  "table": Object {
+    "name": "foo",
+    "type": "Identifier",
+  },
   "type": "InsertStatement",
   "values": Object {
     "expressions": Array [
@@ -686,19 +936,28 @@ Object {
   "set": Object {
     "asignments": Array [
       Object {
-        "left": "a",
+        "left": Object {
+          "name": "a",
+          "type": "Identifier",
+        },
         "right": "1",
         "type": "AssignmentExpression",
       },
       Object {
-        "left": "b",
+        "left": Object {
+          "name": "b",
+          "type": "Identifier",
+        },
         "right": "2",
         "type": "AssignmentExpression",
       },
     ],
     "type": "AssignmentList",
   },
-  "table": "foo",
+  "table": Object {
+    "name": "foo",
+    "type": "Identifier",
+  },
   "type": "InsertStatement",
   "values": undefined,
 }
@@ -712,7 +971,10 @@ Object {
   "priority": undefined,
   "select": undefined,
   "set": undefined,
-  "table": "foo",
+  "table": Object {
+    "name": "foo",
+    "type": "Identifier",
+  },
   "type": "InsertStatement",
   "values": Object {
     "expressions": Array [
@@ -734,7 +996,10 @@ Object {
   "priority": undefined,
   "select": undefined,
   "set": undefined,
-  "table": "foo",
+  "table": Object {
+    "name": "foo",
+    "type": "Identifier",
+  },
   "type": "InsertStatement",
   "values": Object {
     "expressions": Array [
@@ -755,12 +1020,18 @@ Object {
   "onDuplicateKeyUpdate": Object {
     "asignments": Array [
       Object {
-        "left": "a",
+        "left": Object {
+          "name": "a",
+          "type": "Identifier",
+        },
         "right": "1",
         "type": "AssignmentExpression",
       },
       Object {
-        "left": "b",
+        "left": Object {
+          "name": "b",
+          "type": "Identifier",
+        },
         "right": "2",
         "type": "AssignmentExpression",
       },
@@ -770,7 +1041,10 @@ Object {
   "priority": undefined,
   "select": undefined,
   "set": undefined,
-  "table": "foo",
+  "table": Object {
+    "name": "foo",
+    "type": "Identifier",
+  },
   "type": "InsertStatement",
   "values": Object {
     "expressions": Array [
@@ -789,14 +1063,20 @@ Object {
   "columnNames": undefined,
   "ignore": undefined,
   "onDuplicateKeyUpdate": Object {
-    "left": "a",
+    "left": Object {
+      "name": "a",
+      "type": "Identifier",
+    },
     "right": "1",
     "type": "AssignmentExpression",
   },
   "priority": undefined,
   "select": undefined,
   "set": undefined,
-  "table": "foo",
+  "table": Object {
+    "name": "foo",
+    "type": "Identifier",
+  },
   "type": "InsertStatement",
   "values": Object {
     "expressions": Array [
@@ -820,7 +1100,10 @@ Object {
   "priority": undefined,
   "select": undefined,
   "set": undefined,
-  "table": "foo",
+  "table": Object {
+    "name": "foo",
+    "type": "Identifier",
+  },
   "type": "InsertStatement",
   "values": Object {
     "expressions": Array [
@@ -842,16 +1125,40 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "type": "StringLiteral",
-      "value": "1",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "type": "StringLiteral",
+        "value": "1",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
     Object {
-      "type": "StringLiteral",
-      "value": "1",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "type": "StringLiteral",
+        "value": "1",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
     Object {
-      "type": "BacktickStringLiteral",
-      "value": "1",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "type": "BacktickStringLiteral",
+        "value": "1",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -881,25 +1188,41 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "distinct": false,
-      "expressions": Array [
-        "1",
-      ],
-      "from": undefined,
-      "groupBy": undefined,
-      "having": undefined,
-      "highPriority": undefined,
-      "limit": undefined,
-      "orderBy": undefined,
-      "sqlBigResult": undefined,
-      "sqlBufferResult": undefined,
-      "sqlCalcFoundRows": undefined,
-      "sqlNoCache": undefined,
-      "sqlSmallResult": undefined,
-      "straightJoin": undefined,
-      "type": "SelectStatement",
-      "union": undefined,
-      "where": undefined,
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "distinct": false,
+        "expressions": Array [
+          Object {
+            "alias": Object {
+              "name": undefined,
+              "type": "Identifier",
+            },
+            "expression": "1",
+            "hasAsKeyword": false,
+            "type": "AliasExpression",
+          },
+        ],
+        "from": undefined,
+        "groupBy": undefined,
+        "having": undefined,
+        "highPriority": undefined,
+        "limit": undefined,
+        "orderBy": undefined,
+        "sqlBigResult": undefined,
+        "sqlBufferResult": undefined,
+        "sqlCalcFoundRows": undefined,
+        "sqlNoCache": undefined,
+        "sqlSmallResult": undefined,
+        "straightJoin": undefined,
+        "type": "SelectStatement",
+        "union": undefined,
+        "where": undefined,
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -925,8 +1248,19 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "expression": "a",
-      "type": "ParenthesisExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "expression": Object {
+          "name": "a",
+          "type": "Identifier",
+        },
+        "type": "ParenthesisExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -949,7 +1283,7 @@ Object {
 
 exports[`SELECT (f)() 1`] = `[SyntaxError: Invalid syntax.]`;
 
-exports[`SELECT * FROM "foo" 1`] = `[SyntaxError: Unexpected token.]`;
+exports[`SELECT * FROM "foo" 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT * FROM (SELECT * FROM foo) 1`] = `[SyntaxError: Missing alias for subquery.]`;
 
@@ -965,7 +1299,10 @@ Object {
     "table": Object {
       "joins": Array [],
       "table": Object {
-        "alias": "alias",
+        "alias": Object {
+          "name": "alias",
+          "type": "Identifier",
+        },
         "table": Object {
           "distinct": false,
           "expressions": Array [
@@ -977,8 +1314,14 @@ Object {
             "table": Object {
               "joins": Array [],
               "table": Object {
-                "alias": undefined,
-                "table": "foo",
+                "alias": Object {
+                  "name": undefined,
+                  "type": "Identifier",
+                },
+                "table": Object {
+                  "name": "foo",
+                  "type": "Identifier",
+                },
                 "type": "TableFactor",
               },
               "type": "TableReference",
@@ -1035,7 +1378,10 @@ Object {
     "table": Object {
       "joins": Array [],
       "table": Object {
-        "alias": undefined,
+        "alias": Object {
+          "name": undefined,
+          "type": "Identifier",
+        },
         "table": Object {
           "left": Object {
             "type": "BacktickStringLiteral",
@@ -1084,8 +1430,14 @@ Object {
     "table": Object {
       "joins": Array [],
       "table": Object {
-        "alias": undefined,
-        "table": "foo",
+        "alias": Object {
+          "name": undefined,
+          "type": "Identifier",
+        },
+        "table": Object {
+          "name": "foo",
+          "type": "Identifier",
+        },
         "type": "TableFactor",
       },
       "type": "TableReference",
@@ -1122,7 +1474,10 @@ Object {
       "joins": Array [],
       "table": Object {
         "alias": undefined,
-        "table": "foo",
+        "table": Object {
+          "name": "foo",
+          "type": "Identifier",
+        },
         "type": "TableFactor",
       },
       "type": "TableReference",
@@ -1131,13 +1486,19 @@ Object {
   },
   "groupBy": Object {
     "expressions": Array [
-      "a",
+      Object {
+        "name": "a",
+        "type": "Identifier",
+      },
     ],
     "type": "GroupByClause",
   },
   "having": Object {
     "expression": Object {
-      "left": "b",
+      "left": Object {
+        "name": "b",
+        "type": "Identifier",
+      },
       "operator": "=",
       "right": "5",
     },
@@ -1173,8 +1534,14 @@ Object {
           "joinType": "inner",
           "on": undefined,
           "table": Object {
-            "alias": undefined,
-            "table": "goo",
+            "alias": Object {
+              "name": undefined,
+              "type": "Identifier",
+            },
+            "table": Object {
+              "name": "goo",
+              "type": "Identifier",
+            },
             "type": "TableFactor",
           },
           "type": "JoinClause",
@@ -1182,7 +1549,10 @@ Object {
       ],
       "table": Object {
         "alias": undefined,
-        "table": "foo",
+        "table": Object {
+          "name": "foo",
+          "type": "Identifier",
+        },
         "type": "TableFactor",
       },
       "type": "TableReference",
@@ -1222,14 +1592,26 @@ Object {
           "on": Object {
             "expression": Object {
               "left": Object {
-                "left": "f",
-                "right": "a",
+                "left": Object {
+                  "name": "f",
+                  "type": "Identifier",
+                },
+                "right": Object {
+                  "name": "a",
+                  "type": "Identifier",
+                },
                 "type": "MemberExpression",
               },
               "operator": "=",
               "right": Object {
-                "left": "g",
-                "right": "a",
+                "left": Object {
+                  "name": "g",
+                  "type": "Identifier",
+                },
+                "right": Object {
+                  "name": "a",
+                  "type": "Identifier",
+                },
                 "type": "MemberExpression",
               },
             },
@@ -1237,7 +1619,10 @@ Object {
           },
           "table": Object {
             "alias": undefined,
-            "table": "goo",
+            "table": Object {
+              "name": "goo",
+              "type": "Identifier",
+            },
             "type": "TableFactor",
           },
           "type": "JoinClause",
@@ -1245,7 +1630,10 @@ Object {
       ],
       "table": Object {
         "alias": undefined,
-        "table": "foo",
+        "table": Object {
+          "name": "foo",
+          "type": "Identifier",
+        },
         "type": "TableFactor",
       },
       "type": "TableReference",
@@ -1287,14 +1675,26 @@ Object {
           "on": Object {
             "expression": Object {
               "left": Object {
-                "left": "foo",
-                "right": "a",
+                "left": Object {
+                  "name": "foo",
+                  "type": "Identifier",
+                },
+                "right": Object {
+                  "name": "a",
+                  "type": "Identifier",
+                },
                 "type": "MemberExpression",
               },
               "operator": "=",
               "right": Object {
-                "left": "goo",
-                "right": "a",
+                "left": Object {
+                  "name": "goo",
+                  "type": "Identifier",
+                },
+                "right": Object {
+                  "name": "a",
+                  "type": "Identifier",
+                },
                 "type": "MemberExpression",
               },
             },
@@ -1302,7 +1702,10 @@ Object {
           },
           "table": Object {
             "alias": undefined,
-            "table": "goo",
+            "table": Object {
+              "name": "goo",
+              "type": "Identifier",
+            },
             "type": "TableFactor",
           },
           "type": "JoinClause",
@@ -1310,7 +1713,10 @@ Object {
       ],
       "table": Object {
         "alias": undefined,
-        "table": "foo",
+        "table": Object {
+          "name": "foo",
+          "type": "Identifier",
+        },
         "type": "TableFactor",
       },
       "type": "TableReference",
@@ -1347,7 +1753,10 @@ Object {
       "joins": Array [],
       "table": Object {
         "alias": undefined,
-        "table": "foo",
+        "table": Object {
+          "name": "foo",
+          "type": "Identifier",
+        },
         "type": "TableFactor",
       },
       "type": "TableReference",
@@ -1369,12 +1778,23 @@ Object {
   "union": undefined,
   "where": Object {
     "expression": Object {
-      "left": "a",
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
       "operator": "=",
       "right": Object {
         "distinct": false,
         "expressions": Array [
-          "42",
+          Object {
+            "alias": Object {
+              "name": undefined,
+              "type": "Identifier",
+            },
+            "expression": "42",
+            "hasAsKeyword": false,
+            "type": "AliasExpression",
+          },
         ],
         "from": undefined,
         "groupBy": undefined,
@@ -1410,8 +1830,14 @@ Object {
     "table": Object {
       "joins": Array [],
       "table": Object {
-        "alias": "goo",
-        "table": "foo",
+        "alias": Object {
+          "name": "goo",
+          "type": "Identifier",
+        },
+        "table": Object {
+          "name": "foo",
+          "type": "Identifier",
+        },
         "type": "TableFactor",
       },
       "type": "TableReference",
@@ -1451,30 +1877,54 @@ Object {
           "on": Object {
             "expression": Object {
               "left": Object {
-                "left": "f",
-                "right": "a",
+                "left": Object {
+                  "name": "f",
+                  "type": "Identifier",
+                },
+                "right": Object {
+                  "name": "a",
+                  "type": "Identifier",
+                },
                 "type": "MemberExpression",
               },
               "operator": "=",
               "right": Object {
-                "left": "g",
-                "right": "a",
+                "left": Object {
+                  "name": "g",
+                  "type": "Identifier",
+                },
+                "right": Object {
+                  "name": "a",
+                  "type": "Identifier",
+                },
                 "type": "MemberExpression",
               },
             },
             "type": "OnClause",
           },
           "table": Object {
-            "alias": "g",
-            "table": "goo",
+            "alias": Object {
+              "name": "g",
+              "type": "Identifier",
+            },
+            "table": Object {
+              "name": "goo",
+              "type": "Identifier",
+            },
             "type": "TableFactor",
           },
           "type": "JoinClause",
         },
       ],
       "table": Object {
-        "alias": "f",
-        "table": "foo",
+        "alias": Object {
+          "name": "f",
+          "type": "Identifier",
+        },
+        "table": Object {
+          "name": "foo",
+          "type": "Identifier",
+        },
         "type": "TableFactor",
       },
       "type": "TableReference",
@@ -1510,8 +1960,14 @@ Object {
     "table": Object {
       "joins": Array [],
       "table": Object {
-        "alias": "goo",
-        "table": "foo",
+        "alias": Object {
+          "name": "goo",
+          "type": "Identifier",
+        },
+        "table": Object {
+          "name": "foo",
+          "type": "Identifier",
+        },
         "type": "TableFactor",
       },
       "type": "TableReference",
@@ -1549,8 +2005,14 @@ Object {
         Object {
           "joins": Array [],
           "table": Object {
-            "alias": undefined,
-            "table": "foo",
+            "alias": Object {
+              "name": undefined,
+              "type": "Identifier",
+            },
+            "table": Object {
+              "name": "foo",
+              "type": "Identifier",
+            },
             "type": "TableFactor",
           },
           "type": "TableReference",
@@ -1558,8 +2020,14 @@ Object {
         Object {
           "joins": Array [],
           "table": Object {
-            "alias": undefined,
-            "table": "goo",
+            "alias": Object {
+              "name": undefined,
+              "type": "Identifier",
+            },
+            "table": Object {
+              "name": "goo",
+              "type": "Identifier",
+            },
             "type": "TableFactor",
           },
           "type": "TableReference",
@@ -1598,10 +2066,19 @@ Object {
     "table": Object {
       "joins": Array [],
       "table": Object {
-        "alias": undefined,
+        "alias": Object {
+          "name": undefined,
+          "type": "Identifier",
+        },
         "table": Object {
-          "left": "foo",
-          "right": "goo",
+          "left": Object {
+            "name": "foo",
+            "type": "Identifier",
+          },
+          "right": Object {
+            "name": "goo",
+            "type": "Identifier",
+          },
           "type": "MemberExpression",
         },
         "type": "TableFactor",
@@ -1701,7 +2178,10 @@ Object {
   "highPriority": undefined,
   "limit": undefined,
   "orderBy": Object {
-    "columnName": "a",
+    "columnName": Object {
+      "name": "a",
+      "type": "Identifier",
+    },
     "type": "OrderByClause",
   },
   "sqlBigResult": undefined,
@@ -1723,13 +2203,21 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "left": Object {
-        "operand": "1",
-        "operator": "+",
-        "type": "UnaryExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
       },
-      "operator": "-",
-      "right": "2",
+      "expression": Object {
+        "left": Object {
+          "operand": "1",
+          "operator": "+",
+          "type": "UnaryExpression",
+        },
+        "operator": "-",
+        "right": "2",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -1755,21 +2243,29 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "operand": Object {
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
         "operand": Object {
           "operand": Object {
-            "operand": "1",
-            "operator": "~",
+            "operand": Object {
+              "operand": "1",
+              "operator": "~",
+              "type": "UnaryExpression",
+            },
+            "operator": "!",
             "type": "UnaryExpression",
           },
-          "operator": "!",
+          "operator": "-",
           "type": "UnaryExpression",
         },
-        "operator": "-",
+        "operator": "+",
         "type": "UnaryExpression",
       },
-      "operator": "+",
-      "type": "UnaryExpression",
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -1795,15 +2291,23 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "left": Object {
-        "type": "BacktickStringLiteral",
-        "value": "a",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
       },
-      "right": Object {
-        "type": "BacktickStringLiteral",
-        "value": "b",
+      "expression": Object {
+        "left": Object {
+          "type": "BacktickStringLiteral",
+          "value": "a",
+        },
+        "right": Object {
+          "type": "BacktickStringLiteral",
+          "value": "b",
+        },
+        "type": "MemberExpression",
       },
-      "type": "MemberExpression",
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -1829,12 +2333,20 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "arguments": Array [],
-      "callee": Object {
-        "type": "BacktickStringLiteral",
-        "value": "foo",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
       },
-      "type": "CallExpression",
+      "expression": Object {
+        "arguments": Array [],
+        "callee": Object {
+          "type": "BacktickStringLiteral",
+          "value": "foo",
+        },
+        "type": "CallExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -1860,19 +2372,27 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "arguments": Array [],
-      "callee": Object {
-        "left": Object {
-          "type": "BacktickStringLiteral",
-          "value": "foo",
-        },
-        "right": Object {
-          "type": "BacktickStringLiteral",
-          "value": "bar",
-        },
-        "type": "MemberExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
       },
-      "type": "CallExpression",
+      "expression": Object {
+        "arguments": Array [],
+        "callee": Object {
+          "left": Object {
+            "type": "BacktickStringLiteral",
+            "value": "foo",
+          },
+          "right": Object {
+            "type": "BacktickStringLiteral",
+            "value": "bar",
+          },
+          "type": "MemberExpression",
+        },
+        "type": "CallExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -1898,13 +2418,27 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "operand": Object {
-        "left": "a",
-        "right": "b",
-        "type": "MemberExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
       },
-      "operator": "-",
-      "type": "UnaryExpression",
+      "expression": Object {
+        "operand": Object {
+          "left": Object {
+            "name": "a",
+            "type": "Identifier",
+          },
+          "right": Object {
+            "name": "b",
+            "type": "Identifier",
+          },
+          "type": "MemberExpression",
+        },
+        "operator": "-",
+        "type": "UnaryExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -1951,7 +2485,15 @@ Object {
   "union": Object {
     "distinct": false,
     "expressions": Array [
-      "2",
+      Object {
+        "alias": Object {
+          "name": undefined,
+          "type": "Identifier",
+        },
+        "expression": "2",
+        "hasAsKeyword": false,
+        "type": "AliasExpression",
+      },
     ],
     "from": undefined,
     "groupBy": undefined,
@@ -2013,7 +2555,15 @@ Object {
     "union": Object {
       "distinct": false,
       "expressions": Array [
-        "3",
+        Object {
+          "alias": Object {
+            "name": undefined,
+            "type": "Identifier",
+          },
+          "expression": "3",
+          "hasAsKeyword": false,
+          "type": "AliasExpression",
+        },
       ],
       "from": undefined,
       "groupBy": undefined,
@@ -2053,16 +2603,30 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "left": "2",
-      "operator": "*",
-      "right": Object {
-        "expression": Object {
-          "left": "a",
-          "operator": "%",
-          "right": "b",
-        },
-        "type": "ParenthesisExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
       },
+      "expression": Object {
+        "left": "2",
+        "operator": "*",
+        "right": Object {
+          "expression": Object {
+            "left": Object {
+              "name": "a",
+              "type": "Identifier",
+            },
+            "operator": "%",
+            "right": Object {
+              "name": "b",
+              "type": "Identifier",
+            },
+          },
+          "type": "ParenthesisExpression",
+        },
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2088,7 +2652,15 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "type": "WildcardExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "type": "WildcardExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2114,9 +2686,17 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "arguments": Array [],
-      "callee": "CURRENT_DATE",
-      "type": "CallExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "arguments": Array [],
+        "callee": "CURRENT_DATE",
+        "type": "CallExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2142,7 +2722,15 @@ Object {
   "distinct": true,
   "expressions": Array [
     Object {
-      "type": "WildcardExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "type": "WildcardExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2168,7 +2756,15 @@ Object {
   "distinct": true,
   "expressions": Array [
     Object {
-      "type": "WildcardExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "type": "WildcardExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2194,7 +2790,15 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "type": "WildcardExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "type": "WildcardExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2220,7 +2824,15 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "type": "WildcardExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "type": "WildcardExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2246,7 +2858,15 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "type": "WildcardExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "type": "WildcardExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2272,7 +2892,15 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "type": "WildcardExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "type": "WildcardExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2298,7 +2926,15 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "type": "WildcardExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "type": "WildcardExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2324,7 +2960,15 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "type": "WildcardExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "type": "WildcardExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2350,7 +2994,15 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "type": "WildcardExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "type": "WildcardExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2380,7 +3032,10 @@ Object {
         "type": "StringLiteral",
         "value": "aa",
       },
-      "expression": "a",
+      "expression": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
       "hasAsKeyword": false,
       "type": "AliasExpression",
     },
@@ -2408,17 +3063,37 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "left": Object {
-        "left": "a",
-        "operator": "+",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "left": Object {
+          "left": Object {
+            "name": "a",
+            "type": "Identifier",
+          },
+          "operator": "+",
+          "right": Object {
+            "left": Object {
+              "name": "b",
+              "type": "Identifier",
+            },
+            "operator": "*",
+            "right": Object {
+              "name": "c",
+              "type": "Identifier",
+            },
+          },
+        },
+        "operator": "/",
         "right": Object {
-          "left": "b",
-          "operator": "*",
-          "right": "c",
+          "name": "d",
+          "type": "Identifier",
         },
       },
-      "operator": "/",
-      "right": "d",
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2444,13 +3119,30 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "left": Object {
-        "left": "a",
-        "operator": "+",
-        "right": "b",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
       },
-      "operator": "+",
-      "right": "c",
+      "expression": Object {
+        "left": Object {
+          "left": Object {
+            "name": "a",
+            "type": "Identifier",
+          },
+          "operator": "+",
+          "right": Object {
+            "name": "b",
+            "type": "Identifier",
+          },
+        },
+        "operator": "+",
+        "right": Object {
+          "name": "c",
+          "type": "Identifier",
+        },
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2476,13 +3168,30 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "left": Object {
-        "left": "a",
-        "operator": "+",
-        "right": "b",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
       },
-      "operator": "-",
-      "right": "c",
+      "expression": Object {
+        "left": Object {
+          "left": Object {
+            "name": "a",
+            "type": "Identifier",
+          },
+          "operator": "+",
+          "right": Object {
+            "name": "b",
+            "type": "Identifier",
+          },
+        },
+        "operator": "-",
+        "right": Object {
+          "name": "c",
+          "type": "Identifier",
+        },
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2508,9 +3217,23 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "left": "a",
-      "operator": "+",
-      "right": "b",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "left": Object {
+          "name": "a",
+          "type": "Identifier",
+        },
+        "operator": "+",
+        "right": Object {
+          "name": "b",
+          "type": "Identifier",
+        },
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2540,7 +3263,10 @@ Object {
         "type": "BacktickStringLiteral",
         "value": "aa",
       },
-      "expression": "a",
+      "expression": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
       "hasAsKeyword": false,
       "type": "AliasExpression",
     },
@@ -2567,14 +3293,20 @@ exports[`SELECT a FROM b WHERE m = 6; 1`] = `
 Object {
   "distinct": false,
   "expressions": Array [
-    "a",
+    Object {
+      "name": "a",
+      "type": "Identifier",
+    },
   ],
   "from": Object {
     "table": Object {
       "joins": Array [],
       "table": Object {
         "alias": undefined,
-        "table": "b",
+        "table": Object {
+          "name": "b",
+          "type": "Identifier",
+        },
         "type": "TableFactor",
       },
       "type": "TableReference",
@@ -2596,7 +3328,10 @@ Object {
   "union": undefined,
   "where": Object {
     "expression": Object {
-      "left": "m",
+      "left": Object {
+        "name": "m",
+        "type": "Identifier",
+      },
       "operator": "=",
       "right": "6",
     },
@@ -2610,8 +3345,14 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": "aa",
-      "expression": "a",
+      "alias": Object {
+        "name": "aa",
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
       "hasAsKeyword": false,
       "type": "AliasExpression",
     },
@@ -2653,18 +3394,29 @@ Object {
 }
 `;
 
-exports[`SELECT a."b" 1`] = `[SyntaxError: Unexpected token.]`;
+exports[`SELECT a."b" 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT a.* 1`] = `
 Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "left": "a",
-      "right": Object {
-        "type": "WildcardExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
       },
-      "type": "MemberExpression",
+      "expression": Object {
+        "left": Object {
+          "name": "a",
+          "type": "Identifier",
+        },
+        "right": Object {
+          "type": "WildcardExpression",
+        },
+        "type": "MemberExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2690,7 +3442,10 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "left": "a",
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
       "right": Object {
         "type": "WildcardExpression",
       },
@@ -2701,8 +3456,14 @@ Object {
     "table": Object {
       "joins": Array [],
       "table": Object {
-        "alias": undefined,
-        "table": "foo",
+        "alias": Object {
+          "name": undefined,
+          "type": "Identifier",
+        },
+        "table": Object {
+          "name": "foo",
+          "type": "Identifier",
+        },
         "type": "TableFactor",
       },
       "type": "TableReference",
@@ -2731,9 +3492,23 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "left": "a",
-      "right": "b",
-      "type": "MemberExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "left": Object {
+          "name": "a",
+          "type": "Identifier",
+        },
+        "right": Object {
+          "name": "b",
+          "type": "Identifier",
+        },
+        "type": "MemberExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2791,17 +3566,34 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "arguments": Array [
-        Object {
-          "arguments": Array [
-            "a",
-          ],
-          "callee": "g",
-          "type": "CallExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "arguments": Array [
+          Object {
+            "arguments": Array [
+              Object {
+                "name": "a",
+                "type": "Identifier",
+              },
+            ],
+            "callee": Object {
+              "name": "g",
+              "type": "Identifier",
+            },
+            "type": "CallExpression",
+          },
+        ],
+        "callee": Object {
+          "name": "f",
+          "type": "Identifier",
         },
-      ],
-      "callee": "f",
-      "type": "CallExpression",
+        "type": "CallExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2827,13 +3619,27 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "arguments": Array [],
-      "callee": Object {
-        "left": "f",
-        "right": "g",
-        "type": "MemberExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
       },
-      "type": "CallExpression",
+      "expression": Object {
+        "arguments": Array [],
+        "callee": Object {
+          "left": Object {
+            "name": "f",
+            "type": "Identifier",
+          },
+          "right": Object {
+            "name": "g",
+            "type": "Identifier",
+          },
+          "type": "MemberExpression",
+        },
+        "type": "CallExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2861,24 +3667,66 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "arguments": Array [],
-      "callee": "fn",
-      "type": "CallExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "arguments": Array [],
+        "callee": Object {
+          "name": "fn",
+          "type": "Identifier",
+        },
+        "type": "CallExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
     Object {
-      "arguments": Array [
-        "a",
-      ],
-      "callee": "fn",
-      "type": "CallExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "arguments": Array [
+          Object {
+            "name": "a",
+            "type": "Identifier",
+          },
+        ],
+        "callee": Object {
+          "name": "fn",
+          "type": "Identifier",
+        },
+        "type": "CallExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
     Object {
-      "arguments": Array [
-        "a",
-        "b",
-      ],
-      "callee": "fn",
-      "type": "CallExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "arguments": Array [
+          Object {
+            "name": "a",
+            "type": "Identifier",
+          },
+          Object {
+            "name": "b",
+            "type": "Identifier",
+          },
+        ],
+        "callee": Object {
+          "name": "fn",
+          "type": "Identifier",
+        },
+        "type": "CallExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2904,9 +3752,20 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "arguments": Array [],
-      "callee": "max",
-      "type": "CallExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "arguments": Array [],
+        "callee": Object {
+          "name": "max",
+          "type": "Identifier",
+        },
+        "type": "CallExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2932,9 +3791,20 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "arguments": Array [],
-      "callee": "max",
-      "type": "CallExpression",
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "arguments": Array [],
+        "callee": Object {
+          "name": "max",
+          "type": "Identifier",
+        },
+        "type": "CallExpression",
+      },
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
     },
   ],
   "from": undefined,
@@ -2961,16 +3831,38 @@ exports[`SELECT null, true, current_timestamp FROM a 1`] = `
 Object {
   "distinct": false,
   "expressions": Array [
-    "null",
-    "true",
+    Object {
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": "null",
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
+    },
+    Object {
+      "alias": Object {
+        "name": undefined,
+        "type": "Identifier",
+      },
+      "expression": "true",
+      "hasAsKeyword": false,
+      "type": "AliasExpression",
+    },
     "current_timestamp",
   ],
   "from": Object {
     "table": Object {
       "joins": Array [],
       "table": Object {
-        "alias": undefined,
-        "table": "a",
+        "alias": Object {
+          "name": undefined,
+          "type": "Identifier",
+        },
+        "table": Object {
+          "name": "a",
+          "type": "Identifier",
+        },
         "type": "TableFactor",
       },
       "type": "TableReference",
@@ -2999,8 +3891,14 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": "tt",
-      "expression": "t",
+      "alias": Object {
+        "name": "tt",
+        "type": "Identifier",
+      },
+      "expression": Object {
+        "name": "t",
+        "type": "Identifier",
+      },
       "hasAsKeyword": true,
       "type": "AliasExpression",
     },
@@ -3036,7 +3934,10 @@ Object {
   "set": Object {
     "expressions": Array [
       Object {
-        "left": "a",
+        "left": Object {
+          "name": "a",
+          "type": "Identifier",
+        },
         "operator": "=",
         "right": "1",
       },
@@ -3050,7 +3951,10 @@ Object {
         "on": undefined,
         "table": Object {
           "alias": undefined,
-          "table": "Goo",
+          "table": Object {
+            "name": "Goo",
+            "type": "Identifier",
+          },
           "type": "TableFactor",
         },
         "type": "JoinClause",
@@ -3058,7 +3962,10 @@ Object {
     ],
     "table": Object {
       "alias": undefined,
-      "table": "Foo",
+      "table": Object {
+        "name": "Foo",
+        "type": "Identifier",
+      },
       "type": "TableFactor",
     },
     "type": "TableReference",
@@ -3081,7 +3988,10 @@ Object {
   "set": Object {
     "expressions": Array [
       Object {
-        "left": "a",
+        "left": Object {
+          "name": "a",
+          "type": "Identifier",
+        },
         "operator": "=",
         "right": "1",
       },
@@ -3092,7 +4002,10 @@ Object {
     "joins": Array [],
     "table": Object {
       "alias": undefined,
-      "table": "Foo",
+      "table": Object {
+        "name": "Foo",
+        "type": "Identifier",
+      },
       "type": "TableFactor",
     },
     "type": "TableReference",
@@ -3114,13 +4027,19 @@ Object {
   },
   "lowPriority": undefined,
   "orderBy": Object {
-    "columnName": "c",
+    "columnName": Object {
+      "name": "c",
+      "type": "Identifier",
+    },
     "type": "OrderByClause",
   },
   "set": Object {
     "expressions": Array [
       Object {
-        "left": "a",
+        "left": Object {
+          "name": "a",
+          "type": "Identifier",
+        },
         "operator": "=",
         "right": "1",
       },
@@ -3131,7 +4050,10 @@ Object {
     "joins": Array [],
     "table": Object {
       "alias": undefined,
-      "table": "Foo",
+      "table": Object {
+        "name": "Foo",
+        "type": "Identifier",
+      },
       "type": "TableFactor",
     },
     "type": "TableReference",
@@ -3139,7 +4061,10 @@ Object {
   "type": "UpdateStatement",
   "where": Object {
     "expression": Object {
-      "left": "b",
+      "left": Object {
+        "name": "b",
+        "type": "Identifier",
+      },
       "operator": "=",
       "right": "2",
     },
@@ -3157,7 +4082,10 @@ Object {
   "set": Object {
     "expressions": Array [
       Object {
-        "left": "a",
+        "left": Object {
+          "name": "a",
+          "type": "Identifier",
+        },
         "operator": "=",
         "right": "5",
       },
@@ -3168,7 +4096,10 @@ Object {
     "joins": Array [],
     "table": Object {
       "alias": undefined,
-      "table": "Foo",
+      "table": Object {
+        "name": "Foo",
+        "type": "Identifier",
+      },
       "type": "TableFactor",
     },
     "type": "TableReference",
@@ -3187,12 +4118,18 @@ Object {
   "set": Object {
     "expressions": Array [
       Object {
-        "left": "a",
+        "left": Object {
+          "name": "a",
+          "type": "Identifier",
+        },
         "operator": "=",
         "right": "5",
       },
       Object {
-        "left": "b",
+        "left": Object {
+          "name": "b",
+          "type": "Identifier",
+        },
         "operator": "=",
         "right": "6",
       },
@@ -3203,7 +4140,10 @@ Object {
     "joins": Array [],
     "table": Object {
       "alias": undefined,
-      "table": "Foo",
+      "table": Object {
+        "name": "Foo",
+        "type": "Identifier",
+      },
       "type": "TableFactor",
     },
     "type": "TableReference",
@@ -3228,9 +4168,15 @@ Object {
       Object {
         "left": Object {
           "arguments": Array [
-            "a",
+            Object {
+              "name": "a",
+              "type": "Identifier",
+            },
           ],
-          "callee": "f",
+          "callee": Object {
+            "name": "f",
+            "type": "Identifier",
+          },
           "type": "CallExpression",
         },
         "operator": "=",
@@ -3243,7 +4189,10 @@ Object {
     "joins": Array [],
     "table": Object {
       "alias": undefined,
-      "table": "Foo",
+      "table": Object {
+        "name": "Foo",
+        "type": "Identifier",
+      },
       "type": "TableFactor",
     },
     "type": "TableReference",
@@ -3262,7 +4211,10 @@ Object {
   "set": Object {
     "expressions": Array [
       Object {
-        "left": "a",
+        "left": Object {
+          "name": "a",
+          "type": "Identifier",
+        },
         "operator": "=",
         "right": "1",
       },
@@ -3274,8 +4226,14 @@ Object {
       Object {
         "joins": Array [],
         "table": Object {
-          "alias": undefined,
-          "table": "Foo",
+          "alias": Object {
+            "name": undefined,
+            "type": "Identifier",
+          },
+          "table": Object {
+            "name": "Foo",
+            "type": "Identifier",
+          },
           "type": "TableFactor",
         },
         "type": "TableReference",
@@ -3284,7 +4242,10 @@ Object {
         "joins": Array [],
         "table": Object {
           "alias": undefined,
-          "table": "Goo",
+          "table": Object {
+            "name": "Goo",
+            "type": "Identifier",
+          },
           "type": "TableFactor",
         },
         "type": "TableReference",
@@ -3306,7 +4267,10 @@ Object {
   "set": Object {
     "expressions": Array [
       Object {
-        "left": "a",
+        "left": Object {
+          "name": "a",
+          "type": "Identifier",
+        },
         "operator": "=",
         "right": "1",
       },
@@ -3317,7 +4281,10 @@ Object {
     "joins": Array [],
     "table": Object {
       "alias": undefined,
-      "table": "Foo",
+      "table": Object {
+        "name": "Foo",
+        "type": "Identifier",
+      },
       "type": "TableFactor",
     },
     "type": "TableReference",
@@ -3336,7 +4303,10 @@ Object {
   "set": Object {
     "expressions": Array [
       Object {
-        "left": "a",
+        "left": Object {
+          "name": "a",
+          "type": "Identifier",
+        },
         "operator": "=",
         "right": "1",
       },
@@ -3347,7 +4317,10 @@ Object {
     "joins": Array [],
     "table": Object {
       "alias": undefined,
-      "table": "Foo",
+      "table": Object {
+        "name": "Foo",
+        "type": "Identifier",
+      },
       "type": "TableFactor",
     },
     "type": "TableReference",
