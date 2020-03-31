@@ -2100,7 +2100,9 @@ exports[`SSSSS foo FROM b 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`UPDATE Foo JOIN Goo SET a = 1 1`] = `
 Object {
+  "ignore": undefined,
   "limit": undefined,
+  "lowPriority": undefined,
   "orderBy": undefined,
   "set": Object {
     "expressions": Array [
@@ -2139,10 +2141,12 @@ Object {
 
 exports[`UPDATE Foo SET a = 1 LIMIT 1 1`] = `
 Object {
+  "ignore": undefined,
   "limit": Object {
     "count": "1",
     "type": "LimitClause",
   },
+  "lowPriority": undefined,
   "orderBy": undefined,
   "set": Object {
     "expressions": Array [
@@ -2172,10 +2176,12 @@ exports[`UPDATE Foo SET a = 1 LIMIT 1, 1 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4 1`] = `
 Object {
+  "ignore": undefined,
   "limit": Object {
     "count": "4",
     "type": "LimitClause",
   },
+  "lowPriority": undefined,
   "orderBy": Object {
     "columnName": "c",
     "type": "OrderByClause",
@@ -2213,7 +2219,9 @@ Object {
 
 exports[`UPDATE Foo SET a = 5 1`] = `
 Object {
+  "ignore": undefined,
   "limit": undefined,
+  "lowPriority": undefined,
   "orderBy": undefined,
   "set": Object {
     "expressions": Array [
@@ -2241,7 +2249,9 @@ Object {
 
 exports[`UPDATE Foo SET a = 5, b = 6 1`] = `
 Object {
+  "ignore": undefined,
   "limit": undefined,
+  "lowPriority": undefined,
   "orderBy": undefined,
   "set": Object {
     "expressions": Array [
@@ -2278,7 +2288,9 @@ exports[`UPDATE Foo SET a = 6 b 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`UPDATE Foo SET f(a) = 5 1`] = `
 Object {
+  "ignore": undefined,
   "limit": undefined,
+  "lowPriority": undefined,
   "orderBy": undefined,
   "set": Object {
     "expressions": Array [
@@ -2292,6 +2304,110 @@ Object {
         },
         "operator": "=",
         "right": "5",
+      },
+    ],
+    "type": "SetClause",
+  },
+  "table": Object {
+    "joins": Array [],
+    "table": Object {
+      "alias": undefined,
+      "table": "Foo",
+      "type": "TableFactor",
+    },
+    "type": "TableReference",
+  },
+  "type": "UpdateStatement",
+  "where": undefined,
+}
+`;
+
+exports[`UPDATE Foo, Goo SET a = 1 1`] = `
+Object {
+  "ignore": undefined,
+  "limit": undefined,
+  "lowPriority": undefined,
+  "orderBy": undefined,
+  "set": Object {
+    "expressions": Array [
+      Object {
+        "left": "a",
+        "operator": "=",
+        "right": "1",
+      },
+    ],
+    "type": "SetClause",
+  },
+  "table": Object {
+    "tables": Array [
+      Object {
+        "joins": Array [],
+        "table": Object {
+          "alias": undefined,
+          "table": "Foo",
+          "type": "TableFactor",
+        },
+        "type": "TableReference",
+      },
+      Object {
+        "joins": Array [],
+        "table": Object {
+          "alias": undefined,
+          "table": "Goo",
+          "type": "TableFactor",
+        },
+        "type": "TableReference",
+      },
+    ],
+    "type": "TableReferenceList",
+  },
+  "type": "UpdateStatement",
+  "where": undefined,
+}
+`;
+
+exports[`UPDATE IGNORE Foo SET a = 1 1`] = `
+Object {
+  "ignore": "IGNORE",
+  "limit": undefined,
+  "lowPriority": undefined,
+  "orderBy": undefined,
+  "set": Object {
+    "expressions": Array [
+      Object {
+        "left": "a",
+        "operator": "=",
+        "right": "1",
+      },
+    ],
+    "type": "SetClause",
+  },
+  "table": Object {
+    "joins": Array [],
+    "table": Object {
+      "alias": undefined,
+      "table": "Foo",
+      "type": "TableFactor",
+    },
+    "type": "TableReference",
+  },
+  "type": "UpdateStatement",
+  "where": undefined,
+}
+`;
+
+exports[`UPDATE LOW_PRIORITY Foo SET a = 1 1`] = `
+Object {
+  "ignore": undefined,
+  "limit": undefined,
+  "lowPriority": "LOW_PRIORITY",
+  "orderBy": undefined,
+  "set": Object {
+    "expressions": Array [
+      Object {
+        "left": "a",
+        "operator": "=",
+        "right": "1",
       },
     ],
     "type": "SetClause",
