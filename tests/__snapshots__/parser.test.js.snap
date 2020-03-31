@@ -5,6 +5,7 @@ SELECT
   a
  1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     "a",
   ],
@@ -593,6 +594,7 @@ Object {
   "onDuplicateKeyUpdate": undefined,
   "priority": undefined,
   "select": Object {
+    "distinct": false,
     "expressions": Array [
       "c",
       "d",
@@ -822,6 +824,7 @@ Object {
 
 exports[`SELECT "1", '1', \`1\` 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "type": "StringLiteral",
@@ -853,8 +856,10 @@ exports[`SELECT "foo"() 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT (SELECT 1) 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
+      "distinct": false,
       "expressions": Array [
         "1",
       ],
@@ -881,6 +886,7 @@ Object {
 
 exports[`SELECT (a) 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "expression": "a",
@@ -906,6 +912,7 @@ exports[`SELECT * FROM (SELECT * FROM foo) 1`] = `[SyntaxError: Missing alias fo
 
 exports[`SELECT * FROM (SELECT * FROM foo) alias 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "type": "WildcardExpression",
@@ -917,6 +924,7 @@ Object {
       "table": Object {
         "alias": "alias",
         "table": Object {
+          "distinct": false,
           "expressions": Array [
             Object {
               "type": "WildcardExpression",
@@ -960,6 +968,7 @@ Object {
 
 exports[`SELECT * FROM \`foo\`.\`goo\` 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "type": "WildcardExpression",
@@ -1001,6 +1010,7 @@ exports[`SELECT * FROM f.g.h 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT * FROM foo 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "type": "WildcardExpression",
@@ -1030,6 +1040,7 @@ Object {
 
 exports[`SELECT * FROM foo GROUP BY a HAVING b=5 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "type": "WildcardExpression",
@@ -1071,6 +1082,7 @@ Object {
 
 exports[`SELECT * FROM foo JOIN goo 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "type": "WildcardExpression",
@@ -1111,6 +1123,7 @@ Object {
 
 exports[`SELECT * FROM foo JOIN goo ON f.a = g.a 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "type": "WildcardExpression",
@@ -1168,6 +1181,7 @@ exports[`SELECT * FROM foo LEFT JOIN goo 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "type": "WildcardExpression",
@@ -1223,6 +1237,7 @@ Object {
 
 exports[`SELECT * FROM foo WHERE a = (SELECT 42) 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "type": "WildcardExpression",
@@ -1251,6 +1266,7 @@ Object {
       "left": "a",
       "operator": "=",
       "right": Object {
+        "distinct": false,
         "expressions": Array [
           "42",
         ],
@@ -1271,6 +1287,7 @@ Object {
 
 exports[`SELECT * FROM foo as goo 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "type": "WildcardExpression",
@@ -1300,6 +1317,7 @@ Object {
 
 exports[`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "type": "WildcardExpression",
@@ -1355,6 +1373,7 @@ Object {
 
 exports[`SELECT * FROM foo goo 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "type": "WildcardExpression",
@@ -1384,6 +1403,7 @@ Object {
 
 exports[`SELECT * FROM foo, goo 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "type": "WildcardExpression",
@@ -1427,6 +1447,7 @@ Object {
 
 exports[`SELECT * FROM foo.goo 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "type": "WildcardExpression",
@@ -1460,6 +1481,7 @@ Object {
 
 exports[`SELECT * ORDER BY a 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "type": "WildcardExpression",
@@ -1483,6 +1505,7 @@ exports[`SELECT *.a 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT + 1 - 2 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "left": Object {
@@ -1507,6 +1530,7 @@ Object {
 
 exports[`SELECT +-!~1 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "operand": Object {
@@ -1539,6 +1563,7 @@ Object {
 
 exports[`SELECT \`a\`.\`b\` 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "left": Object {
@@ -1565,6 +1590,7 @@ Object {
 
 exports[`SELECT \`foo\`() 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "arguments": Array [],
@@ -1588,6 +1614,7 @@ Object {
 
 exports[`SELECT \`foo\`.\`bar\`() 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "arguments": Array [],
@@ -1618,6 +1645,7 @@ Object {
 
 exports[`SELECT - a.b 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "operand": Object {
@@ -1646,6 +1674,7 @@ exports[`SELECT 1 SELECT 2 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT 1 UNION SELECT 2 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     "1",
   ],
@@ -1656,6 +1685,7 @@ Object {
   "orderBy": undefined,
   "type": "SelectStatement",
   "union": Object {
+    "distinct": false,
     "expressions": Array [
       "2",
     ],
@@ -1674,6 +1704,7 @@ Object {
 
 exports[`SELECT 1 UNION SELECT 2 UNION SELECT 3 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     "1",
   ],
@@ -1684,6 +1715,7 @@ Object {
   "orderBy": undefined,
   "type": "SelectStatement",
   "union": Object {
+    "distinct": false,
     "expressions": Array [
       "2",
     ],
@@ -1694,6 +1726,7 @@ Object {
     "orderBy": undefined,
     "type": "SelectStatement",
     "union": Object {
+      "distinct": false,
       "expressions": Array [
         "3",
       ],
@@ -1725,6 +1758,7 @@ Object {
 
 exports[`SELECT 2 * (a % b) 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "left": "2",
@@ -1750,8 +1784,28 @@ Object {
 }
 `;
 
+exports[`SELECT ALL * 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "type": "WildcardExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
 exports[`SELECT CURRENT_DATE() 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "arguments": Array [],
@@ -1770,8 +1824,47 @@ Object {
 }
 `;
 
+exports[`SELECT DISTINCT * 1`] = `
+Object {
+  "distinct": true,
+  "expressions": Array [
+    Object {
+      "type": "WildcardExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT DISTINCTROW * 1`] = `
+Object {
+  "distinct": true,
+  "expressions": Array [
+    Object {
+      "type": "WildcardExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
 exports[`SELECT a "aa" 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "alias": Object {
@@ -1796,6 +1889,7 @@ Object {
 
 exports[`SELECT a + b * c / d 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "left": Object {
@@ -1824,6 +1918,7 @@ Object {
 
 exports[`SELECT a + b + c 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "left": Object {
@@ -1848,6 +1943,7 @@ Object {
 
 exports[`SELECT a + b - c 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "left": Object {
@@ -1872,6 +1968,7 @@ Object {
 
 exports[`SELECT a + b 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "left": "a",
@@ -1892,6 +1989,7 @@ Object {
 
 exports[`SELECT a \`aa\` 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "alias": Object {
@@ -1916,6 +2014,7 @@ Object {
 
 exports[`SELECT a FROM b WHERE m = 6; 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     "a",
   ],
@@ -1950,6 +2049,7 @@ Object {
 
 exports[`SELECT a aa 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "alias": "aa",
@@ -1992,6 +2092,7 @@ exports[`SELECT a."b" 1`] = `[SyntaxError: Unexpected token.]`;
 
 exports[`SELECT a.* 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "left": "a",
@@ -2014,6 +2115,7 @@ Object {
 
 exports[`SELECT a.* FROM foo 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "left": "a",
@@ -2047,6 +2149,7 @@ Object {
 
 exports[`SELECT a.b 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "left": "a",
@@ -2099,6 +2202,7 @@ exports[`SELECT f().g 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT f(g(a)) 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "arguments": Array [
@@ -2127,6 +2231,7 @@ Object {
 
 exports[`SELECT f.g() 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "arguments": Array [],
@@ -2153,6 +2258,7 @@ exports[`SELECT f.g.h() 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT fn(), fn(a), fn(a, b) 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "arguments": Array [],
@@ -2188,6 +2294,7 @@ Object {
 
 exports[`SELECT max () 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "arguments": Array [],
@@ -2208,6 +2315,7 @@ Object {
 
 exports[`SELECT max() 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "arguments": Array [],
@@ -2230,6 +2338,7 @@ exports[`SELECT not FROM a 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT null, true, current_timestamp FROM a 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     "null",
     "true",
@@ -2259,6 +2368,7 @@ Object {
 
 exports[`SELECT t as tt 1`] = `
 Object {
+  "distinct": false,
   "expressions": Array [
     Object {
       "alias": "tt",
