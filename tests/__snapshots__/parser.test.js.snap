@@ -493,11 +493,36 @@ Object {
 }
 `;
 
+exports[`INSERT DELAYED foo VALUES (1) 1`] = `[SyntaxError: Unexpected token.]`;
+
+exports[`INSERT HIGH_PRIORITY foo VALUES (1) 1`] = `
+Object {
+  "columnNames": undefined,
+  "ignore": undefined,
+  "onDuplicateKeyUpdate": undefined,
+  "priority": "HIGH_PRIORITY",
+  "select": undefined,
+  "set": undefined,
+  "table": "foo",
+  "type": "InsertStatement",
+  "values": Object {
+    "expressions": Array [
+      Object {
+        "expression": "1",
+        "type": "ParenthesisExpression",
+      },
+    ],
+    "type": "ValuesClause",
+  },
+}
+`;
+
 exports[`INSERT IGNORE foo VALUES (1) 1`] = `
 Object {
   "columnNames": undefined,
   "ignore": "IGNORE",
   "onDuplicateKeyUpdate": undefined,
+  "priority": undefined,
   "select": undefined,
   "set": undefined,
   "table": "foo",
@@ -519,6 +544,29 @@ Object {
   "columnNames": undefined,
   "ignore": undefined,
   "onDuplicateKeyUpdate": undefined,
+  "priority": undefined,
+  "select": undefined,
+  "set": undefined,
+  "table": "foo",
+  "type": "InsertStatement",
+  "values": Object {
+    "expressions": Array [
+      Object {
+        "expression": "1",
+        "type": "ParenthesisExpression",
+      },
+    ],
+    "type": "ValuesClause",
+  },
+}
+`;
+
+exports[`INSERT LOW_PRIORITY foo VALUES (1) 1`] = `
+Object {
+  "columnNames": undefined,
+  "ignore": undefined,
+  "onDuplicateKeyUpdate": undefined,
+  "priority": "LOW_PRIORITY",
   "select": undefined,
   "set": undefined,
   "table": "foo",
@@ -543,6 +591,7 @@ Object {
   ],
   "ignore": undefined,
   "onDuplicateKeyUpdate": undefined,
+  "priority": undefined,
   "select": Object {
     "expressions": Array [
       "c",
@@ -583,6 +632,7 @@ Object {
   ],
   "ignore": undefined,
   "onDuplicateKeyUpdate": undefined,
+  "priority": undefined,
   "select": undefined,
   "set": undefined,
   "table": "foo",
@@ -614,6 +664,7 @@ Object {
   "columnNames": undefined,
   "ignore": undefined,
   "onDuplicateKeyUpdate": undefined,
+  "priority": undefined,
   "select": undefined,
   "set": Object {
     "asignments": Array [
@@ -641,6 +692,7 @@ Object {
   "columnNames": undefined,
   "ignore": undefined,
   "onDuplicateKeyUpdate": undefined,
+  "priority": undefined,
   "select": undefined,
   "set": undefined,
   "table": "foo",
@@ -662,6 +714,7 @@ Object {
   "columnNames": undefined,
   "ignore": undefined,
   "onDuplicateKeyUpdate": undefined,
+  "priority": undefined,
   "select": undefined,
   "set": undefined,
   "table": "foo",
@@ -697,6 +750,7 @@ Object {
     ],
     "type": "AssignmentList",
   },
+  "priority": undefined,
   "select": undefined,
   "set": undefined,
   "table": "foo",
@@ -722,6 +776,7 @@ Object {
     "right": "1",
     "type": "AssignmentExpression",
   },
+  "priority": undefined,
   "select": undefined,
   "set": undefined,
   "table": "foo",
@@ -745,6 +800,7 @@ Object {
   "columnNames": undefined,
   "ignore": undefined,
   "onDuplicateKeyUpdate": undefined,
+  "priority": undefined,
   "select": undefined,
   "set": undefined,
   "table": "foo",

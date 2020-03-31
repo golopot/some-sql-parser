@@ -34,8 +34,8 @@ SELECT
   a
 `);
 
-testPass(`SELECT a.b`); 
-testPass(`SELECT a.b.c`); 
+testPass(`SELECT a.b`);
+testPass(`SELECT a.b.c`);
 testPass('SELECT `a`.`b`');
 testPass('SELECT a.*');
 testPass('SELECT - a.b');
@@ -110,38 +110,37 @@ testFail(`SELECT * FROM foo LEFT JOIN goo`);
 
 testPass(`SELECT * FROM foo GROUP BY a HAVING b=5`);
 
-testPass(`SELECT * ORDER BY a`)
-testPass(`SELECT * ORDER BY a, b`)
-testPass(`SELECT * ORDER BY a ASC`)
-testPass(`SELECT * ORDER BY a DESC`)
+testPass(`SELECT * ORDER BY a`);
+testPass(`SELECT * ORDER BY a, b`);
+testPass(`SELECT * ORDER BY a ASC`);
+testPass(`SELECT * ORDER BY a DESC`);
 
-testPass(`SELECT * LIMIT 50, 10`)
-testPass(`SELECT * LIMIT 10 OFFSET 50`)
+testPass(`SELECT * LIMIT 50, 10`);
+testPass(`SELECT * LIMIT 10 OFFSET 50`);
 
 testPass(`SELECT 1 UNION SELECT 2`);
 testPass(`SELECT 1 UNION SELECT 2 UNION SELECT 3`);
 
-testPass(`SELECT ALL *`)
-testPass(`SELECT DISTINCT *`)
-testPass(`SELECT DISTINCTROW *`)
-testPass(`SELECT HIGH_PRIORITY *`)
-testPass(`SELECT STRAIGHT_JOIN *`)
-testPass(`SELECT SQL_SMALL_RESULT *`)
-testPass(`SELECT SQL_BIG_RESULT *`)
-testPass(`SELECT SQL_BUFFER_RESULT *`)
-testPass(`SELECT SQL_NO_CACHE *`)
-testPass(`SELECT SQL_CALC_FOUND_ROWS *`)
+testPass(`SELECT ALL *`);
+testPass(`SELECT DISTINCT *`);
+testPass(`SELECT DISTINCTROW *`);
+testPass(`SELECT HIGH_PRIORITY *`);
+testPass(`SELECT STRAIGHT_JOIN *`);
+testPass(`SELECT SQL_SMALL_RESULT *`);
+testPass(`SELECT SQL_BIG_RESULT *`);
+testPass(`SELECT SQL_BUFFER_RESULT *`);
+testPass(`SELECT SQL_NO_CACHE *`);
+testPass(`SELECT SQL_CALC_FOUND_ROWS *`);
 
 testPass(`INSERT foo VALUES (1)`);
 testPass(`INSERT LOW_PRIORITY foo VALUES (1)`);
-testPass(`INSERT DELAYED foo VALUES (1)`);
 testPass(`INSERT HIGH_PRIORITY foo VALUES (1)`);
 testPass(`INSERT IGNORE foo VALUES (1)`);
 testPass(`INSERT INTO foo VALUES (1)`);
+testFail(`INSERT DELAYED foo VALUES (1)`);
 
 testPass(`INSERT foo VALUES (1)`);
 testPass(`INSERT foo VALUES (1, 2)`);
-testPass(`INSERT foo VALUES ROW(1, 2), ROW(3, 4)`);
 testPass(`INSERT foo (a, b) VALUES (1, 2), (3, 4);`);
 testPass(`INSERT foo SET a = 1, b = 2;`);
 testPass(`INSERT foo (a, b) SELECT c, d FROM bar;`);
