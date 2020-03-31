@@ -623,6 +623,7 @@ Object {
       "name": "a",
       "type": "Identifier",
     },
+    "desc": false,
     "type": "OrderByClause",
   },
   "tableName": Object {
@@ -2182,6 +2183,73 @@ Object {
       "name": "a",
       "type": "Identifier",
     },
+    "desc": false,
+    "type": "OrderByClause",
+  },
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT * ORDER BY a ASC 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "type": "WildcardExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": Object {
+    "columnName": Object {
+      "name": "a",
+      "type": "Identifier",
+    },
+    "desc": false,
+    "type": "OrderByClause",
+  },
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT * ORDER BY a DESC 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "type": "WildcardExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": Object {
+    "columnName": Object {
+      "name": "a",
+      "type": "Identifier",
+    },
+    "desc": true,
     "type": "OrderByClause",
   },
   "sqlBigResult": undefined,
@@ -4031,6 +4099,7 @@ Object {
       "name": "c",
       "type": "Identifier",
     },
+    "desc": false,
     "type": "OrderByClause",
   },
   "set": Object {
