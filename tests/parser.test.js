@@ -147,6 +147,7 @@ testPass(`INSERT foo SET a = 1, b = 2;`);
 testPass(`INSERT foo (a, b) SELECT c, d FROM bar;`);
 testPass(`INSERT foo VALUES (1) ON DUPLICATE KEY UPDATE a = 1;`);
 testPass(`INSERT foo VALUES (1) ON DUPLICATE KEY UPDATE a = 1, b = 2;`);
+testFail(`INSERT foo VALUES (1) ON DUPLICATE KEY UPDATE a;`);
 
 testPass(`CREATE TABLE Foo ( a int )`);
 testPass('CREATE TABLE `Foo` ( a int )');

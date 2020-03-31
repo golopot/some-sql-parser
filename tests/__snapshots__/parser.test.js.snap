@@ -493,10 +493,34 @@ Object {
 }
 `;
 
+exports[`INSERT IGNORE foo VALUES (1) 1`] = `
+Object {
+  "columnNames": undefined,
+  "ignore": "IGNORE",
+  "onDuplicateKeyUpdate": undefined,
+  "select": undefined,
+  "set": undefined,
+  "table": "foo",
+  "type": "InsertStatement",
+  "values": Object {
+    "expressions": Array [
+      Object {
+        "expression": "1",
+        "type": "ParenthesisExpression",
+      },
+    ],
+    "type": "ValuesClause",
+  },
+}
+`;
+
 exports[`INSERT INTO foo VALUES (1) 1`] = `
 Object {
   "columnNames": undefined,
+  "ignore": undefined,
+  "onDuplicateKeyUpdate": undefined,
   "select": undefined,
+  "set": undefined,
   "table": "foo",
   "type": "InsertStatement",
   "values": Object {
@@ -517,6 +541,8 @@ Object {
     "a",
     "b",
   ],
+  "ignore": undefined,
+  "onDuplicateKeyUpdate": undefined,
   "select": Object {
     "expressions": Array [
       "c",
@@ -542,6 +568,7 @@ Object {
     "union": undefined,
     "where": undefined,
   },
+  "set": undefined,
   "table": "foo",
   "type": "InsertStatement",
   "values": undefined,
@@ -554,7 +581,10 @@ Object {
     "a",
     "b",
   ],
+  "ignore": undefined,
+  "onDuplicateKeyUpdate": undefined,
   "select": undefined,
+  "set": undefined,
   "table": "foo",
   "type": "InsertStatement",
   "values": Object {
@@ -579,10 +609,40 @@ Object {
 }
 `;
 
+exports[`INSERT foo SET a = 1, b = 2; 1`] = `
+Object {
+  "columnNames": undefined,
+  "ignore": undefined,
+  "onDuplicateKeyUpdate": undefined,
+  "select": undefined,
+  "set": Object {
+    "asignments": Array [
+      Object {
+        "left": "a",
+        "right": "1",
+        "type": "AssignmentExpression",
+      },
+      Object {
+        "left": "b",
+        "right": "2",
+        "type": "AssignmentExpression",
+      },
+    ],
+    "type": "AssignmentList",
+  },
+  "table": "foo",
+  "type": "InsertStatement",
+  "values": undefined,
+}
+`;
+
 exports[`INSERT foo VALUES (1) 1`] = `
 Object {
   "columnNames": undefined,
+  "ignore": undefined,
+  "onDuplicateKeyUpdate": undefined,
   "select": undefined,
+  "set": undefined,
   "table": "foo",
   "type": "InsertStatement",
   "values": Object {
@@ -600,7 +660,10 @@ Object {
 exports[`INSERT foo VALUES (1) 2`] = `
 Object {
   "columnNames": undefined,
+  "ignore": undefined,
+  "onDuplicateKeyUpdate": undefined,
   "select": undefined,
+  "set": undefined,
   "table": "foo",
   "type": "InsertStatement",
   "values": Object {
@@ -615,10 +678,75 @@ Object {
 }
 `;
 
+exports[`INSERT foo VALUES (1) ON DUPLICATE KEY UPDATE a = 1, b = 2; 1`] = `
+Object {
+  "columnNames": undefined,
+  "ignore": undefined,
+  "onDuplicateKeyUpdate": Object {
+    "asignments": Array [
+      Object {
+        "left": "a",
+        "right": "1",
+        "type": "AssignmentExpression",
+      },
+      Object {
+        "left": "b",
+        "right": "2",
+        "type": "AssignmentExpression",
+      },
+    ],
+    "type": "AssignmentList",
+  },
+  "select": undefined,
+  "set": undefined,
+  "table": "foo",
+  "type": "InsertStatement",
+  "values": Object {
+    "expressions": Array [
+      Object {
+        "expression": "1",
+        "type": "ParenthesisExpression",
+      },
+    ],
+    "type": "ValuesClause",
+  },
+}
+`;
+
+exports[`INSERT foo VALUES (1) ON DUPLICATE KEY UPDATE a = 1; 1`] = `
+Object {
+  "columnNames": undefined,
+  "ignore": undefined,
+  "onDuplicateKeyUpdate": Object {
+    "left": "a",
+    "right": "1",
+    "type": "AssignmentExpression",
+  },
+  "select": undefined,
+  "set": undefined,
+  "table": "foo",
+  "type": "InsertStatement",
+  "values": Object {
+    "expressions": Array [
+      Object {
+        "expression": "1",
+        "type": "ParenthesisExpression",
+      },
+    ],
+    "type": "ValuesClause",
+  },
+}
+`;
+
+exports[`INSERT foo VALUES (1) ON DUPLICATE KEY UPDATE a; 1`] = `[SyntaxError: "=" expected.]`;
+
 exports[`INSERT foo VALUES (1, 2) 1`] = `
 Object {
   "columnNames": undefined,
+  "ignore": undefined,
+  "onDuplicateKeyUpdate": undefined,
   "select": undefined,
+  "set": undefined,
   "table": "foo",
   "type": "InsertStatement",
   "values": Object {
