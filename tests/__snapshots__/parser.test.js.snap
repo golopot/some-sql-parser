@@ -644,7 +644,10 @@ Object {
         "type": "Identifier",
       },
       "operator": "=",
-      "right": "5",
+      "right": Object {
+        "type": "NumberLiteral",
+        "value": "5",
+      },
       "type": "BinaryExpression",
     },
     "type": "WhereClause",
@@ -728,7 +731,10 @@ Object {
   "values": Object {
     "expressions": Array [
       Object {
-        "expression": "1",
+        "expression": Object {
+          "type": "NumberLiteral",
+          "value": "1",
+        },
         "type": "ParenthesisExpression",
       },
     ],
@@ -753,7 +759,10 @@ Object {
   "values": Object {
     "expressions": Array [
       Object {
-        "expression": "1",
+        "expression": Object {
+          "type": "NumberLiteral",
+          "value": "1",
+        },
         "type": "ParenthesisExpression",
       },
     ],
@@ -778,7 +787,10 @@ Object {
   "values": Object {
     "expressions": Array [
       Object {
-        "expression": "1",
+        "expression": Object {
+          "type": "NumberLiteral",
+          "value": "1",
+        },
         "type": "ParenthesisExpression",
       },
     ],
@@ -803,7 +815,10 @@ Object {
   "values": Object {
     "expressions": Array [
       Object {
-        "expression": "1",
+        "expression": Object {
+          "type": "NumberLiteral",
+          "value": "1",
+        },
         "type": "ParenthesisExpression",
       },
     ],
@@ -916,15 +931,27 @@ Object {
     "expressions": Array [
       Object {
         "expressions": Array [
-          "1",
-          "2",
+          Object {
+            "type": "NumberLiteral",
+            "value": "1",
+          },
+          Object {
+            "type": "NumberLiteral",
+            "value": "2",
+          },
         ],
         "type": "TupleExpression",
       },
       Object {
         "expressions": Array [
-          "3",
-          "4",
+          Object {
+            "type": "NumberLiteral",
+            "value": "3",
+          },
+          Object {
+            "type": "NumberLiteral",
+            "value": "4",
+          },
         ],
         "type": "TupleExpression",
       },
@@ -948,7 +975,10 @@ Object {
           "name": "a",
           "type": "Identifier",
         },
-        "right": "1",
+        "right": Object {
+          "type": "NumberLiteral",
+          "value": "1",
+        },
         "type": "AssignmentExpression",
       },
       Object {
@@ -956,7 +986,10 @@ Object {
           "name": "b",
           "type": "Identifier",
         },
-        "right": "2",
+        "right": Object {
+          "type": "NumberLiteral",
+          "value": "2",
+        },
         "type": "AssignmentExpression",
       },
     ],
@@ -987,7 +1020,10 @@ Object {
   "values": Object {
     "expressions": Array [
       Object {
-        "expression": "1",
+        "expression": Object {
+          "type": "NumberLiteral",
+          "value": "1",
+        },
         "type": "ParenthesisExpression",
       },
     ],
@@ -1012,7 +1048,10 @@ Object {
   "values": Object {
     "expressions": Array [
       Object {
-        "expression": "1",
+        "expression": Object {
+          "type": "NumberLiteral",
+          "value": "1",
+        },
         "type": "ParenthesisExpression",
       },
     ],
@@ -1032,7 +1071,10 @@ Object {
           "name": "a",
           "type": "Identifier",
         },
-        "right": "1",
+        "right": Object {
+          "type": "NumberLiteral",
+          "value": "1",
+        },
         "type": "AssignmentExpression",
       },
       Object {
@@ -1040,7 +1082,10 @@ Object {
           "name": "b",
           "type": "Identifier",
         },
-        "right": "2",
+        "right": Object {
+          "type": "NumberLiteral",
+          "value": "2",
+        },
         "type": "AssignmentExpression",
       },
     ],
@@ -1057,7 +1102,10 @@ Object {
   "values": Object {
     "expressions": Array [
       Object {
-        "expression": "1",
+        "expression": Object {
+          "type": "NumberLiteral",
+          "value": "1",
+        },
         "type": "ParenthesisExpression",
       },
     ],
@@ -1075,7 +1123,10 @@ Object {
       "name": "a",
       "type": "Identifier",
     },
-    "right": "1",
+    "right": Object {
+      "type": "NumberLiteral",
+      "value": "1",
+    },
     "type": "AssignmentExpression",
   },
   "priority": undefined,
@@ -1089,7 +1140,10 @@ Object {
   "values": Object {
     "expressions": Array [
       Object {
-        "expression": "1",
+        "expression": Object {
+          "type": "NumberLiteral",
+          "value": "1",
+        },
         "type": "ParenthesisExpression",
       },
     ],
@@ -1117,8 +1171,14 @@ Object {
     "expressions": Array [
       Object {
         "expressions": Array [
-          "1",
-          "2",
+          Object {
+            "type": "NumberLiteral",
+            "value": "1",
+          },
+          Object {
+            "type": "NumberLiteral",
+            "value": "2",
+          },
         ],
         "type": "TupleExpression",
       },
@@ -1208,7 +1268,10 @@ Object {
               "name": undefined,
               "type": "Identifier",
             },
-            "expression": "1",
+            "expression": Object {
+              "type": "NumberLiteral",
+              "value": "1",
+            },
             "hasAsKeyword": false,
             "type": "AliasExpression",
           },
@@ -1508,7 +1571,10 @@ Object {
         "type": "Identifier",
       },
       "operator": "=",
-      "right": "5",
+      "right": Object {
+        "type": "NumberLiteral",
+        "value": "5",
+      },
       "type": "BinaryExpression",
     },
     "type": "HavingClause",
@@ -1802,7 +1868,10 @@ Object {
               "name": undefined,
               "type": "Identifier",
             },
-            "expression": "42",
+            "expression": Object {
+              "type": "NumberLiteral",
+              "value": "42",
+            },
             "hasAsKeyword": false,
             "type": "AliasExpression",
           },
@@ -2301,12 +2370,18 @@ Object {
       },
       "expression": Object {
         "left": Object {
-          "operand": "1",
+          "operand": Object {
+            "type": "NumberLiteral",
+            "value": "1",
+          },
           "operator": "+",
           "type": "UnaryExpression",
         },
         "operator": "-",
-        "right": "2",
+        "right": Object {
+          "type": "NumberLiteral",
+          "value": "2",
+        },
         "type": "BinaryExpression",
       },
       "hasAsKeyword": false,
@@ -2344,7 +2419,10 @@ Object {
         "operand": Object {
           "operand": Object {
             "operand": Object {
-              "operand": "1",
+              "operand": Object {
+                "type": "NumberLiteral",
+                "value": "1",
+              },
               "operator": "~",
               "type": "UnaryExpression",
             },
@@ -2560,7 +2638,10 @@ exports[`SELECT 1 UNION SELECT 2 1`] = `
 Object {
   "distinct": false,
   "expressions": Array [
-    "1",
+    Object {
+      "type": "NumberLiteral",
+      "value": "1",
+    },
   ],
   "from": undefined,
   "groupBy": undefined,
@@ -2583,7 +2664,10 @@ Object {
           "name": undefined,
           "type": "Identifier",
         },
-        "expression": "2",
+        "expression": Object {
+          "type": "NumberLiteral",
+          "value": "2",
+        },
         "hasAsKeyword": false,
         "type": "AliasExpression",
       },
@@ -2612,7 +2696,10 @@ exports[`SELECT 1 UNION SELECT 2 UNION SELECT 3 1`] = `
 Object {
   "distinct": false,
   "expressions": Array [
-    "1",
+    Object {
+      "type": "NumberLiteral",
+      "value": "1",
+    },
   ],
   "from": undefined,
   "groupBy": undefined,
@@ -2630,7 +2717,10 @@ Object {
   "union": Object {
     "distinct": false,
     "expressions": Array [
-      "2",
+      Object {
+        "type": "NumberLiteral",
+        "value": "2",
+      },
     ],
     "from": undefined,
     "groupBy": undefined,
@@ -2653,7 +2743,10 @@ Object {
             "name": undefined,
             "type": "Identifier",
           },
-          "expression": "3",
+          "expression": Object {
+            "type": "NumberLiteral",
+            "value": "3",
+          },
           "hasAsKeyword": false,
           "type": "AliasExpression",
         },
@@ -2701,7 +2794,10 @@ Object {
         "type": "Identifier",
       },
       "expression": Object {
-        "left": "2",
+        "left": Object {
+          "type": "NumberLiteral",
+          "value": "2",
+        },
         "operator": "*",
         "right": Object {
           "expression": Object {
@@ -3436,7 +3532,10 @@ Object {
         "type": "Identifier",
       },
       "operator": "=",
-      "right": "6",
+      "right": Object {
+        "type": "NumberLiteral",
+        "value": "6",
+      },
       "type": "BinaryExpression",
     },
     "type": "WhereClause",
@@ -4043,7 +4142,10 @@ Object {
           "type": "Identifier",
         },
         "operator": "=",
-        "right": "1",
+        "right": Object {
+          "type": "NumberLiteral",
+          "value": "1",
+        },
         "type": "BinaryExpression",
       },
     ],
@@ -4101,7 +4203,10 @@ Object {
           "type": "Identifier",
         },
         "operator": "=",
-        "right": "1",
+        "right": Object {
+          "type": "NumberLiteral",
+          "value": "1",
+        },
         "type": "BinaryExpression",
       },
     ],
@@ -4154,7 +4259,10 @@ Object {
           "type": "Identifier",
         },
         "operator": "=",
-        "right": "1",
+        "right": Object {
+          "type": "NumberLiteral",
+          "value": "1",
+        },
         "type": "BinaryExpression",
       },
     ],
@@ -4180,7 +4288,10 @@ Object {
         "type": "Identifier",
       },
       "operator": "=",
-      "right": "2",
+      "right": Object {
+        "type": "NumberLiteral",
+        "value": "2",
+      },
       "type": "BinaryExpression",
     },
     "type": "WhereClause",
@@ -4202,7 +4313,10 @@ Object {
           "type": "Identifier",
         },
         "operator": "=",
-        "right": "5",
+        "right": Object {
+          "type": "NumberLiteral",
+          "value": "5",
+        },
         "type": "BinaryExpression",
       },
     ],
@@ -4239,7 +4353,10 @@ Object {
           "type": "Identifier",
         },
         "operator": "=",
-        "right": "5",
+        "right": Object {
+          "type": "NumberLiteral",
+          "value": "5",
+        },
         "type": "BinaryExpression",
       },
       Object {
@@ -4248,7 +4365,10 @@ Object {
           "type": "Identifier",
         },
         "operator": "=",
-        "right": "6",
+        "right": Object {
+          "type": "NumberLiteral",
+          "value": "6",
+        },
         "type": "BinaryExpression",
       },
     ],
@@ -4298,7 +4418,10 @@ Object {
           "type": "CallExpression",
         },
         "operator": "=",
-        "right": "5",
+        "right": Object {
+          "type": "NumberLiteral",
+          "value": "5",
+        },
         "type": "BinaryExpression",
       },
     ],
@@ -4335,7 +4458,10 @@ Object {
           "type": "Identifier",
         },
         "operator": "=",
-        "right": "1",
+        "right": Object {
+          "type": "NumberLiteral",
+          "value": "1",
+        },
         "type": "BinaryExpression",
       },
     ],
@@ -4392,7 +4518,10 @@ Object {
           "type": "Identifier",
         },
         "operator": "=",
-        "right": "1",
+        "right": Object {
+          "type": "NumberLiteral",
+          "value": "1",
+        },
         "type": "BinaryExpression",
       },
     ],
@@ -4429,7 +4558,10 @@ Object {
           "type": "Identifier",
         },
         "operator": "=",
-        "right": "1",
+        "right": Object {
+          "type": "NumberLiteral",
+          "value": "1",
+        },
         "type": "BinaryExpression",
       },
     ],
