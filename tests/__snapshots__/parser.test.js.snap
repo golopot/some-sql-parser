@@ -8,16 +8,8 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "name": "a",
-        "type": "Identifier",
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "name": "a",
+      "type": "Identifier",
     },
   ],
   "from": undefined,
@@ -465,7 +457,7 @@ Object {
 }
 `;
 
-exports[`CREATE TABLE "Foo" ( a int ) 1`] = `[SyntaxError: "(" expected.]`;
+exports[`CREATE TABLE "Foo" ( a int ) 1`] = `[SyntaxError: Unexpected token.]`;
 
 exports[`CREATE TABLE \`Foo\` ( a int ) 1`] = `
 Object {
@@ -612,7 +604,7 @@ Object {
 
 exports[`CREATE TABLE Foo ( key (id) ) 1`] = `[SyntaxError: Invalid create table definition.]`;
 
-exports[`CREATE TABLE Foo () 1`] = `[SyntaxError: Invalid syntax.]`;
+exports[`CREATE TABLE Foo () 1`] = `[SyntaxError: Invalid create table definition.]`;
 
 exports[`DELETE FROM table_name WHERE a = 5 ORDER BY a LIMIT 3 1`] = `
 Object {
@@ -846,16 +838,8 @@ Object {
     "distinct": false,
     "expressions": Array [
       Object {
-        "alias": Object {
-          "name": undefined,
-          "type": "Identifier",
-        },
-        "expression": Object {
-          "name": "c",
-          "type": "Identifier",
-        },
-        "hasAsKeyword": false,
-        "type": "AliasExpression",
+        "name": "c",
+        "type": "Identifier",
       },
       Object {
         "name": "d",
@@ -866,10 +850,7 @@ Object {
       "table": Object {
         "joins": Array [],
         "table": Object {
-          "alias": Object {
-            "name": undefined,
-            "type": "Identifier",
-          },
+          "alias": undefined,
           "table": Object {
             "name": "bar",
             "type": "Identifier",
@@ -1193,40 +1174,16 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "type": "StringLiteral",
-        "value": "1",
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "StringLiteral",
+      "value": "1",
     },
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "type": "StringLiteral",
-        "value": "1",
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "StringLiteral",
+      "value": "1",
     },
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "type": "BacktickStringLiteral",
-        "value": "1",
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "BacktickStringLiteral",
+      "value": "1",
     },
   ],
   "from": undefined,
@@ -1256,44 +1213,28 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "distinct": false,
-        "expressions": Array [
-          Object {
-            "alias": Object {
-              "name": undefined,
-              "type": "Identifier",
-            },
-            "expression": Object {
-              "type": "NumberLiteral",
-              "value": "1",
-            },
-            "hasAsKeyword": false,
-            "type": "AliasExpression",
-          },
-        ],
-        "from": undefined,
-        "groupBy": undefined,
-        "having": undefined,
-        "highPriority": undefined,
-        "limit": undefined,
-        "orderBy": undefined,
-        "sqlBigResult": undefined,
-        "sqlBufferResult": undefined,
-        "sqlCalcFoundRows": undefined,
-        "sqlNoCache": undefined,
-        "sqlSmallResult": undefined,
-        "straightJoin": undefined,
-        "type": "SelectStatement",
-        "union": undefined,
-        "where": undefined,
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "distinct": false,
+      "expressions": Array [
+        Object {
+          "type": "NumberLiteral",
+          "value": "1",
+        },
+      ],
+      "from": undefined,
+      "groupBy": undefined,
+      "having": undefined,
+      "highPriority": undefined,
+      "limit": undefined,
+      "orderBy": undefined,
+      "sqlBigResult": undefined,
+      "sqlBufferResult": undefined,
+      "sqlCalcFoundRows": undefined,
+      "sqlNoCache": undefined,
+      "sqlSmallResult": undefined,
+      "straightJoin": undefined,
+      "type": "SelectStatement",
+      "union": undefined,
+      "where": undefined,
     },
   ],
   "from": undefined,
@@ -1319,19 +1260,11 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
+      "expression": Object {
+        "name": "a",
         "type": "Identifier",
       },
-      "expression": Object {
-        "expression": Object {
-          "name": "a",
-          "type": "Identifier",
-        },
-        "type": "ParenthesisExpression",
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "ParenthesisExpression",
     },
   ],
   "from": undefined,
@@ -1354,7 +1287,7 @@ Object {
 
 exports[`SELECT (f)() 1`] = `[SyntaxError: Invalid syntax.]`;
 
-exports[`SELECT * FROM "foo" 1`] = `[SyntaxError: Invalid syntax.]`;
+exports[`SELECT * FROM "foo" 1`] = `[SyntaxError: Unexpected token.]`;
 
 exports[`SELECT * FROM (SELECT * FROM foo) 1`] = `[SyntaxError: Missing alias for subquery.]`;
 
@@ -1385,10 +1318,7 @@ Object {
             "table": Object {
               "joins": Array [],
               "table": Object {
-                "alias": Object {
-                  "name": undefined,
-                  "type": "Identifier",
-                },
+                "alias": undefined,
                 "table": Object {
                   "name": "foo",
                   "type": "Identifier",
@@ -1449,10 +1379,7 @@ Object {
     "table": Object {
       "joins": Array [],
       "table": Object {
-        "alias": Object {
-          "name": undefined,
-          "type": "Identifier",
-        },
+        "alias": undefined,
         "table": Object {
           "left": Object {
             "type": "BacktickStringLiteral",
@@ -1501,10 +1428,7 @@ Object {
     "table": Object {
       "joins": Array [],
       "table": Object {
-        "alias": Object {
-          "name": undefined,
-          "type": "Identifier",
-        },
+        "alias": undefined,
         "table": Object {
           "name": "foo",
           "type": "Identifier",
@@ -1609,10 +1533,7 @@ Object {
           "joinType": "inner",
           "on": undefined,
           "table": Object {
-            "alias": Object {
-              "name": undefined,
-              "type": "Identifier",
-            },
+            "alias": undefined,
             "table": Object {
               "name": "goo",
               "type": "Identifier",
@@ -1864,16 +1785,8 @@ Object {
         "distinct": false,
         "expressions": Array [
           Object {
-            "alias": Object {
-              "name": undefined,
-              "type": "Identifier",
-            },
-            "expression": Object {
-              "type": "NumberLiteral",
-              "value": "42",
-            },
-            "hasAsKeyword": false,
-            "type": "AliasExpression",
+            "type": "NumberLiteral",
+            "value": "42",
           },
         ],
         "from": undefined,
@@ -2087,10 +2000,7 @@ Object {
         Object {
           "joins": Array [],
           "table": Object {
-            "alias": Object {
-              "name": undefined,
-              "type": "Identifier",
-            },
+            "alias": undefined,
             "table": Object {
               "name": "foo",
               "type": "Identifier",
@@ -2102,10 +2012,7 @@ Object {
         Object {
           "joins": Array [],
           "table": Object {
-            "alias": Object {
-              "name": undefined,
-              "type": "Identifier",
-            },
+            "alias": undefined,
             "table": Object {
               "name": "goo",
               "type": "Identifier",
@@ -2148,10 +2055,7 @@ Object {
     "table": Object {
       "joins": Array [],
       "table": Object {
-        "alias": Object {
-          "name": undefined,
-          "type": "Identifier",
-        },
+        "alias": undefined,
         "table": Object {
           "left": Object {
             "name": "foo",
@@ -2364,28 +2268,20 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "left": Object {
-          "operand": Object {
-            "type": "NumberLiteral",
-            "value": "1",
-          },
-          "operator": "+",
-          "type": "UnaryExpression",
-        },
-        "operator": "-",
-        "right": Object {
+      "left": Object {
+        "operand": Object {
           "type": "NumberLiteral",
-          "value": "2",
+          "value": "1",
         },
-        "type": "BinaryExpression",
+        "operator": "+",
+        "type": "UnaryExpression",
       },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "operator": "-",
+      "right": Object {
+        "type": "NumberLiteral",
+        "value": "2",
+      },
+      "type": "BinaryExpression",
     },
   ],
   "from": undefined,
@@ -2411,32 +2307,24 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
+      "operand": Object {
         "operand": Object {
           "operand": Object {
             "operand": Object {
-              "operand": Object {
-                "type": "NumberLiteral",
-                "value": "1",
-              },
-              "operator": "~",
-              "type": "UnaryExpression",
+              "type": "NumberLiteral",
+              "value": "1",
             },
-            "operator": "!",
+            "operator": "~",
             "type": "UnaryExpression",
           },
-          "operator": "-",
+          "operator": "!",
           "type": "UnaryExpression",
         },
-        "operator": "+",
+        "operator": "-",
         "type": "UnaryExpression",
       },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "operator": "+",
+      "type": "UnaryExpression",
     },
   ],
   "from": undefined,
@@ -2462,23 +2350,15 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
+      "left": Object {
+        "type": "BacktickStringLiteral",
+        "value": "a",
       },
-      "expression": Object {
-        "left": Object {
-          "type": "BacktickStringLiteral",
-          "value": "a",
-        },
-        "right": Object {
-          "type": "BacktickStringLiteral",
-          "value": "b",
-        },
-        "type": "MemberExpression",
+      "right": Object {
+        "type": "BacktickStringLiteral",
+        "value": "b",
       },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "MemberExpression",
     },
   ],
   "from": undefined,
@@ -2504,20 +2384,12 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
+      "arguments": Array [],
+      "callee": Object {
+        "type": "BacktickStringLiteral",
+        "value": "foo",
       },
-      "expression": Object {
-        "arguments": Array [],
-        "callee": Object {
-          "type": "BacktickStringLiteral",
-          "value": "foo",
-        },
-        "type": "CallExpression",
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "CallExpression",
     },
   ],
   "from": undefined,
@@ -2543,27 +2415,19 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "arguments": Array [],
-        "callee": Object {
-          "left": Object {
-            "type": "BacktickStringLiteral",
-            "value": "foo",
-          },
-          "right": Object {
-            "type": "BacktickStringLiteral",
-            "value": "bar",
-          },
-          "type": "MemberExpression",
+      "arguments": Array [],
+      "callee": Object {
+        "left": Object {
+          "type": "BacktickStringLiteral",
+          "value": "foo",
         },
-        "type": "CallExpression",
+        "right": Object {
+          "type": "BacktickStringLiteral",
+          "value": "bar",
+        },
+        "type": "MemberExpression",
       },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "CallExpression",
     },
   ],
   "from": undefined,
@@ -2589,27 +2453,19 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "operand": Object {
-          "left": Object {
-            "name": "a",
-            "type": "Identifier",
-          },
-          "right": Object {
-            "name": "b",
-            "type": "Identifier",
-          },
-          "type": "MemberExpression",
+      "operand": Object {
+        "left": Object {
+          "name": "a",
+          "type": "Identifier",
         },
-        "operator": "-",
-        "type": "UnaryExpression",
+        "right": Object {
+          "name": "b",
+          "type": "Identifier",
+        },
+        "type": "MemberExpression",
       },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "operator": "-",
+      "type": "UnaryExpression",
     },
   ],
   "from": undefined,
@@ -2660,16 +2516,8 @@ Object {
     "distinct": false,
     "expressions": Array [
       Object {
-        "alias": Object {
-          "name": undefined,
-          "type": "Identifier",
-        },
-        "expression": Object {
-          "type": "NumberLiteral",
-          "value": "2",
-        },
-        "hasAsKeyword": false,
-        "type": "AliasExpression",
+        "type": "NumberLiteral",
+        "value": "2",
       },
     ],
     "from": undefined,
@@ -2739,16 +2587,8 @@ Object {
       "distinct": false,
       "expressions": Array [
         Object {
-          "alias": Object {
-            "name": undefined,
-            "type": "Identifier",
-          },
-          "expression": Object {
-            "type": "NumberLiteral",
-            "value": "3",
-          },
-          "hasAsKeyword": false,
-          "type": "AliasExpression",
+          "type": "NumberLiteral",
+          "value": "3",
         },
       ],
       "from": undefined,
@@ -2789,35 +2629,27 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
+      "left": Object {
+        "type": "NumberLiteral",
+        "value": "2",
       },
-      "expression": Object {
-        "left": Object {
-          "type": "NumberLiteral",
-          "value": "2",
-        },
-        "operator": "*",
-        "right": Object {
-          "expression": Object {
-            "left": Object {
-              "name": "a",
-              "type": "Identifier",
-            },
-            "operator": "%",
-            "right": Object {
-              "name": "b",
-              "type": "Identifier",
-            },
-            "type": "BinaryExpression",
+      "operator": "*",
+      "right": Object {
+        "expression": Object {
+          "left": Object {
+            "name": "a",
+            "type": "Identifier",
           },
-          "type": "ParenthesisExpression",
+          "operator": "%",
+          "right": Object {
+            "name": "b",
+            "type": "Identifier",
+          },
+          "type": "BinaryExpression",
         },
-        "type": "BinaryExpression",
+        "type": "ParenthesisExpression",
       },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "BinaryExpression",
     },
   ],
   "from": undefined,
@@ -2843,15 +2675,7 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "type": "WildcardExpression",
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "WildcardExpression",
     },
   ],
   "from": undefined,
@@ -2913,15 +2737,7 @@ Object {
   "distinct": true,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "type": "WildcardExpression",
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "WildcardExpression",
     },
   ],
   "from": undefined,
@@ -2947,15 +2763,7 @@ Object {
   "distinct": true,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "type": "WildcardExpression",
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "WildcardExpression",
     },
   ],
   "from": undefined,
@@ -2981,15 +2789,7 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "type": "WildcardExpression",
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "WildcardExpression",
     },
   ],
   "from": undefined,
@@ -3015,15 +2815,7 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "type": "WildcardExpression",
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "WildcardExpression",
     },
   ],
   "from": undefined,
@@ -3049,15 +2841,7 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "type": "WildcardExpression",
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "WildcardExpression",
     },
   ],
   "from": undefined,
@@ -3083,15 +2867,7 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "type": "WildcardExpression",
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "WildcardExpression",
     },
   ],
   "from": undefined,
@@ -3117,15 +2893,7 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "type": "WildcardExpression",
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "WildcardExpression",
     },
   ],
   "from": undefined,
@@ -3151,15 +2919,7 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "type": "WildcardExpression",
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "WildcardExpression",
     },
   ],
   "from": undefined,
@@ -3185,15 +2945,7 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "type": "WildcardExpression",
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "WildcardExpression",
     },
   ],
   "from": undefined,
@@ -3254,40 +3006,32 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
+      "left": Object {
         "left": Object {
+          "name": "a",
+          "type": "Identifier",
+        },
+        "operator": "+",
+        "right": Object {
           "left": Object {
-            "name": "a",
+            "name": "b",
             "type": "Identifier",
           },
-          "operator": "+",
+          "operator": "*",
           "right": Object {
-            "left": Object {
-              "name": "b",
-              "type": "Identifier",
-            },
-            "operator": "*",
-            "right": Object {
-              "name": "c",
-              "type": "Identifier",
-            },
-            "type": "BinaryExpression",
+            "name": "c",
+            "type": "Identifier",
           },
           "type": "BinaryExpression",
         },
-        "operator": "/",
-        "right": Object {
-          "name": "d",
-          "type": "Identifier",
-        },
         "type": "BinaryExpression",
       },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "operator": "/",
+      "right": Object {
+        "name": "d",
+        "type": "Identifier",
+      },
+      "type": "BinaryExpression",
     },
   ],
   "from": undefined,
@@ -3313,32 +3057,24 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
+      "left": Object {
         "left": Object {
-          "left": Object {
-            "name": "a",
-            "type": "Identifier",
-          },
-          "operator": "+",
-          "right": Object {
-            "name": "b",
-            "type": "Identifier",
-          },
-          "type": "BinaryExpression",
+          "name": "a",
+          "type": "Identifier",
         },
         "operator": "+",
         "right": Object {
-          "name": "c",
+          "name": "b",
           "type": "Identifier",
         },
         "type": "BinaryExpression",
       },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "operator": "+",
+      "right": Object {
+        "name": "c",
+        "type": "Identifier",
+      },
+      "type": "BinaryExpression",
     },
   ],
   "from": undefined,
@@ -3364,32 +3100,24 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
+      "left": Object {
         "left": Object {
-          "left": Object {
-            "name": "a",
-            "type": "Identifier",
-          },
-          "operator": "+",
-          "right": Object {
-            "name": "b",
-            "type": "Identifier",
-          },
-          "type": "BinaryExpression",
+          "name": "a",
+          "type": "Identifier",
         },
-        "operator": "-",
+        "operator": "+",
         "right": Object {
-          "name": "c",
+          "name": "b",
           "type": "Identifier",
         },
         "type": "BinaryExpression",
       },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "operator": "-",
+      "right": Object {
+        "name": "c",
+        "type": "Identifier",
+      },
+      "type": "BinaryExpression",
     },
   ],
   "from": undefined,
@@ -3415,24 +3143,16 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
+      "left": Object {
+        "name": "a",
         "type": "Identifier",
       },
-      "expression": Object {
-        "left": Object {
-          "name": "a",
-          "type": "Identifier",
-        },
-        "operator": "+",
-        "right": Object {
-          "name": "b",
-          "type": "Identifier",
-        },
-        "type": "BinaryExpression",
+      "operator": "+",
+      "right": Object {
+        "name": "b",
+        "type": "Identifier",
       },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "BinaryExpression",
     },
   ],
   "from": undefined,
@@ -3597,29 +3317,21 @@ Object {
 }
 `;
 
-exports[`SELECT a."b" 1`] = `[SyntaxError: Invalid syntax.]`;
+exports[`SELECT a."b" 1`] = `[SyntaxError: Unexpected token.]`;
 
 exports[`SELECT a.* 1`] = `
 Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
+      "left": Object {
+        "name": "a",
         "type": "Identifier",
       },
-      "expression": Object {
-        "left": Object {
-          "name": "a",
-          "type": "Identifier",
-        },
-        "right": Object {
-          "type": "WildcardExpression",
-        },
-        "type": "MemberExpression",
+      "right": Object {
+        "type": "WildcardExpression",
       },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "MemberExpression",
     },
   ],
   "from": undefined,
@@ -3659,10 +3371,7 @@ Object {
     "table": Object {
       "joins": Array [],
       "table": Object {
-        "alias": Object {
-          "name": undefined,
-          "type": "Identifier",
-        },
+        "alias": undefined,
         "table": Object {
           "name": "foo",
           "type": "Identifier",
@@ -3695,23 +3404,15 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
+      "left": Object {
+        "name": "a",
         "type": "Identifier",
       },
-      "expression": Object {
-        "left": Object {
-          "name": "a",
-          "type": "Identifier",
-        },
-        "right": Object {
-          "name": "b",
-          "type": "Identifier",
-        },
-        "type": "MemberExpression",
+      "right": Object {
+        "name": "b",
+        "type": "Identifier",
       },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "MemberExpression",
     },
   ],
   "from": undefined,
@@ -3769,34 +3470,26 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "arguments": Array [
-          Object {
-            "arguments": Array [
-              Object {
-                "name": "a",
-                "type": "Identifier",
-              },
-            ],
-            "callee": Object {
-              "name": "g",
+      "arguments": Array [
+        Object {
+          "arguments": Array [
+            Object {
+              "name": "a",
               "type": "Identifier",
             },
-            "type": "CallExpression",
+          ],
+          "callee": Object {
+            "name": "g",
+            "type": "Identifier",
           },
-        ],
-        "callee": Object {
-          "name": "f",
-          "type": "Identifier",
+          "type": "CallExpression",
         },
-        "type": "CallExpression",
+      ],
+      "callee": Object {
+        "name": "f",
+        "type": "Identifier",
       },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "CallExpression",
     },
   ],
   "from": undefined,
@@ -3822,27 +3515,19 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "arguments": Array [],
-        "callee": Object {
-          "left": Object {
-            "name": "f",
-            "type": "Identifier",
-          },
-          "right": Object {
-            "name": "g",
-            "type": "Identifier",
-          },
-          "type": "MemberExpression",
+      "arguments": Array [],
+      "callee": Object {
+        "left": Object {
+          "name": "f",
+          "type": "Identifier",
         },
-        "type": "CallExpression",
+        "right": Object {
+          "name": "g",
+          "type": "Identifier",
+        },
+        "type": "MemberExpression",
       },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "CallExpression",
     },
   ],
   "from": undefined,
@@ -3870,66 +3555,42 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
+      "arguments": Array [],
+      "callee": Object {
+        "name": "fn",
         "type": "Identifier",
       },
-      "expression": Object {
-        "arguments": Array [],
-        "callee": Object {
-          "name": "fn",
-          "type": "Identifier",
-        },
-        "type": "CallExpression",
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "CallExpression",
     },
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "arguments": Array [
-          Object {
-            "name": "a",
-            "type": "Identifier",
-          },
-        ],
-        "callee": Object {
-          "name": "fn",
+      "arguments": Array [
+        Object {
+          "name": "a",
           "type": "Identifier",
         },
-        "type": "CallExpression",
+      ],
+      "callee": Object {
+        "name": "fn",
+        "type": "Identifier",
       },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "CallExpression",
     },
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": Object {
-        "arguments": Array [
-          Object {
-            "name": "a",
-            "type": "Identifier",
-          },
-          Object {
-            "name": "b",
-            "type": "Identifier",
-          },
-        ],
-        "callee": Object {
-          "name": "fn",
+      "arguments": Array [
+        Object {
+          "name": "a",
           "type": "Identifier",
         },
-        "type": "CallExpression",
+        Object {
+          "name": "b",
+          "type": "Identifier",
+        },
+      ],
+      "callee": Object {
+        "name": "fn",
+        "type": "Identifier",
       },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "CallExpression",
     },
   ],
   "from": undefined,
@@ -3955,20 +3616,12 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
+      "arguments": Array [],
+      "callee": Object {
+        "name": "max",
         "type": "Identifier",
       },
-      "expression": Object {
-        "arguments": Array [],
-        "callee": Object {
-          "name": "max",
-          "type": "Identifier",
-        },
-        "type": "CallExpression",
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "CallExpression",
     },
   ],
   "from": undefined,
@@ -3994,20 +3647,12 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
+      "arguments": Array [],
+      "callee": Object {
+        "name": "max",
         "type": "Identifier",
       },
-      "expression": Object {
-        "arguments": Array [],
-        "callee": Object {
-          "name": "max",
-          "type": "Identifier",
-        },
-        "type": "CallExpression",
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "CallExpression",
     },
   ],
   "from": undefined,
@@ -4034,34 +3679,15 @@ exports[`SELECT null, true, current_timestamp FROM a 1`] = `
 Object {
   "distinct": false,
   "expressions": Array [
-    Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": "null",
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
-    },
-    Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
-      },
-      "expression": "true",
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
-    },
+    "null",
+    "true",
     "current_timestamp",
   ],
   "from": Object {
     "table": Object {
       "joins": Array [],
       "table": Object {
-        "alias": Object {
-          "name": undefined,
-          "type": "Identifier",
-        },
+        "alias": undefined,
         "table": Object {
           "name": "a",
           "type": "Identifier",
@@ -4472,10 +4098,7 @@ Object {
       Object {
         "joins": Array [],
         "table": Object {
-          "alias": Object {
-            "name": undefined,
-            "type": "Identifier",
-          },
+          "alias": undefined,
           "table": Object {
             "name": "Foo",
             "type": "Identifier",
