@@ -590,7 +590,10 @@ Object {
       },
       "columnType": Object {
         "arguments": Array [
-          "255",
+          Object {
+            "type": "NumberLiteral",
+            "value": "255",
+          },
         ],
         "name": "VARCHAR",
         "type": "DataType",
@@ -614,7 +617,10 @@ exports[`CREATE TABLE Foo () 1`] = `[SyntaxError: Invalid syntax.]`;
 exports[`DELETE FROM table_name WHERE a = 5 ORDER BY a LIMIT 3 1`] = `
 Object {
   "limit": Object {
-    "count": "3",
+    "count": Object {
+      "type": "NumberLiteral",
+      "value": "3",
+    },
     "offset": undefined,
     "type": "LimitClause",
   },
@@ -2124,8 +2130,14 @@ Object {
   "having": undefined,
   "highPriority": undefined,
   "limit": Object {
-    "count": "10",
-    "offset": "50",
+    "count": Object {
+      "type": "NumberLiteral",
+      "value": "10",
+    },
+    "offset": Object {
+      "type": "NumberLiteral",
+      "value": "50",
+    },
     "type": "LimitClause",
   },
   "orderBy": undefined,
@@ -2154,8 +2166,14 @@ Object {
   "having": undefined,
   "highPriority": undefined,
   "limit": Object {
-    "count": "10",
-    "offset": "50",
+    "count": Object {
+      "type": "NumberLiteral",
+      "value": "10",
+    },
+    "offset": Object {
+      "type": "NumberLiteral",
+      "value": "50",
+    },
     "type": "LimitClause",
   },
   "orderBy": undefined,
@@ -4066,7 +4084,10 @@ exports[`UPDATE Foo SET a = 1 LIMIT 1 1`] = `
 Object {
   "ignore": undefined,
   "limit": Object {
-    "count": "1",
+    "count": Object {
+      "type": "NumberLiteral",
+      "value": "1",
+    },
     "offset": undefined,
     "type": "LimitClause",
   },
@@ -4109,7 +4130,10 @@ exports[`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4 1`] = `
 Object {
   "ignore": undefined,
   "limit": Object {
-    "count": "4",
+    "count": Object {
+      "type": "NumberLiteral",
+      "value": "4",
+    },
     "offset": undefined,
     "type": "LimitClause",
   },
