@@ -2827,17 +2827,12 @@ Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "alias": Object {
-        "name": undefined,
-        "type": "Identifier",
+      "arguments": Array [],
+      "callee": Object {
+        "name": "CURRENT_DATE",
+        "type": "SpecialValue",
       },
-      "expression": Object {
-        "arguments": Array [],
-        "callee": "CURRENT_DATE",
-        "type": "CallExpression",
-      },
-      "hasAsKeyword": false,
-      "type": "AliasExpression",
+      "type": "CallExpression",
     },
   ],
   "from": undefined,
@@ -3426,22 +3421,7 @@ Object {
 
 exports[`SELECT a b c d e 1`] = `[SyntaxError: Invalid syntax.]`;
 
-exports[`SELECT a, b, 1`] = `
-Object {
-  "expressions": Array [
-    "a",
-    "b",
-  ],
-  "from": undefined,
-  "groupBy": undefined,
-  "having": undefined,
-  "limit": undefined,
-  "orderBy": undefined,
-  "type": "SelectStatement",
-  "union": undefined,
-  "where": undefined,
-}
-`;
+exports[`SELECT a, b, 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT a."b" 1`] = `[SyntaxError: Unexpected token.]`;
 
@@ -3805,9 +3785,18 @@ exports[`SELECT null, true, current_timestamp FROM a 1`] = `
 Object {
   "distinct": false,
   "expressions": Array [
-    "null",
-    "true",
-    "current_timestamp",
+    Object {
+      "name": "null",
+      "type": "SpecialValue",
+    },
+    Object {
+      "name": "true",
+      "type": "SpecialValue",
+    },
+    Object {
+      "name": "current_timestamp",
+      "type": "SpecialValue",
+    },
   ],
   "from": Object {
     "table": Object {
