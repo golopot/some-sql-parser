@@ -617,10 +617,12 @@ Object {
     "type": "LimitClause",
   },
   "orderBy": Object {
-    "columnName": Object {
-      "name": "a",
-      "type": "Identifier",
-    },
+    "columnNames": Array [
+      Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+    ],
     "desc": false,
     "type": "OrderByClause",
   },
@@ -1656,6 +1658,85 @@ Object {
 
 exports[`SELECT * FROM foo LEFT JOIN goo 1`] = `[SyntaxError: Invalid syntax.]`;
 
+exports[`SELECT * FROM foo LEFT JOIN goo ON 1 LEFT JOIN hoo ON 1 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "type": "WildcardExpression",
+    },
+  ],
+  "from": Object {
+    "table": Object {
+      "joins": Array [
+        Object {
+          "joinType": "left",
+          "on": Object {
+            "expression": Object {
+              "type": "NumberLiteral",
+              "value": "1",
+            },
+            "type": "OnClause",
+          },
+          "table": Object {
+            "alias": undefined,
+            "table": Object {
+              "name": "goo",
+              "type": "Identifier",
+            },
+            "type": "TableFactor",
+          },
+          "type": "JoinClause",
+        },
+        Object {
+          "joinType": "left",
+          "on": Object {
+            "expression": Object {
+              "type": "NumberLiteral",
+              "value": "1",
+            },
+            "type": "OnClause",
+          },
+          "table": Object {
+            "alias": undefined,
+            "table": Object {
+              "name": "hoo",
+              "type": "Identifier",
+            },
+            "type": "TableFactor",
+          },
+          "type": "JoinClause",
+        },
+      ],
+      "table": Object {
+        "alias": undefined,
+        "table": Object {
+          "name": "foo",
+          "type": "Identifier",
+        },
+        "type": "TableFactor",
+      },
+      "type": "TableReference",
+    },
+    "type": "FromClause",
+  },
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
 exports[`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a 1`] = `
 Object {
   "distinct": false,
@@ -2176,10 +2257,12 @@ Object {
   "highPriority": undefined,
   "limit": undefined,
   "orderBy": Object {
-    "columnName": Object {
-      "name": "a",
-      "type": "Identifier",
-    },
+    "columnNames": Array [
+      Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+    ],
     "desc": false,
     "type": "OrderByClause",
   },
@@ -2209,10 +2292,12 @@ Object {
   "highPriority": undefined,
   "limit": undefined,
   "orderBy": Object {
-    "columnName": Object {
-      "name": "a",
-      "type": "Identifier",
-    },
+    "columnNames": Array [
+      Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+    ],
     "desc": false,
     "type": "OrderByClause",
   },
@@ -2242,11 +2327,52 @@ Object {
   "highPriority": undefined,
   "limit": undefined,
   "orderBy": Object {
-    "columnName": Object {
-      "name": "a",
-      "type": "Identifier",
-    },
+    "columnNames": Array [
+      Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+    ],
     "desc": true,
+    "type": "OrderByClause",
+  },
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT * ORDER BY a, b 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "type": "WildcardExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": Object {
+    "columnNames": Array [
+      Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      Object {
+        "name": "b",
+        "type": "Identifier",
+      },
+    ],
+    "desc": false,
     "type": "OrderByClause",
   },
   "sqlBigResult": undefined,
@@ -3870,10 +3996,12 @@ Object {
   },
   "lowPriority": undefined,
   "orderBy": Object {
-    "columnName": Object {
-      "name": "c",
-      "type": "Identifier",
-    },
+    "columnNames": Array [
+      Object {
+        "name": "c",
+        "type": "Identifier",
+      },
+    ],
     "desc": false,
     "type": "OrderByClause",
   },
