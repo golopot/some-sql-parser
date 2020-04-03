@@ -484,6 +484,31 @@ Object {
 }
 `;
 
+exports[`CREATE TABLE Foo ( a int )  1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "type": "CreateDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "type": "CreateTableStatement",
+}
+`;
+
 exports[`CREATE TABLE Foo ( a int ) 1`] = `
 Object {
   "definitions": Array [
