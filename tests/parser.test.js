@@ -154,9 +154,28 @@ testPass('CREATE TABLE `Foo` ( a int )');
 testPass(`CREATE TABLE Foo ( a int, b varchar(255) )`);
 testPass(`CREATE TABLE Foo ( a int primary key )`);
 testPass(`CREATE TABLE Foo ( a int key )`);
+testPass(`CREATE TABLE Foo ( a int UNIQUE KEY )`);
+testPass(`CREATE TABLE Foo ( a int UNIQUE KEY KEY )`);
+testPass(`CREATE TABLE Foo ( a int UNIQUE PRIMARY KEY )`);
+testPass(`CREATE TABLE Foo ( a int COMMENT "cccc" )`);
+testPass(`CREATE TABLE Foo ( a int COLLATE collation_name )`);
+testPass(`CREATE TABLE Foo ( a int NULL )`);
+testPass(`CREATE TABLE Foo ( a int NOT NULL )`);
+testPass(`CREATE TABLE Foo ( a int DEFAULT 50 )`);
+testPass(`CREATE TABLE Foo ( a int DEFAULT "zoo" )`);
+testPass(`CREATE TABLE Foo ( a int DEFAULT (uuid()) )`);
+testPass(`CREATE TABLE Foo ( a int REFERENCES Goo(a) )`);
+testPass(`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE CASCADE )`);
+testPass(`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE RESTRICT )`);
+testPass(`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE NO ACTION )`);
+testPass(`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE SET NULL )`);
+testPass(`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE SET DEFAULT )`);
+testPass(`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON UPDATE CASCADE )`);
+testPass(`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE CASCADE ON UPDATE CASCADE )`);
 testFail(`CREATE TABLE "Foo" ( a int )`);
 testFail(`CREATE TABLE Foo ( key (id) )`);
 testFail(`CREATE TABLE Foo ()`);
+testFail(`CREATE TABLE Foo ( a int DEFAULT uuid() )`);
 
 testPass(`CREATE DATABASE db_name`);
 

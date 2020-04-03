@@ -509,6 +509,8 @@ Object {
 }
 `;
 
+exports[`CREATE TABLE Foo ( a int DEFAULT uuid() ) 1`] = `[SyntaxError: Invalid create table definition.]`;
+
 exports[`CREATE TABLE Foo ( a int key ) 1`] = `
 Object {
   "definitions": Array [
