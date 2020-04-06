@@ -194,6 +194,8 @@ testPass(`CREATE TABLE Foo ( a int ) COLLATE collation_name`);
 testPass(`CREATE TABLE Foo ( a int ) DEFAULT COLLATE collation_name`);
 testPass(`CREATE TABLE Foo ( a int ) ENGINE engine_name`);
 testPass(`CREATE TABLE Foo ( a int ) ENGINE = engine_name`);
+testPass(`CREATE TABLE Foo ( a int ) COMMENT "c" ENGINE = e`);
+testPass(`CREATE TABLE Foo ( a int ) COMMENT "c", ENGINE = e`);
 testFail(`CREATE TABLE "Foo" ( a int )`);
 testFail(`CREATE TABLE Foo ()`);
 testFail(`CREATE TABLE Foo ( a int DEFAULT uuid() )`);

@@ -480,6 +480,7 @@ Object {
     "type": "BacktickStringLiteral",
     "value": "Foo",
   },
+  "tableOptions": Array [],
   "type": "CreateTableStatement",
 }
 `;
@@ -505,6 +506,7 @@ Object {
     "name": "Foo",
     "type": "Identifier",
   },
+  "tableOptions": Array [],
   "type": "CreateTableStatement",
 }
 `;
@@ -530,6 +532,233 @@ Object {
     "name": "Foo",
     "type": "Identifier",
   },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int ) COMMENT "c" ENGINE = e 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "type": "CreateDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [
+    Object {
+      "name": "COMMENT",
+      "type": "TableOption",
+      "value": Object {
+        "type": "StringLiteral",
+        "value": "c",
+      },
+    },
+    Object {
+      "name": "ENGINE",
+      "type": "TableOption",
+      "value": Object {
+        "name": "e",
+        "type": "Identifier",
+      },
+    },
+  ],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int ) COMMENT "c", ENGINE = e 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "type": "CreateDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [
+    Object {
+      "name": "COMMENT",
+      "type": "TableOption",
+      "value": Object {
+        "type": "StringLiteral",
+        "value": "c",
+      },
+    },
+    Object {
+      "name": "ENGINE",
+      "type": "TableOption",
+      "value": Object {
+        "name": "e",
+        "type": "Identifier",
+      },
+    },
+  ],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int ) COMMENT "some_comment" 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "type": "CreateDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [
+    Object {
+      "name": "COMMENT",
+      "type": "TableOption",
+      "value": Object {
+        "type": "StringLiteral",
+        "value": "some_comment",
+      },
+    },
+  ],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int ) COMMENT = "some_comment" 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "type": "CreateDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [
+    Object {
+      "name": "COMMENT",
+      "type": "TableOption",
+      "value": Object {
+        "type": "StringLiteral",
+        "value": "some_comment",
+      },
+    },
+  ],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int ) ENGINE = engine_name 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "type": "CreateDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [
+    Object {
+      "name": "ENGINE",
+      "type": "TableOption",
+      "value": Object {
+        "name": "engine_name",
+        "type": "Identifier",
+      },
+    },
+  ],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int ) ENGINE engine_name 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "type": "CreateDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [
+    Object {
+      "name": "ENGINE",
+      "type": "TableOption",
+      "value": Object {
+        "name": "engine_name",
+        "type": "Identifier",
+      },
+    },
+  ],
   "type": "CreateTableStatement",
 }
 `;
@@ -557,6 +786,7 @@ Object {
     "name": "Foo",
     "type": "Identifier",
   },
+  "tableOptions": Array [],
   "type": "CreateTableStatement",
 }
 `;
@@ -582,6 +812,7 @@ Object {
     "name": "Foo",
     "type": "Identifier",
   },
+  "tableOptions": Array [],
   "type": "CreateTableStatement",
 }
 `;
@@ -625,11 +856,10 @@ Object {
     "name": "Foo",
     "type": "Identifier",
   },
+  "tableOptions": Array [],
   "type": "CreateTableStatement",
 }
 `;
-
-exports[`CREATE TABLE Foo ( key (id) ) 1`] = `[SyntaxError: Invalid create table definition.]`;
 
 exports[`CREATE TABLE Foo () 1`] = `[SyntaxError: Invalid create table definition.]`;
 
