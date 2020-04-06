@@ -537,6 +537,76 @@ Object {
 }
 `;
 
+exports[`CREATE TABLE Foo ( a int ) CHARACTER SET charset_name 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "type": "CreateDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [
+    Object {
+      "name": "CHARACTER SET",
+      "type": "TableOption",
+      "value": Object {
+        "name": "charset_name",
+        "type": "Identifier",
+      },
+    },
+  ],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int ) COLLATE collation_name 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "type": "CreateDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [
+    Object {
+      "name": "COLLATE",
+      "type": "TableOption",
+      "value": Object {
+        "name": "collation_name",
+        "type": "Identifier",
+      },
+    },
+  ],
+  "type": "CreateTableStatement",
+}
+`;
+
 exports[`CREATE TABLE Foo ( a int ) COMMENT "c" ENGINE = e 1`] = `
 Object {
   "definitions": Array [
@@ -686,6 +756,76 @@ Object {
       "value": Object {
         "type": "StringLiteral",
         "value": "some_comment",
+      },
+    },
+  ],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int ) DEFAULT CHARACTER SET charset_name 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "type": "CreateDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [
+    Object {
+      "name": "CHARACTER SET",
+      "type": "TableOption",
+      "value": Object {
+        "name": "charset_name",
+        "type": "Identifier",
+      },
+    },
+  ],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int ) DEFAULT COLLATE collation_name 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "type": "CreateDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [
+    Object {
+      "name": "COLLATE",
+      "type": "TableOption",
+      "value": Object {
+        "name": "collation_name",
+        "type": "Identifier",
       },
     },
   ],
