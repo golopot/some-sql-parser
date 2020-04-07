@@ -34,6 +34,42 @@ SELECT
   a
 `);
 
+testPass(`SELECT a + b`);
+testPass(`SELECT a + b * c`);
+testPass(`SELECT a * b + c`);
+testPass(`SELECT +-!~1`);
+testPass(`SELECT NOT a`)
+testPass(`SELECT !a`)
+testPass(`SELECT + 1 - 2`);
+testPass(`SELECT a || b`)
+testPass(`SELECT a && b`)
+testPass(`SELECT a OR b`)
+testPass(`SELECT a XOR b`)
+testPass(`SELECT a AND b`)
+testPass(`SELECT a IS TRUE`)
+testPass(`SELECT a IS NOT TRUE`)
+testPass(`SELECT a IS FALSE`)
+testPass(`SELECT a IS NULL`)
+testPass(`SELECT a IS NOT NULL`)
+testPass(`SELECT a < 0`)
+testPass(`SELECT a <= 0`)
+testPass(`SELECT a = 0`)
+testPass(`SELECT a != 0`)
+testPass(`SELECT a > 0`)
+testPass(`SELECT a <= 0`)
+testPass(`SELECT a <> 0`)
+testPass(`SELECT a <=> 0`)
+testPass(`SELECT a | 0`)
+testPass(`SELECT a & 0`)
+testPass(`SELECT a << 0`)
+testPass(`SELECT a >> 0`)
+testPass(`SELECT a DIV 0`)
+testPass(`SELECT a MODE 0`)
+testPass(`SELECT a % 0`)
+testPass(`SELECT a ^ 0`)
+testPass(`SELECT (a)`);
+testPass(`SELECT 2 * (a % b)`);
+
 testPass(`SELECT a.b`);
 testPass(`SELECT a.b.c`);
 testPass('SELECT `a`.`b`');
@@ -57,16 +93,6 @@ testFail(`SELECT f.g.h()`);
 testFail(`SELECT f().g`);
 testFail(`SELECT (f)()`);
 testFail(`SELECT f()()`);
-
-testPass(`SELECT a + b`);
-testPass(`SELECT a + b + c`);
-testPass(`SELECT a + b - c`);
-testPass(`SELECT a + b * c / d`);
-testPass(`SELECT (a)`);
-testPass(`SELECT 2 * (a % b)`);
-
-testPass(`SELECT +-!~1`);
-testPass(`SELECT + 1 - 2`);
 
 testPass(`SELECT a aa`);
 testPass(`SELECT a "aa"`);
@@ -171,7 +197,9 @@ testPass(`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE NO ACTION )`);
 testPass(`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE SET NULL )`);
 testPass(`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE SET DEFAULT )`);
 testPass(`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON UPDATE CASCADE )`);
-testPass(`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE CASCADE ON UPDATE CASCADE )`);
+testPass(
+  `CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE CASCADE ON UPDATE CASCADE )`
+);
 testPass(`CREATE TABLE Foo ( KEY (id) )`);
 testPass(`CREATE TABLE Foo ( INDEX (id) )`);
 testPass(`CREATE TABLE Foo ( KEY index_name (id) )`);
@@ -184,7 +212,9 @@ testPass(`CREATE TABLE Foo ( UNIQUE INDEX (id) )`);
 testPass(`CREATE TABLE Foo ( UNIQUE KEY index_name (id) )`);
 testPass(`CREATE TABLE Foo ( UNIQUE KEY (id) COMMENT 'some_comment' )`);
 testPass(`CREATE TABLE Foo ( FOREIGN KEY (a) REFERENCES Goo (a) )`);
-testPass(`CREATE TABLE Foo ( FOREIGN KEY (a) REFERENCES Goo (a) ON DELETE CASCADE )`);
+testPass(
+  `CREATE TABLE Foo ( FOREIGN KEY (a) REFERENCES Goo (a) ON DELETE CASCADE )`
+);
 testPass(`CREATE TABLE Foo ( a int ) `);
 testPass(`CREATE TABLE Foo ( a int ) COMMENT "some_comment"`);
 testPass(`CREATE TABLE Foo ( a int ) COMMENT = "some_comment"`);
