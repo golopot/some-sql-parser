@@ -463,6 +463,7 @@ exports[`CREATE TABLE \`Foo\` ( a int ) 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -473,8 +474,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
@@ -866,6 +869,7 @@ exports[`CREATE TABLE Foo ( a int )  1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -876,8 +880,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
@@ -895,6 +901,7 @@ exports[`CREATE TABLE Foo ( a int ) 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -905,8 +912,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
@@ -924,6 +933,7 @@ exports[`CREATE TABLE Foo ( a int ) CHARACTER SET charset_name 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -934,8 +944,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
@@ -962,6 +974,7 @@ exports[`CREATE TABLE Foo ( a int ) COLLATE collation_name 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -972,8 +985,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
@@ -1000,6 +1015,7 @@ exports[`CREATE TABLE Foo ( a int ) COMMENT "c" ENGINE = e 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1010,8 +1026,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
@@ -1046,6 +1064,7 @@ exports[`CREATE TABLE Foo ( a int ) COMMENT "c", ENGINE = e 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1056,8 +1075,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
@@ -1092,6 +1113,7 @@ exports[`CREATE TABLE Foo ( a int ) COMMENT "some_comment" 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1102,8 +1124,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
@@ -1130,6 +1154,7 @@ exports[`CREATE TABLE Foo ( a int ) COMMENT = "some_comment" 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1140,8 +1165,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
@@ -1168,6 +1195,7 @@ exports[`CREATE TABLE Foo ( a int ) DEFAULT CHARACTER SET charset_name 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1178,8 +1206,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
@@ -1206,6 +1236,7 @@ exports[`CREATE TABLE Foo ( a int ) DEFAULT COLLATE collation_name 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1216,8 +1247,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
@@ -1244,6 +1277,7 @@ exports[`CREATE TABLE Foo ( a int ) ENGINE = engine_name 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1254,8 +1288,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
@@ -1282,6 +1318,7 @@ exports[`CREATE TABLE Foo ( a int ) ENGINE engine_name 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1292,8 +1329,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
@@ -1316,10 +1355,81 @@ Object {
 }
 `;
 
+exports[`CREATE TABLE Foo ( a int COLLATE collation_name ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "collate": Object {
+        "name": "collation_name",
+        "type": "Identifier",
+      },
+      "columnDefault": undefined,
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "comment": undefined,
+      "isNotNull": false,
+      "isPrimaryKey": false,
+      "isUniqueKey": false,
+      "references": undefined,
+      "type": "ColumnDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int COMMENT "cccc" ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "collate": undefined,
+      "columnDefault": undefined,
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "comment": Object {
+        "type": "StringLiteral",
+        "value": "cccc",
+      },
+      "isNotNull": false,
+      "isPrimaryKey": false,
+      "isUniqueKey": false,
+      "references": undefined,
+      "type": "ColumnDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
 exports[`CREATE TABLE Foo ( a int DEFAULT "zoo" ) 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": Object {
         "type": "StringLiteral",
         "value": "zoo",
@@ -1333,8 +1443,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
@@ -1352,6 +1464,7 @@ exports[`CREATE TABLE Foo ( a int DEFAULT (uuid()) ) 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": Object {
         "arguments": Array [],
         "callee": Object {
@@ -1369,8 +1482,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
@@ -1388,6 +1503,7 @@ exports[`CREATE TABLE Foo ( a int DEFAULT 50 ) 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": Object {
         "type": "NumberLiteral",
         "value": "50",
@@ -1401,8 +1517,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
@@ -1422,6 +1540,7 @@ exports[`CREATE TABLE Foo ( a int NOT NULL ) 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1432,8 +1551,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": true,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
@@ -1451,6 +1572,7 @@ exports[`CREATE TABLE Foo ( a int NULL ) 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1461,8 +1583,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
@@ -1480,6 +1604,7 @@ exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ) 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1490,8 +1615,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": Object {
         "keyParts": Array [
           Object {
@@ -1523,6 +1650,7 @@ exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE CASCADE ) 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1533,8 +1661,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": Object {
         "keyParts": Array [
           Object {
@@ -1566,6 +1696,7 @@ exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE CASCADE ON UPDATE 
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1576,8 +1707,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": Object {
         "keyParts": Array [
           Object {
@@ -1609,6 +1742,7 @@ exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE NO ACTION ) 1`] = 
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1619,8 +1753,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": Object {
         "keyParts": Array [
           Object {
@@ -1652,6 +1788,7 @@ exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE RESTRICT ) 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1662,8 +1799,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": Object {
         "keyParts": Array [
           Object {
@@ -1695,6 +1834,7 @@ exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE SET DEFAULT ) 1`] 
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1705,8 +1845,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": Object {
         "keyParts": Array [
           Object {
@@ -1738,6 +1880,7 @@ exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE SET NULL ) 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1748,8 +1891,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": Object {
         "keyParts": Array [
           Object {
@@ -1781,6 +1926,7 @@ exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON UPDATE CASCADE ) 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1791,8 +1937,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": Object {
         "keyParts": Array [
           Object {
@@ -1820,10 +1968,11 @@ Object {
 }
 `;
 
-exports[`CREATE TABLE Foo ( a int key ) 1`] = `
+exports[`CREATE TABLE Foo ( a int UNIQUE KEY ) 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1834,8 +1983,106 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
+      "isNotNull": false,
+      "isPrimaryKey": false,
+      "isUniqueKey": true,
+      "references": undefined,
+      "type": "ColumnDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int UNIQUE KEY KEY ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "collate": undefined,
+      "columnDefault": undefined,
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": true,
+      "isUniqueKey": true,
+      "references": undefined,
+      "type": "ColumnDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int UNIQUE PRIMARY KEY ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "collate": undefined,
+      "columnDefault": undefined,
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "comment": undefined,
+      "isNotNull": false,
+      "isPrimaryKey": true,
+      "isUniqueKey": true,
+      "references": undefined,
+      "type": "ColumnDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int key ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "collate": undefined,
+      "columnDefault": undefined,
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "comment": undefined,
+      "isNotNull": false,
+      "isPrimaryKey": true,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
@@ -1853,6 +2100,7 @@ exports[`CREATE TABLE Foo ( a int primary key ) 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1863,8 +2111,10 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": true,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
@@ -1882,6 +2132,7 @@ exports[`CREATE TABLE Foo ( a int, b varchar(255) ) 1`] = `
 Object {
   "definitions": Array [
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "a",
@@ -1892,12 +2143,15 @@ Object {
         "name": "INT",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
     Object {
+      "collate": undefined,
       "columnDefault": undefined,
       "columnName": Object {
         "name": "b",
@@ -1913,8 +2167,10 @@ Object {
         "name": "VARCHAR",
         "type": "DataType",
       },
+      "comment": undefined,
       "isNotNull": false,
       "isPrimaryKey": false,
+      "isUniqueKey": false,
       "references": undefined,
       "type": "ColumnDefinition",
     },
