@@ -473,7 +473,8 @@ Object {
         "type": "DataType",
       },
       "isPrimaryKey": false,
-      "type": "CreateDefinition",
+      "references": undefined,
+      "type": "ColumnDefinition",
     },
   ],
   "tableName": Object {
@@ -489,18 +490,27 @@ exports[`CREATE TABLE Foo ( FOREIGN KEY (a) REFERENCES Goo (a) ) 1`] = `
 Object {
   "definitions": Array [
     Object {
-      "indexName": undefined,
-      "keyParts": Array [
+      "columns": Array [
         Object {
           "name": "a",
           "type": "Identifier",
         },
       ],
-      "onDelete": undefined,
-      "onUpdate": undefined,
-      "table": Object {
-        "name": "Goo",
-        "type": "Identifier",
+      "indexName": undefined,
+      "references": Object {
+        "keyParts": Array [
+          Object {
+            "name": "a",
+            "type": "Identifier",
+          },
+        ],
+        "onDelete": undefined,
+        "onUpdate": undefined,
+        "table": Object {
+          "name": "Goo",
+          "type": "Identifier",
+        },
+        "type": "ReferenceDefinition",
       },
       "type": "ForeignKeyDefinition",
     },
@@ -518,18 +528,27 @@ exports[`CREATE TABLE Foo ( FOREIGN KEY (a) REFERENCES Goo (a) ON DELETE CASCADE
 Object {
   "definitions": Array [
     Object {
-      "indexName": undefined,
-      "keyParts": Array [
+      "columns": Array [
         Object {
           "name": "a",
           "type": "Identifier",
         },
       ],
-      "onDelete": "CASCADE",
-      "onUpdate": undefined,
-      "table": Object {
-        "name": "Goo",
-        "type": "Identifier",
+      "indexName": undefined,
+      "references": Object {
+        "keyParts": Array [
+          Object {
+            "name": "a",
+            "type": "Identifier",
+          },
+        ],
+        "onDelete": "CASCADE",
+        "onUpdate": undefined,
+        "table": Object {
+          "name": "Goo",
+          "type": "Identifier",
+        },
+        "type": "ReferenceDefinition",
       },
       "type": "ForeignKeyDefinition",
     },
@@ -855,7 +874,8 @@ Object {
         "type": "DataType",
       },
       "isPrimaryKey": false,
-      "type": "CreateDefinition",
+      "references": undefined,
+      "type": "ColumnDefinition",
     },
   ],
   "tableName": Object {
@@ -881,7 +901,8 @@ Object {
         "type": "DataType",
       },
       "isPrimaryKey": false,
-      "type": "CreateDefinition",
+      "references": undefined,
+      "type": "ColumnDefinition",
     },
   ],
   "tableName": Object {
@@ -907,7 +928,8 @@ Object {
         "type": "DataType",
       },
       "isPrimaryKey": false,
-      "type": "CreateDefinition",
+      "references": undefined,
+      "type": "ColumnDefinition",
     },
   ],
   "tableName": Object {
@@ -942,7 +964,8 @@ Object {
         "type": "DataType",
       },
       "isPrimaryKey": false,
-      "type": "CreateDefinition",
+      "references": undefined,
+      "type": "ColumnDefinition",
     },
   ],
   "tableName": Object {
@@ -977,7 +1000,8 @@ Object {
         "type": "DataType",
       },
       "isPrimaryKey": false,
-      "type": "CreateDefinition",
+      "references": undefined,
+      "type": "ColumnDefinition",
     },
   ],
   "tableName": Object {
@@ -1020,7 +1044,8 @@ Object {
         "type": "DataType",
       },
       "isPrimaryKey": false,
-      "type": "CreateDefinition",
+      "references": undefined,
+      "type": "ColumnDefinition",
     },
   ],
   "tableName": Object {
@@ -1063,7 +1088,8 @@ Object {
         "type": "DataType",
       },
       "isPrimaryKey": false,
-      "type": "CreateDefinition",
+      "references": undefined,
+      "type": "ColumnDefinition",
     },
   ],
   "tableName": Object {
@@ -1098,7 +1124,8 @@ Object {
         "type": "DataType",
       },
       "isPrimaryKey": false,
-      "type": "CreateDefinition",
+      "references": undefined,
+      "type": "ColumnDefinition",
     },
   ],
   "tableName": Object {
@@ -1133,7 +1160,8 @@ Object {
         "type": "DataType",
       },
       "isPrimaryKey": false,
-      "type": "CreateDefinition",
+      "references": undefined,
+      "type": "ColumnDefinition",
     },
   ],
   "tableName": Object {
@@ -1168,7 +1196,8 @@ Object {
         "type": "DataType",
       },
       "isPrimaryKey": false,
-      "type": "CreateDefinition",
+      "references": undefined,
+      "type": "ColumnDefinition",
     },
   ],
   "tableName": Object {
@@ -1203,7 +1232,8 @@ Object {
         "type": "DataType",
       },
       "isPrimaryKey": false,
-      "type": "CreateDefinition",
+      "references": undefined,
+      "type": "ColumnDefinition",
     },
   ],
   "tableName": Object {
@@ -1238,7 +1268,8 @@ Object {
         "type": "DataType",
       },
       "isPrimaryKey": false,
-      "type": "CreateDefinition",
+      "references": undefined,
+      "type": "ColumnDefinition",
     },
   ],
   "tableName": Object {
@@ -1261,6 +1292,334 @@ Object {
 
 exports[`CREATE TABLE Foo ( a int DEFAULT uuid() ) 1`] = `[SyntaxError: ")" expected.]`;
 
+exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "references": Object {
+        "keyParts": Array [
+          Object {
+            "name": "a",
+            "type": "Identifier",
+          },
+        ],
+        "onDelete": undefined,
+        "onUpdate": undefined,
+        "table": Object {
+          "name": "Goo",
+          "type": "Identifier",
+        },
+        "type": "ReferenceDefinition",
+      },
+      "type": "ColumnDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE CASCADE ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "references": Object {
+        "keyParts": Array [
+          Object {
+            "name": "a",
+            "type": "Identifier",
+          },
+        ],
+        "onDelete": "CASCADE",
+        "onUpdate": undefined,
+        "table": Object {
+          "name": "Goo",
+          "type": "Identifier",
+        },
+        "type": "ReferenceDefinition",
+      },
+      "type": "ColumnDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE CASCADE ON UPDATE CASCADE ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "references": Object {
+        "keyParts": Array [
+          Object {
+            "name": "a",
+            "type": "Identifier",
+          },
+        ],
+        "onDelete": "CASCADE",
+        "onUpdate": "CASCADE",
+        "table": Object {
+          "name": "Goo",
+          "type": "Identifier",
+        },
+        "type": "ReferenceDefinition",
+      },
+      "type": "ColumnDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE NO ACTION ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "references": Object {
+        "keyParts": Array [
+          Object {
+            "name": "a",
+            "type": "Identifier",
+          },
+        ],
+        "onDelete": "NO ACTION",
+        "onUpdate": undefined,
+        "table": Object {
+          "name": "Goo",
+          "type": "Identifier",
+        },
+        "type": "ReferenceDefinition",
+      },
+      "type": "ColumnDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE RESTRICT ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "references": Object {
+        "keyParts": Array [
+          Object {
+            "name": "a",
+            "type": "Identifier",
+          },
+        ],
+        "onDelete": "RESTRICT",
+        "onUpdate": undefined,
+        "table": Object {
+          "name": "Goo",
+          "type": "Identifier",
+        },
+        "type": "ReferenceDefinition",
+      },
+      "type": "ColumnDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE SET DEFAULT ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "references": Object {
+        "keyParts": Array [
+          Object {
+            "name": "a",
+            "type": "Identifier",
+          },
+        ],
+        "onDelete": "NO DEFAULT",
+        "onUpdate": undefined,
+        "table": Object {
+          "name": "Goo",
+          "type": "Identifier",
+        },
+        "type": "ReferenceDefinition",
+      },
+      "type": "ColumnDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE SET NULL ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "references": Object {
+        "keyParts": Array [
+          Object {
+            "name": "a",
+            "type": "Identifier",
+          },
+        ],
+        "onDelete": "NO NULL",
+        "onUpdate": undefined,
+        "table": Object {
+          "name": "Goo",
+          "type": "Identifier",
+        },
+        "type": "ReferenceDefinition",
+      },
+      "type": "ColumnDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON UPDATE CASCADE ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "references": Object {
+        "keyParts": Array [
+          Object {
+            "name": "a",
+            "type": "Identifier",
+          },
+        ],
+        "onDelete": undefined,
+        "onUpdate": "CASCADE",
+        "table": Object {
+          "name": "Goo",
+          "type": "Identifier",
+        },
+        "type": "ReferenceDefinition",
+      },
+      "type": "ColumnDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
 exports[`CREATE TABLE Foo ( a int key ) 1`] = `
 Object {
   "definitions": Array [
@@ -1275,7 +1634,8 @@ Object {
         "type": "DataType",
       },
       "isPrimaryKey": true,
-      "type": "CreateDefinition",
+      "references": undefined,
+      "type": "ColumnDefinition",
     },
   ],
   "tableName": Object {
@@ -1301,7 +1661,8 @@ Object {
         "type": "DataType",
       },
       "isPrimaryKey": true,
-      "type": "CreateDefinition",
+      "references": undefined,
+      "type": "ColumnDefinition",
     },
   ],
   "tableName": Object {
@@ -1327,7 +1688,8 @@ Object {
         "type": "DataType",
       },
       "isPrimaryKey": false,
-      "type": "CreateDefinition",
+      "references": undefined,
+      "type": "ColumnDefinition",
     },
     Object {
       "columnName": Object {
@@ -1345,7 +1707,8 @@ Object {
         "type": "DataType",
       },
       "isPrimaryKey": false,
-      "type": "CreateDefinition",
+      "references": undefined,
+      "type": "ColumnDefinition",
     },
   ],
   "tableName": Object {
