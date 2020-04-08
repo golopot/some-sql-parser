@@ -480,7 +480,7 @@ Object {
     },
   ],
   "tableName": Object {
-    "type": "BacktickStringLiteral",
+    "type": "BacktickLiteral",
     "value": "Foo",
   },
   "tableOptions": Array [],
@@ -2539,7 +2539,7 @@ Object {
       "value": "1",
     },
     Object {
-      "type": "BacktickStringLiteral",
+      "type": "BacktickLiteral",
       "value": "1",
     },
   ],
@@ -2739,11 +2739,11 @@ Object {
         "alias": undefined,
         "table": Object {
           "left": Object {
-            "type": "BacktickStringLiteral",
+            "type": "BacktickLiteral",
             "value": "foo",
           },
           "right": Object {
-            "type": "BacktickStringLiteral",
+            "type": "BacktickLiteral",
             "value": "goo",
           },
           "type": "MemberExpression",
@@ -3859,11 +3859,11 @@ Object {
   "expressions": Array [
     Object {
       "left": Object {
-        "type": "BacktickStringLiteral",
+        "type": "BacktickLiteral",
         "value": "a",
       },
       "right": Object {
-        "type": "BacktickStringLiteral",
+        "type": "BacktickLiteral",
         "value": "b",
       },
       "type": "MemberExpression",
@@ -3894,7 +3894,7 @@ Object {
     Object {
       "arguments": Array [],
       "callee": Object {
-        "type": "BacktickStringLiteral",
+        "type": "BacktickLiteral",
         "value": "foo",
       },
       "type": "CallExpression",
@@ -3926,11 +3926,11 @@ Object {
       "arguments": Array [],
       "callee": Object {
         "left": Object {
-          "type": "BacktickStringLiteral",
+          "type": "BacktickLiteral",
           "value": "foo",
         },
         "right": Object {
-          "type": "BacktickStringLiteral",
+          "type": "BacktickLiteral",
           "value": "bar",
         },
         "type": "MemberExpression",
@@ -4728,7 +4728,7 @@ Object {
   "expressions": Array [
     Object {
       "alias": Object {
-        "type": "BacktickStringLiteral",
+        "type": "BacktickLiteral",
         "value": "aa",
       },
       "expression": Object {
