@@ -40,35 +40,35 @@ testPass(`SELECT a + b`);
 testPass(`SELECT a + b * c`);
 testPass(`SELECT a * b + c`);
 testPass(`SELECT +-!~1`);
-testPass(`SELECT NOT a`)
-testPass(`SELECT !a`)
+testPass(`SELECT NOT a`);
+testPass(`SELECT !a`);
 testPass(`SELECT + 1 - 2`);
-testPass(`SELECT a || b`)
-testPass(`SELECT a && b`)
-testPass(`SELECT a OR b`)
-testPass(`SELECT a XOR b`)
-testPass(`SELECT a AND b`)
-testPass(`SELECT a IS TRUE`)
-testPass(`SELECT a IS NOT TRUE`)
-testPass(`SELECT a IS FALSE`)
-testPass(`SELECT a IS NULL`)
-testPass(`SELECT a IS NOT NULL`)
-testPass(`SELECT a < 0`)
-testPass(`SELECT a <= 0`)
-testPass(`SELECT a = 0`)
-testPass(`SELECT a != 0`)
-testPass(`SELECT a > 0`)
-testPass(`SELECT a <= 0`)
-testPass(`SELECT a <> 0`)
-testPass(`SELECT a <=> 0`)
-testPass(`SELECT a | 0`)
-testPass(`SELECT a & 0`)
-testPass(`SELECT a << 0`)
-testPass(`SELECT a >> 0`)
-testPass(`SELECT a DIV 0`)
-testPass(`SELECT a MODE 0`)
-testPass(`SELECT a % 0`)
-testPass(`SELECT a ^ 0`)
+testPass(`SELECT a || b`);
+testPass(`SELECT a && b`);
+testPass(`SELECT a OR b`);
+testPass(`SELECT a XOR b`);
+testPass(`SELECT a AND b`);
+testPass(`SELECT a IS TRUE`);
+testPass(`SELECT a IS NOT TRUE`);
+testPass(`SELECT a IS FALSE`);
+testPass(`SELECT a IS NULL`);
+testPass(`SELECT a IS NOT NULL`);
+testPass(`SELECT a < 0`);
+testPass(`SELECT a <= 0`);
+testPass(`SELECT a = 0`);
+testPass(`SELECT a != 0`);
+testPass(`SELECT a > 0`);
+testPass(`SELECT a <= 0`);
+testPass(`SELECT a <> 0`);
+testPass(`SELECT a <=> 0`);
+testPass(`SELECT a | 0`);
+testPass(`SELECT a & 0`);
+testPass(`SELECT a << 0`);
+testPass(`SELECT a >> 0`);
+testPass(`SELECT a DIV 0`);
+testPass(`SELECT a MODE 0`);
+testPass(`SELECT a % 0`);
+testPass(`SELECT a ^ 0`);
 testPass(`SELECT (a)`);
 testPass(`SELECT 2 * (a % b)`);
 

@@ -1290,7 +1290,88 @@ Object {
 }
 `;
 
-exports[`CREATE TABLE Foo ( a int DEFAULT uuid() ) 1`] = `[SyntaxError: ")" expected.]`;
+exports[`CREATE TABLE Foo ( a int DEFAULT "zoo" ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "references": undefined,
+      "type": "ColumnDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int DEFAULT (uuid()) ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "references": undefined,
+      "type": "ColumnDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int DEFAULT 50 ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "columnName": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "columnType": Object {
+        "arguments": undefined,
+        "name": "INT",
+        "type": "DataType",
+      },
+      "isPrimaryKey": false,
+      "references": undefined,
+      "type": "ColumnDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( a int DEFAULT uuid() ) 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ) 1`] = `
 Object {
