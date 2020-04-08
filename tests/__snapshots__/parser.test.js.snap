@@ -543,6 +543,304 @@ Object {
 }
 `;
 
+exports[`CREATE TABLE Foo ( INDEX (id) ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "indexName": undefined,
+      "indexOptions": Array [],
+      "keyParts": Array [
+        Object {
+          "name": "id",
+          "type": "Identifier",
+        },
+      ],
+      "type": "KeyDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( KEY (id) ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "indexName": undefined,
+      "indexOptions": Array [],
+      "keyParts": Array [
+        Object {
+          "name": "id",
+          "type": "Identifier",
+        },
+      ],
+      "type": "KeyDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( KEY index_name (id) ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "indexName": Object {
+        "name": "index_name",
+        "type": "Identifier",
+      },
+      "indexOptions": Array [],
+      "keyParts": Array [
+        Object {
+          "name": "id",
+          "type": "Identifier",
+        },
+      ],
+      "type": "KeyDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( KEY index_name (id) COMMENT 'some_comment' ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "indexName": Object {
+        "name": "index_name",
+        "type": "Identifier",
+      },
+      "indexOptions": Array [
+        Object {
+          "name": "COMMENT",
+          "type": "IndexOption",
+          "value": Object {
+            "type": "StringLiteral",
+            "value": "some_comment",
+          },
+        },
+      ],
+      "keyParts": Array [
+        Object {
+          "name": "id",
+          "type": "Identifier",
+        },
+      ],
+      "type": "KeyDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( PRIMARY KEY (id) ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "indexOptions": Array [],
+      "keyParts": Array [
+        Object {
+          "name": "id",
+          "type": "Identifier",
+        },
+      ],
+      "type": "PrimaryKeyDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( PRIMARY KEY (id) COMMENT 'some_comment' ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "indexOptions": Array [
+        Object {
+          "name": "COMMENT",
+          "type": "IndexOption",
+          "value": Object {
+            "type": "StringLiteral",
+            "value": "some_comment",
+          },
+        },
+      ],
+      "keyParts": Array [
+        Object {
+          "name": "id",
+          "type": "Identifier",
+        },
+      ],
+      "type": "PrimaryKeyDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( UNIQUE (id) ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "indexName": undefined,
+      "indexOptions": Array [],
+      "keyParts": Array [
+        Object {
+          "name": "id",
+          "type": "Identifier",
+        },
+      ],
+      "type": "UniqueKeyDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( UNIQUE INDEX (id) ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "indexName": undefined,
+      "indexOptions": Array [],
+      "keyParts": Array [
+        Object {
+          "name": "id",
+          "type": "Identifier",
+        },
+      ],
+      "type": "UniqueKeyDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( UNIQUE KEY (id) ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "indexName": undefined,
+      "indexOptions": Array [],
+      "keyParts": Array [
+        Object {
+          "name": "id",
+          "type": "Identifier",
+        },
+      ],
+      "type": "UniqueKeyDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( UNIQUE KEY (id) COMMENT 'some_comment' ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "indexName": undefined,
+      "indexOptions": Array [
+        Object {
+          "name": "COMMENT",
+          "type": "IndexOption",
+          "value": Object {
+            "type": "StringLiteral",
+            "value": "some_comment",
+          },
+        },
+      ],
+      "keyParts": Array [
+        Object {
+          "name": "id",
+          "type": "Identifier",
+        },
+      ],
+      "type": "UniqueKeyDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( UNIQUE KEY index_name (id) ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "indexName": Object {
+        "name": "index_name",
+        "type": "Identifier",
+      },
+      "indexOptions": Array [],
+      "keyParts": Array [
+        Object {
+          "name": "id",
+          "type": "Identifier",
+        },
+      ],
+      "type": "UniqueKeyDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
 exports[`CREATE TABLE Foo ( a int )  1`] = `
 Object {
   "definitions": Array [
