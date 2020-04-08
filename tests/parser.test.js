@@ -25,6 +25,8 @@ function testFail(code) {
 }
 
 testPass(`SELECT 1; SELECT 2;`);
+testPass(`SELECT /* comment */ 1;`);
+testPass(`SELECT 1 -- comment;`);
 testPass(`SELECT a FROM b WHERE m = 6;`);
 testFail(`SELECT a, b,`);
 testPass(`SELECT "1", '1', \`1\``);

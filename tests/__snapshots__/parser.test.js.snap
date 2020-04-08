@@ -485,6 +485,64 @@ Object {
 }
 `;
 
+exports[`CREATE TABLE Foo ( FOREIGN KEY (a) REFERENCES Goo (a) ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "indexName": undefined,
+      "keyParts": Array [
+        Object {
+          "name": "a",
+          "type": "Identifier",
+        },
+      ],
+      "onDelete": undefined,
+      "onUpdate": undefined,
+      "table": Object {
+        "name": "Goo",
+        "type": "Identifier",
+      },
+      "type": "ForeignKeyDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
+exports[`CREATE TABLE Foo ( FOREIGN KEY (a) REFERENCES Goo (a) ON DELETE CASCADE ) 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "indexName": undefined,
+      "keyParts": Array [
+        Object {
+          "name": "a",
+          "type": "Identifier",
+        },
+      ],
+      "onDelete": "CASCADE",
+      "onUpdate": undefined,
+      "table": Object {
+        "name": "Goo",
+        "type": "Identifier",
+      },
+      "type": "ForeignKeyDefinition",
+    },
+  ],
+  "tableName": Object {
+    "name": "Foo",
+    "type": "Identifier",
+  },
+  "tableOptions": Array [],
+  "type": "CreateTableStatement",
+}
+`;
+
 exports[`CREATE TABLE Foo ( a int )  1`] = `
 Object {
   "definitions": Array [
@@ -2899,6 +2957,33 @@ Object {
 }
 `;
 
+exports[`SELECT /* comment */ 1; 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "type": "NumberLiteral",
+      "value": "1",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
 exports[`SELECT \`a\`.\`b\` 1`] = `
 Object {
   "distinct": false,
@@ -3041,6 +3126,33 @@ Object {
 `;
 
 exports[`SELECT 1`] = `[SyntaxError: Invalid syntax.]`;
+
+exports[`SELECT 1 -- comment; 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "type": "NumberLiteral",
+      "value": "1",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
 
 exports[`SELECT 1 SELECT 2 1`] = `[SyntaxError: Invalid syntax.]`;
 
