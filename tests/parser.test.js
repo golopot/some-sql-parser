@@ -66,7 +66,7 @@ testPass(`SELECT a & 0`);
 testPass(`SELECT a << 0`);
 testPass(`SELECT a >> 0`);
 testPass(`SELECT a DIV 0`);
-testPass(`SELECT a MODE 0`);
+testPass(`SELECT a MOD 0`);
 testPass(`SELECT a % 0`);
 testPass(`SELECT a ^ 0`);
 testPass(`SELECT (a)`);

@@ -4752,6 +4752,41 @@ Object {
 }
 `;
 
+exports[`SELECT a != 0 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "!=",
+      "right": Object {
+        "type": "NumberLiteral",
+        "value": "0",
+      },
+      "type": "BinaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
 exports[`SELECT a "aa" 1`] = `
 Object {
   "distinct": false,
@@ -4800,6 +4835,76 @@ Object {
       "right": Object {
         "type": "NumberLiteral",
         "value": "0",
+      },
+      "type": "BinaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT a & 0 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "&",
+      "right": Object {
+        "type": "NumberLiteral",
+        "value": "0",
+      },
+      "type": "BinaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT a && b 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "&&",
+      "right": Object {
+        "name": "b",
+        "type": "Identifier",
       },
       "type": "BinaryExpression",
     },
@@ -4943,6 +5048,216 @@ Object {
 }
 `;
 
+exports[`SELECT a < 0 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "<",
+      "right": Object {
+        "type": "NumberLiteral",
+        "value": "0",
+      },
+      "type": "BinaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT a << 0 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "<<",
+      "right": Object {
+        "type": "NumberLiteral",
+        "value": "0",
+      },
+      "type": "BinaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT a <= 0 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "<=",
+      "right": Object {
+        "type": "NumberLiteral",
+        "value": "0",
+      },
+      "type": "BinaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT a <= 0 2`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "<=",
+      "right": Object {
+        "type": "NumberLiteral",
+        "value": "0",
+      },
+      "type": "BinaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT a <=> 0 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "<=>",
+      "right": Object {
+        "type": "NumberLiteral",
+        "value": "0",
+      },
+      "type": "BinaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT a <> 0 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "<>",
+      "right": Object {
+        "type": "NumberLiteral",
+        "value": "0",
+      },
+      "type": "BinaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
 exports[`SELECT a = 0 1`] = `
 Object {
   "distinct": false,
@@ -4953,6 +5268,111 @@ Object {
         "type": "Identifier",
       },
       "operator": "=",
+      "right": Object {
+        "type": "NumberLiteral",
+        "value": "0",
+      },
+      "type": "BinaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT a > 0 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": ">",
+      "right": Object {
+        "type": "NumberLiteral",
+        "value": "0",
+      },
+      "type": "BinaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT a >> 0 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": ">>",
+      "right": Object {
+        "type": "NumberLiteral",
+        "value": "0",
+      },
+      "type": "BinaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT a ^ 0 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "^",
       "right": Object {
         "type": "NumberLiteral",
         "value": "0",
@@ -4993,6 +5413,76 @@ Object {
       },
       "hasAsKeyword": false,
       "type": "AliasExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT a | 0 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "|",
+      "right": Object {
+        "type": "NumberLiteral",
+        "value": "0",
+      },
+      "type": "BinaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT a || b 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "||",
+      "right": Object {
+        "name": "b",
+        "type": "Identifier",
+      },
+      "type": "BinaryExpression",
     },
   ],
   "from": undefined,
