@@ -5538,6 +5538,41 @@ Object {
 }
 `;
 
+exports[`SELECT a DIV 0 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "DIV",
+      "right": Object {
+        "type": "NumberLiteral",
+        "value": "0",
+      },
+      "type": "BinaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
 exports[`SELECT a FROM b WHERE m = 6; 1`] = `
 Object {
   "distinct": false,
@@ -5590,6 +5625,111 @@ Object {
     },
     "type": "WhereClause",
   },
+}
+`;
+
+exports[`SELECT a MOD 0 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "MOD",
+      "right": Object {
+        "type": "NumberLiteral",
+        "value": "0",
+      },
+      "type": "BinaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT a OR b 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "OR",
+      "right": Object {
+        "name": "b",
+        "type": "Identifier",
+      },
+      "type": "BinaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT a XOR b 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "left": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "XOR",
+      "right": Object {
+        "name": "b",
+        "type": "Identifier",
+      },
+      "type": "BinaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
 }
 `;
 
@@ -5748,29 +5888,7 @@ Object {
 }
 `;
 
-exports[`SELECT a.b.c 1`] = `
-Object {
-  "expressions": Array [
-    Object {
-      "left": Object {
-        "left": "a",
-        "right": "b",
-        "type": "MemberExpression",
-      },
-      "operator": ".",
-      "right": "c",
-    },
-  ],
-  "from": undefined,
-  "groupBy": undefined,
-  "having": undefined,
-  "limit": undefined,
-  "orderBy": undefined,
-  "type": "SelectStatement",
-  "union": undefined,
-  "where": undefined,
-}
-`;
+exports[`SELECT a.b.c 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT a.b.c.d 1`] = `[SyntaxError: Invalid syntax.]`;
 

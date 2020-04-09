@@ -73,7 +73,7 @@ testPass(`SELECT (a)`);
 testPass(`SELECT 2 * (a % b)`);
 
 testPass(`SELECT a.b`);
-testPass(`SELECT a.b.c`);
+testFail(`SELECT a.b.c`);
 testPass('SELECT `a`.`b`');
 testPass('SELECT a.*');
 testPass('SELECT - a.b');
