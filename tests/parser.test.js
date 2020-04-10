@@ -72,6 +72,8 @@ testPass(`SELECT a ^ 0`);
 testPass(`SELECT (a)`);
 testPass(`SELECT 2 * (a % b)`);
 
+testPass(`SELECT NOT a OR b`);
+
 testPass(`SELECT a.b`);
 testFail(`SELECT a.b.c`);
 testPass('SELECT `a`.`b`');

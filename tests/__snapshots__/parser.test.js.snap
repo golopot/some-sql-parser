@@ -2761,6 +2761,7 @@ Object {
         "type": "Identifier",
       },
       "operator": "!",
+      "prefix": true,
       "type": "UnaryExpression",
     },
   ],
@@ -4011,6 +4012,7 @@ Object {
           "value": "1",
         },
         "operator": "+",
+        "prefix": true,
         "type": "UnaryExpression",
       },
       "operator": "-",
@@ -4052,15 +4054,19 @@ Object {
               "value": "1",
             },
             "operator": "~",
+            "prefix": true,
             "type": "UnaryExpression",
           },
           "operator": "!",
+          "prefix": true,
           "type": "UnaryExpression",
         },
         "operator": "-",
+        "prefix": true,
         "type": "UnaryExpression",
       },
       "operator": "+",
+      "prefix": true,
       "type": "UnaryExpression",
     },
   ],
@@ -4229,6 +4235,7 @@ Object {
         "type": "MemberExpression",
       },
       "operator": "-",
+      "prefix": true,
       "type": "UnaryExpression",
     },
   ],
@@ -4582,6 +4589,78 @@ Object {
   "groupBy": undefined,
   "having": undefined,
   "highPriority": "HIGH_PRIORITY",
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT NOT a 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "operand": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "NOT",
+      "prefix": true,
+      "type": "UnaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT NOT a OR b 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "operand": Object {
+        "left": Object {
+          "name": "a",
+          "type": "Identifier",
+        },
+        "operator": "OR",
+        "right": Object {
+          "name": "b",
+          "type": "Identifier",
+        },
+        "type": "BinaryExpression",
+      },
+      "operator": "NOT",
+      "prefix": true,
+      "type": "UnaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
   "limit": undefined,
   "orderBy": undefined,
   "sqlBigResult": undefined,
@@ -5625,6 +5704,166 @@ Object {
     },
     "type": "WhereClause",
   },
+}
+`;
+
+exports[`SELECT a IS FALSE 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "operand": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "IS FALSE",
+      "prefix": false,
+      "type": "UnaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT a IS NOT NULL 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "operand": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "IS NOT NULL",
+      "prefix": false,
+      "type": "UnaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT a IS NOT TRUE 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "operand": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "IS NOT TRUE",
+      "prefix": false,
+      "type": "UnaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT a IS NULL 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "operand": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "IS NULL",
+      "prefix": false,
+      "type": "UnaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
+
+exports[`SELECT a IS TRUE 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "operand": Object {
+        "name": "a",
+        "type": "Identifier",
+      },
+      "operator": "IS TRUE",
+      "prefix": false,
+      "type": "UnaryExpression",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
 }
 `;
 
