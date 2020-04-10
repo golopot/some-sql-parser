@@ -6075,7 +6075,34 @@ exports[`SELECT a.b.c 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT a.b.c.d 1`] = `[SyntaxError: Invalid syntax.]`;
 
-exports[`SELECT by FROM foo; 1`] = `[SyntaxError: Invalid syntax.]`;
+exports[`SELECT by 1`] = `[SyntaxError: Invalid syntax.]`;
+
+exports[`SELECT current_timestamp 1`] = `
+Object {
+  "distinct": false,
+  "expressions": Array [
+    Object {
+      "name": "CURRENT_TIMESTAMP",
+      "type": "SpecialValue",
+    },
+  ],
+  "from": undefined,
+  "groupBy": undefined,
+  "having": undefined,
+  "highPriority": undefined,
+  "limit": undefined,
+  "orderBy": undefined,
+  "sqlBigResult": undefined,
+  "sqlBufferResult": undefined,
+  "sqlCalcFoundRows": undefined,
+  "sqlNoCache": undefined,
+  "sqlSmallResult": undefined,
+  "straightJoin": undefined,
+  "type": "SelectStatement",
+  "union": undefined,
+  "where": undefined,
+}
+`;
 
 exports[`SELECT f()() 1`] = `[SyntaxError: Invalid syntax.]`;
 
@@ -6289,40 +6316,26 @@ Object {
 }
 `;
 
-exports[`SELECT not FROM a 1`] = `[SyntaxError: Invalid syntax.]`;
+exports[`SELECT not 1`] = `[SyntaxError: Invalid syntax.]`;
 
-exports[`SELECT null, true, current_timestamp FROM a 1`] = `
+exports[`SELECT null, true, false 1`] = `
 Object {
   "distinct": false,
   "expressions": Array [
     Object {
-      "name": "null",
+      "name": "NULL",
       "type": "SpecialValue",
     },
     Object {
-      "name": "true",
+      "name": "TRUE",
       "type": "SpecialValue",
     },
     Object {
-      "name": "current_timestamp",
+      "name": "FALSE",
       "type": "SpecialValue",
     },
   ],
-  "from": Object {
-    "table": Object {
-      "joins": Array [],
-      "table": Object {
-        "alias": undefined,
-        "table": Object {
-          "name": "a",
-          "type": "Identifier",
-        },
-        "type": "TableFactor",
-      },
-      "type": "TableReference",
-    },
-    "type": "FromClause",
-  },
+  "from": undefined,
   "groupBy": undefined,
   "having": undefined,
   "highPriority": undefined,
@@ -6375,7 +6388,7 @@ Object {
 }
 `;
 
-exports[`SELECT varchar FROM a 1`] = `[SyntaxError: Invalid syntax.]`;
+exports[`SELECT varchar 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SSSSS foo FROM b 1`] = `[SyntaxError: Invalid syntax.]`;
 

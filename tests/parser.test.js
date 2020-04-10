@@ -103,10 +103,11 @@ testPass(`SELECT a "aa"`);
 testPass(`SELECT a \`aa\``);
 testPass(`SELECT t as tt`);
 
-testPass(`SELECT null, true, current_timestamp FROM a`);
-testFail(`SELECT not FROM a`);
-testFail(`SELECT varchar FROM a`);
-testFail(`SELECT by FROM foo;`);
+testPass(`SELECT null, true, false`);
+testPass(`SELECT current_timestamp`);
+testFail(`SELECT not`);
+testFail(`SELECT varchar`);
+testFail(`SELECT by`);
 testFail(`SELECT a b c d e`);
 
 testPass(`SELECT * FROM foo`);
