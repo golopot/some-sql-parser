@@ -2430,16 +2430,12 @@ Object {
     ],
     "from": Object {
       "table": Object {
-        "joins": Array [],
+        "alias": undefined,
         "table": Object {
-          "alias": undefined,
-          "table": Object {
-            "name": "bar",
-            "type": "Identifier",
-          },
-          "type": "TableFactor",
+          "name": "bar",
+          "type": "Identifier",
         },
-        "type": "TableReference",
+        "type": "TableFactor",
       },
       "type": "FromClause",
     },
@@ -2915,52 +2911,44 @@ Object {
   ],
   "from": Object {
     "table": Object {
-      "joins": Array [],
-      "table": Object {
-        "alias": Object {
-          "name": "alias",
-          "type": "Identifier",
-        },
-        "table": Object {
-          "distinct": false,
-          "expressions": Array [
-            Object {
-              "type": "WildcardExpression",
-            },
-          ],
-          "from": Object {
-            "table": Object {
-              "joins": Array [],
-              "table": Object {
-                "alias": undefined,
-                "table": Object {
-                  "name": "foo",
-                  "type": "Identifier",
-                },
-                "type": "TableFactor",
-              },
-              "type": "TableReference",
-            },
-            "type": "FromClause",
-          },
-          "groupBy": undefined,
-          "having": undefined,
-          "highPriority": undefined,
-          "limit": undefined,
-          "orderBy": undefined,
-          "sqlBigResult": undefined,
-          "sqlBufferResult": undefined,
-          "sqlCalcFoundRows": undefined,
-          "sqlNoCache": undefined,
-          "sqlSmallResult": undefined,
-          "straightJoin": undefined,
-          "type": "SelectStatement",
-          "union": undefined,
-          "where": undefined,
-        },
-        "type": "TableFactor",
+      "alias": Object {
+        "name": "alias",
+        "type": "Identifier",
       },
-      "type": "TableReference",
+      "table": Object {
+        "distinct": false,
+        "expressions": Array [
+          Object {
+            "type": "WildcardExpression",
+          },
+        ],
+        "from": Object {
+          "table": Object {
+            "alias": undefined,
+            "table": Object {
+              "name": "foo",
+              "type": "Identifier",
+            },
+            "type": "TableFactor",
+          },
+          "type": "FromClause",
+        },
+        "groupBy": undefined,
+        "having": undefined,
+        "highPriority": undefined,
+        "limit": undefined,
+        "orderBy": undefined,
+        "sqlBigResult": undefined,
+        "sqlBufferResult": undefined,
+        "sqlCalcFoundRows": undefined,
+        "sqlNoCache": undefined,
+        "sqlSmallResult": undefined,
+        "straightJoin": undefined,
+        "type": "SelectStatement",
+        "union": undefined,
+        "where": undefined,
+      },
+      "type": "TableFactor",
     },
     "type": "FromClause",
   },
@@ -2991,23 +2979,19 @@ Object {
   ],
   "from": Object {
     "table": Object {
-      "joins": Array [],
+      "alias": undefined,
       "table": Object {
-        "alias": undefined,
-        "table": Object {
-          "left": Object {
-            "type": "BacktickLiteral",
-            "value": "foo",
-          },
-          "right": Object {
-            "type": "BacktickLiteral",
-            "value": "goo",
-          },
-          "type": "MemberExpression",
+        "left": Object {
+          "type": "BacktickLiteral",
+          "value": "foo",
         },
-        "type": "TableFactor",
+        "right": Object {
+          "type": "BacktickLiteral",
+          "value": "goo",
+        },
+        "type": "MemberExpression",
       },
-      "type": "TableReference",
+      "type": "TableFactor",
     },
     "type": "FromClause",
   },
@@ -3040,16 +3024,12 @@ Object {
   ],
   "from": Object {
     "table": Object {
-      "joins": Array [],
+      "alias": undefined,
       "table": Object {
-        "alias": undefined,
-        "table": Object {
-          "name": "foo",
-          "type": "Identifier",
-        },
-        "type": "TableFactor",
+        "name": "foo",
+        "type": "Identifier",
       },
-      "type": "TableReference",
+      "type": "TableFactor",
     },
     "type": "FromClause",
   },
@@ -3080,16 +3060,12 @@ Object {
   ],
   "from": Object {
     "table": Object {
-      "joins": Array [],
+      "alias": undefined,
       "table": Object {
-        "alias": undefined,
-        "table": Object {
-          "name": "foo",
-          "type": "Identifier",
-        },
-        "type": "TableFactor",
+        "name": "foo",
+        "type": "Identifier",
       },
-      "type": "TableReference",
+      "type": "TableFactor",
     },
     "type": "FromClause",
   },
@@ -3441,16 +3417,12 @@ Object {
   ],
   "from": Object {
     "table": Object {
-      "joins": Array [],
+      "alias": undefined,
       "table": Object {
-        "alias": undefined,
-        "table": Object {
-          "name": "foo",
-          "type": "Identifier",
-        },
-        "type": "TableFactor",
+        "name": "foo",
+        "type": "Identifier",
       },
-      "type": "TableReference",
+      "type": "TableFactor",
     },
     "type": "FromClause",
   },
@@ -3515,19 +3487,15 @@ Object {
   ],
   "from": Object {
     "table": Object {
-      "joins": Array [],
-      "table": Object {
-        "alias": Object {
-          "name": "goo",
-          "type": "Identifier",
-        },
-        "table": Object {
-          "name": "foo",
-          "type": "Identifier",
-        },
-        "type": "TableFactor",
+      "alias": Object {
+        "name": "goo",
+        "type": "Identifier",
       },
-      "type": "TableReference",
+      "table": Object {
+        "name": "foo",
+        "type": "Identifier",
+      },
+      "type": "TableFactor",
     },
     "type": "FromClause",
   },
@@ -3646,19 +3614,15 @@ Object {
   ],
   "from": Object {
     "table": Object {
-      "joins": Array [],
-      "table": Object {
-        "alias": Object {
-          "name": "goo",
-          "type": "Identifier",
-        },
-        "table": Object {
-          "name": "foo",
-          "type": "Identifier",
-        },
-        "type": "TableFactor",
+      "alias": Object {
+        "name": "goo",
+        "type": "Identifier",
       },
-      "type": "TableReference",
+      "table": Object {
+        "name": "foo",
+        "type": "Identifier",
+      },
+      "type": "TableFactor",
     },
     "type": "FromClause",
   },
@@ -3691,28 +3655,20 @@ Object {
     "table": Object {
       "tables": Array [
         Object {
-          "joins": Array [],
+          "alias": undefined,
           "table": Object {
-            "alias": undefined,
-            "table": Object {
-              "name": "foo",
-              "type": "Identifier",
-            },
-            "type": "TableFactor",
+            "name": "foo",
+            "type": "Identifier",
           },
-          "type": "TableReference",
+          "type": "TableFactor",
         },
         Object {
-          "joins": Array [],
+          "alias": undefined,
           "table": Object {
-            "alias": undefined,
-            "table": Object {
-              "name": "goo",
-              "type": "Identifier",
-            },
-            "type": "TableFactor",
+            "name": "goo",
+            "type": "Identifier",
           },
-          "type": "TableReference",
+          "type": "TableFactor",
         },
       ],
       "type": "TableReferenceList",
@@ -3746,23 +3702,19 @@ Object {
   ],
   "from": Object {
     "table": Object {
-      "joins": Array [],
+      "alias": undefined,
       "table": Object {
-        "alias": undefined,
-        "table": Object {
-          "left": Object {
-            "name": "foo",
-            "type": "Identifier",
-          },
-          "right": Object {
-            "name": "goo",
-            "type": "Identifier",
-          },
-          "type": "MemberExpression",
+        "left": Object {
+          "name": "foo",
+          "type": "Identifier",
         },
-        "type": "TableFactor",
+        "right": Object {
+          "name": "goo",
+          "type": "Identifier",
+        },
+        "type": "MemberExpression",
       },
-      "type": "TableReference",
+      "type": "TableFactor",
     },
     "type": "FromClause",
   },
@@ -5663,16 +5615,12 @@ Object {
   ],
   "from": Object {
     "table": Object {
-      "joins": Array [],
+      "alias": undefined,
       "table": Object {
-        "alias": undefined,
-        "table": Object {
-          "name": "b",
-          "type": "Identifier",
-        },
-        "type": "TableFactor",
+        "name": "b",
+        "type": "Identifier",
       },
-      "type": "TableReference",
+      "type": "TableFactor",
     },
     "type": "FromClause",
   },
@@ -6063,16 +6011,12 @@ Object {
   ],
   "from": Object {
     "table": Object {
-      "joins": Array [],
+      "alias": undefined,
       "table": Object {
-        "alias": undefined,
-        "table": Object {
-          "name": "foo",
-          "type": "Identifier",
-        },
-        "type": "TableFactor",
+        "name": "foo",
+        "type": "Identifier",
       },
-      "type": "TableReference",
+      "type": "TableFactor",
     },
     "type": "FromClause",
   },
@@ -6520,16 +6464,12 @@ Object {
     "type": "SetClause",
   },
   "table": Object {
-    "joins": Array [],
+    "alias": undefined,
     "table": Object {
-      "alias": undefined,
-      "table": Object {
-        "name": "Foo",
-        "type": "Identifier",
-      },
-      "type": "TableFactor",
+      "name": "Foo",
+      "type": "Identifier",
     },
-    "type": "TableReference",
+    "type": "TableFactor",
   },
   "type": "UpdateStatement",
   "where": undefined,
@@ -6578,16 +6518,12 @@ Object {
     "type": "SetClause",
   },
   "table": Object {
-    "joins": Array [],
+    "alias": undefined,
     "table": Object {
-      "alias": undefined,
-      "table": Object {
-        "name": "Foo",
-        "type": "Identifier",
-      },
-      "type": "TableFactor",
+      "name": "Foo",
+      "type": "Identifier",
     },
-    "type": "TableReference",
+    "type": "TableFactor",
   },
   "type": "UpdateStatement",
   "where": Object {
@@ -6632,16 +6568,12 @@ Object {
     "type": "SetClause",
   },
   "table": Object {
-    "joins": Array [],
+    "alias": undefined,
     "table": Object {
-      "alias": undefined,
-      "table": Object {
-        "name": "Foo",
-        "type": "Identifier",
-      },
-      "type": "TableFactor",
+      "name": "Foo",
+      "type": "Identifier",
     },
-    "type": "TableReference",
+    "type": "TableFactor",
   },
   "type": "UpdateStatement",
   "where": undefined,
@@ -6684,16 +6616,12 @@ Object {
     "type": "SetClause",
   },
   "table": Object {
-    "joins": Array [],
+    "alias": undefined,
     "table": Object {
-      "alias": undefined,
-      "table": Object {
-        "name": "Foo",
-        "type": "Identifier",
-      },
-      "type": "TableFactor",
+      "name": "Foo",
+      "type": "Identifier",
     },
-    "type": "TableReference",
+    "type": "TableFactor",
   },
   "type": "UpdateStatement",
   "where": undefined,
@@ -6737,16 +6665,12 @@ Object {
     "type": "SetClause",
   },
   "table": Object {
-    "joins": Array [],
+    "alias": undefined,
     "table": Object {
-      "alias": undefined,
-      "table": Object {
-        "name": "Foo",
-        "type": "Identifier",
-      },
-      "type": "TableFactor",
+      "name": "Foo",
+      "type": "Identifier",
     },
-    "type": "TableReference",
+    "type": "TableFactor",
   },
   "type": "UpdateStatement",
   "where": undefined,
@@ -6779,28 +6703,20 @@ Object {
   "table": Object {
     "tables": Array [
       Object {
-        "joins": Array [],
+        "alias": undefined,
         "table": Object {
-          "alias": undefined,
-          "table": Object {
-            "name": "Foo",
-            "type": "Identifier",
-          },
-          "type": "TableFactor",
+          "name": "Foo",
+          "type": "Identifier",
         },
-        "type": "TableReference",
+        "type": "TableFactor",
       },
       Object {
-        "joins": Array [],
+        "alias": undefined,
         "table": Object {
-          "alias": undefined,
-          "table": Object {
-            "name": "Goo",
-            "type": "Identifier",
-          },
-          "type": "TableFactor",
+          "name": "Goo",
+          "type": "Identifier",
         },
-        "type": "TableReference",
+        "type": "TableFactor",
       },
     ],
     "type": "TableReferenceList",
@@ -6834,16 +6750,12 @@ Object {
     "type": "SetClause",
   },
   "table": Object {
-    "joins": Array [],
+    "alias": undefined,
     "table": Object {
-      "alias": undefined,
-      "table": Object {
-        "name": "Foo",
-        "type": "Identifier",
-      },
-      "type": "TableFactor",
+      "name": "Foo",
+      "type": "Identifier",
     },
-    "type": "TableReference",
+    "type": "TableFactor",
   },
   "type": "UpdateStatement",
   "where": undefined,
@@ -6874,16 +6786,12 @@ Object {
     "type": "SetClause",
   },
   "table": Object {
-    "joins": Array [],
+    "alias": undefined,
     "table": Object {
-      "alias": undefined,
-      "table": Object {
-        "name": "Foo",
-        "type": "Identifier",
-      },
-      "type": "TableFactor",
+      "name": "Foo",
+      "type": "Identifier",
     },
-    "type": "TableReference",
+    "type": "TableFactor",
   },
   "type": "UpdateStatement",
   "where": undefined,
