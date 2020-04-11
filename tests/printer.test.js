@@ -1,28 +1,15 @@
 /* eslint-disable quotes */
-const Parser = require('../lib/parser');
+const Printer = require('../lib/printer');
 
 function testPass(code) {
   it(code, () => {
-    const ast = Parser.parse(code);
-    expect(ast).toMatchSnapshot();
+    const formatted = Printer.print(code);
+    expect(`\n${formatted}\n`).toMatchSnapshot();
   });
 }
 
-function testFail(code) {
-  it(code, () => {
-    let didThrown = false;
-    try {
-      Parser.parse(code);
-    } catch (e) {
-      didThrown = true;
-      expect(e).toMatchSnapshot();
-    }
-
-    if (!didThrown) {
-      throw new Error('Expected a syntax error.');
-    }
-  });
-}
+// eslint-disable-next-line no-unused-vars
+function testFail(code) {}
 
 testFail(`SELECT 1; SELECT 2;`); // TODO
 

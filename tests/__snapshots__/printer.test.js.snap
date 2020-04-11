@@ -1,0 +1,913 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`
+SELECT
+  a
+ 1`] = `
+"
+SELECT a
+"
+`;
+
+exports[`ALTER TABLE table_name DROP FOREIGN KEY fk_symbol 1`] = `
+"
+ALTER TABLE
+  table_name
+DROP FOREIGN KEY
+  fk_symbol
+"
+`;
+
+exports[`ALTER TABLE table_name DROP INDEX index_name 1`] = `
+"
+ALTER TABLE
+  table_name
+DROP KEY
+
+"
+`;
+
+exports[`ALTER TABLE table_name DROP KEY index_name 1`] = `
+"
+ALTER TABLE
+  table_name
+DROP KEY
+
+"
+`;
+
+exports[`ALTER TABLE table_name DROP PRIMARY KEY 1`] = `
+"
+ALTER TABLE
+  table_name
+DROP PRIMARY KEY
+"
+`;
+
+exports[`ALTER TABLE table_name RENAME AS new_table_name 1`] = `
+"
+ALTER TABLE
+  table_name
+RENAME
+  new_table_name
+"
+`;
+
+exports[`ALTER TABLE table_name RENAME COLUMN old_column TO new_column 1`] = `
+"
+ALTER TABLE
+  table_name
+RENAME COLUMN
+  old_column TO new_column
+"
+`;
+
+exports[`ALTER TABLE table_name RENAME INDEX old_key TO new_key 1`] = `
+"
+ALTER TABLE
+  table_name
+RENAME INDEX
+old_key
+TO
+new_key
+"
+`;
+
+exports[`ALTER TABLE table_name RENAME KEY old_key TO new_key 1`] = `
+"
+ALTER TABLE
+  table_name
+RENAME INDEX
+old_key
+TO
+new_key
+"
+`;
+
+exports[`ALTER TABLE table_name RENAME TO new_table_name 1`] = `
+"
+ALTER TABLE
+  table_name
+RENAME
+  new_table_name
+"
+`;
+
+exports[`ALTER TABLE table_name RENAME new_table_name 1`] = `
+"
+ALTER TABLE
+  table_name
+RENAME
+  new_table_name
+"
+`;
+
+exports[`CREATE DATABASE db_name 1`] = `
+"
+CREATE DATABASE
+  db_name
+"
+`;
+
+exports[`CREATE DATABASE db_name 2`] = `
+"
+CREATE DATABASE
+  db_name
+"
+`;
+
+exports[`DELETE FROM table_name WHERE a = 5 ORDER BY a LIMIT 3 1`] = `
+"
+DELETE FROM
+  table_name
+  WHERE
+    a
+    =
+    5
+  ORDER BY
+    a
+  LIMIT
+    3
+"
+`;
+
+exports[`DROP DATABASE IF EXISTS db_name 1`] = `
+"
+DROP DATABASE IF EXISTS
+  db_name
+
+"
+`;
+
+exports[`DROP DATABASE db_name 1`] = `
+"
+DROP DATABASE
+  db_name
+
+"
+`;
+
+exports[`DROP INDEX index_name ON tbl_name 1`] = `
+"
+DROP INDEX
+  index_name
+"
+`;
+
+exports[`DROP TABLE IF EXISTS table_name 1`] = `
+"
+DROP TABLE IF EXISTS
+  table_name
+"
+`;
+
+exports[`DROP TABLE table_name 1`] = `
+"
+DROP TABLE
+  table_name
+"
+`;
+
+exports[`INSERT HIGH_PRIORITY foo VALUES (1) 1`] = `
+"
+INSERT INTO
+  foo
+VALUES
+  ParenthesisExpression
+"
+`;
+
+exports[`INSERT IGNORE foo VALUES (1) 1`] = `
+"
+INSERT INTO
+  foo
+VALUES
+  ParenthesisExpression
+"
+`;
+
+exports[`INSERT INTO foo VALUES (1) 1`] = `
+"
+INSERT INTO
+  foo
+VALUES
+  ParenthesisExpression
+"
+`;
+
+exports[`INSERT LOW_PRIORITY foo VALUES (1) 1`] = `
+"
+INSERT INTO
+  foo
+VALUES
+  ParenthesisExpression
+"
+`;
+
+exports[`INSERT foo (a, b) SELECT c, d FROM bar; 1`] = `
+"
+INSERT INTO
+  foo
+"
+`;
+
+exports[`INSERT foo (a, b) VALUES (1, 2), (3, 4); 1`] = `
+"
+INSERT INTO
+  foo
+VALUES
+  (1,
+  2),
+  (3,
+  4)
+"
+`;
+
+exports[`INSERT foo SET a = 1, b = 2; 1`] = `
+"
+INSERT INTO
+  foo
+"
+`;
+
+exports[`INSERT foo VALUES (1) 1`] = `
+"
+INSERT INTO
+  foo
+VALUES
+  ParenthesisExpression
+"
+`;
+
+exports[`INSERT foo VALUES (1) 2`] = `
+"
+INSERT INTO
+  foo
+VALUES
+  ParenthesisExpression
+"
+`;
+
+exports[`INSERT foo VALUES (1) ON DUPLICATE KEY UPDATE a = 1, b = 2; 1`] = `
+"
+INSERT INTO
+  foo
+VALUES
+  ParenthesisExpression
+"
+`;
+
+exports[`INSERT foo VALUES (1) ON DUPLICATE KEY UPDATE a = 1; 1`] = `
+"
+INSERT INTO
+  foo
+VALUES
+  ParenthesisExpression
+"
+`;
+
+exports[`INSERT foo VALUES (1, 2) 1`] = `
+"
+INSERT INTO
+  foo
+VALUES
+  (1,
+  2)
+"
+`;
+
+exports[`SELECT !a 1`] = `
+"
+SELECT
+  UnaryExpression
+"
+`;
+
+exports[`SELECT "1", '1', \`1\` 1`] = `
+"
+SELECT
+  StringLiteral,
+  StringLiteral,
+  BacktickLiteral
+"
+`;
+
+exports[`SELECT (SELECT 1) 1`] = `
+"
+SELECT
+  SelectStatement
+"
+`;
+
+exports[`SELECT (a) 1`] = `
+"
+SELECT
+  ParenthesisExpression
+"
+`;
+
+exports[`SELECT * FROM foo JOIN goo 1`] = `
+"
+SELECT
+  *
+FROM
+  foo
+"
+`;
+
+exports[`SELECT * FROM foo JOIN goo ON f.a = g.a 1`] = `
+"
+SELECT
+  *
+FROM
+  foo
+"
+`;
+
+exports[`SELECT * FROM foo LEFT JOIN goo ON 1 LEFT JOIN hoo ON 1 1`] = `
+"
+SELECT
+  *
+FROM
+  foo
+"
+`;
+
+exports[`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a 1`] = `
+"
+SELECT
+  *
+FROM
+  foo
+"
+`;
+
+exports[`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a 1`] = `
+"
+SELECT
+  *
+FROM
+  foo
+"
+`;
+
+exports[`SELECT * LIMIT 10 OFFSET 50 1`] = `
+"
+SELECT
+  *
+LIMIT
+  10
+"
+`;
+
+exports[`SELECT * LIMIT 50, 10 1`] = `
+"
+SELECT
+  *
+LIMIT
+  10
+"
+`;
+
+exports[`SELECT * ORDER BY a 1`] = `
+"
+SELECT *
+"
+`;
+
+exports[`SELECT * ORDER BY a ASC 1`] = `
+"
+SELECT *
+"
+`;
+
+exports[`SELECT * ORDER BY a DESC 1`] = `
+"
+SELECT *
+"
+`;
+
+exports[`SELECT * ORDER BY a, b 1`] = `
+"
+SELECT *
+"
+`;
+
+exports[`SELECT + 1 - 2 1`] = `
+"
+SELECT
+  UnaryExpression
+  -
+  2
+"
+`;
+
+exports[`SELECT +-!~1 1`] = `
+"
+SELECT
+  UnaryExpression
+"
+`;
+
+exports[`SELECT /* comment */ 1; 1`] = `
+"
+SELECT 1
+"
+`;
+
+exports[`SELECT \`a\`.\`b\` 1`] = `
+"
+SELECT
+  MemberExpression
+"
+`;
+
+exports[`SELECT \`foo\`() 1`] = `
+"
+SELECT
+  CallExpression
+"
+`;
+
+exports[`SELECT \`foo\`.\`bar\`() 1`] = `
+"
+SELECT
+  CallExpression
+"
+`;
+
+exports[`SELECT - a.b 1`] = `
+"
+SELECT
+  UnaryExpression
+"
+`;
+
+exports[`SELECT 1 -- comment; 1`] = `
+"
+SELECT 1
+"
+`;
+
+exports[`SELECT 1 UNION SELECT 2 1`] = `
+"
+SELECT 1
+"
+`;
+
+exports[`SELECT 1 UNION SELECT 2 UNION SELECT 3 1`] = `
+"
+SELECT 1
+"
+`;
+
+exports[`SELECT 2 * (a % b) 1`] = `
+"
+SELECT
+  2
+  *
+  ParenthesisExpression
+"
+`;
+
+exports[`SELECT ALL * 1`] = `
+"
+SELECT *
+"
+`;
+
+exports[`SELECT CURRENT_DATE() 1`] = `
+"
+SELECT
+  CallExpression
+"
+`;
+
+exports[`SELECT DISTINCT * 1`] = `
+"
+SELECT *
+"
+`;
+
+exports[`SELECT DISTINCTROW * 1`] = `
+"
+SELECT *
+"
+`;
+
+exports[`SELECT HIGH_PRIORITY * 1`] = `
+"
+SELECT *
+"
+`;
+
+exports[`SELECT NOT a 1`] = `
+"
+SELECT
+  UnaryExpression
+"
+`;
+
+exports[`SELECT NOT a OR b 1`] = `
+"
+SELECT
+  UnaryExpression
+"
+`;
+
+exports[`SELECT SQL_BIG_RESULT * 1`] = `
+"
+SELECT *
+"
+`;
+
+exports[`SELECT SQL_BUFFER_RESULT * 1`] = `
+"
+SELECT *
+"
+`;
+
+exports[`SELECT SQL_CALC_FOUND_ROWS * 1`] = `
+"
+SELECT *
+"
+`;
+
+exports[`SELECT SQL_NO_CACHE * 1`] = `
+"
+SELECT *
+"
+`;
+
+exports[`SELECT SQL_SMALL_RESULT * 1`] = `
+"
+SELECT *
+"
+`;
+
+exports[`SELECT STRAIGHT_JOIN * 1`] = `
+"
+SELECT *
+"
+`;
+
+exports[`SELECT a != 0 1`] = `
+"
+SELECT
+  a
+  !=
+  0
+"
+`;
+
+exports[`SELECT a "aa" 1`] = `
+"
+SELECT
+  a StringLiteral
+"
+`;
+
+exports[`SELECT a % 0 1`] = `
+"
+SELECT
+  a
+  %
+  0
+"
+`;
+
+exports[`SELECT a & 0 1`] = `
+"
+SELECT
+  a
+  &
+  0
+"
+`;
+
+exports[`SELECT a && b 1`] = `
+"
+SELECT
+  a
+  &&
+  b
+"
+`;
+
+exports[`SELECT a * b + c 1`] = `
+"
+SELECT
+  a
+  *
+  b
+  +
+  c
+"
+`;
+
+exports[`SELECT a + b * c 1`] = `
+"
+SELECT
+  a
+  +
+  b
+  *
+  c
+"
+`;
+
+exports[`SELECT a + b 1`] = `
+"
+SELECT
+  a
+  +
+  b
+"
+`;
+
+exports[`SELECT a < 0 1`] = `
+"
+SELECT
+  a
+  <
+  0
+"
+`;
+
+exports[`SELECT a << 0 1`] = `
+"
+SELECT
+  a
+  <<
+  0
+"
+`;
+
+exports[`SELECT a <= 0 1`] = `
+"
+SELECT
+  a
+  <=
+  0
+"
+`;
+
+exports[`SELECT a <= 0 2`] = `
+"
+SELECT
+  a
+  <=
+  0
+"
+`;
+
+exports[`SELECT a <=> 0 1`] = `
+"
+SELECT
+  a
+  <=>
+  0
+"
+`;
+
+exports[`SELECT a <> 0 1`] = `
+"
+SELECT
+  a
+  <>
+  0
+"
+`;
+
+exports[`SELECT a = 0 1`] = `
+"
+SELECT
+  a
+  =
+  0
+"
+`;
+
+exports[`SELECT a > 0 1`] = `
+"
+SELECT
+  a
+  >
+  0
+"
+`;
+
+exports[`SELECT a >> 0 1`] = `
+"
+SELECT
+  a
+  >>
+  0
+"
+`;
+
+exports[`SELECT a ^ 0 1`] = `
+"
+SELECT
+  a
+  ^
+  0
+"
+`;
+
+exports[`SELECT a \`aa\` 1`] = `
+"
+SELECT
+  a BacktickLiteral
+"
+`;
+
+exports[`SELECT a | 0 1`] = `
+"
+SELECT
+  a
+  |
+  0
+"
+`;
+
+exports[`SELECT a || b 1`] = `
+"
+SELECT
+  a
+  ||
+  b
+"
+`;
+
+exports[`SELECT a AND b 1`] = `
+"
+SELECT
+  a
+  AND
+  b
+"
+`;
+
+exports[`SELECT a DIV 0 1`] = `
+"
+SELECT
+  a
+  DIV
+  0
+"
+`;
+
+exports[`SELECT a IS FALSE 1`] = `
+"
+SELECT
+  UnaryExpression
+"
+`;
+
+exports[`SELECT a IS NOT NULL 1`] = `
+"
+SELECT
+  UnaryExpression
+"
+`;
+
+exports[`SELECT a IS NOT TRUE 1`] = `
+"
+SELECT
+  UnaryExpression
+"
+`;
+
+exports[`SELECT a IS NULL 1`] = `
+"
+SELECT
+  UnaryExpression
+"
+`;
+
+exports[`SELECT a IS TRUE 1`] = `
+"
+SELECT
+  UnaryExpression
+"
+`;
+
+exports[`SELECT a MOD 0 1`] = `
+"
+SELECT
+  a
+  MOD
+  0
+"
+`;
+
+exports[`SELECT a OR b 1`] = `
+"
+SELECT
+  a
+  OR
+  b
+"
+`;
+
+exports[`SELECT a XOR b 1`] = `
+"
+SELECT
+  a
+  XOR
+  b
+"
+`;
+
+exports[`SELECT a aa 1`] = `
+"
+SELECT
+  a aa
+"
+`;
+
+exports[`SELECT a.* 1`] = `
+"
+SELECT
+  MemberExpression
+"
+`;
+
+exports[`SELECT a.b 1`] = `
+"
+SELECT
+  MemberExpression
+"
+`;
+
+exports[`SELECT current_timestamp 1`] = `
+"
+SELECT
+  SpecialValue
+"
+`;
+
+exports[`SELECT f(g(a)) 1`] = `
+"
+SELECT
+  CallExpression
+"
+`;
+
+exports[`SELECT f.g() 1`] = `
+"
+SELECT
+  CallExpression
+"
+`;
+
+exports[`SELECT fn(), fn(a), fn(a, b) 1`] = `
+"
+SELECT
+  CallExpression,
+  CallExpression,
+  CallExpression
+"
+`;
+
+exports[`SELECT max () 1`] = `
+"
+SELECT
+  CallExpression
+"
+`;
+
+exports[`SELECT max() 1`] = `
+"
+SELECT
+  CallExpression
+"
+`;
+
+exports[`SELECT null, true, false 1`] = `
+"
+SELECT
+  SpecialValue,
+  SpecialValue,
+  SpecialValue
+"
+`;
+
+exports[`SELECT t as tt 1`] = `
+"
+SELECT
+  t tt
+"
+`;
+
+exports[`UPDATE Foo JOIN Goo SET a = 1 1`] = `
+"
+UPDATE
+  Foo
+SET
+  a
+  =
+  1
+"
+`;
