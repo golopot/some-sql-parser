@@ -139,7 +139,7 @@ exports[`ALTER TABLE tbl_name ADD a int AFTER b 1`] = `
 ALTER TABLE
   tbl_name
 ADD COLUMN
-  a INT
+  a INT AFTER b
 "
 `;
 
@@ -148,7 +148,7 @@ exports[`ALTER TABLE tbl_name ADD a int FIRST 1`] = `
 ALTER TABLE
   tbl_name
 ADD COLUMN
-  a INT
+  a INT FIRST
 "
 `;
 
