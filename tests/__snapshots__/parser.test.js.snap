@@ -4365,14 +4365,7 @@ Object {
 
 exports[`SELECT 1 UPDATE foo SET a = 5 1`] = `[SyntaxError: Invalid syntax.]`;
 
-exports[`SELECT 1; SELECT 2; 1`] = `
-Object {
-  "expected": undefined,
-  "index": undefined,
-  "message": "Invalid syntax.",
-  "type": undefined,
-}
-`;
+exports[`SELECT 1; SELECT 2; 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT 2 * (a % b) 1`] = `
 Object {
