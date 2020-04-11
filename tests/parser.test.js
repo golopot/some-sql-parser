@@ -1,10 +1,13 @@
 /* eslint-disable quotes */
 const Parser = require('../lib/parser');
+const Printer = require('../lib/printer');
 
 function testPass(code) {
   it(code, () => {
     const ast = Parser.parse(code);
     expect(ast).toMatchSnapshot();
+    const formatted = Printer.print(code);
+    expect(formatted).toMatchSnapshot();
   });
 }
 

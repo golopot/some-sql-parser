@@ -30,6 +30,11 @@ Object {
 }
 `;
 
+exports[`
+SELECT
+  a
+ 2`] = `"SELECT a  "`;
+
 exports[`ALTER TABLE table_name DROP COLUMN a 1`] = `
 Object {
   "specifications": Array [
@@ -2317,6 +2322,8 @@ Object {
 }
 `;
 
+exports[`INSERT HIGH_PRIORITY foo VALUES (1) 2`] = `"INSERT INTO foo VALUESParenthesisExpression "`;
+
 exports[`INSERT IGNORE foo VALUES (1) 1`] = `
 Object {
   "columnNames": undefined,
@@ -2344,6 +2351,8 @@ Object {
   },
 }
 `;
+
+exports[`INSERT IGNORE foo VALUES (1) 2`] = `"INSERT INTO foo VALUESParenthesisExpression "`;
 
 exports[`INSERT INTO foo VALUES (1) 1`] = `
 Object {
@@ -2373,6 +2382,8 @@ Object {
 }
 `;
 
+exports[`INSERT INTO foo VALUES (1) 2`] = `"INSERT INTO foo VALUESParenthesisExpression "`;
+
 exports[`INSERT LOW_PRIORITY foo VALUES (1) 1`] = `
 Object {
   "columnNames": undefined,
@@ -2400,6 +2411,8 @@ Object {
   },
 }
 `;
+
+exports[`INSERT LOW_PRIORITY foo VALUES (1) 2`] = `"INSERT INTO foo VALUESParenthesisExpression "`;
 
 exports[`INSERT foo (a, b) SELECT c, d FROM bar; 1`] = `
 Object {
@@ -2464,6 +2477,8 @@ Object {
 }
 `;
 
+exports[`INSERT foo (a, b) SELECT c, d FROM bar; 2`] = `"INSERT INTO foo  "`;
+
 exports[`INSERT foo (a, b) VALUES (1, 2), (3, 4); 1`] = `
 Object {
   "columnNames": Array [
@@ -2520,6 +2535,8 @@ Object {
 }
 `;
 
+exports[`INSERT foo (a, b) VALUES (1, 2), (3, 4); 2`] = `"INSERT INTO foo VALUES(1, 2), (3, 4) "`;
+
 exports[`INSERT foo SET a = 1, b = 2; 1`] = `
 Object {
   "columnNames": undefined,
@@ -2563,6 +2580,8 @@ Object {
 }
 `;
 
+exports[`INSERT foo SET a = 1, b = 2; 2`] = `"INSERT INTO foo  "`;
+
 exports[`INSERT foo VALUES (1) 1`] = `
 Object {
   "columnNames": undefined,
@@ -2591,7 +2610,9 @@ Object {
 }
 `;
 
-exports[`INSERT foo VALUES (1) 2`] = `
+exports[`INSERT foo VALUES (1) 2`] = `"INSERT INTO foo VALUESParenthesisExpression "`;
+
+exports[`INSERT foo VALUES (1) 3`] = `
 Object {
   "columnNames": undefined,
   "ignore": undefined,
@@ -2618,6 +2639,8 @@ Object {
   },
 }
 `;
+
+exports[`INSERT foo VALUES (1) 4`] = `"INSERT INTO foo VALUESParenthesisExpression "`;
 
 exports[`INSERT foo VALUES (1) ON DUPLICATE KEY UPDATE a = 1, b = 2; 1`] = `
 Object {
@@ -2673,6 +2696,8 @@ Object {
 }
 `;
 
+exports[`INSERT foo VALUES (1) ON DUPLICATE KEY UPDATE a = 1, b = 2; 2`] = `"INSERT INTO foo VALUESParenthesisExpression "`;
+
 exports[`INSERT foo VALUES (1) ON DUPLICATE KEY UPDATE a = 1; 1`] = `
 Object {
   "columnNames": undefined,
@@ -2711,6 +2736,8 @@ Object {
 }
 `;
 
+exports[`INSERT foo VALUES (1) ON DUPLICATE KEY UPDATE a = 1; 2`] = `"INSERT INTO foo VALUESParenthesisExpression "`;
+
 exports[`INSERT foo VALUES (1) ON DUPLICATE KEY UPDATE a; 1`] = `[SyntaxError: "=" expected.]`;
 
 exports[`INSERT foo VALUES (1, 2) 1`] = `
@@ -2747,6 +2774,8 @@ Object {
 }
 `;
 
+exports[`INSERT foo VALUES (1, 2) 2`] = `"INSERT INTO foo VALUES(1, 2) "`;
+
 exports[`SELECT !a 1`] = `
 Object {
   "distinct": false,
@@ -2778,6 +2807,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT !a 2`] = `"SELECT UnaryExpression  "`;
 
 exports[`SELECT "1", '1', \`1\` 1`] = `
 Object {
@@ -2813,6 +2844,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT "1", '1', \`1\` 2`] = `"SELECT StringLiteral, StringLiteral, BacktickLiteral  "`;
 
 exports[`SELECT "a".b 1`] = `[SyntaxError: Invalid syntax.]`;
 
@@ -2865,6 +2898,8 @@ Object {
 }
 `;
 
+exports[`SELECT (SELECT 1) 2`] = `"SELECT SelectStatement  "`;
+
 exports[`SELECT (a) 1`] = `
 Object {
   "distinct": false,
@@ -2894,6 +2929,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT (a) 2`] = `"SELECT ParenthesisExpression  "`;
 
 exports[`SELECT (f)() 1`] = `[SyntaxError: Invalid syntax.]`;
 
@@ -3162,6 +3199,8 @@ Object {
 }
 `;
 
+exports[`SELECT * FROM foo JOIN goo 2`] = `"SELECT WildcardExpression FROM foo "`;
+
 exports[`SELECT * FROM foo JOIN goo ON f.a = g.a 1`] = `
 Object {
   "distinct": false,
@@ -3244,6 +3283,8 @@ Object {
 }
 `;
 
+exports[`SELECT * FROM foo JOIN goo ON f.a = g.a 2`] = `"SELECT WildcardExpression FROM foo "`;
+
 exports[`SELECT * FROM foo LEFT JOIN goo 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT * FROM foo LEFT JOIN goo ON 1 LEFT JOIN hoo ON 1 1`] = `
@@ -3324,6 +3365,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT * FROM foo LEFT JOIN goo ON 1 LEFT JOIN hoo ON 1 2`] = `"SELECT WildcardExpression FROM foo "`;
 
 exports[`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a 1`] = `
 Object {
@@ -3406,6 +3449,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a 2`] = `"SELECT WildcardExpression FROM foo "`;
 
 exports[`SELECT * FROM foo WHERE a = (SELECT 42) 1`] = `
 Object {
@@ -3604,6 +3649,8 @@ Object {
 }
 `;
 
+exports[`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a 2`] = `"SELECT WildcardExpression FROM foo "`;
+
 exports[`SELECT * FROM foo goo 1`] = `
 Object {
   "distinct": false,
@@ -3771,6 +3818,8 @@ Object {
 }
 `;
 
+exports[`SELECT * LIMIT 10 OFFSET 50 2`] = `"SELECT WildcardExpression  "`;
+
 exports[`SELECT * LIMIT 50, 10 1`] = `
 Object {
   "distinct": false,
@@ -3807,6 +3856,8 @@ Object {
 }
 `;
 
+exports[`SELECT * LIMIT 50, 10 2`] = `"SELECT WildcardExpression  "`;
+
 exports[`SELECT * ORDER BY a 1`] = `
 Object {
   "distinct": false,
@@ -3841,6 +3892,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT * ORDER BY a 2`] = `"SELECT WildcardExpression  "`;
 
 exports[`SELECT * ORDER BY a ASC 1`] = `
 Object {
@@ -3877,6 +3930,8 @@ Object {
 }
 `;
 
+exports[`SELECT * ORDER BY a ASC 2`] = `"SELECT WildcardExpression  "`;
+
 exports[`SELECT * ORDER BY a DESC 1`] = `
 Object {
   "distinct": false,
@@ -3911,6 +3966,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT * ORDER BY a DESC 2`] = `"SELECT WildcardExpression  "`;
 
 exports[`SELECT * ORDER BY a, b 1`] = `
 Object {
@@ -3950,6 +4007,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT * ORDER BY a, b 2`] = `"SELECT WildcardExpression  "`;
 
 exports[`SELECT *.a 1`] = `[SyntaxError: Invalid syntax.]`;
 
@@ -3992,6 +4051,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT + 1 - 2 2`] = `"SELECT UnaryExpression - 2  "`;
 
 exports[`SELECT +-!~1 1`] = `
 Object {
@@ -4040,6 +4101,8 @@ Object {
 }
 `;
 
+exports[`SELECT +-!~1 2`] = `"SELECT UnaryExpression  "`;
+
 exports[`SELECT /* comment */ 1; 1`] = `
 Object {
   "distinct": false,
@@ -4066,6 +4129,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT /* comment */ 1; 2`] = `"SELECT 1  "`;
 
 exports[`SELECT \`a\`.\`b\` 1`] = `
 Object {
@@ -4101,6 +4166,8 @@ Object {
 }
 `;
 
+exports[`SELECT \`a\`.\`b\` 2`] = `"SELECT MemberExpression  "`;
+
 exports[`SELECT \`foo\`() 1`] = `
 Object {
   "distinct": false,
@@ -4131,6 +4198,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT \`foo\`() 2`] = `"SELECT CallExpression  "`;
 
 exports[`SELECT \`foo\`.\`bar\`() 1`] = `
 Object {
@@ -4169,6 +4238,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT \`foo\`.\`bar\`() 2`] = `"SELECT CallExpression  "`;
 
 exports[`SELECT - a.b 1`] = `
 Object {
@@ -4209,6 +4280,8 @@ Object {
 }
 `;
 
+exports[`SELECT - a.b 2`] = `"SELECT UnaryExpression  "`;
+
 exports[`SELECT 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT 1 -- comment; 1`] = `
@@ -4237,6 +4310,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT 1 -- comment; 2`] = `"SELECT 1  "`;
 
 exports[`SELECT 1 SELECT 2 1`] = `[SyntaxError: Invalid syntax.]`;
 
@@ -4289,6 +4364,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT 1 UNION SELECT 2 2`] = `"SELECT 1  "`;
 
 exports[`SELECT 1 UNION SELECT 2 UNION SELECT 3 1`] = `
 Object {
@@ -4363,6 +4440,8 @@ Object {
 }
 `;
 
+exports[`SELECT 1 UNION SELECT 2 UNION SELECT 3 2`] = `"SELECT 1  "`;
+
 exports[`SELECT 1 UPDATE foo SET a = 5 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT 1; SELECT 2; 1`] = `[SyntaxError: Invalid syntax.]`;
@@ -4413,6 +4492,8 @@ Object {
 }
 `;
 
+exports[`SELECT 2 * (a % b) 2`] = `"SELECT 2 * ParenthesisExpression  "`;
+
 exports[`SELECT ALL * 1`] = `
 Object {
   "distinct": false,
@@ -4438,6 +4519,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT ALL * 2`] = `"SELECT WildcardExpression  "`;
 
 exports[`SELECT CURRENT_DATE() 1`] = `
 Object {
@@ -4470,6 +4553,8 @@ Object {
 }
 `;
 
+exports[`SELECT CURRENT_DATE() 2`] = `"SELECT CallExpression  "`;
+
 exports[`SELECT DISTINCT * 1`] = `
 Object {
   "distinct": true,
@@ -4495,6 +4580,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT DISTINCT * 2`] = `"SELECT WildcardExpression  "`;
 
 exports[`SELECT DISTINCTROW * 1`] = `
 Object {
@@ -4522,6 +4609,8 @@ Object {
 }
 `;
 
+exports[`SELECT DISTINCTROW * 2`] = `"SELECT WildcardExpression  "`;
+
 exports[`SELECT HIGH_PRIORITY * 1`] = `
 Object {
   "distinct": false,
@@ -4547,6 +4636,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT HIGH_PRIORITY * 2`] = `"SELECT WildcardExpression  "`;
 
 exports[`SELECT NOT a 1`] = `
 Object {
@@ -4579,6 +4670,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT NOT a 2`] = `"SELECT UnaryExpression  "`;
 
 exports[`SELECT NOT a OR b 1`] = `
 Object {
@@ -4620,6 +4713,8 @@ Object {
 }
 `;
 
+exports[`SELECT NOT a OR b 2`] = `"SELECT UnaryExpression  "`;
+
 exports[`SELECT SQL_BIG_RESULT * 1`] = `
 Object {
   "distinct": false,
@@ -4645,6 +4740,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT SQL_BIG_RESULT * 2`] = `"SELECT WildcardExpression  "`;
 
 exports[`SELECT SQL_BUFFER_RESULT * 1`] = `
 Object {
@@ -4672,6 +4769,8 @@ Object {
 }
 `;
 
+exports[`SELECT SQL_BUFFER_RESULT * 2`] = `"SELECT WildcardExpression  "`;
+
 exports[`SELECT SQL_CALC_FOUND_ROWS * 1`] = `
 Object {
   "distinct": false,
@@ -4697,6 +4796,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT SQL_CALC_FOUND_ROWS * 2`] = `"SELECT WildcardExpression  "`;
 
 exports[`SELECT SQL_NO_CACHE * 1`] = `
 Object {
@@ -4724,6 +4825,8 @@ Object {
 }
 `;
 
+exports[`SELECT SQL_NO_CACHE * 2`] = `"SELECT WildcardExpression  "`;
+
 exports[`SELECT SQL_SMALL_RESULT * 1`] = `
 Object {
   "distinct": false,
@@ -4750,6 +4853,8 @@ Object {
 }
 `;
 
+exports[`SELECT SQL_SMALL_RESULT * 2`] = `"SELECT WildcardExpression  "`;
+
 exports[`SELECT STRAIGHT_JOIN * 1`] = `
 Object {
   "distinct": false,
@@ -4775,6 +4880,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT STRAIGHT_JOIN * 2`] = `"SELECT WildcardExpression  "`;
 
 exports[`SELECT a != 0 1`] = `
 Object {
@@ -4811,6 +4918,8 @@ Object {
 }
 `;
 
+exports[`SELECT a != 0 2`] = `"SELECT a != 0  "`;
+
 exports[`SELECT a "aa" 1`] = `
 Object {
   "distinct": false,
@@ -4845,6 +4954,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT a "aa" 2`] = `"SELECT a StringLiteral  "`;
 
 exports[`SELECT a % 0 1`] = `
 Object {
@@ -4881,6 +4992,8 @@ Object {
 }
 `;
 
+exports[`SELECT a % 0 2`] = `"SELECT a % 0  "`;
+
 exports[`SELECT a & 0 1`] = `
 Object {
   "distinct": false,
@@ -4916,6 +5029,8 @@ Object {
 }
 `;
 
+exports[`SELECT a & 0 2`] = `"SELECT a & 0  "`;
+
 exports[`SELECT a && b 1`] = `
 Object {
   "distinct": false,
@@ -4950,6 +5065,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT a && b 2`] = `"SELECT a && b  "`;
 
 exports[`SELECT a * b + c 1`] = `
 Object {
@@ -4994,6 +5111,8 @@ Object {
 }
 `;
 
+exports[`SELECT a * b + c 2`] = `"SELECT a * b + c  "`;
+
 exports[`SELECT a + b * c 1`] = `
 Object {
   "distinct": false,
@@ -5037,6 +5156,8 @@ Object {
 }
 `;
 
+exports[`SELECT a + b * c 2`] = `"SELECT a + b * c  "`;
+
 exports[`SELECT a + b 1`] = `
 Object {
   "distinct": false,
@@ -5071,6 +5192,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT a + b 2`] = `"SELECT a + b  "`;
 
 exports[`SELECT a < 0 1`] = `
 Object {
@@ -5107,6 +5230,8 @@ Object {
 }
 `;
 
+exports[`SELECT a < 0 2`] = `"SELECT a < 0  "`;
+
 exports[`SELECT a << 0 1`] = `
 Object {
   "distinct": false,
@@ -5141,6 +5266,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT a << 0 2`] = `"SELECT a << 0  "`;
 
 exports[`SELECT a <= 0 1`] = `
 Object {
@@ -5177,7 +5304,9 @@ Object {
 }
 `;
 
-exports[`SELECT a <= 0 2`] = `
+exports[`SELECT a <= 0 2`] = `"SELECT a <= 0  "`;
+
+exports[`SELECT a <= 0 3`] = `
 Object {
   "distinct": false,
   "expressions": Array [
@@ -5211,6 +5340,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT a <= 0 4`] = `"SELECT a <= 0  "`;
 
 exports[`SELECT a <=> 0 1`] = `
 Object {
@@ -5247,6 +5378,8 @@ Object {
 }
 `;
 
+exports[`SELECT a <=> 0 2`] = `"SELECT a <=> 0  "`;
+
 exports[`SELECT a <> 0 1`] = `
 Object {
   "distinct": false,
@@ -5281,6 +5414,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT a <> 0 2`] = `"SELECT a <> 0  "`;
 
 exports[`SELECT a = 0 1`] = `
 Object {
@@ -5317,6 +5452,8 @@ Object {
 }
 `;
 
+exports[`SELECT a = 0 2`] = `"SELECT a = 0  "`;
+
 exports[`SELECT a > 0 1`] = `
 Object {
   "distinct": false,
@@ -5351,6 +5488,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT a > 0 2`] = `"SELECT a > 0  "`;
 
 exports[`SELECT a >> 0 1`] = `
 Object {
@@ -5387,6 +5526,8 @@ Object {
 }
 `;
 
+exports[`SELECT a >> 0 2`] = `"SELECT a >> 0  "`;
+
 exports[`SELECT a ^ 0 1`] = `
 Object {
   "distinct": false,
@@ -5421,6 +5562,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT a ^ 0 2`] = `"SELECT a ^ 0  "`;
 
 exports[`SELECT a \`aa\` 1`] = `
 Object {
@@ -5457,6 +5600,8 @@ Object {
 }
 `;
 
+exports[`SELECT a \`aa\` 2`] = `"SELECT a BacktickLiteral  "`;
+
 exports[`SELECT a | 0 1`] = `
 Object {
   "distinct": false,
@@ -5491,6 +5636,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT a | 0 2`] = `"SELECT a | 0  "`;
 
 exports[`SELECT a || b 1`] = `
 Object {
@@ -5527,6 +5674,8 @@ Object {
 }
 `;
 
+exports[`SELECT a || b 2`] = `"SELECT a || b  "`;
+
 exports[`SELECT a AND b 1`] = `
 Object {
   "distinct": false,
@@ -5562,6 +5711,8 @@ Object {
 }
 `;
 
+exports[`SELECT a AND b 2`] = `"SELECT a AND b  "`;
+
 exports[`SELECT a DIV 0 1`] = `
 Object {
   "distinct": false,
@@ -5596,6 +5747,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT a DIV 0 2`] = `"SELECT a DIV 0  "`;
 
 exports[`SELECT a FROM b WHERE m = 6; 1`] = `
 Object {
@@ -5680,6 +5833,8 @@ Object {
 }
 `;
 
+exports[`SELECT a IS FALSE 2`] = `"SELECT UnaryExpression  "`;
+
 exports[`SELECT a IS NOT NULL 1`] = `
 Object {
   "distinct": false,
@@ -5711,6 +5866,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT a IS NOT NULL 2`] = `"SELECT UnaryExpression  "`;
 
 exports[`SELECT a IS NOT TRUE 1`] = `
 Object {
@@ -5744,6 +5901,8 @@ Object {
 }
 `;
 
+exports[`SELECT a IS NOT TRUE 2`] = `"SELECT UnaryExpression  "`;
+
 exports[`SELECT a IS NULL 1`] = `
 Object {
   "distinct": false,
@@ -5776,6 +5935,8 @@ Object {
 }
 `;
 
+exports[`SELECT a IS NULL 2`] = `"SELECT UnaryExpression  "`;
+
 exports[`SELECT a IS TRUE 1`] = `
 Object {
   "distinct": false,
@@ -5807,6 +5968,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT a IS TRUE 2`] = `"SELECT UnaryExpression  "`;
 
 exports[`SELECT a MOD 0 1`] = `
 Object {
@@ -5843,6 +6006,8 @@ Object {
 }
 `;
 
+exports[`SELECT a MOD 0 2`] = `"SELECT a MOD 0  "`;
+
 exports[`SELECT a OR b 1`] = `
 Object {
   "distinct": false,
@@ -5877,6 +6042,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT a OR b 2`] = `"SELECT a OR b  "`;
 
 exports[`SELECT a XOR b 1`] = `
 Object {
@@ -5913,6 +6080,8 @@ Object {
 }
 `;
 
+exports[`SELECT a XOR b 2`] = `"SELECT a XOR b  "`;
+
 exports[`SELECT a aa 1`] = `
 Object {
   "distinct": false,
@@ -5947,6 +6116,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT a aa 2`] = `"SELECT a aa  "`;
 
 exports[`SELECT a b c d e 1`] = `[SyntaxError: Invalid syntax.]`;
 
@@ -5986,6 +6157,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT a.* 2`] = `"SELECT MemberExpression  "`;
 
 exports[`SELECT a.* FROM foo 1`] = `
 Object {
@@ -6064,6 +6237,8 @@ Object {
 }
 `;
 
+exports[`SELECT a.b 2`] = `"SELECT MemberExpression  "`;
+
 exports[`SELECT a.b.c 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`SELECT a.b.c.d 1`] = `[SyntaxError: Invalid syntax.]`;
@@ -6096,6 +6271,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT current_timestamp 2`] = `"SELECT SpecialValue  "`;
 
 exports[`SELECT f()() 1`] = `[SyntaxError: Invalid syntax.]`;
 
@@ -6146,6 +6323,8 @@ Object {
 }
 `;
 
+exports[`SELECT f(g(a)) 2`] = `"SELECT CallExpression  "`;
+
 exports[`SELECT f.g() 1`] = `
 Object {
   "distinct": false,
@@ -6183,6 +6362,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT f.g() 2`] = `"SELECT CallExpression  "`;
 
 exports[`SELECT f.g.h() 1`] = `[SyntaxError: Invalid syntax.]`;
 
@@ -6247,6 +6428,8 @@ Object {
 }
 `;
 
+exports[`SELECT fn(), fn(a), fn(a, b) 2`] = `"SELECT CallExpression, CallExpression, CallExpression  "`;
+
 exports[`SELECT max () 1`] = `
 Object {
   "distinct": false,
@@ -6278,6 +6461,8 @@ Object {
 }
 `;
 
+exports[`SELECT max () 2`] = `"SELECT CallExpression  "`;
+
 exports[`SELECT max() 1`] = `
 Object {
   "distinct": false,
@@ -6308,6 +6493,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT max() 2`] = `"SELECT CallExpression  "`;
 
 exports[`SELECT not 1`] = `[SyntaxError: Invalid syntax.]`;
 
@@ -6346,6 +6533,8 @@ Object {
 }
 `;
 
+exports[`SELECT null, true, false 2`] = `"SELECT SpecialValue, SpecialValue, SpecialValue  "`;
+
 exports[`SELECT t as tt 1`] = `
 Object {
   "distinct": false,
@@ -6380,6 +6569,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`SELECT t as tt 2`] = `"SELECT t tt  "`;
 
 exports[`SELECT varchar 1`] = `[SyntaxError: Invalid syntax.]`;
 
@@ -6438,6 +6629,8 @@ Object {
   "where": undefined,
 }
 `;
+
+exports[`UPDATE Foo JOIN Goo SET a = 1 2`] = `"UPDATE Foo SET a = 1 "`;
 
 exports[`UPDATE Foo SET a = 1 LIMIT 1 1`] = `
 Object {
