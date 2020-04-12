@@ -1048,6 +1048,18 @@ SET
 "
 `;
 
+exports[`UPDATE Foo, Goo SET a = 1 1`] = `
+"
+UPDATE
+  Foo,
+  Goo
+SET
+  a
+  =
+  1
+"
+`;
+
 exports[`UPDATE IGNORE Foo SET a = 1 1`] = `
 "
 UPDATE IGNORE
