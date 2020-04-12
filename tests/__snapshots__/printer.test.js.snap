@@ -978,6 +978,90 @@ SELECT
 exports[`UPDATE Foo JOIN Goo SET a = 1 1`] = `
 "
 UPDATE
+  TableReference
+SET
+  a
+  =
+  1
+"
+`;
+
+exports[`UPDATE Foo SET a = 1 LIMIT 1 1`] = `
+"
+UPDATE
+  Foo
+SET
+  a
+  =
+  1
+"
+`;
+
+exports[`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4 1`] = `
+"
+UPDATE
+  Foo
+SET
+  a
+  =
+  1
+WHERE
+  b
+  =
+  2
+"
+`;
+
+exports[`UPDATE Foo SET a = 5 1`] = `
+"
+UPDATE
+  Foo
+SET
+  a
+  =
+  5
+"
+`;
+
+exports[`UPDATE Foo SET a = 5, b = 6 1`] = `
+"
+UPDATE
+  Foo
+SET
+  a
+  =
+  5,
+  b
+  =
+  6
+"
+`;
+
+exports[`UPDATE Foo SET f(a) = 5 1`] = `
+"
+UPDATE
+  Foo
+SET
+  CallExpression
+  =
+  5
+"
+`;
+
+exports[`UPDATE IGNORE Foo SET a = 1 1`] = `
+"
+UPDATE IGNORE
+  Foo
+SET
+  a
+  =
+  1
+"
+`;
+
+exports[`UPDATE LOW_PRIORITY Foo SET a = 1 1`] = `
+"
+UPDATE
   Foo
 SET
   a
