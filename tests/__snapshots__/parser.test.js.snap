@@ -1856,7 +1856,7 @@ Object {
             "type": "Identifier",
           },
         ],
-        "onDelete": "NO DEFAULT",
+        "onDelete": "SET DEFAULT",
         "onUpdate": undefined,
         "table": Object {
           "name": "Goo",
@@ -1902,7 +1902,7 @@ Object {
             "type": "Identifier",
           },
         ],
-        "onDelete": "NO NULL",
+        "onDelete": "SET NULL",
         "onUpdate": undefined,
         "table": Object {
           "name": "Goo",
