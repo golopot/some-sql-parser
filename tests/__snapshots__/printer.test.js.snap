@@ -473,7 +473,7 @@ INSERT LOW_PRIORITY INTO foo VALUES (1)
 
 exports[`INSERT foo (a, b) SELECT c, d FROM bar; 1`] = `
 "
-INSERT INTO foo (a, b)
+INSERT INTO foo (a, b) SELECT c, d FROM bar
 "
 `;
 
