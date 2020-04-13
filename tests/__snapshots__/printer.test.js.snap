@@ -766,12 +766,30 @@ SELECT
 "
 `;
 
-exports[`SELECT * FROM foo JOIN goo 1`] = `
+exports[`SELECT * FROM foo 1`] = `
 "
 SELECT
   *
 FROM
   foo
+"
+`;
+
+exports[`SELECT * FROM foo GROUP BY a HAVING b=5 1`] = `
+"
+SELECT
+  *
+FROM
+  foo
+"
+`;
+
+exports[`SELECT * FROM foo JOIN goo 1`] = `
+"
+SELECT
+  *
+FROM
+  TableReference
 "
 `;
 
@@ -780,7 +798,7 @@ exports[`SELECT * FROM foo JOIN goo ON f.a = g.a 1`] = `
 SELECT
   *
 FROM
-  foo
+  TableReference
 "
 `;
 
@@ -789,7 +807,7 @@ exports[`SELECT * FROM foo LEFT JOIN goo ON 1 LEFT JOIN hoo ON 1 1`] = `
 SELECT
   *
 FROM
-  foo
+  TableReference
 "
 `;
 
@@ -798,7 +816,29 @@ exports[`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a 1`] = `
 SELECT
   *
 FROM
+  TableReference
+"
+`;
+
+exports[`SELECT * FROM foo WHERE a = (SELECT 42) 1`] = `
+"
+SELECT
+  *
+FROM
   foo
+WHERE
+  a
+  =
+  SelectStatement
+"
+`;
+
+exports[`SELECT * FROM foo as goo 1`] = `
+"
+SELECT
+  *
+FROM
+  foo AS goo
 "
 `;
 
@@ -807,7 +847,26 @@ exports[`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a 1`] = `
 SELECT
   *
 FROM
-  foo
+  TableReference
+"
+`;
+
+exports[`SELECT * FROM foo goo 1`] = `
+"
+SELECT
+  *
+FROM
+  foo AS goo
+"
+`;
+
+exports[`SELECT * FROM foo, goo 1`] = `
+"
+SELECT
+  *
+FROM
+  foo,
+  goo
 "
 `;
 
@@ -1231,6 +1290,19 @@ SELECT
 "
 `;
 
+exports[`SELECT a FROM b WHERE m = 6; 1`] = `
+"
+SELECT
+  a
+FROM
+  b
+WHERE
+  m
+  =
+  6
+"
+`;
+
 exports[`SELECT a IS FALSE 1`] = `
 "
 SELECT
@@ -1304,6 +1376,15 @@ exports[`SELECT a.* 1`] = `
 "
 SELECT
   MemberExpression
+"
+`;
+
+exports[`SELECT a.* FROM foo 1`] = `
+"
+SELECT
+  MemberExpression
+FROM
+  foo
 "
 `;
 
