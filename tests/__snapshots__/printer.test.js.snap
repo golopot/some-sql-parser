@@ -187,6 +187,14 @@ ON
 "
 `;
 
+exports[`CREATE TABLE \`Foo\` ( a int ) 1`] = `
+"
+CREATE TABLE \`Foo\` (
+  a INT
+)
+"
+`;
+
 exports[`CREATE TABLE Foo ( FOREIGN KEY (a) REFERENCES Goo (a) ) 1`] = `
 "
 CREATE TABLE Foo (
