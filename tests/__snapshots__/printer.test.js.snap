@@ -766,6 +766,29 @@ SELECT
 "
 `;
 
+exports[`SELECT * FROM (SELECT * FROM foo) alias 1`] = `
+"
+SELECT
+  *
+FROM
+  (
+    SELECT
+      *
+    FROM
+      foo
+  ) AS alias
+"
+`;
+
+exports[`SELECT * FROM \`foo\`.\`goo\` 1`] = `
+"
+SELECT
+  *
+FROM
+  \`foo\`.\`goo\`
+"
+`;
+
 exports[`SELECT * FROM foo 1`] = `
 "
 SELECT
@@ -867,6 +890,15 @@ SELECT
 FROM
   foo,
   goo
+"
+`;
+
+exports[`SELECT * FROM foo.goo 1`] = `
+"
+SELECT
+  *
+FROM
+  foo.goo
 "
 `;
 
