@@ -11,965 +11,667 @@ SELECT a
 
 exports[`ALTER TABLE table_name DROP COLUMN a 1`] = `
 "
-ALTER TABLE
-  table_name
-DROP COLUMN
-  a
+ALTER TABLE table_name DROP COLUMN a
 "
 `;
 
 exports[`ALTER TABLE table_name DROP FOREIGN KEY fk_symbol 1`] = `
 "
-ALTER TABLE
-  table_name
-DROP FOREIGN KEY
-  fk_symbol
+ALTER TABLE table_name DROP FOREIGN KEY fk_symbol
 "
 `;
 
 exports[`ALTER TABLE table_name DROP INDEX index_name 1`] = `
 "
-ALTER TABLE
-  table_name
-DROP KEY
-  index_name
+ALTER TABLE table_name DROP KEY index_name
 "
 `;
 
 exports[`ALTER TABLE table_name DROP KEY index_name 1`] = `
 "
-ALTER TABLE
-  table_name
-DROP KEY
-  index_name
+ALTER TABLE table_name DROP KEY index_name
 "
 `;
 
 exports[`ALTER TABLE table_name DROP PRIMARY KEY 1`] = `
 "
-ALTER TABLE
-  table_name
-DROP PRIMARY KEY
+ALTER TABLE table_name DROP PRIMARY KEY
 "
 `;
 
 exports[`ALTER TABLE table_name DROP a 1`] = `
 "
-ALTER TABLE
-  table_name
-DROP COLUMN
-  a
+ALTER TABLE table_name DROP COLUMN a
 "
 `;
 
 exports[`ALTER TABLE table_name RENAME AS new_table_name 1`] = `
 "
-ALTER TABLE
-  table_name
-RENAME
-  new_table_name
+ALTER TABLE table_name RENAME new_table_name
 "
 `;
 
 exports[`ALTER TABLE table_name RENAME COLUMN old_column TO new_column 1`] = `
 "
-ALTER TABLE
-  table_name
-RENAME COLUMN
-  old_column TO new_column
+ALTER TABLE table_name RENAME COLUMN old_column TO new_column
 "
 `;
 
 exports[`ALTER TABLE table_name RENAME INDEX old_key TO new_key 1`] = `
 "
-ALTER TABLE
-  table_name
-RENAME INDEX
-  old_key TO new_key
+ALTER TABLE table_name RENAME KEY old_key TO new_key
 "
 `;
 
 exports[`ALTER TABLE table_name RENAME KEY old_key TO new_key 1`] = `
 "
-ALTER TABLE
-  table_name
-RENAME INDEX
-  old_key TO new_key
+ALTER TABLE table_name RENAME KEY old_key TO new_key
 "
 `;
 
 exports[`ALTER TABLE table_name RENAME TO new_table_name 1`] = `
 "
-ALTER TABLE
-  table_name
-RENAME
-  new_table_name
+ALTER TABLE table_name RENAME new_table_name
 "
 `;
 
 exports[`ALTER TABLE table_name RENAME new_table_name 1`] = `
 "
-ALTER TABLE
-  table_name
-RENAME
-  new_table_name
+ALTER TABLE table_name RENAME new_table_name
 "
 `;
 
 exports[`ALTER TABLE tbl_name ADD COLUMN a int 1`] = `
 "
-ALTER TABLE
-  tbl_name
-ADD COLUMN
-  a INT
+ALTER TABLE tbl_name ADD COLUMN a INT
 "
 `;
 
 exports[`ALTER TABLE tbl_name ADD a int 1`] = `
 "
-ALTER TABLE
-  tbl_name
-ADD COLUMN
-  a INT
+ALTER TABLE tbl_name ADD COLUMN a INT
 "
 `;
 
 exports[`ALTER TABLE tbl_name ADD a int AFTER b 1`] = `
 "
-ALTER TABLE
-  tbl_name
-ADD COLUMN
-  a INT AFTER b
+ALTER TABLE tbl_name ADD COLUMN a INT AFTER b
 "
 `;
 
 exports[`ALTER TABLE tbl_name ADD a int FIRST 1`] = `
 "
-ALTER TABLE
-  tbl_name
-ADD COLUMN
-  a INT FIRST
+ALTER TABLE tbl_name ADD COLUMN a INT FIRST
 "
 `;
 
 exports[`ALTER TABLE tbl_name ADD a int, ADD b int 1`] = `
 "
-ALTER TABLE
-  tbl_name
-ADD COLUMN
-  a INT,
-ADD COLUMN
-  b INT
+ALTER TABLE tbl_name ADD COLUMN a INT, ADD COLUMN b INT
 "
 `;
 
 exports[`CREATE DATABASE db_name 1`] = `
 "
-CREATE DATABASE
-  db_name
+CREATE DATABASE db_name
 "
 `;
 
 exports[`CREATE DATABASE db_name 2`] = `
 "
-CREATE DATABASE
-  db_name
+CREATE DATABASE db_name
 "
 `;
 
 exports[`CREATE INDEX idx ON t1 (col1, col2) 1`] = `
 "
-CREATE INDEX
-  idx
-ON
-  (col1,
-  col2)
+CREATE INDEX idx ON (col1, col2)
 "
 `;
 
 exports[`CREATE TABLE \`Foo\` ( a int ) 1`] = `
 "
-CREATE TABLE \`Foo\` (
-  a INT
-)
+CREATE TABLE \`Foo\` ( a INT )
 "
 `;
 
 exports[`CREATE TABLE Foo ( FOREIGN KEY (a) REFERENCES Goo (a) ) 1`] = `
 "
-CREATE TABLE Foo (
-  FOREIGN KEY (a) REFERENCES Goo(a)
-)
+CREATE TABLE Foo ( FOREIGN KEY (a) REFERENCES Goo(a) )
 "
 `;
 
 exports[`CREATE TABLE Foo ( FOREIGN KEY (a) REFERENCES Goo (a) ON DELETE CASCADE ) 1`] = `
 "
-CREATE TABLE Foo (
-  FOREIGN KEY (a) REFERENCES Goo(a) ON DELETE CASCADE
-)
+CREATE TABLE Foo ( FOREIGN KEY (a) REFERENCES Goo(a) ON DELETE CASCADE )
 "
 `;
 
 exports[`CREATE TABLE Foo ( INDEX (id) ) 1`] = `
 "
-CREATE TABLE Foo (
-  KEY (id)
-)
+CREATE TABLE Foo ( KEY (id) )
 "
 `;
 
 exports[`CREATE TABLE Foo ( KEY (id) ) 1`] = `
 "
-CREATE TABLE Foo (
-  KEY (id)
-)
+CREATE TABLE Foo ( KEY (id) )
 "
 `;
 
 exports[`CREATE TABLE Foo ( KEY index_name (id) ) 1`] = `
 "
-CREATE TABLE Foo (
-  KEY index_name (id)
-)
+CREATE TABLE Foo ( KEY index_name (id) )
 "
 `;
 
 exports[`CREATE TABLE Foo ( KEY index_name (id) COMMENT 'some_comment' ) 1`] = `
 "
-CREATE TABLE Foo (
-  KEY index_name (id) COMMENT \\"some_comment\\"
-)
+CREATE TABLE Foo ( KEY index_name (id) COMMENT \\"some_comment\\" )
 "
 `;
 
 exports[`CREATE TABLE Foo ( PRIMARY KEY (id) ) 1`] = `
 "
-CREATE TABLE Foo (
-  PRIMARY KEY (id)
-)
+CREATE TABLE Foo ( PRIMARY KEY (id) )
 "
 `;
 
 exports[`CREATE TABLE Foo ( PRIMARY KEY (id) COMMENT 'some_comment' ) 1`] = `
 "
-CREATE TABLE Foo (
-  PRIMARY KEY (id) COMMENT \\"some_comment\\"
-)
+CREATE TABLE Foo ( PRIMARY KEY (id) COMMENT \\"some_comment\\" )
 "
 `;
 
 exports[`CREATE TABLE Foo ( UNIQUE (id) ) 1`] = `
 "
-CREATE TABLE Foo (
-  UNIQUE KEY (id)
-)
+CREATE TABLE Foo ( UNIQUE KEY (id) )
 "
 `;
 
 exports[`CREATE TABLE Foo ( UNIQUE INDEX (id) ) 1`] = `
 "
-CREATE TABLE Foo (
-  UNIQUE KEY (id)
-)
+CREATE TABLE Foo ( UNIQUE KEY (id) )
 "
 `;
 
 exports[`CREATE TABLE Foo ( UNIQUE KEY (id) ) 1`] = `
 "
-CREATE TABLE Foo (
-  UNIQUE KEY (id)
-)
+CREATE TABLE Foo ( UNIQUE KEY (id) )
 "
 `;
 
 exports[`CREATE TABLE Foo ( UNIQUE KEY (id) COMMENT 'some_comment' ) 1`] = `
 "
-CREATE TABLE Foo (
-  UNIQUE KEY (id) COMMENT \\"some_comment\\"
-)
+CREATE TABLE Foo ( UNIQUE KEY (id) COMMENT \\"some_comment\\" )
 "
 `;
 
 exports[`CREATE TABLE Foo ( UNIQUE KEY index_name (id) ) 1`] = `
 "
-CREATE TABLE Foo (
-  UNIQUE KEY index_name (id)
-)
+CREATE TABLE Foo ( UNIQUE KEY index_name (id) )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int )  1`] = `
 "
-CREATE TABLE Foo (
-  a INT
-)
+CREATE TABLE Foo ( a INT )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT
-)
+CREATE TABLE Foo ( a INT )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int ) CHARACTER SET charset_name 1`] = `
 "
-CREATE TABLE Foo (
-  a INT
-)
-CHARACTER SET charset_name
+CREATE TABLE Foo ( a INT ) CHARACTER SET charset_name
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int ) COLLATE collation_name 1`] = `
 "
-CREATE TABLE Foo (
-  a INT
-)
-COLLATE collation_name
+CREATE TABLE Foo ( a INT ) COLLATE collation_name
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int ) COMMENT "c" ENGINE = e 1`] = `
 "
-CREATE TABLE Foo (
-  a INT
-)
-COMMENT \\"c\\"
-ENGINE e
+CREATE TABLE Foo ( a INT ) COMMENT \\"c\\" ENGINE e
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int ) COMMENT "c", ENGINE = e 1`] = `
 "
-CREATE TABLE Foo (
-  a INT
-)
-COMMENT \\"c\\"
-ENGINE e
+CREATE TABLE Foo ( a INT ) COMMENT \\"c\\" ENGINE e
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int ) COMMENT "some_comment" 1`] = `
 "
-CREATE TABLE Foo (
-  a INT
-)
-COMMENT \\"some_comment\\"
+CREATE TABLE Foo ( a INT ) COMMENT \\"some_comment\\"
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int ) COMMENT = "some_comment" 1`] = `
 "
-CREATE TABLE Foo (
-  a INT
-)
-COMMENT \\"some_comment\\"
+CREATE TABLE Foo ( a INT ) COMMENT \\"some_comment\\"
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int ) DEFAULT CHARACTER SET charset_name 1`] = `
 "
-CREATE TABLE Foo (
-  a INT
-)
-CHARACTER SET charset_name
+CREATE TABLE Foo ( a INT ) CHARACTER SET charset_name
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int ) DEFAULT COLLATE collation_name 1`] = `
 "
-CREATE TABLE Foo (
-  a INT
-)
-COLLATE collation_name
+CREATE TABLE Foo ( a INT ) COLLATE collation_name
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int ) ENGINE = engine_name 1`] = `
 "
-CREATE TABLE Foo (
-  a INT
-)
-ENGINE engine_name
+CREATE TABLE Foo ( a INT ) ENGINE engine_name
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int ) ENGINE engine_name 1`] = `
 "
-CREATE TABLE Foo (
-  a INT
-)
-ENGINE engine_name
+CREATE TABLE Foo ( a INT ) ENGINE engine_name
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int COLLATE collation_name ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT COLLATE collation_name
-)
+CREATE TABLE Foo ( a INT COLLATE collation_name )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int COMMENT "cccc" ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT COMMENT \\"cccc\\"
-)
+CREATE TABLE Foo ( a INT COMMENT \\"cccc\\" )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int DEFAULT "zoo" ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT DEFAULT \\"zoo\\"
-)
+CREATE TABLE Foo ( a INT DEFAULT \\"zoo\\" )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int DEFAULT (uuid()) ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT DEFAULT (CallExpression)
-)
+CREATE TABLE Foo ( a INT DEFAULT (CallExpression) )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int DEFAULT 50 ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT DEFAULT 50
-)
+CREATE TABLE Foo ( a INT DEFAULT 50 )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int NOT NULL ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT NOT NULL
-)
+CREATE TABLE Foo ( a INT NOT NULL )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int NULL ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT
-)
+CREATE TABLE Foo ( a INT )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT REFERENCES Goo(a)
-)
+CREATE TABLE Foo ( a INT REFERENCES Goo(a) )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE CASCADE ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT REFERENCES Goo(a) ON DELETE CASCADE
-)
+CREATE TABLE Foo ( a INT REFERENCES Goo(a) ON DELETE CASCADE )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE CASCADE ON UPDATE CASCADE ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT REFERENCES Goo(a) ON DELETE CASCADE ON UPDATE CASCADE
-)
+CREATE TABLE Foo ( a INT REFERENCES Goo(a) ON DELETE CASCADE ON UPDATE CASCADE )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE NO ACTION ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT REFERENCES Goo(a) ON DELETE NO ACTION
-)
+CREATE TABLE Foo ( a INT REFERENCES Goo(a) ON DELETE NO ACTION )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE RESTRICT ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT REFERENCES Goo(a) ON DELETE RESTRICT
-)
+CREATE TABLE Foo ( a INT REFERENCES Goo(a) ON DELETE RESTRICT )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE SET DEFAULT ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT REFERENCES Goo(a) ON DELETE SET DEFAULT
-)
+CREATE TABLE Foo ( a INT REFERENCES Goo(a) ON DELETE SET DEFAULT )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON DELETE SET NULL ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT REFERENCES Goo(a) ON DELETE SET NULL
-)
+CREATE TABLE Foo ( a INT REFERENCES Goo(a) ON DELETE SET NULL )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int REFERENCES Goo(a) ON UPDATE CASCADE ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT REFERENCES Goo(a) ON UPDATE CASCADE
-)
+CREATE TABLE Foo ( a INT REFERENCES Goo(a) ON UPDATE CASCADE )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int UNIQUE KEY ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT UNIQUE KEY
-)
+CREATE TABLE Foo ( a INT UNIQUE KEY )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int UNIQUE KEY KEY ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT UNIQUE KEY PRIMARY KEY
-)
+CREATE TABLE Foo ( a INT UNIQUE KEY PRIMARY KEY )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int UNIQUE PRIMARY KEY ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT UNIQUE KEY PRIMARY KEY
-)
+CREATE TABLE Foo ( a INT UNIQUE KEY PRIMARY KEY )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int key ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT PRIMARY KEY
-)
+CREATE TABLE Foo ( a INT PRIMARY KEY )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int primary key ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT PRIMARY KEY
-)
+CREATE TABLE Foo ( a INT PRIMARY KEY )
 "
 `;
 
 exports[`CREATE TABLE Foo ( a int, b varchar(255) ) 1`] = `
 "
-CREATE TABLE Foo (
-  a INT,
-  b VARCHAR
-)
+CREATE TABLE Foo ( a INT, b VARCHAR )
 "
 `;
 
 exports[`DELETE FROM table_name WHERE a = 5 ORDER BY a LIMIT 3 1`] = `
 "
-DELETE FROM
-  table_name
-WHERE
-  a
-  =
-  5
-ORDER BY
-  a
-LIMIT
-  3
+DELETE FROM table_name WHERE a = 5 ORDER BY a LIMIT 3
 "
 `;
 
 exports[`DROP DATABASE IF EXISTS db_name 1`] = `
 "
-DROP DATABASE IF EXISTS
-  db_name
-
+DROP DATABASE IF EXISTS db_name 
 "
 `;
 
 exports[`DROP DATABASE db_name 1`] = `
 "
-DROP DATABASE
-  db_name
-
+DROP DATABASE db_name 
 "
 `;
 
 exports[`DROP INDEX index_name ON tbl_name 1`] = `
 "
-DROP INDEX
-  index_name
+DROP INDEX index_name
 "
 `;
 
 exports[`DROP TABLE IF EXISTS table_name 1`] = `
 "
-DROP TABLE IF EXISTS
-  table_name
+DROP TABLE IF EXISTS table_name
 "
 `;
 
 exports[`DROP TABLE table_name 1`] = `
 "
-DROP TABLE
-  table_name
+DROP TABLE table_name
 "
 `;
 
 exports[`INSERT HIGH_PRIORITY foo VALUES (1) 1`] = `
 "
-INSERT INTO
-  foo
-VALUES
-  ParenthesisExpression
+INSERT INTO foo VALUES ParenthesisExpression
 "
 `;
 
 exports[`INSERT IGNORE foo VALUES (1) 1`] = `
 "
-INSERT INTO
-  foo
-VALUES
-  ParenthesisExpression
+INSERT INTO foo VALUES ParenthesisExpression
 "
 `;
 
 exports[`INSERT INTO foo VALUES (1) 1`] = `
 "
-INSERT INTO
-  foo
-VALUES
-  ParenthesisExpression
+INSERT INTO foo VALUES ParenthesisExpression
 "
 `;
 
 exports[`INSERT LOW_PRIORITY foo VALUES (1) 1`] = `
 "
-INSERT INTO
-  foo
-VALUES
-  ParenthesisExpression
+INSERT INTO foo VALUES ParenthesisExpression
 "
 `;
 
 exports[`INSERT foo (a, b) SELECT c, d FROM bar; 1`] = `
 "
-INSERT INTO
-  foo
+INSERT INTO foo
 "
 `;
 
 exports[`INSERT foo (a, b) VALUES (1, 2), (3, 4); 1`] = `
 "
-INSERT INTO
-  foo
-VALUES
-  (1,
-  2),
-  (3,
-  4)
+INSERT INTO foo VALUES (1, 2), (3, 4)
 "
 `;
 
 exports[`INSERT foo SET a = 1, b = 2; 1`] = `
 "
-INSERT INTO
-  foo
+INSERT INTO foo
 "
 `;
 
 exports[`INSERT foo VALUES (1) 1`] = `
 "
-INSERT INTO
-  foo
-VALUES
-  ParenthesisExpression
+INSERT INTO foo VALUES ParenthesisExpression
 "
 `;
 
 exports[`INSERT foo VALUES (1) 2`] = `
 "
-INSERT INTO
-  foo
-VALUES
-  ParenthesisExpression
+INSERT INTO foo VALUES ParenthesisExpression
 "
 `;
 
 exports[`INSERT foo VALUES (1) ON DUPLICATE KEY UPDATE a = 1, b = 2; 1`] = `
 "
-INSERT INTO
-  foo
-VALUES
-  ParenthesisExpression
+INSERT INTO foo VALUES ParenthesisExpression
 "
 `;
 
 exports[`INSERT foo VALUES (1) ON DUPLICATE KEY UPDATE a = 1; 1`] = `
 "
-INSERT INTO
-  foo
-VALUES
-  ParenthesisExpression
+INSERT INTO foo VALUES ParenthesisExpression
 "
 `;
 
 exports[`INSERT foo VALUES (1, 2) 1`] = `
 "
-INSERT INTO
-  foo
-VALUES
-  (1,
-  2)
+INSERT INTO foo VALUES (1, 2)
 "
 `;
 
 exports[`SELECT !a 1`] = `
 "
-SELECT
-  UnaryExpression
+SELECT UnaryExpression
 "
 `;
 
 exports[`SELECT "1", '1', \`1\` 1`] = `
 "
-SELECT
-  StringLiteral,
-  StringLiteral,
-  BacktickLiteral
+SELECT StringLiteral, StringLiteral, BacktickLiteral
 "
 `;
 
 exports[`SELECT (SELECT 1) 1`] = `
 "
-SELECT
-  SelectStatement
+SELECT SelectStatement
 "
 `;
 
 exports[`SELECT (a) 1`] = `
 "
-SELECT
-  ParenthesisExpression
+SELECT ParenthesisExpression
 "
 `;
 
 exports[`SELECT * FROM (SELECT * FROM foo) alias 1`] = `
 "
-SELECT
-  *
-FROM
-  (
-    SELECT
-      *
-    FROM
-      foo
-  ) AS alias
+SELECT * FROM ( SELECT * FROM foo ) AS alias
 "
 `;
 
 exports[`SELECT * FROM \`foo\`.\`goo\` 1`] = `
 "
-SELECT
-  *
-FROM
-  \`foo\`.\`goo\`
+SELECT * FROM \`foo\`.\`goo\`
 "
 `;
 
 exports[`SELECT * FROM foo 1`] = `
 "
-SELECT
-  *
-FROM
-  foo
+SELECT * FROM foo
 "
 `;
 
 exports[`SELECT * FROM foo GROUP BY a HAVING b=5 1`] = `
 "
-SELECT
-  *
-FROM
-  foo
+SELECT * FROM foo
 "
 `;
 
 exports[`SELECT * FROM foo JOIN goo 1`] = `
 "
-SELECT
-  *
-FROM
-  TableReference
+SELECT * FROM TableReference
 "
 `;
 
 exports[`SELECT * FROM foo JOIN goo ON f.a = g.a 1`] = `
 "
-SELECT
-  *
-FROM
-  TableReference
+SELECT * FROM TableReference
 "
 `;
 
 exports[`SELECT * FROM foo LEFT JOIN goo ON 1 LEFT JOIN hoo ON 1 1`] = `
 "
-SELECT
-  *
-FROM
-  TableReference
+SELECT * FROM TableReference
 "
 `;
 
 exports[`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a 1`] = `
 "
-SELECT
-  *
-FROM
-  TableReference
+SELECT * FROM TableReference
 "
 `;
 
 exports[`SELECT * FROM foo WHERE a = (SELECT 42) 1`] = `
 "
-SELECT
-  *
-FROM
-  foo
-WHERE
-  a
-  =
-  SelectStatement
+SELECT * FROM foo WHERE a = SelectStatement
 "
 `;
 
 exports[`SELECT * FROM foo as goo 1`] = `
 "
-SELECT
-  *
-FROM
-  foo AS goo
+SELECT * FROM foo AS goo
 "
 `;
 
 exports[`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a 1`] = `
 "
-SELECT
-  *
-FROM
-  TableReference
+SELECT * FROM TableReference
 "
 `;
 
 exports[`SELECT * FROM foo goo 1`] = `
 "
-SELECT
-  *
-FROM
-  foo AS goo
+SELECT * FROM foo AS goo
 "
 `;
 
 exports[`SELECT * FROM foo, goo 1`] = `
 "
-SELECT
-  *
-FROM
-  foo,
-  goo
+SELECT * FROM foo, goo
 "
 `;
 
 exports[`SELECT * FROM foo.goo 1`] = `
 "
-SELECT
-  *
-FROM
-  foo.goo
+SELECT * FROM foo.goo
 "
 `;
 
 exports[`SELECT * LIMIT 10 OFFSET 50 1`] = `
 "
-SELECT
-  *
-LIMIT
-  10
+SELECT * LIMIT 10
 "
 `;
 
 exports[`SELECT * LIMIT 50, 10 1`] = `
 "
-SELECT
-  *
-LIMIT
-  10
+SELECT * LIMIT 10
 "
 `;
 
 exports[`SELECT * ORDER BY a 1`] = `
 "
-SELECT
-  *
-ORDER BY
-  a
+SELECT * ORDER BY a
 "
 `;
 
 exports[`SELECT * ORDER BY a ASC 1`] = `
 "
-SELECT
-  *
-ORDER BY
-  a
+SELECT * ORDER BY a
 "
 `;
 
 exports[`SELECT * ORDER BY a DESC 1`] = `
 "
-SELECT
-  *
-ORDER BY
-  a
+SELECT * ORDER BY a
 "
 `;
 
 exports[`SELECT * ORDER BY a, b 1`] = `
 "
-SELECT
-  *
-ORDER BY
-  a,
-  b
+SELECT * ORDER BY a, b
 "
 `;
 
 exports[`SELECT + 1 - 2 1`] = `
 "
-SELECT
-  UnaryExpression
-  -
-  2
+SELECT UnaryExpression - 2
 "
 `;
 
 exports[`SELECT +-!~1 1`] = `
 "
-SELECT
-  UnaryExpression
+SELECT UnaryExpression
 "
 `;
 
@@ -981,29 +683,25 @@ SELECT 1
 
 exports[`SELECT \`a\`.\`b\` 1`] = `
 "
-SELECT
-  MemberExpression
+SELECT MemberExpression
 "
 `;
 
 exports[`SELECT \`foo\`() 1`] = `
 "
-SELECT
-  CallExpression
+SELECT CallExpression
 "
 `;
 
 exports[`SELECT \`foo\`.\`bar\`() 1`] = `
 "
-SELECT
-  CallExpression
+SELECT CallExpression
 "
 `;
 
 exports[`SELECT - a.b 1`] = `
 "
-SELECT
-  UnaryExpression
+SELECT UnaryExpression
 "
 `;
 
@@ -1027,10 +725,7 @@ SELECT 1
 
 exports[`SELECT 2 * (a % b) 1`] = `
 "
-SELECT
-  2
-  *
-  ParenthesisExpression
+SELECT 2 * ParenthesisExpression
 "
 `;
 
@@ -1042,8 +737,7 @@ SELECT *
 
 exports[`SELECT CURRENT_DATE() 1`] = `
 "
-SELECT
-  CallExpression
+SELECT CallExpression
 "
 `;
 
@@ -1067,15 +761,13 @@ SELECT *
 
 exports[`SELECT NOT a 1`] = `
 "
-SELECT
-  UnaryExpression
+SELECT UnaryExpression
 "
 `;
 
 exports[`SELECT NOT a OR b 1`] = `
 "
-SELECT
-  UnaryExpression
+SELECT UnaryExpression
 "
 `;
 
@@ -1117,479 +809,318 @@ SELECT *
 
 exports[`SELECT a != 0 1`] = `
 "
-SELECT
-  a
-  !=
-  0
+SELECT a != 0
 "
 `;
 
 exports[`SELECT a "aa" 1`] = `
 "
-SELECT
-  a StringLiteral
+SELECT a StringLiteral
 "
 `;
 
 exports[`SELECT a % 0 1`] = `
 "
-SELECT
-  a
-  %
-  0
+SELECT a % 0
 "
 `;
 
 exports[`SELECT a & 0 1`] = `
 "
-SELECT
-  a
-  &
-  0
+SELECT a & 0
 "
 `;
 
 exports[`SELECT a && b 1`] = `
 "
-SELECT
-  a
-  &&
-  b
+SELECT a && b
 "
 `;
 
 exports[`SELECT a * b + c 1`] = `
 "
-SELECT
-  a
-  *
-  b
-  +
-  c
+SELECT a * b + c
 "
 `;
 
 exports[`SELECT a + b * c 1`] = `
 "
-SELECT
-  a
-  +
-  b
-  *
-  c
+SELECT a + b * c
 "
 `;
 
 exports[`SELECT a + b 1`] = `
 "
-SELECT
-  a
-  +
-  b
+SELECT a + b
 "
 `;
 
 exports[`SELECT a < 0 1`] = `
 "
-SELECT
-  a
-  <
-  0
+SELECT a < 0
 "
 `;
 
 exports[`SELECT a << 0 1`] = `
 "
-SELECT
-  a
-  <<
-  0
+SELECT a << 0
 "
 `;
 
 exports[`SELECT a <= 0 1`] = `
 "
-SELECT
-  a
-  <=
-  0
+SELECT a <= 0
 "
 `;
 
 exports[`SELECT a <= 0 2`] = `
 "
-SELECT
-  a
-  <=
-  0
+SELECT a <= 0
 "
 `;
 
 exports[`SELECT a <=> 0 1`] = `
 "
-SELECT
-  a
-  <=>
-  0
+SELECT a <=> 0
 "
 `;
 
 exports[`SELECT a <> 0 1`] = `
 "
-SELECT
-  a
-  <>
-  0
+SELECT a <> 0
 "
 `;
 
 exports[`SELECT a = 0 1`] = `
 "
-SELECT
-  a
-  =
-  0
+SELECT a = 0
 "
 `;
 
 exports[`SELECT a > 0 1`] = `
 "
-SELECT
-  a
-  >
-  0
+SELECT a > 0
 "
 `;
 
 exports[`SELECT a >> 0 1`] = `
 "
-SELECT
-  a
-  >>
-  0
+SELECT a >> 0
 "
 `;
 
 exports[`SELECT a ^ 0 1`] = `
 "
-SELECT
-  a
-  ^
-  0
+SELECT a ^ 0
 "
 `;
 
 exports[`SELECT a \`aa\` 1`] = `
 "
-SELECT
-  a BacktickLiteral
+SELECT a BacktickLiteral
 "
 `;
 
 exports[`SELECT a | 0 1`] = `
 "
-SELECT
-  a
-  |
-  0
+SELECT a | 0
 "
 `;
 
 exports[`SELECT a || b 1`] = `
 "
-SELECT
-  a
-  ||
-  b
+SELECT a || b
 "
 `;
 
 exports[`SELECT a AND b 1`] = `
 "
-SELECT
-  a
-  AND
-  b
+SELECT a AND b
 "
 `;
 
 exports[`SELECT a DIV 0 1`] = `
 "
-SELECT
-  a
-  DIV
-  0
+SELECT a DIV 0
 "
 `;
 
 exports[`SELECT a FROM b WHERE m = 6; 1`] = `
 "
-SELECT
-  a
-FROM
-  b
-WHERE
-  m
-  =
-  6
+SELECT a FROM b WHERE m = 6
 "
 `;
 
 exports[`SELECT a IS FALSE 1`] = `
 "
-SELECT
-  UnaryExpression
+SELECT UnaryExpression
 "
 `;
 
 exports[`SELECT a IS NOT NULL 1`] = `
 "
-SELECT
-  UnaryExpression
+SELECT UnaryExpression
 "
 `;
 
 exports[`SELECT a IS NOT TRUE 1`] = `
 "
-SELECT
-  UnaryExpression
+SELECT UnaryExpression
 "
 `;
 
 exports[`SELECT a IS NULL 1`] = `
 "
-SELECT
-  UnaryExpression
+SELECT UnaryExpression
 "
 `;
 
 exports[`SELECT a IS TRUE 1`] = `
 "
-SELECT
-  UnaryExpression
+SELECT UnaryExpression
 "
 `;
 
 exports[`SELECT a MOD 0 1`] = `
 "
-SELECT
-  a
-  MOD
-  0
+SELECT a MOD 0
 "
 `;
 
 exports[`SELECT a OR b 1`] = `
 "
-SELECT
-  a
-  OR
-  b
+SELECT a OR b
 "
 `;
 
 exports[`SELECT a XOR b 1`] = `
 "
-SELECT
-  a
-  XOR
-  b
+SELECT a XOR b
 "
 `;
 
 exports[`SELECT a aa 1`] = `
 "
-SELECT
-  a aa
+SELECT a aa
 "
 `;
 
 exports[`SELECT a.* 1`] = `
 "
-SELECT
-  MemberExpression
+SELECT MemberExpression
 "
 `;
 
 exports[`SELECT a.* FROM foo 1`] = `
 "
-SELECT
-  MemberExpression
-FROM
-  foo
+SELECT MemberExpression FROM foo
 "
 `;
 
 exports[`SELECT a.b 1`] = `
 "
-SELECT
-  MemberExpression
+SELECT MemberExpression
 "
 `;
 
 exports[`SELECT current_timestamp 1`] = `
 "
-SELECT
-  SpecialValue
+SELECT SpecialValue
 "
 `;
 
 exports[`SELECT f(g(a)) 1`] = `
 "
-SELECT
-  CallExpression
+SELECT CallExpression
 "
 `;
 
 exports[`SELECT f.g() 1`] = `
 "
-SELECT
-  CallExpression
+SELECT CallExpression
 "
 `;
 
 exports[`SELECT fn(), fn(a), fn(a, b) 1`] = `
 "
-SELECT
-  CallExpression,
-  CallExpression,
-  CallExpression
+SELECT CallExpression, CallExpression, CallExpression
 "
 `;
 
 exports[`SELECT max () 1`] = `
 "
-SELECT
-  CallExpression
+SELECT CallExpression
 "
 `;
 
 exports[`SELECT max() 1`] = `
 "
-SELECT
-  CallExpression
+SELECT CallExpression
 "
 `;
 
 exports[`SELECT null, true, false 1`] = `
 "
-SELECT
-  SpecialValue,
-  SpecialValue,
-  SpecialValue
+SELECT SpecialValue, SpecialValue, SpecialValue
 "
 `;
 
 exports[`SELECT t as tt 1`] = `
 "
-SELECT
-  t tt
+SELECT t tt
 "
 `;
 
 exports[`UPDATE Foo JOIN Goo SET a = 1 1`] = `
 "
-UPDATE
-  TableReference
-SET
-  a
-  =
-  1
+UPDATE TableReference SET a = 1
 "
 `;
 
 exports[`UPDATE Foo SET a = 1 LIMIT 1 1`] = `
 "
-UPDATE
-  Foo
-SET
-  a
-  =
-  1
+UPDATE Foo SET a = 1
 "
 `;
 
 exports[`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4 1`] = `
 "
-UPDATE
-  Foo
-SET
-  a
-  =
-  1
-WHERE
-  b
-  =
-  2
+UPDATE Foo SET a = 1 WHERE b = 2
 "
 `;
 
 exports[`UPDATE Foo SET a = 5 1`] = `
 "
-UPDATE
-  Foo
-SET
-  a
-  =
-  5
+UPDATE Foo SET a = 5
 "
 `;
 
 exports[`UPDATE Foo SET a = 5, b = 6 1`] = `
 "
-UPDATE
-  Foo
-SET
-  a
-  =
-  5,
-  b
-  =
-  6
+UPDATE Foo SET a = 5, b = 6
 "
 `;
 
 exports[`UPDATE Foo SET f(a) = 5 1`] = `
 "
-UPDATE
-  Foo
-SET
-  CallExpression
-  =
-  5
+UPDATE Foo SET CallExpression = 5
 "
 `;
 
 exports[`UPDATE Foo, Goo SET a = 1 1`] = `
 "
-UPDATE
-  Foo,
-  Goo
-SET
-  a
-  =
-  1
+UPDATE Foo, Goo SET a = 1
 "
 `;
 
 exports[`UPDATE IGNORE Foo SET a = 1 1`] = `
 "
-UPDATE IGNORE
-  Foo
-SET
-  a
-  =
-  1
+UPDATE IGNORE Foo SET a = 1
 "
 `;
 
 exports[`UPDATE LOW_PRIORITY Foo SET a = 1 1`] = `
 "
-UPDATE
-  Foo
-SET
-  a
-  =
-  1
+UPDATE Foo SET a = 1
 "
 `;
