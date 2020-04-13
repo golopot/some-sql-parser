@@ -187,6 +187,110 @@ ON
 "
 `;
 
+exports[`CREATE TABLE Foo ( FOREIGN KEY (a) REFERENCES Goo (a) ) 1`] = `
+"
+CREATE TABLE Foo (
+  FOREIGN KEY (a) REFERENCES Goo(a)
+)
+"
+`;
+
+exports[`CREATE TABLE Foo ( FOREIGN KEY (a) REFERENCES Goo (a) ON DELETE CASCADE ) 1`] = `
+"
+CREATE TABLE Foo (
+  FOREIGN KEY (a) REFERENCES Goo(a) ON DELETE CASCADE
+)
+"
+`;
+
+exports[`CREATE TABLE Foo ( INDEX (id) ) 1`] = `
+"
+CREATE TABLE Foo (
+  KEY (id)
+)
+"
+`;
+
+exports[`CREATE TABLE Foo ( KEY (id) ) 1`] = `
+"
+CREATE TABLE Foo (
+  KEY (id)
+)
+"
+`;
+
+exports[`CREATE TABLE Foo ( KEY index_name (id) ) 1`] = `
+"
+CREATE TABLE Foo (
+  KEY index_name (id)
+)
+"
+`;
+
+exports[`CREATE TABLE Foo ( KEY index_name (id) COMMENT 'some_comment' ) 1`] = `
+"
+CREATE TABLE Foo (
+  KEY index_name (id) COMMENT \\"some_comment\\"
+)
+"
+`;
+
+exports[`CREATE TABLE Foo ( PRIMARY KEY (id) ) 1`] = `
+"
+CREATE TABLE Foo (
+  PRIMARY KEY (id)
+)
+"
+`;
+
+exports[`CREATE TABLE Foo ( PRIMARY KEY (id) COMMENT 'some_comment' ) 1`] = `
+"
+CREATE TABLE Foo (
+  PRIMARY KEY (id) COMMENT \\"some_comment\\"
+)
+"
+`;
+
+exports[`CREATE TABLE Foo ( UNIQUE (id) ) 1`] = `
+"
+CREATE TABLE Foo (
+  UNIQUE KEY (id)
+)
+"
+`;
+
+exports[`CREATE TABLE Foo ( UNIQUE INDEX (id) ) 1`] = `
+"
+CREATE TABLE Foo (
+  UNIQUE KEY (id)
+)
+"
+`;
+
+exports[`CREATE TABLE Foo ( UNIQUE KEY (id) ) 1`] = `
+"
+CREATE TABLE Foo (
+  UNIQUE KEY (id)
+)
+"
+`;
+
+exports[`CREATE TABLE Foo ( UNIQUE KEY (id) COMMENT 'some_comment' ) 1`] = `
+"
+CREATE TABLE Foo (
+  UNIQUE KEY (id) COMMENT \\"some_comment\\"
+)
+"
+`;
+
+exports[`CREATE TABLE Foo ( UNIQUE KEY index_name (id) ) 1`] = `
+"
+CREATE TABLE Foo (
+  UNIQUE KEY index_name (id)
+)
+"
+`;
+
 exports[`CREATE TABLE Foo ( a int )  1`] = `
 "
 CREATE TABLE Foo (
