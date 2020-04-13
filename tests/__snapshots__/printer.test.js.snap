@@ -125,7 +125,7 @@ CREATE DATABASE db_name
 
 exports[`CREATE INDEX idx ON t1 (col1, col2) 1`] = `
 "
-CREATE INDEX idx ON (col1, col2)
+CREATE INDEX idx ON t1 (col1, col2)
 "
 `;
 
@@ -305,7 +305,7 @@ CREATE TABLE Foo ( a INT DEFAULT \\"zoo\\" )
 
 exports[`CREATE TABLE Foo ( a int DEFAULT (uuid()) ) 1`] = `
 "
-CREATE TABLE Foo ( a INT DEFAULT (CallExpression) )
+CREATE TABLE Foo ( a INT DEFAULT (uuid()) )
 "
 `;
 
@@ -689,13 +689,13 @@ SELECT MemberExpression
 
 exports[`SELECT \`foo\`() 1`] = `
 "
-SELECT CallExpression
+SELECT \`foo\`()
 "
 `;
 
 exports[`SELECT \`foo\`.\`bar\`() 1`] = `
 "
-SELECT CallExpression
+SELECT \`foo\`.\`bar\`()
 "
 `;
 
@@ -737,7 +737,7 @@ SELECT *
 
 exports[`SELECT CURRENT_DATE() 1`] = `
 "
-SELECT CallExpression
+SELECT CURRENT_DATE()
 "
 `;
 
@@ -1025,43 +1025,43 @@ SELECT MemberExpression
 
 exports[`SELECT current_timestamp 1`] = `
 "
-SELECT SpecialValue
+SELECT CURRENT_TIMESTAMP
 "
 `;
 
 exports[`SELECT f(g(a)) 1`] = `
 "
-SELECT CallExpression
+SELECT f(g(a))
 "
 `;
 
 exports[`SELECT f.g() 1`] = `
 "
-SELECT CallExpression
+SELECT f.g()
 "
 `;
 
 exports[`SELECT fn(), fn(a), fn(a, b) 1`] = `
 "
-SELECT CallExpression, CallExpression, CallExpression
+SELECT fn(), fn(a), fn(a, b)
 "
 `;
 
 exports[`SELECT max () 1`] = `
 "
-SELECT CallExpression
+SELECT max()
 "
 `;
 
 exports[`SELECT max() 1`] = `
 "
-SELECT CallExpression
+SELECT max()
 "
 `;
 
 exports[`SELECT null, true, false 1`] = `
 "
-SELECT SpecialValue, SpecialValue, SpecialValue
+SELECT NULL, TRUE, FALSE
 "
 `;
 
@@ -1103,7 +1103,7 @@ UPDATE Foo SET a = 5, b = 6
 
 exports[`UPDATE Foo SET f(a) = 5 1`] = `
 "
-UPDATE Foo SET CallExpression = 5
+UPDATE Foo SET f(a) = 5
 "
 `;
 
