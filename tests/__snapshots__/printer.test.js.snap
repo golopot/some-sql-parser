@@ -629,13 +629,13 @@ SELECT * FROM foo.goo
 
 exports[`SELECT * LIMIT 10 OFFSET 50 1`] = `
 "
-SELECT * LIMIT 10
+SELECT * LIMIT 10 OFFSET 50
 "
 `;
 
 exports[`SELECT * LIMIT 50, 10 1`] = `
 "
-SELECT * LIMIT 10
+SELECT * LIMIT 10 OFFSET 50
 "
 `;
 
