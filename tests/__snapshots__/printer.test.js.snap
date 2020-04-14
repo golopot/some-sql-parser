@@ -533,7 +533,7 @@ SELECT \\"1\\", \\"1\\", \`1\`
 
 exports[`SELECT (SELECT 1) 1`] = `
 "
-SELECT SelectStatement
+SELECT ( SELECT 1 )
 "
 `;
 
@@ -593,7 +593,7 @@ SELECT * FROM TableReference
 
 exports[`SELECT * FROM foo WHERE a = (SELECT 42) 1`] = `
 "
-SELECT * FROM foo WHERE a = SelectStatement
+SELECT * FROM foo WHERE a = ( SELECT 42 )
 "
 `;
 
@@ -1007,13 +1007,13 @@ SELECT a aa
 
 exports[`SELECT a.* 1`] = `
 "
-SELECT MemberExpression
+SELECT a.*
 "
 `;
 
 exports[`SELECT a.* FROM foo 1`] = `
 "
-SELECT MemberExpression FROM foo
+SELECT a.* FROM foo
 "
 `;
 
