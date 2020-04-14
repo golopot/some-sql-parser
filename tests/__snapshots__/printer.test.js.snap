@@ -569,25 +569,25 @@ SELECT * FROM foo GROUP BY a HAVING b = 5
 
 exports[`SELECT * FROM foo JOIN goo 1`] = `
 "
-SELECT * FROM TableReference
+SELECT * FROM foo JOIN goo
 "
 `;
 
 exports[`SELECT * FROM foo JOIN goo ON f.a = g.a 1`] = `
 "
-SELECT * FROM TableReference
+SELECT * FROM foo JOIN goo ON f.a = g.a
 "
 `;
 
 exports[`SELECT * FROM foo LEFT JOIN goo ON 1 LEFT JOIN hoo ON 1 1`] = `
 "
-SELECT * FROM TableReference
+SELECT * FROM foo LEFT JOIN goo ON 1 LEFT JOIN hoo ON 1
 "
 `;
 
 exports[`SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a 1`] = `
 "
-SELECT * FROM TableReference
+SELECT * FROM foo LEFT JOIN goo ON foo.a = goo.a
 "
 `;
 
@@ -605,7 +605,7 @@ SELECT * FROM foo AS goo
 
 exports[`SELECT * FROM foo f LEFT JOIN goo g ON f.a = g.a 1`] = `
 "
-SELECT * FROM TableReference
+SELECT * FROM foo AS f LEFT JOIN goo AS g ON f.a = g.a
 "
 `;
 
@@ -1073,7 +1073,7 @@ SELECT t tt
 
 exports[`UPDATE Foo JOIN Goo SET a = 1 1`] = `
 "
-UPDATE TableReference SET a = 1
+UPDATE Foo JOIN Goo SET a = 1
 "
 `;
 
