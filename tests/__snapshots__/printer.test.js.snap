@@ -1115,6 +1115,6 @@ UPDATE IGNORE Foo SET a = 1
 
 exports[`UPDATE LOW_PRIORITY Foo SET a = 1 1`] = `
 "
-UPDATE Foo SET a = 1
+UPDATE LOW_PRIORITY Foo SET a = 1
 "
 `;

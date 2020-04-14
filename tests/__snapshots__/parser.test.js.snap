@@ -6392,9 +6392,9 @@ exports[`SSSSS foo FROM b 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`UPDATE Foo JOIN Goo SET a = 1 1`] = `
 Object {
-  "ignore": undefined,
+  "ignore": false,
   "limit": undefined,
-  "lowPriority": undefined,
+  "lowPriority": false,
   "orderBy": undefined,
   "set": Object {
     "assignments": Array [
@@ -6445,7 +6445,7 @@ Object {
 
 exports[`UPDATE Foo SET a = 1 LIMIT 1 1`] = `
 Object {
-  "ignore": undefined,
+  "ignore": false,
   "limit": Object {
     "count": Object {
       "type": "NumberLiteral",
@@ -6454,7 +6454,7 @@ Object {
     "offset": undefined,
     "type": "LimitClause",
   },
-  "lowPriority": undefined,
+  "lowPriority": false,
   "orderBy": undefined,
   "set": Object {
     "assignments": Array [
@@ -6489,7 +6489,7 @@ exports[`UPDATE Foo SET a = 1 LIMIT 1, 1 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4 1`] = `
 Object {
-  "ignore": undefined,
+  "ignore": false,
   "limit": Object {
     "count": Object {
       "type": "NumberLiteral",
@@ -6498,7 +6498,7 @@ Object {
     "offset": undefined,
     "type": "LimitClause",
   },
-  "lowPriority": undefined,
+  "lowPriority": false,
   "orderBy": Object {
     "columnNames": Array [
       Object {
@@ -6554,9 +6554,9 @@ Object {
 
 exports[`UPDATE Foo SET a = 5 1`] = `
 Object {
-  "ignore": undefined,
+  "ignore": false,
   "limit": undefined,
-  "lowPriority": undefined,
+  "lowPriority": false,
   "orderBy": undefined,
   "set": Object {
     "assignments": Array [
@@ -6589,9 +6589,9 @@ Object {
 
 exports[`UPDATE Foo SET a = 5, b = 6 1`] = `
 Object {
-  "ignore": undefined,
+  "ignore": false,
   "limit": undefined,
-  "lowPriority": undefined,
+  "lowPriority": false,
   "orderBy": undefined,
   "set": Object {
     "assignments": Array [
@@ -6641,9 +6641,9 @@ exports[`UPDATE Foo SET f(a) = 5 1`] = `[SyntaxError: Invalid assignment express
 
 exports[`UPDATE Foo, Goo SET a = 1 1`] = `
 Object {
-  "ignore": undefined,
+  "ignore": false,
   "limit": undefined,
-  "lowPriority": undefined,
+  "lowPriority": false,
   "orderBy": undefined,
   "set": Object {
     "assignments": Array [
@@ -6689,9 +6689,9 @@ Object {
 
 exports[`UPDATE IGNORE Foo SET a = 1 1`] = `
 Object {
-  "ignore": "IGNORE",
+  "ignore": true,
   "limit": undefined,
-  "lowPriority": undefined,
+  "lowPriority": false,
   "orderBy": undefined,
   "set": Object {
     "assignments": Array [
@@ -6724,9 +6724,9 @@ Object {
 
 exports[`UPDATE LOW_PRIORITY Foo SET a = 1 1`] = `
 Object {
-  "ignore": undefined,
+  "ignore": false,
   "limit": undefined,
-  "lowPriority": "LOW_PRIORITY",
+  "lowPriority": true,
   "orderBy": undefined,
   "set": Object {
     "assignments": Array [
