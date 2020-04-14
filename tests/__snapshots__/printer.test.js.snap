@@ -521,7 +521,7 @@ INSERT INTO foo VALUES (1, 2)
 
 exports[`SELECT !a 1`] = `
 "
-SELECT UnaryExpression
+SELECT !a
 "
 `;
 
@@ -665,13 +665,13 @@ SELECT * ORDER BY a, b
 
 exports[`SELECT + 1 - 2 1`] = `
 "
-SELECT UnaryExpression - 2
+SELECT +1 - 2
 "
 `;
 
 exports[`SELECT +-!~1 1`] = `
 "
-SELECT UnaryExpression
+SELECT +-!~1
 "
 `;
 
@@ -701,7 +701,7 @@ SELECT \`foo\`.\`bar\`()
 
 exports[`SELECT - a.b 1`] = `
 "
-SELECT UnaryExpression
+SELECT -MemberExpression
 "
 `;
 
@@ -761,13 +761,13 @@ SELECT *
 
 exports[`SELECT NOT a 1`] = `
 "
-SELECT UnaryExpression
+SELECT NOT a
 "
 `;
 
 exports[`SELECT NOT a OR b 1`] = `
 "
-SELECT UnaryExpression
+SELECT NOT a OR b
 "
 `;
 
@@ -953,31 +953,31 @@ SELECT a FROM b WHERE m = 6
 
 exports[`SELECT a IS FALSE 1`] = `
 "
-SELECT UnaryExpression
+SELECT a IS FALSE
 "
 `;
 
 exports[`SELECT a IS NOT NULL 1`] = `
 "
-SELECT UnaryExpression
+SELECT a IS NOT NULL
 "
 `;
 
 exports[`SELECT a IS NOT TRUE 1`] = `
 "
-SELECT UnaryExpression
+SELECT a IS NOT TRUE
 "
 `;
 
 exports[`SELECT a IS NULL 1`] = `
 "
-SELECT UnaryExpression
+SELECT a IS NULL
 "
 `;
 
 exports[`SELECT a IS TRUE 1`] = `
 "
-SELECT UnaryExpression
+SELECT a IS TRUE
 "
 `;
 
