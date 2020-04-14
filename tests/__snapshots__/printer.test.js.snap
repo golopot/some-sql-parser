@@ -563,7 +563,7 @@ SELECT * FROM foo
 
 exports[`SELECT * FROM foo GROUP BY a HAVING b=5 1`] = `
 "
-SELECT * FROM foo
+SELECT * FROM foo GROUP BY a HAVING b = 5
 "
 `;
 
