@@ -743,19 +743,19 @@ SELECT CURRENT_DATE()
 
 exports[`SELECT DISTINCT * 1`] = `
 "
-SELECT *
+SELECT DISTINCT *
 "
 `;
 
 exports[`SELECT DISTINCTROW * 1`] = `
 "
-SELECT *
+SELECT DISTINCT *
 "
 `;
 
 exports[`SELECT HIGH_PRIORITY * 1`] = `
 "
-SELECT *
+SELECT HIGH_PRIORITY *
 "
 `;
 
@@ -773,37 +773,37 @@ SELECT NOT a OR b
 
 exports[`SELECT SQL_BIG_RESULT * 1`] = `
 "
-SELECT *
+SELECT SQL_BIG_RESULT *
 "
 `;
 
 exports[`SELECT SQL_BUFFER_RESULT * 1`] = `
 "
-SELECT *
+SELECT SQL_BUFFER_RESULT *
 "
 `;
 
 exports[`SELECT SQL_CALC_FOUND_ROWS * 1`] = `
 "
-SELECT *
+SELECT SQL_CALC_FOUND_ROWS *
 "
 `;
 
 exports[`SELECT SQL_NO_CACHE * 1`] = `
 "
-SELECT *
+SELECT SQL_NO_CACHE *
 "
 `;
 
 exports[`SELECT SQL_SMALL_RESULT * 1`] = `
 "
-SELECT *
+SELECT SQL_SMALL_RESULT *
 "
 `;
 
 exports[`SELECT STRAIGHT_JOIN * 1`] = `
 "
-SELECT *
+SELECT STRAIGHT_JOIN *
 "
 `;
 
