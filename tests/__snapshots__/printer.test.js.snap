@@ -653,7 +653,7 @@ SELECT * ORDER BY a
 
 exports[`SELECT * ORDER BY a DESC 1`] = `
 "
-SELECT * ORDER BY a
+SELECT * ORDER BY a DESC
 "
 `;
 
