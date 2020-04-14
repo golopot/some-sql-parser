@@ -229,13 +229,13 @@ testPass(`CREATE INDEX idx ON t1 (col1, col2)`);
 
 testPass(`UPDATE Foo SET a = 5`);
 testPass(`UPDATE Foo SET a = 5, b = 6`);
-testPass(`UPDATE Foo SET f(a) = 5`);
 testPass(`UPDATE Foo SET a = 1 WHERE b = 2 ORDER BY c LIMIT 4`);
 testPass(`UPDATE Foo SET a = 1 LIMIT 1`);
 testPass(`UPDATE Foo, Goo SET a = 1`);
 testPass(`UPDATE Foo JOIN Goo SET a = 1`);
 testPass(`UPDATE LOW_PRIORITY Foo SET a = 1`);
 testPass(`UPDATE IGNORE Foo SET a = 1`);
+testFail(`UPDATE Foo SET f(a) = 5`);
 testFail(`UPDATE Foo SET a = 6 b`);
 testFail(`UPDATE Foo SET a = 6 as b`);
 testFail(`UPDATE Foo SET a = 1 LIMIT 1, 1`);

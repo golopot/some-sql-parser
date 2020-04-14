@@ -485,7 +485,7 @@ INSERT INTO foo (a, b) VALUES (1, 2), (3, 4)
 
 exports[`INSERT foo SET a = 1, b = 2; 1`] = `
 "
-INSERT INTO foo
+INSERT INTO foo SET a = 1, b = 2
 "
 `;
 
@@ -1098,12 +1098,6 @@ UPDATE Foo SET a = 5
 exports[`UPDATE Foo SET a = 5, b = 6 1`] = `
 "
 UPDATE Foo SET a = 5, b = 6
-"
-`;
-
-exports[`UPDATE Foo SET f(a) = 5 1`] = `
-"
-UPDATE Foo SET f(a) = 5
 "
 `;
 

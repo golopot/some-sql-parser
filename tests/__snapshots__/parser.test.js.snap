@@ -2528,7 +2528,7 @@ Object {
   "priority": undefined,
   "select": undefined,
   "set": Object {
-    "asignments": Array [
+    "assignments": Array [
       Object {
         "left": Object {
           "name": "a",
@@ -2552,7 +2552,7 @@ Object {
         "type": "AssignmentExpression",
       },
     ],
-    "type": "AssignmentList",
+    "type": "SetClause",
   },
   "table": Object {
     "name": "foo",
@@ -2624,7 +2624,7 @@ Object {
   "columnNames": undefined,
   "ignore": undefined,
   "onDuplicateKeyUpdate": Object {
-    "asignments": Array [
+    "assignments": Array [
       Object {
         "left": Object {
           "name": "a",
@@ -2678,15 +2678,20 @@ Object {
   "columnNames": undefined,
   "ignore": undefined,
   "onDuplicateKeyUpdate": Object {
-    "left": Object {
-      "name": "a",
-      "type": "Identifier",
-    },
-    "right": Object {
-      "type": "NumberLiteral",
-      "value": "1",
-    },
-    "type": "AssignmentExpression",
+    "assignments": Array [
+      Object {
+        "left": Object {
+          "name": "a",
+          "type": "Identifier",
+        },
+        "right": Object {
+          "type": "NumberLiteral",
+          "value": "1",
+        },
+        "type": "AssignmentExpression",
+      },
+    ],
+    "type": "AssignmentList",
   },
   "priority": undefined,
   "select": undefined,
@@ -2711,7 +2716,7 @@ Object {
 }
 `;
 
-exports[`INSERT foo VALUES (1) ON DUPLICATE KEY UPDATE a; 1`] = `[SyntaxError: "=" expected.]`;
+exports[`INSERT foo VALUES (1) ON DUPLICATE KEY UPDATE a; 1`] = `[SyntaxError: Invalid assignment expression.]`;
 
 exports[`INSERT foo VALUES (1, 2) 1`] = `
 Object {
@@ -6392,18 +6397,17 @@ Object {
   "lowPriority": undefined,
   "orderBy": undefined,
   "set": Object {
-    "expressions": Array [
+    "assignments": Array [
       Object {
         "left": Object {
           "name": "a",
           "type": "Identifier",
         },
-        "operator": "=",
         "right": Object {
           "type": "NumberLiteral",
           "value": "1",
         },
-        "type": "BinaryExpression",
+        "type": "AssignmentExpression",
       },
     ],
     "type": "SetClause",
@@ -6453,18 +6457,17 @@ Object {
   "lowPriority": undefined,
   "orderBy": undefined,
   "set": Object {
-    "expressions": Array [
+    "assignments": Array [
       Object {
         "left": Object {
           "name": "a",
           "type": "Identifier",
         },
-        "operator": "=",
         "right": Object {
           "type": "NumberLiteral",
           "value": "1",
         },
-        "type": "BinaryExpression",
+        "type": "AssignmentExpression",
       },
     ],
     "type": "SetClause",
@@ -6507,18 +6510,17 @@ Object {
     "type": "OrderByClause",
   },
   "set": Object {
-    "expressions": Array [
+    "assignments": Array [
       Object {
         "left": Object {
           "name": "a",
           "type": "Identifier",
         },
-        "operator": "=",
         "right": Object {
           "type": "NumberLiteral",
           "value": "1",
         },
-        "type": "BinaryExpression",
+        "type": "AssignmentExpression",
       },
     ],
     "type": "SetClause",
@@ -6557,18 +6559,17 @@ Object {
   "lowPriority": undefined,
   "orderBy": undefined,
   "set": Object {
-    "expressions": Array [
+    "assignments": Array [
       Object {
         "left": Object {
           "name": "a",
           "type": "Identifier",
         },
-        "operator": "=",
         "right": Object {
           "type": "NumberLiteral",
           "value": "5",
         },
-        "type": "BinaryExpression",
+        "type": "AssignmentExpression",
       },
     ],
     "type": "SetClause",
@@ -6593,30 +6594,28 @@ Object {
   "lowPriority": undefined,
   "orderBy": undefined,
   "set": Object {
-    "expressions": Array [
+    "assignments": Array [
       Object {
         "left": Object {
           "name": "a",
           "type": "Identifier",
         },
-        "operator": "=",
         "right": Object {
           "type": "NumberLiteral",
           "value": "5",
         },
-        "type": "BinaryExpression",
+        "type": "AssignmentExpression",
       },
       Object {
         "left": Object {
           "name": "b",
           "type": "Identifier",
         },
-        "operator": "=",
         "right": Object {
           "type": "NumberLiteral",
           "value": "6",
         },
-        "type": "BinaryExpression",
+        "type": "AssignmentExpression",
       },
     ],
     "type": "SetClause",
@@ -6638,50 +6637,7 @@ exports[`UPDATE Foo SET a = 6 as b 1`] = `[SyntaxError: Invalid syntax.]`;
 
 exports[`UPDATE Foo SET a = 6 b 1`] = `[SyntaxError: Invalid syntax.]`;
 
-exports[`UPDATE Foo SET f(a) = 5 1`] = `
-Object {
-  "ignore": undefined,
-  "limit": undefined,
-  "lowPriority": undefined,
-  "orderBy": undefined,
-  "set": Object {
-    "expressions": Array [
-      Object {
-        "left": Object {
-          "arguments": Array [
-            Object {
-              "name": "a",
-              "type": "Identifier",
-            },
-          ],
-          "callee": Object {
-            "name": "f",
-            "type": "Identifier",
-          },
-          "type": "CallExpression",
-        },
-        "operator": "=",
-        "right": Object {
-          "type": "NumberLiteral",
-          "value": "5",
-        },
-        "type": "BinaryExpression",
-      },
-    ],
-    "type": "SetClause",
-  },
-  "table": Object {
-    "alias": undefined,
-    "table": Object {
-      "name": "Foo",
-      "type": "Identifier",
-    },
-    "type": "TableFactor",
-  },
-  "type": "UpdateStatement",
-  "where": undefined,
-}
-`;
+exports[`UPDATE Foo SET f(a) = 5 1`] = `[SyntaxError: Invalid assignment expression.]`;
 
 exports[`UPDATE Foo, Goo SET a = 1 1`] = `
 Object {
@@ -6690,18 +6646,17 @@ Object {
   "lowPriority": undefined,
   "orderBy": undefined,
   "set": Object {
-    "expressions": Array [
+    "assignments": Array [
       Object {
         "left": Object {
           "name": "a",
           "type": "Identifier",
         },
-        "operator": "=",
         "right": Object {
           "type": "NumberLiteral",
           "value": "1",
         },
-        "type": "BinaryExpression",
+        "type": "AssignmentExpression",
       },
     ],
     "type": "SetClause",
@@ -6739,18 +6694,17 @@ Object {
   "lowPriority": undefined,
   "orderBy": undefined,
   "set": Object {
-    "expressions": Array [
+    "assignments": Array [
       Object {
         "left": Object {
           "name": "a",
           "type": "Identifier",
         },
-        "operator": "=",
         "right": Object {
           "type": "NumberLiteral",
           "value": "1",
         },
-        "type": "BinaryExpression",
+        "type": "AssignmentExpression",
       },
     ],
     "type": "SetClause",
@@ -6775,18 +6729,17 @@ Object {
   "lowPriority": "LOW_PRIORITY",
   "orderBy": undefined,
   "set": Object {
-    "expressions": Array [
+    "assignments": Array [
       Object {
         "left": Object {
           "name": "a",
           "type": "Identifier",
         },
-        "operator": "=",
         "right": Object {
           "type": "NumberLiteral",
           "value": "1",
         },
-        "type": "BinaryExpression",
+        "type": "AssignmentExpression",
       },
     ],
     "type": "SetClause",
