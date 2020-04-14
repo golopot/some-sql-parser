@@ -527,7 +527,7 @@ SELECT !a
 
 exports[`SELECT "1", '1', \`1\` 1`] = `
 "
-SELECT StringLiteral, StringLiteral, BacktickLiteral
+SELECT \\"1\\", \\"1\\", \`1\`
 "
 `;
 
@@ -683,7 +683,7 @@ SELECT 1
 
 exports[`SELECT \`a\`.\`b\` 1`] = `
 "
-SELECT MemberExpression
+SELECT \`a\`.\`b\`
 "
 `;
 
@@ -701,7 +701,7 @@ SELECT \`foo\`.\`bar\`()
 
 exports[`SELECT - a.b 1`] = `
 "
-SELECT -MemberExpression
+SELECT -a.b
 "
 `;
 
@@ -815,7 +815,7 @@ SELECT a != 0
 
 exports[`SELECT a "aa" 1`] = `
 "
-SELECT a StringLiteral
+SELECT a \\"aa\\"
 "
 `;
 
@@ -917,7 +917,7 @@ SELECT a ^ 0
 
 exports[`SELECT a \`aa\` 1`] = `
 "
-SELECT a BacktickLiteral
+SELECT a \`aa\`
 "
 `;
 
@@ -1019,7 +1019,7 @@ SELECT MemberExpression FROM foo
 
 exports[`SELECT a.b 1`] = `
 "
-SELECT MemberExpression
+SELECT a.b
 "
 `;
 
